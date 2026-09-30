@@ -1,0 +1,63 @@
+{
+ "about": [
+  "The cost of reading a region is a fold of what was observed: the join of the spans runs took. A cost that was",
+  "only declared has no origin behind it and has no cost until one run is observed."
+ ],
+ "cases": [
+  {
+   "name": "observed costs fold to the span that holds them",
+   "observed": [
+    [
+     100,
+     100
+    ],
+    [
+     300,
+     300
+    ]
+   ],
+   "cost": [
+    100,
+    300
+   ]
+  },
+  {
+   "name": "one observation is its own cost",
+   "observed": [
+    [
+     120,
+     120
+    ]
+   ],
+   "cost": [
+    120,
+    120
+   ]
+  },
+  {
+   "name": "a declared cost nobody observed has no cost",
+   "observed": [],
+   "declared": [
+    50,
+    50
+   ]
+  },
+  {
+   "name": "an observed run supersedes a declared cost",
+   "observed": [
+    [
+     80,
+     80
+    ]
+   ],
+   "declared": [
+    50,
+    50
+   ],
+   "cost": [
+    80,
+    80
+   ]
+  }
+ ]
+}

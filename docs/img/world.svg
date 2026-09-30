@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" width="640" height="280" role="img" aria-label="declares measurements, runs on node, reaches none, 2 regions, written in one file of 92 lines, packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780, a place adopts it with uses/topos-measure and run by the node host">
+<style>
+text{font:14px ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#59636e}rect{fill:none;stroke:#8c959f}line{stroke:#2da44e}
+@media (prefers-color-scheme:dark){text{fill:#9198a1}}
+</style>
+<rect x="20" y="8" width="600" height="36" rx="6"/>
+<text x="36" y="31">declares measurements, runs on node, reaches none</text>
+<rect x="20" y="64" width="600" height="36" rx="6"/>
+<text x="36" y="87">2 regions, written in one file of 92 lines</text>
+<line x1="320" y1="44" x2="320" y2="64"/>
+<rect x="20" y="120" width="600" height="36" rx="6"/>
+<text x="36" y="143">packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780</text>
+<line x1="320" y1="100" x2="320" y2="120"/>
+<rect x="20" y="176" width="600" height="36" rx="6"/>
+<text x="36" y="199">a place adopts it with uses/topos-measure</text>
+<line x1="320" y1="156" x2="320" y2="176"/>
+<rect x="20" y="232" width="600" height="36" rx="6"/>
+<text x="36" y="255">run by the node host</text>
+<line x1="320" y1="212" x2="320" y2="232"/>
+</svg>

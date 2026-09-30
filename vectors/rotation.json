@@ -1,0 +1,342 @@
+{
+ "about": [
+  "A rotation breaks nothing. n keys are admitted; one is lost; k of the n that remain admit a replacement",
+  "with an epoch; the lost key's window closes; every claim it signed inside its window still verifies,",
+  "and whatever it signs after the close is refused with the key named. There is no recovery by mail and",
+  "nothing is exported: a rotation is claims on keys/<id>, signed by the lock itself.",
+  "",
+  "`verify` is the same stand-in as signers.json: a line verifies against a public key when its `sig` is",
+  "`ok:` followed by that key. Epochs are plain integers."
+ ],
+ "verify": "sig === 'ok:' + publicKey",
+ "root": {
+  "id": "owner",
+  "keyClass": "authorize",
+  "publicKey": "K0",
+  "coverage": [
+   "*"
+  ],
+  "depth": {
+   "lo": 1,
+   "hi": 16
+  },
+  "admittedBy": []
+ },
+ "lock": [
+  {
+   "scope": "keys/a",
+   "measure": "class",
+   "value": "authorize",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/a",
+   "measure": "public-key",
+   "value": "K1",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/a",
+   "measure": "coverage",
+   "value": "*",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/a",
+   "measure": "resolution",
+   "value": "1..16",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/b",
+   "measure": "class",
+   "value": "authorize",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/b",
+   "measure": "public-key",
+   "value": "K2",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/b",
+   "measure": "coverage",
+   "value": "*",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/b",
+   "measure": "resolution",
+   "value": "1..16",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/c",
+   "measure": "class",
+   "value": "authorize",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/c",
+   "measure": "public-key",
+   "value": "K3",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/c",
+   "measure": "coverage",
+   "value": "*",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys/c",
+   "measure": "resolution",
+   "value": "1..16",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "1"
+  },
+  {
+   "scope": "keys",
+   "measure": "quorum",
+   "value": "2..2",
+   "by": "owner",
+   "sig": "ok:K0",
+   "epoch": "2"
+  },
+  {
+   "scope": "keys/a",
+   "measure": "epoch",
+   "value": "1..5",
+   "by": "b",
+   "sig": "ok:K2",
+   "epoch": "5"
+  },
+  {
+   "scope": "keys/d",
+   "measure": "class",
+   "value": "authorize",
+   "by": "b",
+   "sig": "ok:K2",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/d",
+   "measure": "class",
+   "value": "authorize",
+   "by": "c",
+   "sig": "ok:K3",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/d",
+   "measure": "public-key",
+   "value": "K4",
+   "by": "b",
+   "sig": "ok:K2",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/d",
+   "measure": "coverage",
+   "value": "*",
+   "by": "b",
+   "sig": "ok:K2",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/d",
+   "measure": "resolution",
+   "value": "1..16",
+   "by": "b",
+   "sig": "ok:K2",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/e",
+   "measure": "class",
+   "value": "authorize",
+   "by": "a",
+   "sig": "ok:K1",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/e",
+   "measure": "class",
+   "value": "authorize",
+   "by": "b",
+   "sig": "ok:K2",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/e",
+   "measure": "public-key",
+   "value": "K5",
+   "by": "b",
+   "sig": "ok:K2",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/f",
+   "measure": "class",
+   "value": "authorize",
+   "by": "c",
+   "sig": "ok:K3",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/f",
+   "measure": "public-key",
+   "value": "K6",
+   "by": "c",
+   "sig": "ok:K3",
+   "epoch": "6"
+  },
+  {
+   "scope": "keys/c",
+   "measure": "epoch",
+   "value": "1..6",
+   "by": "a",
+   "sig": "ok:K1",
+   "epoch": "7"
+  }
+ ],
+ "cases": [
+  {
+   "name": "every claim the lost key signed inside its epoch still verifies",
+   "line": {
+    "scope": "audit/x",
+    "by": "a",
+    "sig": "ok:K1",
+    "epoch": "3"
+   },
+   "verdict": "admitted",
+   "potential": [
+    "e",
+    "f"
+   ]
+  },
+  {
+   "name": "the last epoch of a closed window is still inside it",
+   "line": {
+    "scope": "audit/x",
+    "by": "a",
+    "sig": "ok:K1",
+    "epoch": "5"
+   },
+   "verdict": "admitted",
+   "potential": [
+    "e",
+    "f"
+   ]
+  },
+  {
+   "name": "a claim the lost key signs after its epoch closed is refused naming the key",
+   "line": {
+    "scope": "audit/y",
+    "by": "a",
+    "sig": "ok:K1",
+    "epoch": "7"
+   },
+   "verdict": "refuse",
+   "named": "a",
+   "potential": [
+    "e",
+    "f"
+   ]
+  },
+  {
+   "name": "the replacement admitted by k of n signs",
+   "line": {
+    "scope": "audit/z",
+    "by": "d",
+    "sig": "ok:K4",
+    "epoch": "7"
+   },
+   "verdict": "admitted",
+   "potential": [
+    "e",
+    "f"
+   ]
+  },
+  {
+   "name": "the replacement has no authority before its admission",
+   "line": {
+    "scope": "audit/z",
+    "by": "d",
+    "sig": "ok:K4",
+    "epoch": "4"
+   },
+   "verdict": "grey",
+   "potential": [
+    "e",
+    "f"
+   ]
+  },
+  {
+   "name": "the lost key does not count toward a quorum after its close",
+   "line": {
+    "scope": "audit/w",
+    "by": "e",
+    "sig": "ok:K5",
+    "epoch": "7"
+   },
+   "verdict": "grey",
+   "potential": [
+    "e",
+    "f"
+   ]
+  },
+  {
+   "name": "one admitted signer alone does not reach a quorum of two",
+   "line": {
+    "scope": "audit/w",
+    "by": "f",
+    "sig": "ok:K6",
+    "epoch": "7"
+   },
+   "verdict": "grey",
+   "potential": [
+    "e",
+    "f"
+   ]
+  },
+  {
+   "name": "the lost key cannot close another key's window after its own close",
+   "line": {
+    "scope": "audit/v",
+    "by": "c",
+    "sig": "ok:K3",
+    "epoch": "9"
+   },
+   "verdict": "admitted",
+   "potential": [
+    "e",
+    "f"
+   ]
+  }
+ ]
+}

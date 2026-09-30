@@ -1,0 +1,9 @@
+{
+ "witness": "a-page-that-knew-its-world",
+ "reads": "capsule/reads/<region>",
+ "handed": "the lines and the region receipts the region declares, and nothing else",
+ "reading": "source/unread",
+ "unread": 0,
+ "why": "a page is a function of the lines and receipts its regions declare: a regex over source, a path, a host, a law name, a placeholder token or a word table written in a capsule is a fact nobody handed it, and each one is counted",
+ "expected.ok": true
+}

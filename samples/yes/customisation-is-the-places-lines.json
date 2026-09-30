@@ -1,0 +1,9 @@
+{
+ "witness": "a-text-colour-on-a-filled-node-written-in-the-capsule",
+ "reads": "theme · lang · prose/<lang>/* · notation/* · docs/* · sources/* · examples/* · samples/*",
+ "handed": "the colours, the glyphs, the sentences and the order a place signs",
+ "reading": "source/customised",
+ "customised": 0,
+ "why": "a person customises a page by signing lines, never by forking the capsule: a colour, a glyph of a notation or a sentence written in a render capsule is one the place cannot change, and each one is counted",
+ "expected.ok": true
+}

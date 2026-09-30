@@ -1,0 +1,68 @@
+{
+  "name": "@lapxo/topos",
+  "version": "0.1.0",
+  "description": "Bound's SDK: the wire, the forms, the contract and the shell you build a world with — a reader of any source or a renderer of any artefact, in an afternoon.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Lapxo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lapxo/topos.git"
+  },
+  "keywords": [
+    "topos",
+    "lock",
+    "wire",
+    "capsule"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.12"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/readers/index.d.ts",
+      "default": "./dist/readers/index.js"
+    },
+    "./authority": {
+      "types": "./dist/authority/index.d.ts",
+      "default": "./dist/authority/index.js"
+    },
+    "./capsule": {
+      "types": "./dist/capsule/index.d.ts",
+      "default": "./dist/capsule/index.js"
+    },
+    "./contract": {
+      "types": "./dist/contract/index.d.ts",
+      "default": "./dist/contract/index.js"
+    },
+    "./forms": {
+      "types": "./dist/forms/index.d.ts",
+      "default": "./dist/forms/index.js"
+    },
+    "./readers": {
+      "types": "./dist/readers/index.d.ts",
+      "default": "./dist/readers/index.js"
+    },
+    "./wire": {
+      "types": "./dist/wire/index.d.ts",
+      "default": "./dist/wire/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "TARGET.bound"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "@lapxo/obligations": "^0.3.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "why": "a reader asked with no file handed observed an empty one and answered as if it had read something",
+  "files": [],
+  "kind": "fact",
+  "expected.ok": false
+}

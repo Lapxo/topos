@@ -1,0 +1,103 @@
+{
+ "about": [
+  "A capsule is its own lines: the domain it serves, the runtime a host starts it with, where its world holds its values,",
+  "the release it pins of each package it bundles, and its regions and effects. A capsule that names no runtime or no",
+  "holding says none, and the contract does not supply one."
+ ],
+ "worlds": {
+  "filesystem": {
+   "lines": [
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/domain value=filesystem",
+    "bound-lock/1 about=\"the runtime the host starts this capsule with, read from these lines and resolved by the instrument's own lock; node is one runtime among others\" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/runtime value=node",
+    "bound-lock/1 about=\"where this world holds its values: files under the root the world is asked at, a coordinate being a path\" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/holds value=./",
+    "bound-lock/1 about=\"a value at a coordinate: the bytes the world holds there, with the stamp they had; a coordinate that holds nothing answers nothing, never an empty value\" at=policy:topos/capsule by=target form=alphabet measure=reads role=receipt scope=region/observe value=**",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=receipt scope=region/observe value=observed/**",
+    "bound-lock/1 about=\"a value from lines: the value a view's lines make, written whole at the view's coordinate and swapped in, never partly\" at=policy:topos/capsule by=target form=alphabet measure=reads role=render scope=region/write value=view/*",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=render scope=region/write value=**",
+    "bound-lock/1 about=\"the encounter of a render with what the world holds: SAME when the bytes at the coordinate are the bytes the lines make, unlike with both digests otherwise, unread when either side refused\" at=policy:topos/capsule by=target form=alphabet measure=reads role=receipt scope=region/same value=region/observe|region/write",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=receipt scope=region/same value=same/**",
+    "bound-lock/1 about=\"the world is written only where its write region is asked\" at=policy:topos/capsule by=target form=alphabet measure=effects role=writes scope=capsule/effects value=writes"
+   ]
+  },
+  "json-store": {
+   "lines": [
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/domain value=json-store",
+    "bound-lock/1 about=\"the runtime the host starts this capsule with, read from these lines and resolved by the instrument's own lock; node is one runtime among others\" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/runtime value=node",
+    "bound-lock/1 about=\"where this world holds its values: one JSON document whose keys are the coordinates and whose values are the text held there\" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/holds value=store.json",
+    "bound-lock/1 about=\"a value at a coordinate: the bytes the world holds there, with the stamp they had; a coordinate that holds nothing answers nothing, never an empty value\" at=policy:topos/capsule by=target form=alphabet measure=reads role=receipt scope=region/observe value=**",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=receipt scope=region/observe value=observed/**",
+    "bound-lock/1 about=\"a value from lines: the value a view's lines make, written whole at the view's coordinate and swapped in, never partly\" at=policy:topos/capsule by=target form=alphabet measure=reads role=render scope=region/write value=view/*",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=render scope=region/write value=**",
+    "bound-lock/1 about=\"the encounter of a render with what the world holds: SAME when the bytes at the coordinate are the bytes the lines make, unlike with both digests otherwise, unread when either side refused\" at=policy:topos/capsule by=target form=alphabet measure=reads role=receipt scope=region/same value=region/observe|region/write",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=receipt scope=region/same value=same/**",
+    "bound-lock/1 about=\"the world is written only where its write region is asked\" at=policy:topos/capsule by=target form=alphabet measure=effects role=writes scope=capsule/effects value=writes"
+   ]
+  },
+  "topos-bound": {
+   "lines": [
+    "bound-lock/1 about=\"the domain this capsule serves: what bound keeps in its locks, and a capsule read as its entries\" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/domain value=bound",
+    "bound-lock/1 about=\"a capsule read as its entries: its lock, its code, its vectors\" at=policy:topos/capsule by=target form=alphabet measure=reads role=receipt scope=region/capsules value=*/",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=receipt scope=region/capsules value=audit/topos/**",
+    "bound-lock/1 about=\"the laws a lock states, each with what it rests on and the samples that show it\" at=policy:topos/capsule by=target form=alphabet measure=reads role=receipt scope=region/laws value=*.bound",
+    "bound-lock/1 at=policy:topos/capsule by=target form=alphabet measure=writes role=receipt scope=region/laws value=law/**|audit/**",
+    "bound-lock/1 about=\"what this capsule reaches beyond the bytes it is handed\" at=policy:topos/capsule by=target form=alphabet measure=effects role=writes scope=capsule/effects value=none",
+    "bound-lock/1 about=\"the release of topos this capsule's blob bundles, laid from its digest, never the sibling source\" at=policy:topos/capsule by=target form=alphabet measure=digest role=writes scope=capsule/topos value=sha256:9bd23c16b52258e2a2f56f516887aef384b799bd8b54d133e9f82c4aa99c9e2f",
+    "bound-lock/1 about=\"the release of the object this capsule's blob bundles, laid from its digest, never the sibling source\" at=policy:topos/capsule by=target form=alphabet measure=digest role=writes scope=capsule/obligations value=sha256:ba4149b7d00941920027c4527a222f11717fb105bb052cbc6be12a9d17240162"
+   ]
+  }
+ },
+ "cases": [
+  {
+   "name": "filesystem · its lines are its declaration",
+   "world": "filesystem",
+   "expected": {
+    "domain": "filesystem",
+    "runtime": "node",
+    "holds": "./",
+    "pins": {},
+    "effects": [
+     "writes"
+    ],
+    "regions": [
+     "observe",
+     "same",
+     "write"
+    ]
+   }
+  },
+  {
+   "name": "json-store · its lines are its declaration",
+   "world": "json-store",
+   "expected": {
+    "domain": "json-store",
+    "runtime": "node",
+    "holds": "store.json",
+    "pins": {},
+    "effects": [
+     "writes"
+    ],
+    "regions": [
+     "observe",
+     "same",
+     "write"
+    ]
+   }
+  },
+  {
+   "name": "topos-bound · its lines are its declaration",
+   "world": "topos-bound",
+   "expected": {
+    "domain": "bound",
+    "pins": {
+     "topos": "sha256:9bd23c16b52258e2a2f56f516887aef384b799bd8b54d133e9f82c4aa99c9e2f",
+     "obligations": "sha256:ba4149b7d00941920027c4527a222f11717fb105bb052cbc6be12a9d17240162"
+    },
+    "effects": [],
+    "regions": [
+     "capsules",
+     "laws"
+    ]
+   }
+  }
+ ]
+}

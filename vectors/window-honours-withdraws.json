@@ -1,0 +1,218 @@
+{
+ "about": [
+  "A key's window is its standing epoch lines: each stands from the epoch it was signed at until a withdraw of it lands, and a line the key signs is judged by the windows standing when it was signed.",
+  "Windows standing together close at the nearer, so a withdraw is what widens, and never for what was signed before it. The lines are lane D's key as the ledger holds it."
+ ],
+ "cases": [
+  {
+   "name": "lane D's window reopened by the owner: 188..228 withdrawn and 188..268 signed at 232",
+   "lines": [
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "alphabet",
+     "measure": "class",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "agent"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "bound/src/observe/**|bound/src/host/**|bound/src/render/**|region/bound/**"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "alphabet",
+     "measure": "public-key",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "x"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "interval",
+     "measure": "resolution",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "1..16"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "interval",
+     "measure": "epoch",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "188..228"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "232",
+     "form": "interval",
+     "measure": "epoch",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "withdraw"
+    },
+    {
+     "at": "witness:lane-d-closed-at-228-with-four-cards-owed",
+     "by": "owner",
+     "epoch": "232",
+     "form": "interval",
+     "measure": "epoch",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "188..268"
+    }
+   ],
+   "closes": {
+    "lane-D": 268
+   },
+   "probes": [
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 200,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 228,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 230,
+     "kind": "refuse"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 232,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 238,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 268,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 269,
+     "kind": "refuse"
+    }
+   ]
+  },
+  {
+   "name": "two windows standing together close at the nearer: 188..268 signed without withdrawing 188..228",
+   "lines": [
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "alphabet",
+     "measure": "class",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "agent"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "bound/src/observe/**|bound/src/host/**|bound/src/render/**|region/bound/**"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "alphabet",
+     "measure": "public-key",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "x"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "interval",
+     "measure": "resolution",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "1..16"
+    },
+    {
+     "at": "witness:lane-d-made-by-the-owner",
+     "by": "owner",
+     "epoch": "188",
+     "form": "interval",
+     "measure": "epoch",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "188..228"
+    },
+    {
+     "at": "witness:lane-d-closed-at-228-with-four-cards-owed",
+     "by": "owner",
+     "epoch": "232",
+     "form": "interval",
+     "measure": "epoch",
+     "role": "reads",
+     "scope": "keys/lane-D",
+     "value": "188..268"
+    }
+   ],
+   "closes": {
+    "lane-D": 228
+   },
+   "probes": [
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 200,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 230,
+     "kind": "refuse"
+    },
+    {
+     "by": "lane-D",
+     "scope": "bound/src/host/x",
+     "epoch": 238,
+     "kind": "refuse"
+    }
+   ]
+  }
+ ]
+}

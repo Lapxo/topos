@@ -1,0 +1,13 @@
+{
+  "name": "wire-fold",
+  "against": "the wire's lock at the claim's epoch: the audit/wire/* lines standing then",
+  "observations": "field=value",
+  "unknown": {
+    "kind": "debit",
+    "witness": "field"
+  },
+  "malformed": {
+    "kind": "debit",
+    "witness": "field"
+  }
+}

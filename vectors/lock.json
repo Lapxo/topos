@@ -1,0 +1,33 @@
+{
+ "about": [
+  "A topos is a lock: it is the claims it declares at their coordinates, never the code that reads its bytes. Two",
+  "declarations of the same claims are one topos, and a topos is changed only by changing what it declares."
+ ],
+ "cases": [
+  {
+   "name": "the same declared coordinates are one topos",
+   "a": [
+    "leaf-role/x",
+    "effect/build",
+    "reader/r"
+   ],
+   "b": [
+    "reader/r",
+    "leaf-role/x",
+    "effect/build"
+   ],
+   "same": true
+  },
+  {
+   "name": "declaring one more coordinate is another topos",
+   "a": [
+    "leaf-role/x"
+   ],
+   "b": [
+    "leaf-role/x",
+    "leaf-role/y"
+   ],
+   "same": false
+  }
+ ]
+}

@@ -1,0 +1,154 @@
+{
+ "about": [
+  "The points every reading over the wire's forms takes: for each form, the parameters of the lattice of the algebra it is read in, a seed and how many points.",
+  "The check is the algebra's own, handed on; it runs over the points and over three broken copies of each lattice, its meet taken as its join, its order reversed and one law removed by taking its top as its bottom. A copy the check passes is a form it cannot see."
+ ],
+ "cases": [
+  {
+   "form": "interval",
+   "params": {
+    "lo": 0,
+    "hi": 10
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "alphabet",
+   "params": {
+    "tokens": [
+     "a",
+     "b",
+     "c",
+     "d"
+    ]
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "alphabet",
+   "params": {
+    "tokens": [
+     "a|b",
+     "￿",
+     "𐀀",
+     "c"
+    ]
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "ladder",
+   "params": {
+    "levels": [
+     "xs",
+     "s",
+     "m",
+     "l",
+     "xl"
+    ]
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "lattice",
+   "params": {
+    "levels": [
+     "bottom",
+     "left",
+     "right",
+     "top"
+    ],
+    "leq": [
+     [
+      true,
+      true,
+      true,
+      true
+     ],
+     [
+      false,
+      true,
+      false,
+      true
+     ],
+     [
+      false,
+      false,
+      true,
+      true
+     ],
+     [
+      false,
+      false,
+      false,
+      true
+     ]
+    ]
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "budget",
+   "params": {
+    "lo": 0,
+    "hi": 64
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "rank",
+   "params": {
+    "n": 12
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "phase",
+   "params": {
+    "lo": 1,
+    "hi": 140
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "stretch",
+   "params": {
+    "lo": 1,
+    "hi": 8
+   },
+   "seed": 7,
+   "n": 12
+  },
+  {
+   "form": "distribution",
+   "params": {
+    "buckets": [
+     "low",
+     "mid",
+     "high"
+    ],
+    "levels": [
+     "none",
+     "some",
+     "most"
+    ]
+   },
+   "seed": 7,
+   "n": 12
+  }
+ ],
+ "coverage": {
+  "size": 9,
+  "criterion": "one case per form the wire writes, each with points enough to make a triple mean something",
+  "could_exclude_counterexamples": true,
+  "why": "a sample of each lattice, not every element of it; the three broken copies show the sample is wide enough to see a law break"
+ }
+}

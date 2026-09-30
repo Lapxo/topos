@@ -1,0 +1,9 @@
+{
+ "witness": "readers-that-lexed-code-no-language-reader-read",
+ "reads": "region/source",
+ "handed": "source/signature · source/imports · source/head · source/answers · source/literal · source/union",
+ "reading": "source/lexed",
+ "lexed": 0,
+ "why": "what is read off code (a cell in an example, an import, a signature, a doc head, a test block) is a receipt the language capsule emits; a capsule that lexes code itself knows a language it does not declare, and each lexing is counted",
+ "expected.ok": true
+}

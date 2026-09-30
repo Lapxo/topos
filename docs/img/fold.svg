@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 198" width="640" height="198" role="img" aria-label="read at @8: a claims 7 to 16 and b claims 7 to 12, read at @1: what they hold together runs from a floor of 7 to a ceiling of 12 and read at @0: ● free">
+<style>
+text{font:14px ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#59636e}.claim{fill:#8c959f}.held{fill:#2da44e}
+@media (prefers-color-scheme:dark){text{fill:#9198a1}}
+</style>
+<rect class="claim" x="143.3" y="12" width="425.4" height="18" rx="4"><animateTransform attributeName="transform" type="translate" values="-40 0;0 0" dur="0.8s" fill="freeze"/></rect>
+<rect class="claim" x="143.3" y="42" width="236.3" height="18" rx="4"><animateTransform attributeName="transform" type="translate" values="40 0;0 0" dur="0.8s" fill="freeze"/></rect>
+<rect class="held" x="143.3" y="72" width="236.3" height="18" rx="4"><animate attributeName="opacity" values="0;0;1" keyTimes="0;0.67;1" dur="1.2s" fill="freeze"/></rect>
+<text x="20" y="120">read at @8: a claims 7 to 16 and b claims 7 to 12<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.78;1" dur="1.8s" fill="freeze"/></text>
+<text x="20" y="148">read at @1: what they hold together runs from a floor of 7 to a ceiling of 12<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.84;1" dur="2.5s" fill="freeze"/></text>
+<text x="20" y="176">read at @0: ● free<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.88;1" dur="3.2s" fill="freeze"/></text>
+</svg>

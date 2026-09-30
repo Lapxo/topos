@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 88" width="640" height="88" role="img" aria-label="Handed bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3, it refuses: `0..1..3` is no interval the wire reads: two ends, each decimal or *">
+<style>
+text{font:14px ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#59636e}.cross{fill:#cf222e;font-weight:600}
+.asked{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#cf222e;text-decoration:line-through}
+@media (prefers-color-scheme:dark){text{fill:#9198a1}}
+</style>
+<text class="cross" x="20" y="32">✕</text>
+<text class="asked" x="44" y="32">bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3</text>
+<text x="44" y="66">`0..1..3` is no interval the wire reads: two ends, each decimal or *</text>
+</svg>

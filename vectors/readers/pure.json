@@ -1,0 +1,10 @@
+{
+  "law": "L26",
+  "observe": "observe(bytes, digest) -> seen",
+  "sdk": "collect stamps by=reader at=digest",
+  "same-bytes-same-claims": true,
+  "empty-bytes-empty-claims": true,
+  "invented-floor-is-unwritable": true,
+  "reader-cannot-set-by-or-at": true,
+  "no-fs-no-store-no-clock-no-network": true
+}

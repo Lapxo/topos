@@ -1,0 +1,441 @@
+{
+ "about": "Every value grammar of the wire with what it reads of a text: the value and the canonical text it writes back, or the refusal and its why. A value is read inside a line, after the line has unquoted it; the kernel never sees these separators.",
+ "cases": [
+  {
+   "name": "alphabet-members-in-order — the members of an alphabet, in the order they are written",
+   "grammar": "alphabet",
+   "input": "draft|sent|paid",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": [
+      "draft",
+      "sent",
+      "paid"
+     ]
+    },
+    "canonical": "draft|sent|paid",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-forbid — not: forbids the members that follow it",
+   "grammar": "alphabet",
+   "input": "not:draft|sent",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "forbid",
+     "members": [
+      "draft",
+      "sent"
+     ]
+    },
+    "canonical": "not:draft|sent",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-none — none is the empty alphabet",
+   "grammar": "alphabet",
+   "input": "none",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": []
+    },
+    "canonical": "none",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-empty-text — an empty value is the empty alphabet, and it writes none",
+   "grammar": "alphabet",
+   "input": "",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": []
+    },
+    "canonical": "none",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-escaped-pipe — a backslash before a pipe keeps the pipe inside a member",
+   "grammar": "alphabet",
+   "input": "a\\|b|c",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": [
+      "a|b",
+      "c"
+     ]
+    },
+    "canonical": "a\\|b|c",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-escaped-backslash — a backslash before a backslash is one backslash",
+   "grammar": "alphabet",
+   "input": "back\\\\slash|x",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": [
+      "back\\slash",
+      "x"
+     ]
+    },
+    "canonical": "back\\\\slash|x",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-other-escape — a backslash before anything else is refused",
+   "grammar": "alphabet",
+   "input": "a\\tb",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire alphabet: a backslash escapes only a pipe or itself"
+   }
+  },
+  {
+   "name": "alphabet-empty-members — an empty member is no member",
+   "grammar": "alphabet",
+   "input": "a||b|",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": [
+      "a",
+      "b"
+     ]
+    },
+    "canonical": "a|b",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-written-order — a list keeps its written order; only a set sorts, and a set sorts by bytes",
+   "grammar": "alphabet",
+   "input": "𐀀|￿|a",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": [
+      "𐀀",
+      "￿",
+      "a"
+     ]
+    },
+    "canonical": "𐀀|￿|a",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "alphabet-member-with-a-space — a member may hold a space, which only a quoted value carries",
+   "grammar": "alphabet",
+   "input": "do not|leaf",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "polarity": "permit",
+     "members": [
+      "do not",
+      "leaf"
+     ]
+    },
+    "canonical": "do not|leaf",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fields-a-literal-claim — the fields of a value, in the order they are written",
+   "grammar": "fields",
+   "input": "origin=seller|span.lo=2|span.hi=9",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     [
+      "origin",
+      "seller"
+     ],
+     [
+      "span.lo",
+      "2"
+     ],
+     [
+      "span.hi",
+      "9"
+     ]
+    ],
+    "canonical": "origin=seller|span.lo=2|span.hi=9",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fields-first-equals — the first equals sign parts the key from the value",
+   "grammar": "fields",
+   "input": "a=b=c|d=e",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     [
+      "a",
+      "b=c"
+     ],
+     [
+      "d",
+      "e"
+     ]
+    ],
+    "canonical": "a=b=c|d=e",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fields-escaped-pipe — a pipe inside a value is escaped as it is in an alphabet",
+   "grammar": "fields",
+   "input": "a=x\\|y|b=z",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     [
+      "a",
+      "x|y"
+     ],
+     [
+      "b",
+      "z"
+     ]
+    ],
+    "canonical": "a=x\\|y|b=z",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fields-empty-value — a key may hold nothing",
+   "grammar": "fields",
+   "input": "k=",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     [
+      "k",
+      ""
+     ]
+    ],
+    "canonical": "k=",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fields-none — none is no fields",
+   "grammar": "fields",
+   "input": "none",
+   "expected": {
+    "kind": "fact",
+    "value": [],
+    "canonical": "none",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fields-no-equals — a member that is not key=value is refused",
+   "grammar": "fields",
+   "input": "novalue|a=b",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire fields: `novalue` is not key=value"
+   }
+  },
+  {
+   "name": "fields-empty-key — a member with no key is refused",
+   "grammar": "fields",
+   "input": "=v",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire fields: `=v` is not key=value"
+   }
+  },
+  {
+   "name": "fields-no-polarity — fields forbid nothing",
+   "grammar": "fields",
+   "input": "not:a=b",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire fields: fields carry no polarity"
+   }
+  },
+  {
+   "name": "steps-a-scope — the steps of a scope",
+   "grammar": "steps",
+   "input": "acme/users/email",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     "acme",
+     "users",
+     "email"
+    ],
+    "canonical": "acme/users/email",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "steps-trailing — a trailing slash is a last, empty step: under a place",
+   "grammar": "steps",
+   "input": "obligations/",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     "obligations",
+     ""
+    ],
+    "canonical": "obligations/",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "steps-globs — a glob is a step like any other",
+   "grammar": "steps",
+   "input": "literal/**/src/**",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     "literal",
+     "**",
+     "src",
+     "**"
+    ],
+    "canonical": "literal/**/src/**",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "steps-one — a scope of one step",
+   "grammar": "steps",
+   "input": "plain",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     "plain"
+    ],
+    "canonical": "plain",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "steps-empty-step — an empty step between two is kept, so the steps write back what was read",
+   "grammar": "steps",
+   "input": "a//b",
+   "expected": {
+    "kind": "fact",
+    "value": [
+     "a",
+     "",
+     "b"
+    ],
+    "canonical": "a//b",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "at-resolution-eight — a region asked at a resolution",
+   "grammar": "atResolution",
+   "input": "notation@8",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "notation",
+     "at": 8
+    },
+    "canonical": "notation@8",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "at-resolution-zero — zero is a resolution, not the absence of one",
+   "grammar": "atResolution",
+   "input": "check@0",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "check",
+     "at": 0
+    },
+    "canonical": "check@0",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "at-resolution-absent — a region with no resolution leaves it to the view",
+   "grammar": "atResolution",
+   "input": "hero",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "hero"
+    },
+    "canonical": "hero",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "at-resolution-every — a star is every resolution",
+   "grammar": "atResolution",
+   "input": "ranges@*",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "ranges",
+     "at": "*"
+    },
+    "canonical": "ranges@*",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "at-resolution-leading-zero — digits are a number, written without leading zeros",
+   "grammar": "atResolution",
+   "input": "a@01",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "a",
+     "at": 1
+    },
+    "canonical": "a@1",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "at-resolution-not-digits — a resolution that is not digits or a star is refused",
+   "grammar": "atResolution",
+   "input": "a@b",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire atResolution: `a@b` is not name@digits or name@*"
+   }
+  },
+  {
+   "name": "at-resolution-no-name — a resolution with no region is refused",
+   "grammar": "atResolution",
+   "input": "@8",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire atResolution: `@8` is not name@digits or name@*"
+   }
+  }
+ ]
+}

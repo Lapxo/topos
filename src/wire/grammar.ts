@@ -9,6 +9,10 @@ export interface Resolution {
   readonly name: string;
   readonly at?: number | '*';
 }
+export interface Requirement {
+  readonly name: string;
+  readonly range: string;
+}
 const [FORBID, EMPTY, MEMBER, PAIR, STEP, AT, EVERY, ESCAPE] = ['not:', 'none', '|', '=', '/', '@', '*', '\\'] as const;
 const refuse = (grammar: string, why: string): never => {
   throw new Error(`REFUSE·wire ${grammar}: ${why}`);
@@ -59,4 +63,12 @@ export function atResolution(given: string | Resolution): Resolution | string {
   const [name, said] = [given.slice(0, at), given.slice(at + 1)];
   if (name === '' || (said !== EVERY && !digits(said))) refuse('atResolution', `\`${given}\` is not name@digits or name@*`);
   return { name, at: said === EVERY ? EVERY : Number(said) };
+}
+
+export function requirement(text: string): Requirement;
+export function requirement(value: Requirement): string;
+export function requirement(given: string | Requirement): Requirement | string {
+  if (typeof given !== 'string') return given.name === '' || given.range === '' || given.range.includes(AT) ? refuse('requirement', 'a requirement names what it requires and a range, with no at sign') : given.name + AT + given.range;
+  const at = given.lastIndexOf(AT);
+  return at > 0 && at < given.length - 1 ? { name: given.slice(0, at), range: given.slice(at + 1) } : refuse('requirement', `\`${given}\` is not name@range`);
 }

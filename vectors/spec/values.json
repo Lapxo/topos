@@ -436,6 +436,84 @@
     "kind": "refuse",
     "why": "REFUSE·wire atResolution: `@8` is not name@digits or name@*"
    }
+  },
+  {
+   "name": "requirement-scoped — a scoped package keeps its own at sign; the range follows the last one",
+   "grammar": "requirement",
+   "input": "@lapxo/topos@^0.1.0",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "@lapxo/topos",
+     "range": "^0.1.0"
+    },
+    "canonical": "@lapxo/topos@^0.1.0",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "requirement-plain — a package and the range it is asked at",
+   "grammar": "requirement",
+   "input": "typescript@^5.9.3",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "typescript",
+     "range": "^5.9.3"
+    },
+    "canonical": "typescript@^5.9.3",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "requirement-engine — an engine is a requirement too, its range a comparison",
+   "grammar": "requirement",
+   "input": "node@>=22.12",
+   "expected": {
+    "kind": "fact",
+    "value": {
+     "name": "node",
+     "range": ">=22.12"
+    },
+    "canonical": "node@>=22.12",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "requirement-no-range — a name asked at no range is refused",
+   "grammar": "requirement",
+   "input": "typescript",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire requirement: `typescript` is not name@range"
+   }
+  },
+  {
+   "name": "requirement-empty-range — an at sign with nothing after it is refused",
+   "grammar": "requirement",
+   "input": "typescript@",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire requirement: `typescript@` is not name@range"
+   }
+  },
+  {
+   "name": "requirement-scope-alone — a scoped name with no range is refused, never read as a range",
+   "grammar": "requirement",
+   "input": "@lapxo/topos",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire requirement: `@lapxo/topos` is not name@range"
+   }
+  },
+  {
+   "name": "requirement-no-name — a range with no package is refused",
+   "grammar": "requirement",
+   "input": "@^0.3.5",
+   "expected": {
+    "kind": "refuse",
+    "why": "REFUSE·wire requirement: `@^0.3.5` is not name@range"
+   }
   }
  ]
 }

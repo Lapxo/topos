@@ -2,7 +2,7 @@
 
 # @lapxo/topos
 
-![version 0.1.1](https://img.shields.io/badge/version-0.1.1-8c959f) ![license MIT](https://img.shields.io/badge/license-MIT-8c959f) ![node >=22.12](https://img.shields.io/badge/node-%3E%3D22.12-8c959f) ![dependencies 1](https://img.shields.io/badge/dependencies-1-8c959f) ![cases 12 hold](https://img.shields.io/badge/cases-12_hold-2da44e) ![verify agrees](https://img.shields.io/badge/verify-agrees-2da44e)
+![version 0.1.2](https://img.shields.io/badge/version-0.1.2-8c959f) ![license MIT](https://img.shields.io/badge/license-MIT-8c959f) ![node >=22.12](https://img.shields.io/badge/node-%3E%3D22.12-8c959f) ![dependencies 1](https://img.shields.io/badge/dependencies-1-8c959f) ![cases 12 hold](https://img.shields.io/badge/cases-12_hold-2da44e) ![verify agrees](https://img.shields.io/badge/verify-agrees-2da44e)
 
 One line for every fact.
 

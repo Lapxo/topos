@@ -80,12 +80,3 @@ export function boundOf(form: string, value: string, grammars?: readonly FormGra
 
 export const BOUND_FORMS: readonly string[] = Object.keys(GRAMMARS);
 export const REF_RELATIONS = ['within', 'copies', 'derives'] as const;
-export interface Refusal {
-  readonly kind: 'refuse';
-  readonly scope: string;
-  readonly measure: string;
-  readonly why: string;
-  readonly witness: string;
-  readonly at?: string;
-}
-

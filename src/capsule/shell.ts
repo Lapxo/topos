@@ -7,16 +7,22 @@ type Region = (asked: Asked) => readonly string[];
 /**
  * The shell a capsule's rendered index hands its regions to: a region is answered only when it was handed every read
  * its own line declares, and one handed less is refused — the no every render capsule carries without writing it.
+ * Handed the url of a world's index instead, each shell only names where the world lies: its host reads the own lock
+ * beside it once and loads each region by name and role.
  */
-export function shell(regions: Readonly<Record<string, { readonly reads: readonly string[]; readonly region: Region }>>): Region {
-  return (asked) => {
-    const one = regions[asked.region];
-    if (one === undefined) throw new Error(`REFUSE·region ${asked.region}: no line of this capsule renders it`);
-    const short = one.reads.filter((read) => !asked.reads.includes(read));
-    if (short.length) throw new Error(`REFUSE·region ${asked.region}: handed less than it declares, without ${short.join(' · ')}`);
-    return one.region(asked);
-  };
+export function shell(regions: Readonly<Record<string, { readonly reads: readonly string[]; readonly region: Region }>> | string): Region {
+  return typeof regions === 'string' ? located(regions) : dispatch(regions, 'renders');
 }
+
+const dispatch = <T>(regions: Readonly<Record<string, { readonly reads: readonly string[]; readonly region: (asked: Asked) => T }>>, verb: string) => (asked: Asked): T => {
+  const one = regions[asked.region];
+  if (one === undefined) throw new Error(`REFUSE·region ${asked.region}: no line of this capsule ${verb} it`);
+  const short = one.reads.filter((read) => !asked.reads.includes(read));
+  if (short.length) throw new Error(`REFUSE·region ${asked.region}: handed less than it declares, without ${short.join(' · ')}`);
+  return one.region(asked);
+};
+
+const located = (url: string) => Object.assign((): never => { throw new Error(`REFUSE·world ${url}: its host answers it by the regions its own lock names`); }, { world: url });
 
 type Handed = readonly { readonly place: string; readonly text: string }[];
 type Observe = (bytes: Uint8Array, place: string, files: Handed) => readonly unknown[];
@@ -35,7 +41,8 @@ const fits = (read: string, place: string): boolean => {
  * reads only what that line declares it reads — a region fits a read when some tail of its steps matches the read's glob,
  * and what follows its `@` is the resolution it is handed at. A region no line names is refused, and so is a file of another shape.
  */
-export function readers(regions: Readonly<Record<string, Reading>>): { readonly observe: (bytes: Uint8Array, place: string, region?: string, files?: Handed) => readonly unknown[]; readonly run: (place: string, self: string, held: readonly (readonly [string, string])[], region?: string) => readonly unknown[] } {
+export function readers(regions: Readonly<Record<string, Reading>> | string): { readonly observe: (bytes: Uint8Array, place: string, region?: string, files?: Handed) => readonly unknown[]; readonly run: (place: string, self: string, held: readonly (readonly [string, string])[], region?: string) => readonly unknown[] } {
+  if (typeof regions === 'string') return { observe: located(regions), run: located(regions) };
   const one = (region: string | undefined, places: readonly string[]): Reading => {
     const held = region === undefined ? undefined : regions[region];
     if (held === undefined) throw new Error(`REFUSE·region ${region ?? ''}: no line of this capsule reads with it`);
@@ -61,12 +68,6 @@ export const counted = (asked: Asked, what: string, n: number, measure: string):
  * handed every read its own line declares; one handed less is refused, as a render is. A reading it answers is `counted`:
  * a count, named by the region that read it and by what it counted.
  */
-export function receiptShell(regions: Readonly<Record<string, { readonly reads: readonly string[]; readonly region: (asked: Asked) => readonly unknown[] }>>): (asked: Asked) => readonly unknown[] {
-  return (asked) => {
-    const one = regions[asked.region];
-    if (one === undefined) throw new Error(`REFUSE·region ${asked.region}: no line of this capsule answers it`);
-    const short = one.reads.filter((read) => !asked.reads.includes(read));
-    if (short.length) throw new Error(`REFUSE·region ${asked.region}: handed less than it declares, without ${short.join(' · ')}`);
-    return one.region(asked);
-  };
+export function receiptShell(regions: Readonly<Record<string, { readonly reads: readonly string[]; readonly region: (asked: Asked) => readonly unknown[] }>> | string): (asked: Asked) => readonly unknown[] {
+  return typeof regions === 'string' ? located(regions) : dispatch(regions, 'answers');
 }

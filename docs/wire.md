@@ -32,11 +32,15 @@ The canonical line is the header, then every field in the byte order of its key,
 
 ## Inside a value
 
-The kernel never looks inside a value; each value has its own grammar, one function each in `topos/wire`. An alphabet is members apart by `|`, with `\|` and `\\` escaped, `not:` before them to forbid and `none` for no member at all. Fields are `key=value` members of an alphabet, parted at the first `=`. A scope is steps apart by `/`, every step kept. A region is `name@resolution`, its resolution digits or `*`. Each function reads its text and writes it back canonical, and what it writes reads back the same.
+The kernel never looks inside a value; each value has its own grammar, one function each in `topos/wire`. An alphabet is members apart by `|`, with `\|` and `\\` escaped, `not:` before them to forbid and `none` for no member at all. Fields are `key=value` members of an alphabet, parted at the first `=`. A scope is steps apart by `/`, every step kept. A region is `name@resolution`, its resolution digits or `*`. A requirement is `name@range`, parted at its last `@`, so a scoped name keeps its own. Each function reads its text and writes it back canonical, and what it writes reads back the same.
 
 ## Numbers
 
 A number has one spelling: decimal digits, a minus when it is negative and a fraction when it has one. No exponent, no hex, no leading dot, no padding. The wire writes every number that way itself, from the shortest digits that read back to it, and reads no other spelling; an interval is two such ends or `*`. Two heads in two languages write the same bytes.
+
+## A world's blob
+
+A world travels as a blob: its own lock and its build, the entry and one module per region, split as ES modules and packed as one tar, gzipped and named by the sha256 digest of its bytes. The entry names only where the world lies; the host reads the lock once and loads each region by its name and its role.
 
 ## The reference
 
@@ -50,6 +54,7 @@ A number has one spelling: decimal digits, a minus when it is negative and a fra
 | `fields` | `fields(text: string): readonly Field[]; fields(value: readonly Field[]): string` |
 | `steps` | `steps(text: string): readonly string[]; steps(value: readonly string[]): string` |
 | `atResolution` | `atResolution(text: string): Resolution; atResolution(value: Resolution): string` |
+| `requirement` | `requirement(text: string): Requirement; requirement(value: Requirement): string` |
 | `decimal` | `decimal(n: number): string` |
 
 ## The corpus

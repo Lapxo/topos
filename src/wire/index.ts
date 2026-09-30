@@ -2,8 +2,8 @@
 export { PROTOCOL } from './types.ts';
 export type { Claim, Method } from './types.ts';
 export { byBytes, canonical, parse, signedBytes } from './line.ts';
-export { alphabet, atResolution, fields, steps } from './grammar.ts';
-export type { Alphabet, Field, Resolution } from './grammar.ts';
+export { alphabet, atResolution, fields, requirement, steps } from './grammar.ts';
+export type { Alphabet, Field, Requirement, Resolution } from './grammar.ts';
 export { fromLine, signersOf, authorityOf, windowAt, roleClaimsOf, roleAt, namesAt, isKeyClaim, isWireClaim, wireAt, ENVELOPE } from './claimline.ts';
 export type { Signer, SignerVerdict, CoordinateRole, RoleClaim } from './claimline.ts';
 export { matches } from './classes.ts';

@@ -1,8 +1,8 @@
-import { alphabet, atResolution, fields, steps } from '@lapxo/topos/wire';
+import { alphabet, atResolution, fields, requirement, steps } from '@lapxo/topos/wire';
 import { load } from './harness.ts';
 
 type Case = { readonly name: string; readonly grammar: string; readonly input: string; readonly expected: Readonly<Record<string, unknown>> };
-const grammars = { alphabet, fields, steps, atResolution } as unknown as Readonly<Record<string, (given: unknown) => unknown>>;
+const grammars = { alphabet, fields, steps, atResolution, requirement } as unknown as Readonly<Record<string, (given: unknown) => unknown>>;
 
 test('value-grammars-read-back — every value of the corpus reads as the wire page says, and the text it writes reads back to the same value', () => {
   for (const one of (load('spec/values')['cases'] ?? []) as readonly Case[]) {

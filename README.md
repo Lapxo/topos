@@ -2,113 +2,26 @@
 
 # @lapxo/topos
 
-![version 0.1.0](https://img.shields.io/badge/version-0.1.0-8c959f) ![license MIT](https://img.shields.io/badge/license-MIT-8c959f) ![node >=22.12](https://img.shields.io/badge/node-%3E%3D22.12-8c959f) ![dependencies 1](https://img.shields.io/badge/dependencies-1-8c959f) ![cases 12 hold](https://img.shields.io/badge/cases-12_hold-2da44e) ![verify agrees](https://img.shields.io/badge/verify-agrees-2da44e)
+![version 0.1.1](https://img.shields.io/badge/version-0.1.1-8c959f) ![license MIT](https://img.shields.io/badge/license-MIT-8c959f) ![node >=22.12](https://img.shields.io/badge/node-%3E%3D22.12-8c959f) ![dependencies 1](https://img.shields.io/badge/dependencies-1-8c959f) ![cases 12 hold](https://img.shields.io/badge/cases-12_hold-2da44e) ![verify agrees](https://img.shields.io/badge/verify-agrees-2da44e)
 
 One line for every fact.
 
-[bound's SDK: the wire, the forms, the contract and the shell you build a world with — a reader of any source or a renderer of any artefact, in an afternoon.](docs/what.md)
+bound's SDK: the wire, the forms, the contract and the shell you build a world with — a reader of any source or a renderer of any artefact, in an afternoon. [in its own words](docs/what.md)
 
 ## Why one line
 
 Everything a system says about itself lives where nobody can check it: a config, a README, a CI log. topos is one line format for all of it — a signed line with a floor and a ceiling, that any head can fold and any second head can verify. Two implementations agree only on what passes between them, and what passes between them is a line. So the line is the one thing held still; everything else belongs to a world.
 
-<p align="center"><img src="docs/img/world.svg" alt="declares measurements, runs on node, reaches none, 2 regions, written in one file of 92 lines, packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780, a place adopts it with uses/topos-measure and run by the node host" width="640"></p>
+<p align="center"><img src="docs/img/fold.svg" alt="21.2..21.4 · free and radiator apart · conflict" width="640"></p>
+
+Two meet at 21.2..21.4; radiator is apart: conflict.
 
 ## A world, built in front of you
 
-```ts
-// topos-measure built in front of you from its own bytes: its lock, its regions and its vector, every case asked through the one contract, then the line a place adopts it with.
-import { intervals } from '@lapxo/obligations';
-import type { Interval } from '@lapxo/obligations';
-import { cell, encounter, observe, state } from '@lapxo/obligations/views/field';
-import { declarationOf, found, lang, listed, of, shell } from '@lapxo/topos/capsule';
-import type { Asked, Handed } from '@lapxo/topos/capsule';
-import { answer } from '@lapxo/topos/contract';
-import { PROTOCOL, canonical, fromLine, steps } from '@lapxo/topos/wire';
+<p align="center"><img src="docs/img/world.svg" alt="declares measurements, runs on node, reaches none, held reads lang|form/prose/**|form/template/**|prose/*/measure/*|measure/**, readings reads lang|form/prose/**|prose/*/measure/*|measure/**, against topos sha256:a87ffd5ab77a99b9e40cc720acfdf0ee7f36d156c72085a20db1232b0653c1dd, packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780, a place adopts it with uses/topos-measure and run by the node host" width="640"></p>
 
-const capsule = [
-  `bound-lock/1 about="the domain this capsule serves: what several origins measured, each quantity read as one cell" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/domain value=measurements`,
-  `bound-lock/1 about="the runtime a host starts this capsule with, whose entry, regions and effects are the runtime's own lines" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/runtime value=node`,
-  `bound-lock/1 about="where this capsule's world keeps its values: the place's own files" at=policy:topos/capsule by=target form=alphabet measure=id role=writes scope=capsule/holds value=./`,
-  `bound-lock/1 about="the held region" at=policy:topos/capsule by=target form=alphabet measure=reads role=render scope=region/held value=lang|form/prose/**|form/template/**|prose/*/measure/*|measure/**`,
-  `bound-lock/1 about="the readings region" at=policy:topos/capsule by=target form=alphabet measure=reads role=render scope=region/readings value=lang|form/prose/**|prose/*/measure/*|measure/**`,
-  `bound-lock/1 about="what this capsule reaches beyond the lines it is handed" at=policy:topos/capsule by=target form=alphabet measure=effects role=writes scope=capsule/effects value=none`,
-  `bound-lock/1 about="the topos release this capsule is packed against, named by its digest" at=policy:topos/capsule by=target form=alphabet measure=digest role=writes scope=capsule/topos value=sha256:a87ffd5ab77a99b9e40cc720acfdf0ee7f36d156c72085a20db1232b0653c1dd`,
-];
-
-const prose = (asked: Asked, key: string): string | undefined => ((line) => (line === undefined ? undefined : of(line, 'about')))(found(asked, `prose/${lang(asked)}/${key}`));
-
-const SPANS = intervals(-Infinity, Infinity);
-const span = (line: Handed): Interval | undefined => ((got) => (got.kind === 'fact' && got.value.bound.kind === 'interval' && got.value.bound.lo !== null && got.value.bound.hi !== null
-  ? { lo: got.value.bound.lo, hi: got.value.bound.hi } : undefined))(fromLine(canonical(line), null));
-const say = (asked: Asked, key: string, fields: Readonly<Record<string, string | number>>): string => listed(asked, `form/template/${key}`).reduce((text, field) => text.split(`{${field}}`).join(String(fields[field] ?? '')), prose(asked, key) ?? '');
-const held = (asked: Asked): readonly string[] => {
-  const read = asked.lines.filter((line) => steps(of(line, 'scope')).length === 3);
-  const numbers = listed(asked, `form/prose/${lang(asked)}/numbers`);
-  return [...new Set(read.map((line) => steps(of(line, 'scope'))[1] ?? ''))].map((quantity) => {
-    const mine = read.filter((line) => steps(of(line, 'scope'))[1] === quantity);
-    const met = mine.reduce((at, line) => ((one) => (one === undefined ? at : observe(at, { origin: steps(of(line, 'scope'))[2] ?? '', span: one })))(span(line)), cell<Interval>(quantity));
-    const { origins, held: meet } = encounter(SPANS, met);
-    return say(asked, `measure/${state(SPANS, met)}`, { quantity, origins: numbers[origins] ?? String(origins), lo: meet.lo, hi: meet.hi, unit: of(mine[0], 'measure') });
-  });
-};
-
-const readings = (asked: Asked): readonly string[] => {
-  const read = asked.lines.filter((line) => steps(of(line, 'scope')).length === 3);
-  return read.length ? [`## ${prose(asked, 'measure/readings') ?? ''}`, '', prose(asked, 'measure/table') ?? '', '|---|---|---|',
-    ...read.map((line) => ((at) => `| ${at[1] ?? ''} | ${at[2] ?? ''} | ${of(line, 'value')} ${of(line, 'measure')} |`)(steps(of(line, 'scope'))))] : [];
-};
-
-const render = shell({
-  held: { reads: ['lang', 'form/prose/**', 'form/template/**', 'prose/*/measure/*', 'measure/**'], region: held },
-  readings: { reads: ['lang', 'form/prose/**', 'prose/*/measure/*', 'measure/**'], region: readings },
-});
-
-const said = [
-  `bound-lock/1 about=Readings at=policy:topos-measure/example by=target form=alphabet measure=text role=writes scope=prose/en/measure/readings value=lock`,
-  `bound-lock/1 about="| quantity | origin | reading |" at=policy:topos-measure/example by=target form=alphabet measure=text role=writes scope=prose/en/measure/table value=lock`,
-  `bound-lock/1 about="The {origins} origins that measured {quantity} meet: every one of their readings holds {lo}..{hi} {unit}." at=policy:topos-measure/example by=target form=alphabet measure=text role=writes scope=prose/en/measure/FREE value=lock`,
-  `bound-lock/1 about="The {origins} origins that measured {quantity} do not meet: no value in {unit} is held by all of their readings, and no average of them closes that." at=policy:topos-measure/example by=target form=alphabet measure=text role=writes scope=prose/en/measure/CONFLICT value=lock`,
-  `bound-lock/1 about="Only {origins} origin measured {quantity}: its reading holds nothing yet, until a second origin's reading meets it." at=policy:topos-measure/example by=target form=alphabet measure=text role=writes scope=prose/en/measure/REQUIRED value=lock`,
-  `bound-lock/1 about="The {origins} origins that measured {quantity} meet, but outside what the bounds on it allow." at=policy:topos-measure/example by=target form=alphabet measure=text role=writes scope=prose/en/measure/FORBIDDEN value=lock`,
-  `bound-lock/1 at=policy:topos-measure/example by=target form=alphabet measure=id role=writes scope=form/template/measure/FREE value=origins|quantity|lo|hi|unit`,
-  `bound-lock/1 at=policy:topos-measure/example by=target form=alphabet measure=id role=writes scope=form/template/measure/CONFLICT value=origins|quantity|unit`,
-  `bound-lock/1 at=policy:topos-measure/example by=target form=alphabet measure=id role=writes scope=form/template/measure/REQUIRED value=origins|quantity`,
-  `bound-lock/1 at=policy:topos-measure/example by=target form=alphabet measure=id role=writes scope=form/template/measure/FORBIDDEN value=origins|quantity`,
-  `bound-lock/1 at=policy:topos-measure/example by=target form=alphabet measure=id role=writes scope=form/prose/en/numbers value=zero|one|two|three|four|five|six|seven|eight|nine|ten`,
-  `bound-lock/1 at=policy:topos-measure/example by=target form=alphabet measure=id role=writes scope=lang value=en`,
-];
-const met = [
-  { origin: 'a', span: { lo: 19.8, hi: 20.2 } },
-  { origin: 'b', span: { lo: 19.9, hi: 20.3 } },
-  { origin: 'c', span: { lo: 19.7, hi: 20.1 } },
-].map(({ origin, span: { lo, hi } }) => canonical({ at: 'policy:topos-measure/example', by: 'target', form: 'interval', measure: 'celsius', role: 'writes', scope: `measure/room/${origin}`, value: `${lo}..${hi}` }));
-const apart = `bound-lock/1 at=policy:topos-measure/example by=target form=interval measure=celsius role=writes scope=measure/room/d value=24..24.4`;
-const worlds: Readonly<Record<string, readonly string[]>> = { 'root:topos-measure': [...said, ...met, apart], 'agreed:topos-measure': [...said, ...met], 'alone:topos-measure': [...said, ...met.slice(0, 1)] };
-const cases = [
-  { world: 'root:topos-measure', region: 'held', expected: ['The four origins that measured room do not meet: no value in celsius is held by all of their readings, and no average of them closes that.'] },
-  { world: 'agreed:topos-measure', region: 'held', expected: ['The three origins that measured room meet: every one of their readings holds 19.9..20.1 celsius.'] },
-  { world: 'alone:topos-measure', region: 'held', expected: [`Only one origin measured room: its reading holds nothing yet, until a second origin's reading meets it.`] },
-  { world: 'root:topos-measure', region: 'readings', expected: ['## Readings', '', '| quantity | origin | reading |', '|---|---|---|', '| room | a | 19.8..20.2 celsius |', '| room | b | 19.9..20.3 celsius |', '| room | c | 19.7..20.1 celsius |', '| room | d | 24..24.4 celsius |'] },
-];
-
-const declared = declarationOf(capsule);
-const ask = (world: string, region: string, reads: readonly string[]) =>
-  answer({ render }, { protocol: PROTOCOL, verb: 'render', rootScope: '', files: [], lines: worlds[world] ?? [], region, at: 3, shape: 'README.md', name: 'topos-measure', reads }, '');
-for (const line of capsule) console.log(line);
-let [holds, shorts, refused] = [0, 0, 0];
-for (const { world, region, expected } of cases) {
-  const reads = declared.regions[region] ?? [];
-  const got = ask(world, region, reads);
-  const same = JSON.stringify(got) === JSON.stringify({ protocol: PROTOCOL, kind: 'fact', lines: expected });
-  [holds, shorts] = [holds + (same ? 1 : 0), shorts + reads.length];
-  refused += reads.filter((one) => ask(world, region, reads.filter((other) => other !== one)).kind === 'refuse').length;
-  console.log(`${same ? 'HELD   ' : 'DIFFERS'}  ${world} · ${region}`);
-  for (const line of got.lines ?? [got.why ?? '']) console.log(line ? `         ${line}` : '');
-}
-console.log(`HELD ${holds}/${cases.length}`);
-console.log(`REFUSED ${refused}/${shorts}: each case asked again with one read its region declares taken away`);
-console.log(canonical({ at: 'policy:acme/capsules', by: 'target', form: 'alphabet', measure: 'id', role: 'writes', scope: 'uses/topos-measure', value: 'sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780' }));
+```bash
+node examples/release/world.ts
 ```
 
 ```
@@ -119,25 +32,12 @@ bound-lock/1 about="the held region" at=policy:topos/capsule by=target form=alph
 bound-lock/1 about="the readings region" at=policy:topos/capsule by=target form=alphabet measure=reads role=render scope=region/readings value=lang|form/prose/**|prose/*/measure/*|measure/**
 bound-lock/1 about="what this capsule reaches beyond the lines it is handed" at=policy:topos/capsule by=target form=alphabet measure=effects role=writes scope=capsule/effects value=none
 bound-lock/1 about="the topos release this capsule is packed against, named by its digest" at=policy:topos/capsule by=target form=alphabet measure=digest role=writes scope=capsule/topos value=sha256:a87ffd5ab77a99b9e40cc720acfdf0ee7f36d156c72085a20db1232b0653c1dd
-HELD     root:topos-measure · held
-         The four origins that measured room do not meet: no value in celsius is held by all of their readings, and no average of them closes that.
-HELD     agreed:topos-measure · held
-         The three origins that measured room meet: every one of their readings holds 19.9..20.1 celsius.
-HELD     alone:topos-measure · held
-         Only one origin measured room: its reading holds nothing yet, until a second origin's reading meets it.
-HELD     root:topos-measure · readings
-         ## Readings
-
-         | quantity | origin | reading |
-         |---|---|---|
-         | room | a | 19.8..20.2 celsius |
-         | room | b | 19.9..20.3 celsius |
-         | room | c | 19.7..20.1 celsius |
-         | room | d | 24..24.4 celsius |
 HELD 4/4
 REFUSED 19/19: each case asked again with one read its region declares taken away
 bound-lock/1 at=policy:acme/capsules by=target form=alphabet measure=id role=writes scope=uses/topos-measure value=sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780
 ```
+
+[The whole example](examples/release/world.ts)
 
 Three meet at 19.9..20.1: free.
 
@@ -148,30 +48,20 @@ Three meet at 19.9..20.1: free.
 - **It knows no world: it says nothing a world says, and its ceiling on a world's words, markup or figures written in its source reads 0.** · [receipt](receipts.bound)
 - **It writes no order of its own: cells, meets, joins and states come from the object, and its ceiling on an order written here reads 0.** · [receipt](receipts.bound)
 
+## A line
+
 <p align="center"><img src="docs/img/line.svg" alt="The line wire/line/fields, drawn field by field: 6 fields, each named by the wire" width="640"></p>
+
+The line wire/line/fields, drawn field by field: 6 fields, each named by the wire.
 
 ```bash
 npm install @lapxo/topos
 ```
 
-## Your first run
-
 With it installed, run roundtrip: a line is parsed, written again and compared with the bytes it came from.
 
-```ts
-// A line read and written back to the same bytes, then an alphabet read and written back.
-import { alphabet, canonical, parse } from '@lapxo/topos/wire';
-
-const line = 'bound-lock/1 about="a \\"quoted\\" word,\\nthen a second line" at=witness:x by=owner form=interval measure=len role=reads scope=acme/users/email value=0..320';
-const read = parse(line);
-if (read.kind !== 'fact') throw new Error(read.why);
-const again = canonical(read.value.fields);
-console.log(read.value.fields['about']);
-console.log(again);
-console.log('same bytes', again === line);
-const words = 'not:draft|either\\|or';
-console.log(JSON.stringify(alphabet(words)));
-console.log(alphabet(alphabet(words)), 'same bytes', alphabet(alphabet(words)) === words);
+```bash
+node examples/release/roundtrip.ts
 ```
 
 ```
@@ -183,9 +73,11 @@ same bytes true
 not:draft|either\|or same bytes true
 ```
 
-<p align="center"><img src="docs/img/refuses.svg" alt="Handed bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3, it refuses: `0..1..3` is no interval the wire reads: two ends, each decimal or *" width="640"></p>
+[The whole example](examples/release/roundtrip.ts)
 
 ## What it refuses
+
+<p align="center"><img src="docs/img/refuses.svg" alt="Handed bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3, it refuses: `0..1..3` is no interval the wire reads: two ends, each decimal or *" width="640"></p>
 
 Hand it `bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3` and it refuses: `0..1..3` is no interval the wire reads: two ends, each decimal or *.
 
@@ -193,13 +85,11 @@ Hand it `bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3
 
 topos is read one subpath at a time, and each answers one question.
 
-<details><summary>The three subpaths and the question each answers</summary>
-
+- **wire** · the line, the forms' encodings, the names — how is a fact written?
 - **contract** · what a world answers — render, receipt, observe, run — what does a world owe?
 - **readers** · the world-neutral readers of lines — what does a line say?
-- **wire** · the line, the forms' encodings, the names — how is a fact written?
 
-</details>
+It rests on obligations. Nothing else.
 
 ## Check
 

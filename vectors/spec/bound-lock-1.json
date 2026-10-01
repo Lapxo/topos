@@ -1,0 +1,611 @@
+{
+ "about": [
+  "Every line of spec/vectors/bound-lock-1.txt with what the wire reads of it: a refusal and its why, or a fact, its canonical",
+  "line, its fields and the sha256 of its canonical bytes, and whether that canonical line reads back to itself."
+ ],
+ "source": "spec/vectors/bound-lock-1.txt",
+ "cases": [
+  {
+   "name": "bound-lock-1.txt:11",
+   "block": "ordinary, and already canonical: the example from the format itself",
+   "input": "bound-lock/1 by=front coverage=1 epoch=T#2026-08-25 form=interval measure=len scope=acme/users/email unit=js:String.length value=0..320",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 by=front coverage=1 epoch=T#2026-08-25 form=interval measure=len scope=acme/users/email unit=js:String.length value=0..320",
+    "fields": {
+     "by": "front",
+     "coverage": "1",
+     "epoch": "T#2026-08-25",
+     "form": "interval",
+     "measure": "len",
+     "scope": "acme/users/email",
+     "unit": "js:String.length",
+     "value": "0..320"
+    },
+    "sha256": "5cd0c066982cf546170e0d63a7519ba9e0afef99471e1ebcf70bf815cae30e42",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:14",
+   "block": "rule 4: key order and spacing must not reach the output",
+   "input": "bound-lock/1 value=0..320 scope=acme/users/email measure=len form=interval",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=interval measure=len scope=acme/users/email value=0..320",
+    "fields": {
+     "value": "0..320",
+     "scope": "acme/users/email",
+     "measure": "len",
+     "form": "interval"
+    },
+    "sha256": "eafc2bcfe6d56a907da351c6a496a44f8a6eabe5b46e77eb61874bfa28a2273b",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:15",
+   "block": "rule 4: key order and spacing must not reach the output",
+   "input": "bound-lock/1    value=0..320     scope=acme/users/email   measure=len  form=interval",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=interval measure=len scope=acme/users/email value=0..320",
+    "fields": {
+     "value": "0..320",
+     "scope": "acme/users/email",
+     "measure": "len",
+     "form": "interval"
+    },
+    "sha256": "eafc2bcfe6d56a907da351c6a496a44f8a6eabe5b46e77eb61874bfa28a2273b",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:21",
+   "block": "rule 4, the case where JavaScript and UTF-8 disagree.",
+   "input": "bound-lock/1 𐀀=astral ￿=bmp a=first",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 a=first ￿=bmp 𐀀=astral",
+    "fields": {
+     "𐀀": "astral",
+     "￿": "bmp",
+     "a": "first"
+    },
+    "sha256": "4e32b5f8083f445b442ec57450726aea6f7b34f9f24accbf94a09caae4196180",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:22",
+   "block": "rule 4, the case where JavaScript and UTF-8 disagree.",
+   "input": "bound-lock/1 ￿=bmp a=first 𐀀=astral",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 a=first ￿=bmp 𐀀=astral",
+    "fields": {
+     "￿": "bmp",
+     "a": "first",
+     "𐀀": "astral"
+    },
+    "sha256": "4e32b5f8083f445b442ec57450726aea6f7b34f9f24accbf94a09caae4196180",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:25",
+   "block": "rule 3: every character that forces quoting, and every escape that exists",
+   "input": "bound-lock/1 scope=\"acme/weird scope\" measure=len value=0..9",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=len scope=\"acme/weird scope\" value=0..9",
+    "fields": {
+     "scope": "acme/weird scope",
+     "measure": "len",
+     "value": "0..9"
+    },
+    "sha256": "cf5436955ea0a474dd4ac05dac0f9634214aeddc1783d34dae8931f843052021",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:26",
+   "block": "rule 3: every character that forces quoting, and every escape that exists",
+   "input": "bound-lock/1 scope=s measure=m value=\"a=b|c\"",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=\"a=b|c\"",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "a=b|c"
+    },
+    "sha256": "eee6debb64f96133da6d6eef684a1b4dd5350a3c57b6f002155228d47839df5f",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:27",
+   "block": "rule 3: every character that forces quoting, and every escape that exists",
+   "input": "bound-lock/1 scope=s measure=m value=\"say \\\"hi\\\"\"",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=\"say \\\"hi\\\"\"",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "say \"hi\""
+    },
+    "sha256": "cc328da35b08997d081b42018ec33a2df1d21f891b9e1f3420f7487643d397a0",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:28",
+   "block": "rule 3: every character that forces quoting, and every escape that exists",
+   "input": "bound-lock/1 scope=s measure=m value=\"back\\\\slash\"",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=\"back\\\\slash\"",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "back\\slash"
+    },
+    "sha256": "bd590a48180d2e2a799ebd5813239277525d6f5ab95378139fc4dc87a12d6094",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:29",
+   "block": "rule 3: every character that forces quoting, and every escape that exists",
+   "input": "bound-lock/1 scope=s measure=m value=\"line\\nbreak\"",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=\"line\\nbreak\"",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "line\nbreak"
+    },
+    "sha256": "0893100502bfb2062a4b4f232e9037ffdd87529deb8deb3fb19afdff8b40087a",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:30",
+   "block": "rule 3: every character that forces quoting, and every escape that exists",
+   "input": "bound-lock/1 scope=s measure=m value=\"\\\"\\\\\\n\"",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=\"\\\"\\\\\\n\"",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "\"\\\n"
+    },
+    "sha256": "af616e394f0b32c489a659b6e2c3f61481b79faad2fa3654b9465817bac6dcfb",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:33",
+   "block": "rule 3: a value that does NOT need quotes must not get them",
+   "input": "bound-lock/1 scope=s measure=m value=plain",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=plain",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "plain"
+    },
+    "sha256": "2aec726a8c0f0af547d54282d37cc538306a9c8c5b54a821be14aed1c28f56b9",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:36",
+   "block": "rule 8: `-` is absence, and absence is the identity",
+   "input": "bound-lock/1 scope=s measure=m value=0..1 ref=- until=- sig=-",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=0..1",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "0..1"
+    },
+    "sha256": "be5dbde76ec81e4fbde41d4d4e6471e8e9561eaece219007f710205808c78c82",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:37",
+   "block": "rule 8: `-` is absence, and absence is the identity",
+   "input": "bound-lock/1 scope=s measure=m value=0..1",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=0..1",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "0..1"
+    },
+    "sha256": "be5dbde76ec81e4fbde41d4d4e6471e8e9561eaece219007f710205808c78c82",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:40",
+   "block": "rule 5: NFC and NFD are different bytes and stay different",
+   "input": "bound-lock/1 scope=café measure=m value=0..1",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=café value=0..1",
+    "fields": {
+     "scope": "café",
+     "measure": "m",
+     "value": "0..1"
+    },
+    "sha256": "e587bef58ebd7441a12cae16ffb285d8bc5d202f0510e0d96515bd07638f0d6d",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:41",
+   "block": "rule 5: NFC and NFD are different bytes and stay different",
+   "input": "bound-lock/1 scope=café measure=m value=0..1",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=café value=0..1",
+    "fields": {
+     "scope": "café",
+     "measure": "m",
+     "value": "0..1"
+    },
+    "sha256": "e587bef58ebd7441a12cae16ffb285d8bc5d202f0510e0d96515bd07638f0d6d",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:44",
+   "block": "rule 7: a field from 2076 rides through both implementations untouched",
+   "input": "bound-lock/1 scope=s measure=m value=0..1 zk=commit:abc x-quantum=entangled",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s value=0..1 x-quantum=entangled zk=commit:abc",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "0..1",
+     "zk": "commit:abc",
+     "x-quantum": "entangled"
+    },
+    "sha256": "b828fd1787494de82082d20cd1a9c58a969e9fe6a75e2fa181fcb61b1b1db48a",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:47",
+   "block": "rule 7 and rule 11: `sig` is carried, and elided from what it signs",
+   "input": "bound-lock/1 scope=s measure=m value=0..1 sig=ed25519:deadbeef",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s sig=ed25519:deadbeef value=0..1",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "0..1",
+     "sig": "ed25519:deadbeef"
+    },
+    "sha256": "82a9846934498780f53dfad66df267fa65f3157fa4b3c7153e4a44409f503b51",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:48",
+   "block": "rule 7 and rule 11: `sig` is carried, and elided from what it signs",
+   "input": "bound-lock/1 scope=s measure=m value=0..1 sig=ed25519:0000",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=m scope=s sig=ed25519:0000 value=0..1",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "value": "0..1",
+     "sig": "ed25519:0000"
+    },
+    "sha256": "5132cc47e2b015d0ce75c042ccddfa3657b5465e328f137cc1c8b50b88d206e4",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:51",
+   "block": "the alphabet separator lives INSIDE the value, so the kernel never sees it",
+   "input": "bound-lock/1 scope=s measure=value form=alphabet value=draft|sent|paid",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=alphabet measure=value scope=s value=draft|sent|paid",
+    "fields": {
+     "scope": "s",
+     "measure": "value",
+     "form": "alphabet",
+     "value": "draft|sent|paid"
+    },
+    "sha256": "f35de6ab256c37b4f9eb31bf8ef03601429b1948aef6ed05115819434150b22e",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:52",
+   "block": "the alphabet separator lives INSIDE the value, so the kernel never sees it",
+   "input": "bound-lock/1 scope=s measure=value form=alphabet value=\"a\\\\|b|c\"",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=alphabet measure=value scope=s value=\"a\\\\|b|c\"",
+    "fields": {
+     "scope": "s",
+     "measure": "value",
+     "form": "alphabet",
+     "value": "a\\|b|c"
+    },
+    "sha256": "9344a146f0f20931bb284c5f8800b0c193f928332605964239237e67695232d1",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:55",
+   "block": "rule 1: the two refusals and the abstention, which must also agree",
+   "input": "bound-lock/3 scope=s measure=m value=0..1",
+   "expected": {
+    "kind": "abstain",
+    "why": "`bound-lock/3` is a version this reader does not know"
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:56",
+   "block": "rule 1: the two refusals and the abstention, which must also agree",
+   "input": "bound-lock/1 scope=a scope=b",
+   "expected": {
+    "kind": "refuse",
+    "why": "`scope` appears twice — one line, one value per key"
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:57",
+   "block": "rule 1: the two refusals and the abstention, which must also agree",
+   "input": "bound-lock/1 =novalue",
+   "expected": {
+    "kind": "refuse",
+    "why": "`=novalue` is not `key=value`"
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:58",
+   "block": "rule 1: the two refusals and the abstention, which must also agree",
+   "input": "bound-lock/1 v=\"unterminated",
+   "expected": {
+    "kind": "refuse",
+    "why": "a quoted value is not closed"
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:59",
+   "block": "rule 1: the two refusals and the abstention, which must also agree",
+   "input": "bound-lock/1 v=\"a\\tb\"",
+   "expected": {
+    "kind": "refuse",
+    "why": "`v` has an escaping this format does not define"
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:60",
+   "block": "rule 1: the two refusals and the abstention, which must also agree",
+   "input": "not-a-line-at-all scope=s",
+   "expected": {
+    "kind": "refuse",
+    "why": "no `bound-lock/<v>` envelope — found `not-a-line-at-all`"
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:71",
+   "block": "form=ladder, which the wire has spoken since it was written and this",
+   "input": "bound-lock/1 scope=plan measure=tier form=ladder value=bronze|gold",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=ladder measure=tier scope=plan value=bronze|gold",
+    "fields": {
+     "scope": "plan",
+     "measure": "tier",
+     "form": "ladder",
+     "value": "bronze|gold"
+    },
+    "sha256": "0d5cb28b05f2f1c1e7a9c4e6045396b9845bd3713bf403777082b12e02db1b0f",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:75",
+   "block": "form=ladder, which the wire has spoken since it was written and this",
+   "input": "bound-lock/1   form=ladder value=bronze|gold    measure=tier scope=plan",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=ladder measure=tier scope=plan value=bronze|gold",
+    "fields": {
+     "form": "ladder",
+     "value": "bronze|gold",
+     "measure": "tier",
+     "scope": "plan"
+    },
+    "sha256": "0d5cb28b05f2f1c1e7a9c4e6045396b9845bd3713bf403777082b12e02db1b0f",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:79",
+   "block": "form=ladder, which the wire has spoken since it was written and this",
+   "input": "bound-lock/1 scope=plan measure=tier form=ladder value=bronze",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=ladder measure=tier scope=plan value=bronze",
+    "fields": {
+     "scope": "plan",
+     "measure": "tier",
+     "form": "ladder",
+     "value": "bronze"
+    },
+    "sha256": "bfea3d3b77757f4da5ebff9410609e0fe081c778ec7cbbfafd43cb904b72f8aa",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:80",
+   "block": "form=ladder, which the wire has spoken since it was written and this",
+   "input": "bound-lock/1 scope=plan measure=tier form=ladder value=bronze|silver|gold",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=ladder measure=tier scope=plan value=bronze|silver|gold",
+    "fields": {
+     "scope": "plan",
+     "measure": "tier",
+     "form": "ladder",
+     "value": "bronze|silver|gold"
+    },
+    "sha256": "d7251857418280ae2674df0415f01185cedb8a44d72cdf6fc899bfeb63d5ae0d",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:81",
+   "block": "form=ladder, which the wire has spoken since it was written and this",
+   "input": "bound-lock/1 scope=plan measure=tier form=ladder value=",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=ladder measure=tier scope=plan value=",
+    "fields": {
+     "scope": "plan",
+     "measure": "tier",
+     "form": "ladder",
+     "value": ""
+    },
+    "sha256": "68c5004215be7e8212b3b4d61d080b9b92f98f306e3518e278a1d8f4e5076d56",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:85",
+   "block": "form=ladder, which the wire has spoken since it was written and this",
+   "input": "bound-lock/1 scope=plan measure=tier form=ladder value=\"a\\|b|c\"",
+   "expected": {
+    "kind": "refuse",
+    "why": "`value` has an escaping this format does not define"
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:89",
+   "block": "form=ladder, which the wire has spoken since it was written and this",
+   "input": "bound-lock/1 scope=plan measure=tier form=ladder value=gold|gold",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=ladder measure=tier scope=plan value=gold|gold",
+    "fields": {
+     "scope": "plan",
+     "measure": "tier",
+     "form": "ladder",
+     "value": "gold|gold"
+    },
+    "sha256": "d11bc68d6c25fd32fb2bd16e8d83107ace33b786eb410415c1f95eb1910da862",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:96",
+   "block": "a form that is NOT on the wire, and must ABSTAIN rather than refuse.",
+   "input": "bound-lock/1 scope=s measure=m form=lattice value=a",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 form=lattice measure=m scope=s value=a",
+    "fields": {
+     "scope": "s",
+     "measure": "m",
+     "form": "lattice",
+     "value": "a"
+    },
+    "sha256": "0420ba4a8ef90926298b883f723fa6343e116144a6f5097b4cf9e0821a25fba5",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:103",
+   "block": "the evidence fields, which no vector carried until now",
+   "input": "bound-lock/1 coverage=0.81 measure=len method=sample role=writes scope=acme/users/email value=0..320",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 coverage=0.81 measure=len method=sample role=writes scope=acme/users/email value=0..320",
+    "fields": {
+     "coverage": "0.81",
+     "measure": "len",
+     "method": "sample",
+     "role": "writes",
+     "scope": "acme/users/email",
+     "value": "0..320"
+    },
+    "sha256": "937a4548b0704bf97392015c6d89dcf8ea7f4d02c7cbcfa15b24f9721407c27c",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:110",
+   "block": "a value that LOOKS like a number, and is not one",
+   "input": "bound-lock/1 coverage=1.0 measure=len scope=a/b value=0..1",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 coverage=1.0 measure=len scope=a/b value=0..1",
+    "fields": {
+     "coverage": "1.0",
+     "measure": "len",
+     "scope": "a/b",
+     "value": "0..1"
+    },
+    "sha256": "7e863570425bf0d9097eab02b20811094adc794d31bdd1cef063b774303dc0b9",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:111",
+   "block": "a value that LOOKS like a number, and is not one",
+   "input": "bound-lock/1 coverage=.5 measure=len scope=a/b value=0..1",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 coverage=.5 measure=len scope=a/b value=0..1",
+    "fields": {
+     "coverage": ".5",
+     "measure": "len",
+     "scope": "a/b",
+     "value": "0..1"
+    },
+    "sha256": "4ae19fb5ae819a092e36c331f152c965d01543122891f85dcb0b0007a3cfe0c3",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "bound-lock-1.txt:119",
+   "block": "and the kernel does NOT police vocabulary",
+   "input": "bound-lock/1 measure=len method=guessed role=writes scope=a/b value=0..1",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 measure=len method=guessed role=writes scope=a/b value=0..1",
+    "fields": {
+     "measure": "len",
+     "method": "guessed",
+     "role": "writes",
+     "scope": "a/b",
+     "value": "0..1"
+    },
+    "sha256": "3bead616840d703e07170d404a5566e22675770818a17b59111c9677d2d44df5",
+    "roundTrip": true
+   }
+  }
+ ]
+}

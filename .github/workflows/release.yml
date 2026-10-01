@@ -1,0 +1,48 @@
+name: release
+on:
+  workflow_run:
+    workflows: [tag]
+    types: [completed]
+  push:
+    tags: ['v*']
+jobs:
+  release:
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="v$(node -p "require('./package.json').version")"
+          gh release view "$version" >/dev/null 2>&1 && exit 0
+          gh release create "$version" "$(npm pack --silent)" --title "$version" --notes "$(git log -1 --format=%B)"
+  publish:
+    needs: release
+    environment: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
+      - run: npm install --global npm@'12.1.0'
+      - run: |
+          npm view "$(node -p "require('./package.json').name")@$(node -p "require('./package.json').version")" version >/dev/null 2>&1 && exit 0
+          npm stage publish

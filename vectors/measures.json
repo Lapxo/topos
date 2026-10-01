@@ -1,0 +1,68 @@
+{
+ "about": [
+  "How readings of one measure combine when a line reads more than one: a count and a size add up, a longest is the longest, and a measure the wire names no combination for is refused rather than summed."
+ ],
+ "cases": [
+  {
+   "name": "counts add up",
+   "measure": "count",
+   "values": [
+    1,
+    2,
+    4
+   ],
+   "expected": 7
+  },
+  {
+   "name": "sizes add up",
+   "measure": "size",
+   "values": [
+    120,
+    30
+   ],
+   "expected": 150
+  },
+  {
+   "name": "showings add up: a ticket shown at the gate twice is shown 2 times",
+   "measure": "shown",
+   "values": [
+    1,
+    1
+   ],
+   "expected": 2
+  },
+  {
+   "name": "a longest is the longest, never the sum of files",
+   "measure": "longest",
+   "values": [
+    28,
+    20,
+    17
+   ],
+   "expected": 28
+  },
+  {
+   "name": "no readings of a longest is none",
+   "measure": "longest",
+   "values": [],
+   "expected": 0
+  },
+  {
+   "name": "one reading of any measure is itself",
+   "measure": "per-file",
+   "values": [
+    3
+   ],
+   "expected": 3
+  },
+  {
+   "name": "two readings of an undeclared measure are refused",
+   "measure": "per-file",
+   "values": [
+    3,
+    1
+   ],
+   "expected": "refused"
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "about": [
+  "A reader observes each place once per content: a reading is new only where the value at that coordinate changed,",
+  "the latest reading is what stands, and reading unchanged bytes again adds nothing."
+ ],
+ "cases": [
+  {
+   "name": "unchanged content is read once",
+   "readings": [
+    {
+     "at": "p",
+     "epoch": 1,
+     "value": "d1"
+    },
+    {
+     "at": "p",
+     "epoch": 2,
+     "value": "d1"
+    }
+   ],
+   "new": 1,
+   "stands": {
+    "p": "d1"
+   }
+  },
+  {
+   "name": "changed content is read again and the latest stands",
+   "readings": [
+    {
+     "at": "p",
+     "epoch": 1,
+     "value": "d1"
+    },
+    {
+     "at": "p",
+     "epoch": 2,
+     "value": "d2"
+    }
+   ],
+   "new": 2,
+   "stands": {
+    "p": "d2"
+   }
+  },
+  {
+   "name": "places are read apart",
+   "readings": [
+    {
+     "at": "p",
+     "epoch": 1,
+     "value": "d1"
+    },
+    {
+     "at": "q",
+     "epoch": 1,
+     "value": "d1"
+    }
+   ],
+   "new": 2,
+   "stands": {
+    "p": "d1",
+    "q": "d1"
+   }
+  }
+ ]
+}

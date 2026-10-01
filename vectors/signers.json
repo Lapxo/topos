@@ -1,0 +1,367 @@
+{
+ "about": [
+  "Who may sign what is itself a signed lock. A signer is the claims on `keys/<id>`: class, public key,",
+  "coverage (scope prefixes) and resolution (scope depths). The root of the tree admits one signer; every",
+  "other signer is admitted when a quorum of admitted authorize signers signed its class.",
+  "",
+  "It got its own file because one owner key was hardcoded, and 16 `audit/step` lines that said by=owner",
+  "carried authority on 2026-09-17 although no key in the tree verified them. Such a line is grey.",
+  "",
+  "`verify` here is a stand-in so the vector needs no keys: a line verifies against a public key when its",
+  "`sig` is `ok:` followed by that key. The host adapter verifies real signatures."
+ ],
+ "verify": "sig === 'ok:' + publicKey",
+ "root": {
+  "id": "owner",
+  "keyClass": "authorize",
+  "publicKey": "K0",
+  "coverage": [
+   "*"
+  ],
+  "depth": {
+   "lo": 1,
+   "hi": 16
+  },
+  "admittedBy": []
+ },
+ "cases": [
+  {
+   "name": "the root signer's own line is admitted",
+   "lock": [],
+   "line": {
+    "scope": "audit/bound/one-landing-path",
+    "by": "owner",
+    "sig": "ok:K0"
+   },
+   "verdict": "admitted",
+   "potential": []
+  },
+  {
+   "name": "a line that names the root but no admitted key signed is grey",
+   "lock": [],
+   "line": {
+    "scope": "audit/step",
+    "by": "owner",
+    "sig": "ok:K9"
+   },
+   "verdict": "grey",
+   "potential": []
+  },
+  {
+   "name": "an unadmitted signer is grey",
+   "lock": [],
+   "line": {
+    "scope": "audit/tree/lines",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "grey",
+   "potential": []
+  },
+  {
+   "name": "a signer admitted by the root signs inside its coverage",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "2..4",
+     "by": "owner",
+     "sig": "ok:K0"
+    }
+   ],
+   "line": {
+    "scope": "audit/tree/lines",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "admitted",
+   "potential": []
+  },
+  {
+   "name": "outside its coverage is a refusal naming the key",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "2..4",
+     "by": "owner",
+     "sig": "ok:K0"
+    }
+   ],
+   "line": {
+    "scope": "audit/bound/x",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "refuse",
+   "named": "ci",
+   "potential": []
+  },
+  {
+   "name": "a signer does not sign outside its resolution",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "2..4",
+     "by": "owner",
+     "sig": "ok:K0"
+    }
+   ],
+   "line": {
+    "scope": "audit/tree/a/b/c",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "refuse",
+   "named": "ci",
+   "potential": []
+  },
+  {
+   "name": "an attest signer cannot admit signers",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree|keys",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "1..4",
+     "by": "owner",
+     "sig": "ok:K0"
+    }
+   ],
+   "line": {
+    "scope": "keys/bot",
+    "measure": "class",
+    "value": "attest",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "refuse",
+   "named": "ci",
+   "potential": []
+  },
+  {
+   "name": "a quorum of two leaves a key admitted by one signer potential",
+   "lock": [
+    {
+     "scope": "keys",
+     "measure": "quorum",
+     "value": "2..2",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "2..4",
+     "by": "owner",
+     "sig": "ok:K0"
+    }
+   ],
+   "line": {
+    "scope": "audit/tree/lines",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "grey",
+   "potential": [
+    "ci"
+   ]
+  },
+  {
+   "name": "withdrawing an admission narrows the lock and the key goes grey",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "2..4",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "withdraw",
+     "by": "owner",
+     "sig": "ok:K0"
+    }
+   ],
+   "line": {
+    "scope": "audit/tree/lines",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "grey",
+   "potential": [
+    "ci"
+   ]
+  },
+  {
+   "name": "an admission no admitted key signed admits nobody",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "sig": "ok:K5"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K5"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree",
+     "by": "owner",
+     "sig": "ok:K5"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "2..4",
+     "by": "owner",
+     "sig": "ok:K5"
+    }
+   ],
+   "line": {
+    "scope": "audit/tree/lines",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "grey",
+   "potential": [
+    "ci"
+   ]
+  }
+ ]
+}

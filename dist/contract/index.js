@@ -1,0 +1,63 @@
+/** It answers what a world answers — render, receipt, observe, run — what does a world owe? */
+import { handed } from "../capsule/index.js";
+import { PROTOCOL } from "../wire/line.js";
+/**
+ * The one contract across processes, and the one serve: a module's one export answers each request, a reader's by
+ * observing the file it is handed or, handed none, running the place it names, as the region asked when it holds several, a capsule's
+ * by rendering a region, or by answering the claims of a receipt region, from the lines its own lock reads, parsed here and handed over. What throws is a refusal, what the module has no export for is an
+ * abstention, and a reader that can only observe is refused when no file is handed: it never reads an empty one. The host reads and writes, this never does.
+ */
+export function answer(module, request, self) {
+    try {
+        const asked = () => {
+            const reads = request.reads ?? [];
+            const regions = Object.fromEntries(Object.entries(request.regions ?? {}).filter(([name]) => reads.includes(`region/${name}`))
+                .map(([name, held]) => [name, { lines: handed(['**'], held.lines), receipts: handed(['**'], held.receipts) }]));
+            return { region: request.region ?? '', at: request.at ?? 3, shape: request.shape ?? '', name: request.name ?? '', reads, lines: handed(reads, request.lines ?? []), regions };
+        };
+        if (request.verb === 'render' && module.render)
+            return { protocol: PROTOCOL, kind: 'fact', lines: module.render(asked()) };
+        if (request.verb === 'read' && module.receipt && request.reads !== undefined)
+            return { protocol: PROTOCOL, kind: 'fact', claims: module.receipt(asked()) };
+        const file = request.files[0];
+        if (request.verb === 'read' && module.observe && file !== undefined) {
+            return { protocol: PROTOCOL, kind: 'fact', claims: module.observe(new TextEncoder().encode(file.text), request.rootScope, request.region, request.files) };
+        }
+        if (request.verb === 'read' && module.run)
+            return { protocol: PROTOCOL, kind: 'fact', claims: module.run(request.rootScope, self, request.held ?? [], request.region) };
+        if (request.verb === 'read' && module.observe)
+            return { protocol: PROTOCOL, kind: 'refuse', why: 'no file was handed to observe' };
+        return { protocol: PROTOCOL, kind: 'abstain', why: `no export answers ${request.verb}` };
+    }
+    catch (thrown) {
+        return { protocol: PROTOCOL, kind: 'refuse', why: String(thrown) };
+    }
+}
+/**
+ * Observation is the contract's, not a global's: a runner listens once, and a harness hands each sample it loaded through
+ * `observed`, which notes every field of a case a block reads by where the case came from; nobody listening, nothing is noted.
+ */
+export const listen = (note) => {
+    const was = globalThis.__boundRead;
+    globalThis.__boundRead = note;
+    return was;
+};
+export const observed = (held, at) => {
+    const note = globalThis.__boundRead;
+    if (note === undefined || !Array.isArray(held['cases']))
+        return held;
+    const cases = held['cases'].map((one, i) => new Proxy(one, {
+        get: (target, field, receiver) => {
+            if (typeof field === 'string')
+                note(`${at}#${i}:${field}`);
+            return Reflect.get(target, field, receiver);
+        },
+    }));
+    return { ...held, cases };
+};
+export const respond = (module, input, self) => JSON.stringify(JSON.parse(input).map((request) => answer(module, request, self)));
+export function responsesOf(printed, asked) {
+    const last = /(?:^|\n)([^\n]*)$/.exec(printed.trimEnd())?.[1] ?? '';
+    const held = last.startsWith('[') ? JSON.parse(last) : [];
+    return Array.from({ length: asked }, (_, i) => held[i] ?? { protocol: PROTOCOL, kind: 'refuse', why: 'no answer' });
+}

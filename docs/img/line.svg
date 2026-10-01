@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 176" width="640" height="176" role="img" aria-label="The line wire/line/fields, drawn field by field: 6 fields, each named by the wire">
+<style>
+text{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#59636e}.field{fill:#2da44e;font-weight:600}
+@media (prefers-color-scheme:dark){text{fill:#9198a1}}
+</style>
+<text class="field" x="104" y="30" text-anchor="end">scope</text>
+<text x="116" y="30">wire/line/fields</text>
+<text class="field" x="104" y="56" text-anchor="end">role</text>
+<text x="116" y="56">reads</text>
+<text class="field" x="104" y="82" text-anchor="end">measure</text>
+<text x="116" y="82">count</text>
+<text class="field" x="104" y="108" text-anchor="end">form</text>
+<text x="116" y="108">interval</text>
+<text class="field" x="104" y="134" text-anchor="end">value</text>
+<text x="116" y="134">7..16</text>
+<text class="field" x="104" y="160" text-anchor="end">at</text>
+<text x="116" y="160">policy:wire/fields</text>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "bytes": "",
+  "digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "seen": [{ "scope": "lane/0", "measure": "holds", "role": "reads", "bound": { "kind": "enumerated", "values": ["deadbeef"] } }],
+  "why": "a floor constructed from a literal list was not in the handed bytes",
+  "expected.ok": false
+}

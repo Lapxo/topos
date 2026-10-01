@@ -1,0 +1,27 @@
+{
+ "about": [
+  "A signature algorithm, defined by this blob and named on the wire only by its digest.",
+  "Ed25519 as RFC 8032 defines it (PureEdDSA over edwards25519). The message is the UTF-8 bytes of the claim's canonical line without its sig field, with its signer named; the public key is the 32-byte key wrapped as SubjectPublicKeyInfo DER, in base64; the signature is the 64 raw bytes, in base64.",
+  "A later epoch admits another definition by its digest; a line signed under this one stays readable for as long as this blob is kept."
+ ],
+ "scheme": "ed25519",
+ "message": "canonical line without sig, UTF-8",
+ "key": "spki-der-base64",
+ "signature": "raw-base64",
+ "cases": [
+  {
+   "name": "a signature over the canonical bytes verifies",
+   "publicKey": "MCowBQYDK2VwAyEAGk8IxaaMIzYPZw1Vjo6yaJDT7TUJDXMYoCPj9TX7TvE=",
+   "message": "bound-lock/1 at=witness:a-signature-names-its-definition by=owner epoch=3 form=interval measure=count role=reads scope=audit/wire/sample value=0..0",
+   "signature": "uv3QzUHkjYF7cA2NZVebM5C+qP8FUM2mdbj3RX4mvAvwlA2C8Nu2Gmsmg/IWbINEPTNv7CzNrA/QkNbEG2rbBg==",
+   "verifies": true
+  },
+  {
+   "name": "the same signature over one changed byte does not",
+   "publicKey": "MCowBQYDK2VwAyEAGk8IxaaMIzYPZw1Vjo6yaJDT7TUJDXMYoCPj9TX7TvE=",
+   "message": "bound-lock/1 at=witness:a-signature-names-its-definition by=owner epoch=3 form=interval measure=count role=reads scope=audit/wire/sample value=0..1",
+   "signature": "uv3QzUHkjYF7cA2NZVebM5C+qP8FUM2mdbj3RX4mvAvwlA2C8Nu2Gmsmg/IWbINEPTNv7CzNrA/QkNbEG2rbBg==",
+   "verifies": false
+  }
+ ]
+}

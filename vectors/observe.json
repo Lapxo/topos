@@ -1,0 +1,98 @@
+{
+ "about": [
+  "Observation is part of the contract: a reader handed a file observes its bytes, a reader handed none is refused rather",
+  "than handed an empty one, and a case handed out while a runner listens notes each field a block reads, while nothing is",
+  "noted when nobody listens."
+ ],
+ "cases": [
+  {
+   "name": "a reader handed a file observes its bytes",
+   "files": [
+    {
+     "place": "p",
+     "text": "lane/0 holds"
+    }
+   ],
+   "kind": "fact",
+   "claims": [
+    "lane/0 holds"
+   ]
+  },
+  {
+   "name": "a reader handed no file is refused, never handed an empty one",
+   "files": [],
+   "kind": "refuse"
+  },
+  {
+   "name": "a reader region handed a file through the readers shell observes its bytes",
+   "through": "readers",
+   "files": [
+    {
+     "place": "p.txt",
+     "text": "lane/0 holds"
+    }
+   ],
+   "kind": "fact",
+   "claims": [
+    "lane/0 holds"
+   ]
+  },
+  {
+   "name": "a reader region that only observes, handed no file through the readers shell, is refused, never answered empty",
+   "through": "readers",
+   "files": [],
+   "kind": "refuse"
+  },
+  {
+   "name": "a case read while a runner listens notes each field read",
+   "listening": true,
+   "sample": {
+    "cases": [
+     {
+      "a": 1,
+      "b": 2
+     }
+    ]
+   },
+   "at": "samples/yes/one",
+   "read": [
+    "a"
+   ],
+   "notes": [
+    "samples/yes/one#0:a"
+   ]
+  },
+  {
+   "name": "nobody listening, nothing is noted",
+   "listening": false,
+   "sample": {
+    "cases": [
+     {
+      "a": 1
+     }
+    ]
+   },
+   "at": "samples/yes/one",
+   "read": [
+    "a"
+   ],
+   "notes": []
+  },
+  {
+   "name": "a reader region handed a file it does not declare reading is refused, never handed it",
+   "through": "readers",
+   "region": "text",
+   "files": [
+    {
+     "place": "notes.md",
+     "text": "lane/0 holds"
+    }
+   ],
+   "input": "notes.md",
+   "expected": {
+    "kind": "refuse",
+    "why": "Error: REFUSE·region text: notes.md is none of *.txt"
+   }
+  }
+ ]
+}

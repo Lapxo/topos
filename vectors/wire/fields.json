@@ -1,0 +1,197 @@
+{
+ "about": [
+  "The wire is a lock. Its fields, their alphabets and forms, and the algorithms its digests and signatures name are lines of that lock, each with the epoch it was signed at; a claim is read by the lock as it stood when the claim was signed.",
+  "A field the lock does not name is refused. A field the lock closed reads a claim of its own time as history and refuses a later one. A line signed before the lock had any line is history: read, never judged by rules that came after it.",
+  "at carries only the wire's classes; needs is a region, a coordinate prefix at its resolution, never a path; sig names its algorithm by the digest of the blob that defines it, and a digest names its own algorithm from the digest lock.",
+  "The wire that reads a claim of one epoch folds the lock of that epoch, not a grammar remembered beside it."
+ ],
+ "lock": [
+  "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch|shape by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/required role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/roles role=reads form=alphabet measure=id value=reads|writes|demands by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/forms role=reads form=alphabet measure=id value=interval|alphabet|ladder by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/at-classes role=reads form=alphabet measure=id value=origin|place|receipt|witness|policy by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/digest-algorithms role=reads form=alphabet measure=id value=sha256 by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/signature-algorithms role=reads form=alphabet measure=id value=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/form/at role=reads form=alphabet measure=id value=class by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/form/needs role=reads form=alphabet measure=id value=region by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/form/sig role=reads form=alphabet measure=id value=signature by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/form/epoch role=reads form=alphabet measure=id value=count by=owner at=policy:wire epoch=1",
+  "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch by=owner at=policy:wire-without-shape epoch=5",
+  "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch|restsOn|about|kind|view by=owner at=policy:wire-kinds-and-views epoch=7",
+  "bound-lock/1 scope=audit/wire/kinds role=reads form=alphabet measure=id value=axiom|definition|theorem|corollary by=owner at=policy:wire-kinds-and-views epoch=7",
+  "bound-lock/1 scope=audit/wire/views role=reads form=alphabet measure=id value=field|spectrum|ideal|chain|complement|dual|product|quotient|valuation|galois by=owner at=policy:wire-kinds-and-views epoch=7",
+  "bound-lock/1 scope=audit/wire/form/kind role=reads form=alphabet measure=id value=kinds by=owner at=policy:wire-kinds-and-views epoch=7",
+  "bound-lock/1 scope=audit/wire/form/view role=reads form=alphabet measure=id value=views by=owner at=policy:wire-kinds-and-views epoch=7"
+ ],
+ "cases": [
+  {
+   "name": "a line signed before the lock had any line is history, read as it was",
+   "epoch": 0,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=leaf:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb colour=red epoch=0",
+   "read": "fact"
+  },
+  {
+   "name": "every field named, at a wire class, needs a region, sig by digest: read",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/b|c/d/ sig=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:QUJD epoch=3",
+   "read": "fact"
+  },
+  {
+   "name": "a field the lock does not name is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x colour=red epoch=3",
+   "read": "refuse",
+   "field": "colour"
+  },
+  {
+   "name": "a field of its time: shape is open at epoch 3",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=3",
+   "read": "fact"
+  },
+  {
+   "name": "a field the lock closed at epoch 5 refuses a line signed after it",
+   "epoch": 6,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=6",
+   "read": "refuse",
+   "field": "shape"
+  },
+  {
+   "name": "the same closed field still reads its own time as history",
+   "epoch": 4,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=4",
+   "read": "fact"
+  },
+  {
+   "name": "a claim with no at is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner epoch=3",
+   "read": "refuse",
+   "field": "at"
+  },
+  {
+   "name": "at names a place by the digest of its bytes",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=place:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc epoch=3",
+   "read": "fact"
+  },
+  {
+   "name": "at names an origin",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=origin:reader epoch=3",
+   "read": "fact"
+  },
+  {
+   "name": "at with an instrument's class is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=leaf:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc epoch=3",
+   "read": "refuse",
+   "field": "at"
+  },
+  {
+   "name": "at with a card is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=card:cccccccccccccccc epoch=3",
+   "read": "refuse",
+   "field": "at"
+  },
+  {
+   "name": "a digest taken with an algorithm the lock does not admit is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=receipt:md5:dddddddddddddddddddddddddddddddd epoch=3",
+   "read": "refuse",
+   "field": "at"
+  },
+  {
+   "name": "needs as a path from the root is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=/srv/disk/a epoch=3",
+   "read": "refuse",
+   "field": "needs"
+  },
+  {
+   "name": "needs that steps up is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/../b epoch=3",
+   "read": "refuse",
+   "field": "needs"
+  },
+  {
+   "name": "needs with a step that is not a prefix is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/*/b epoch=3",
+   "read": "refuse",
+   "field": "needs"
+  },
+  {
+   "name": "a trailing run of steps is the region before it",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/b/** epoch=3",
+   "read": "fact"
+  },
+  {
+   "name": "sig naming its algorithm by name is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x sig=ed25519:QUJD epoch=3",
+   "read": "refuse",
+   "field": "sig"
+  },
+  {
+   "name": "sig naming an algorithm the lock does not admit is refused",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x sig=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee:QUJD epoch=3",
+   "read": "refuse",
+   "field": "sig"
+  },
+  {
+   "name": "an epoch is a count",
+   "epoch": 3,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x epoch=three",
+   "read": "refuse",
+   "field": "epoch"
+  },
+  {
+   "name": "a kind before the lock names the field is refused",
+   "epoch": 6,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=theorem epoch=6",
+   "read": "refuse",
+   "field": "kind"
+  },
+  {
+   "name": "a kind the lock lists is read",
+   "epoch": 7,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=theorem view=valuation restsOn=law/y about=\"it holds\" epoch=7",
+   "read": "fact"
+  },
+  {
+   "name": "a kind the lock does not list is refused",
+   "epoch": 7,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=lemma epoch=7",
+   "read": "refuse",
+   "field": "kind"
+  },
+  {
+   "name": "a view the lock does not list is refused",
+   "epoch": 7,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x view=lattice epoch=7",
+   "read": "refuse",
+   "field": "view"
+  },
+  {
+   "name": "a list is one id, never several",
+   "epoch": 7,
+   "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x view=field|quotient epoch=7",
+   "read": "refuse",
+   "field": "view"
+  }
+ ],
+ "then": {
+  "fieldsNamingThisEra": 0,
+  "because": [
+   "a sig that names its algorithm by name is refused",
+   "an at whose class is an instrument's is refused",
+   "a needs that is a path is refused"
+  ]
+ }
+}

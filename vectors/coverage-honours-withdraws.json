@@ -1,0 +1,336 @@
+{
+ "about": [
+  "A key's coverage is its standing lines: each coverage line covers what is signed from its epoch until a withdraw of it lands, and covers nothing signed after; the old reach is never counted again.",
+  "The lines are the lane keys as the ledger holds them; each probe is a line a lane would sign at an epoch, and the verdict it gets."
+ ],
+ "cases": [
+  {
+   "name": "the lane keys of the tree",
+   "lines": [
+    {
+     "about": "lane A signs the notation, the frame and the capsules: topos and every topos place, and nothing else",
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "class",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "agent"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "topos/**|topos-frame/**|topos-doc/**|topos-laws/**|topos-notation/**|topos-node/**|topos-github/**|topos-json/**|topos-bound/**|topos-typescript-tree/**"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "public-key",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "MCowBQYDK2VwAyEALpdMdPO3OeXyp6PQcisnTjB9mdeSUiUZCCkRiFK0lys="
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "interval",
+     "measure": "resolution",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "1..16"
+    },
+    {
+     "about": "lane B signs the verb: bound's sources, and nothing else",
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "class",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "agent"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "bound/src/**"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "public-key",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "MCowBQYDK2VwAyEAMJ8w4M+eGkCAWx7rJ4fEf0LOPd7mKzSjNOVYAGv4Y18="
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "interval",
+     "measure": "resolution",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "1..16"
+    },
+    {
+     "about": "lane C signs the object and its second head: obligations, verify and the sources, and nothing else",
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "class",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "agent"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "obligations/**|verify/**|sources/**"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "alphabet",
+     "measure": "public-key",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "MCowBQYDK2VwAyEABGjuoiRkAk1MZ2AeePmBq5Ve0i5PNW0uUkQvCKSWkiI="
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "162",
+     "form": "interval",
+     "measure": "resolution",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "1..16"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "168",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "withdraw"
+    },
+    {
+     "at": "witness:a-lane-could-not-withdraw-a-leaf-of-its-own-place",
+     "by": "owner",
+     "epoch": "168",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "topos/**|topos-frame/**|topos-doc/**|topos-laws/**|topos-notation/**|topos-node/**|topos-github/**|topos-json/**|topos-bound/**|topos-typescript-tree/**|leaf/topos/**|leaf/topos-frame/**|leaf/topos-doc/**|leaf/topos-laws/**|leaf/topos-notation/**|leaf/topos-node/**|leaf/topos-github/**|leaf/topos-json/**|leaf/topos-bound/**|leaf/topos-typescript-tree/**"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "168",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "withdraw"
+    },
+    {
+     "at": "witness:a-lane-could-not-withdraw-a-leaf-of-its-own-place",
+     "by": "owner",
+     "epoch": "168",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "bound/src/**|leaf/bound/**"
+    },
+    {
+     "at": "witness:lane-keys-made-by-the-owner",
+     "by": "owner",
+     "epoch": "168",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "withdraw"
+    },
+    {
+     "at": "witness:a-lane-could-not-withdraw-a-leaf-of-its-own-place",
+     "by": "owner",
+     "epoch": "168",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "obligations/**|verify/**|sources/**|leaf/obligations/**|leaf/verify/**|leaf/sources/**"
+    },
+    {
+     "at": "witness:a-lane-could-not-withdraw-a-leaf-of-its-own-place",
+     "by": "owner",
+     "epoch": "180",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "withdraw"
+    },
+    {
+     "at": "witness:leaf-was-the-old-word",
+     "by": "owner",
+     "epoch": "180",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-A",
+     "value": "topos/**|topos-frame/**|topos-doc/**|topos-laws/**|topos-notation/**|topos-node/**|topos-github/**|topos-json/**|topos-bound/**|topos-typescript-tree/**|region/topos/**|region/topos-frame/**|region/topos-doc/**|region/topos-laws/**|region/topos-notation/**|region/topos-node/**|region/topos-github/**|region/topos-json/**|region/topos-bound/**|region/topos-typescript-tree/**"
+    },
+    {
+     "at": "witness:a-lane-could-not-withdraw-a-leaf-of-its-own-place",
+     "by": "owner",
+     "epoch": "180",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "withdraw"
+    },
+    {
+     "at": "witness:leaf-was-the-old-word",
+     "by": "owner",
+     "epoch": "180",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-B",
+     "value": "bound/src/**|region/bound/**"
+    },
+    {
+     "at": "witness:a-lane-could-not-withdraw-a-leaf-of-its-own-place",
+     "by": "owner",
+     "epoch": "180",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "withdraw"
+    },
+    {
+     "at": "witness:leaf-was-the-old-word",
+     "by": "owner",
+     "epoch": "180",
+     "form": "alphabet",
+     "measure": "coverage",
+     "role": "reads",
+     "scope": "keys/lane-C",
+     "value": "obligations/**|verify/**|sources/**|region/obligations/**|region/verify/**|region/sources/**"
+    }
+   ],
+   "coverage": {
+    "lane-A": [
+     "region/topos-bound/**",
+     "region/topos-doc/**",
+     "region/topos-frame/**",
+     "region/topos-github/**",
+     "region/topos-json/**",
+     "region/topos-laws/**",
+     "region/topos-node/**",
+     "region/topos-notation/**",
+     "region/topos-typescript-tree/**",
+     "region/topos/**",
+     "topos-bound/**",
+     "topos-doc/**",
+     "topos-frame/**",
+     "topos-github/**",
+     "topos-json/**",
+     "topos-laws/**",
+     "topos-node/**",
+     "topos-notation/**",
+     "topos-typescript-tree/**",
+     "topos/**"
+    ],
+    "lane-B": [
+     "bound/src/**",
+     "region/bound/**"
+    ],
+    "lane-C": [
+     "obligations/**",
+     "region/obligations/**",
+     "region/sources/**",
+     "region/verify/**",
+     "sources/**",
+     "verify/**"
+    ]
+   },
+   "probes": [
+    {
+     "by": "lane-B",
+     "scope": "leaf/bound/src/x.ts",
+     "epoch": 172,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-B",
+     "scope": "leaf/bound/src/x.ts",
+     "epoch": 181,
+     "kind": "refuse"
+    },
+    {
+     "by": "lane-B",
+     "scope": "region/bound/x",
+     "epoch": 181,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-C",
+     "scope": "leaf/obligations/x",
+     "epoch": 177,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-C",
+     "scope": "leaf/obligations/x",
+     "epoch": 181,
+     "kind": "refuse"
+    },
+    {
+     "by": "lane-A",
+     "scope": "topos-node/x",
+     "epoch": 181,
+     "kind": "admitted"
+    },
+    {
+     "by": "lane-A",
+     "scope": "leaf/topos-node/x",
+     "epoch": 181,
+     "kind": "refuse"
+    }
+   ]
+  }
+ ]
+}

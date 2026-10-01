@@ -1,0 +1,18 @@
+import { latticeForm } from '@lapxo/obligations';
+import { levelsOf, paramsOf, refuseForm, wordsAt } from "./form.js";
+/** An order a line names outright: its levels and, for each pair, whether the first lies under the second. */
+function orderOf(params) {
+    const levels = wordsAt('lattice', params, 'levels');
+    const leq = paramsOf(params)['leq'];
+    if (!Array.isArray(leq) || leq.length !== levels.length || leq.some((row) => !Array.isArray(row) || row.length !== levels.length))
+        refuseForm('lattice', 'takes leq as a square of truths over its levels');
+    return { levels, leq: leq };
+}
+export const latticeOfForm = {
+    id: 'lattice',
+    lattice: (params) => latticeForm.lattice(orderOf(params)),
+    parse: (params, text) => levelsOf('lattice', orderOf(params).levels, text),
+    emit: (_params, value) => (value.floor === value.ceiling ? value.floor : `${value.floor}..${value.ceiling}`),
+    show: (params, value) => latticeForm.lattice(orderOf(params)).show(value),
+    points: (params, seed, n) => latticeForm.points(orderOf(params), seed, n),
+};

@@ -1,0 +1,31 @@
+{
+ "about": [
+  "Forms are locks loaded by name: the wire admits a form because a line of its lock names it, and reads a field by the",
+  "alphabet a lock line names for it. Two locks that differ only in their lines read the same line differently, and a",
+  "form the code knows but no line names abstains."
+ ],
+ "worlds": {
+  "a": [
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/fields value=scope|measure|form|value|role|colour",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/roles value=reads|writes|demands",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/forms value=alphabet|interval",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/form/colour value=colours",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/colours value=red|blue"
+  ],
+  "b": [
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/fields value=scope|measure|form|value|role|colour",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/roles value=reads|writes|demands",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/forms value=alphabet|ladder",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/form/colour value=colours",
+   "bound-lock/1 epoch=1 form=alphabet measure=id role=reads scope=audit/wire/colours value=green|red"
+  ]
+ },
+ "cases": [
+  { "name": "a form a lock line names reads", "world": "a", "line": "bound-lock/1 form=interval measure=len role=reads scope=x value=0..3", "kind": "fact" },
+  { "name": "the same form abstains under a lock that does not name it", "world": "b", "line": "bound-lock/1 form=interval measure=len role=reads scope=x value=0..3", "kind": "abstain" },
+  { "name": "a field reads the words of the alphabet its lock line names", "world": "a", "line": "bound-lock/1 colour=blue form=alphabet measure=id role=reads scope=x value=a", "kind": "fact" },
+  { "name": "a word outside that alphabet is refused", "world": "a", "line": "bound-lock/1 colour=green form=alphabet measure=id role=reads scope=x value=a", "kind": "refuse" },
+  { "name": "another lock's alphabet admits it: no code names the words", "world": "b", "line": "bound-lock/1 colour=green form=alphabet measure=id role=reads scope=x value=a", "kind": "fact" },
+  { "name": "an interval with three parts is refused", "world": "a", "input": "bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3", "expected": { "kind": "refuse", "why": "`0..1..3` is no interval the wire reads: two ends, each decimal or *" } }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "about": [
+  "A source leaf is a point: a coordinate and a digest. A directory is a render of its leaves at a coarser",
+  "resolution, and a move is the same digest at a new coordinate — a place changed, the content did not."
+ ],
+ "cases": [
+  {
+   "name": "a directory is its leaves read one step coarser",
+   "leaves": [
+    {
+     "at": "a/b/x",
+     "digest": "d1"
+    },
+    {
+     "at": "a/b/y",
+     "digest": "d2"
+    }
+   ],
+   "steps": 2,
+   "render": {
+    "a/b": 2
+   }
+  },
+  {
+   "name": "the same digest at a new coordinate is a move",
+   "before": {
+    "at": "a/x",
+    "digest": "d1"
+   },
+   "after": {
+    "at": "a/y",
+    "digest": "d1"
+   },
+   "moved": true,
+   "changed": false
+  },
+  {
+   "name": "a new digest at the same coordinate is a change",
+   "before": {
+    "at": "a/x",
+    "digest": "d1"
+   },
+   "after": {
+    "at": "a/x",
+    "digest": "d2"
+   },
+   "moved": false,
+   "changed": true
+  }
+ ]
+}

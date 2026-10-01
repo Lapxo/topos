@@ -1,0 +1,11 @@
+{
+ "witness": "a-figure-that-drew-a-line-no-sample-carried",
+ "reads": "said/lines",
+ "handed": "the lines a sample carries, said by the reader of the place, and nothing else",
+ "lines": [
+  "bound-lock/1 at=policy:wire/fields by=a form=interval measure=count role=reads scope=wire/line/fields value=7..16",
+  "bound-lock/1 at=policy:wire/fields by=b form=interval measure=count role=reads scope=wire/line/fields value=7..12"
+ ],
+ "why": "two origins read one quantity, the fields a line of the wire carries: one from the wire, which requires seven and names sixteen, and one from the lines the lock of topos holds, which carry seven to twelve; they meet where both hold, and a figure that draws a line or folds two draws them from a sample a reader says, never from a line written in a capsule or a page",
+ "expected.ok": true
+}

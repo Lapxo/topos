@@ -1,0 +1,12 @@
+{
+ "witness": "a-fold-that-drew-no-meet",
+ "reads": "said/lines",
+ "handed": "the lines a sample carries, said by the reader of the place, and nothing else",
+ "lines": [
+  "bound-lock/1 at=policy:room/temperature by=north form=interval measure=celsius role=reads scope=room/temperature value=21.0..21.6",
+  "bound-lock/1 at=policy:room/temperature by=south form=interval measure=celsius role=reads scope=room/temperature value=21.2..21.4",
+  "bound-lock/1 at=policy:room/temperature by=radiator form=interval measure=celsius role=reads scope=room/temperature value=24.0..24.4"
+ ],
+ "why": "three origins read one quantity, the temperature of one room: the thermometers on its north and south walls hold where they overlap, and the one on the radiator claims a range neither of them allows; a fold draws the two that meet as one cell and the third apart, from a sample a reader says, never from a line written in a capsule or a page",
+ "expected.ok": true
+}

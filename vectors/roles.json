@@ -1,0 +1,89 @@
+{
+ "about": [
+  "Every leaf has one role: source, derived, observed or foreign. A capsule names roles as claims on",
+  "leaf-role/<name>; a name matches a whole segment, and *<end> matches a segment that ends with <end>.",
+  "Foreign outranks derived, derived outranks observed, and a leaf no claim names is source.",
+  "",
+  "It got its own file because a take on 2026-09-17 landed 11 leaves for 5: the build output, the build info",
+  "and two linked packages entered the moved set as if they were source.",
+  "",
+  "The star came the same day: a store and an extension share the spelling .bound, and reading every dotted",
+  "name as an ending would have made each claim file of the tree observed, and invisible to the judge."
+ ],
+ "claims": [
+  {
+   "name": "node_modules",
+   "role": "foreign"
+  },
+  {
+   "name": "dist",
+   "role": "derived"
+  },
+  {
+   "name": "*.tsbuildinfo",
+   "role": "derived"
+  },
+  {
+   "name": ".bound",
+   "role": "observed"
+  }
+ ],
+ "cases": [
+  {
+   "leaf": "topos-contract/src/observe.ts",
+   "role": "source"
+  },
+  {
+   "leaf": "topos-contract/samples/yes/coherent.json",
+   "role": "source"
+  },
+  {
+   "leaf": "topos-contract/dist/observe.js",
+   "role": "derived"
+  },
+  {
+   "leaf": "topos-contract/dist/observe.d.ts.map",
+   "role": "derived"
+  },
+  {
+   "leaf": "topos-contract/.tsbuildinfo",
+   "role": "derived"
+  },
+  {
+   "leaf": "topos-contract/tsconfig.tsbuildinfo",
+   "role": "derived"
+  },
+  {
+   "leaf": "topos-contract/node_modules/@lapxo/topos",
+   "role": "foreign"
+  },
+  {
+   "leaf": "vendor/node_modules/pkg/dist/index.js",
+   "role": "foreign"
+  },
+  {
+   "leaf": "docs/distribution.md",
+   "role": "source"
+  },
+  {
+   "leaf": ".bound/cas/ledger/owner.bound",
+   "role": "observed"
+  },
+  {
+   "leaf": "bound/.bound/gen/0a1b/work/topos/src/index.ts",
+   "role": "observed"
+  },
+  {
+   "leaf": ".bound/gen/0a1b/work/node_modules/pkg/index.js",
+   "role": "foreign"
+  },
+  {
+   "leaf": "topos-bound/roles.bound",
+   "role": "source"
+  },
+  {
+   "leaf": "bound/samples/judge/no/take-landed-derived-leaves.bound",
+   "role": "source"
+  }
+ ]
+}

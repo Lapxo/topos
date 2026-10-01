@@ -1,0 +1,891 @@
+{
+ "about": [
+  "Every line of spec/vectors/fold.txt with what the wire reads of it: a refusal and its why, or a fact, its canonical",
+  "line, its fields and the sha256 of its canonical bytes, and whether that canonical line reads back to itself."
+ ],
+ "source": "spec/vectors/fold.txt",
+ "cases": [
+  {
+   "name": "fold.txt:13",
+   "block": "the meet of two readers",
+   "input": "bound-lock/1 at=a:1 by=api form=interval measure=len role=reads scope=order/ref value=0..320",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=a:1 by=api form=interval measure=len role=reads scope=order/ref value=0..320",
+    "fields": {
+     "at": "a:1",
+     "by": "api",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "order/ref",
+     "value": "0..320"
+    },
+    "sha256": "70eb18272786d7c7eaecfb40cb1e5f346d0070753987df98c7a2a0ce51a0494d",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:14",
+   "block": "the meet of two readers",
+   "input": "bound-lock/1 at=b:1 by=db form=interval measure=len role=reads scope=order/ref value=0..255",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=b:1 by=db form=interval measure=len role=reads scope=order/ref value=0..255",
+    "fields": {
+     "at": "b:1",
+     "by": "db",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "order/ref",
+     "value": "0..255"
+    },
+    "sha256": "59b69ead07643214dadded7d70608259a0eb8caf021a62dc22524247b3aa90db",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:19",
+   "block": "an OPEN end contributes nothing to the extent",
+   "input": "bound-lock/1 at=c:1 by=api form=interval measure=magnitude role=reads scope=order/seq value=0..*",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=c:1 by=api form=interval measure=magnitude role=reads scope=order/seq value=0..*",
+    "fields": {
+     "at": "c:1",
+     "by": "api",
+     "form": "interval",
+     "measure": "magnitude",
+     "role": "reads",
+     "scope": "order/seq",
+     "value": "0..*"
+    },
+    "sha256": "99452829420c2fbbb3dbdf75c674af59945843cd85c31160e0ce1e6e572e261e",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:20",
+   "block": "an OPEN end contributes nothing to the extent",
+   "input": "bound-lock/1 at=c:2 by=api form=interval measure=magnitude role=reads scope=order/seq value=0..*",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=c:2 by=api form=interval measure=magnitude role=reads scope=order/seq value=0..*",
+    "fields": {
+     "at": "c:2",
+     "by": "api",
+     "form": "interval",
+     "measure": "magnitude",
+     "role": "reads",
+     "scope": "order/seq",
+     "value": "0..*"
+    },
+    "sha256": "06e25a6035b2f9c17ebc52245334e03af40a063e74652d1fd6a0381e4b924300",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:23",
+   "block": "SILENCE PERMITS: no reader, so permitted is the whole extent",
+   "input": "bound-lock/1 at=d:1 by=infra form=interval measure=magnitude role=writes scope=log/retention value=30..30",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=d:1 by=infra form=interval measure=magnitude role=writes scope=log/retention value=30..30",
+    "fields": {
+     "at": "d:1",
+     "by": "infra",
+     "form": "interval",
+     "measure": "magnitude",
+     "role": "writes",
+     "scope": "log/retention",
+     "value": "30..30"
+    },
+    "sha256": "37a1aa54e8e69f681568fb9b997c7d2da70695bba72f9dfe92c500a7185515c7",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:26",
+   "block": "NO WRITER: demanded is EMPTY, and that is not \"nothing may be written\"",
+   "input": "bound-lock/1 at=e:1 by=db form=alphabet measure=value role=reads scope=order/status value=draft|sent|void",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=e:1 by=db form=alphabet measure=value role=reads scope=order/status value=draft|sent|void",
+    "fields": {
+     "at": "e:1",
+     "by": "db",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "order/status",
+     "value": "draft|sent|void"
+    },
+    "sha256": "7be02f72d27c96b7794e54d3bb94135d481e3f5ffde785b766a8b3c509d853a1",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:29",
+   "block": "HEALTH ok: the writer falls inside every reader",
+   "input": "bound-lock/1 at=f:1 by=db form=alphabet measure=value role=reads scope=user/role value=admin|member",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=f:1 by=db form=alphabet measure=value role=reads scope=user/role value=admin|member",
+    "fields": {
+     "at": "f:1",
+     "by": "db",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "user/role",
+     "value": "admin|member"
+    },
+    "sha256": "85c368a910bf317495dd709a1a37d0dd035061fa24850db61d0970edd2b1b75c",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:30",
+   "block": "HEALTH ok: the writer falls inside every reader",
+   "input": "bound-lock/1 at=f:2 by=app form=alphabet measure=value role=writes scope=user/role value=member",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=f:2 by=app form=alphabet measure=value role=writes scope=user/role value=member",
+    "fields": {
+     "at": "f:2",
+     "by": "app",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "writes",
+     "scope": "user/role",
+     "value": "member"
+    },
+    "sha256": "e988c8b3ff443db20ca8522689977abee6474019ffd7fa843647e1c95cd70817",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:33",
+   "block": "HEALTH broken: the writer falls OUTSIDE",
+   "input": "bound-lock/1 at=g:1 by=db form=interval measure=len role=reads scope=user/name value=0..24",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=g:1 by=db form=interval measure=len role=reads scope=user/name value=0..24",
+    "fields": {
+     "at": "g:1",
+     "by": "db",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "user/name",
+     "value": "0..24"
+    },
+    "sha256": "28124cf39bc13e3c66582a84cc22016d6776d909519f16037a68b25979444e0a",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:34",
+   "block": "HEALTH broken: the writer falls OUTSIDE",
+   "input": "bound-lock/1 at=g:2 by=infra form=interval measure=len role=writes scope=user/name value=31..31",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=g:2 by=infra form=interval measure=len role=writes scope=user/name value=31..31",
+    "fields": {
+     "at": "g:2",
+     "by": "infra",
+     "form": "interval",
+     "measure": "len",
+     "role": "writes",
+     "scope": "user/name",
+     "value": "31..31"
+    },
+    "sha256": "5fd7eb37938d249d0793209947c1b8454d6488eaf25a5ede0d85e28d26bfedb5",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:37",
+   "block": "THE MEET IS EMPTY: a refusal, and it names its sources",
+   "input": "bound-lock/1 at=h:1 by=api form=alphabet measure=value role=reads scope=job/state value=queued",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=h:1 by=api form=alphabet measure=value role=reads scope=job/state value=queued",
+    "fields": {
+     "at": "h:1",
+     "by": "api",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "job/state",
+     "value": "queued"
+    },
+    "sha256": "1b75ed8b2b1a1cb5f23a4651a8e2ec12e94623e8c9beb9f9fe6642a7aa5b4520",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:38",
+   "block": "THE MEET IS EMPTY: a refusal, and it names its sources",
+   "input": "bound-lock/1 at=h:2 by=front form=alphabet measure=value role=reads scope=job/state value=running",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=h:2 by=front form=alphabet measure=value role=reads scope=job/state value=running",
+    "fields": {
+     "at": "h:2",
+     "by": "front",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "job/state",
+     "value": "running"
+    },
+    "sha256": "0a62bff8c5c97fa8f7e60a1bda62f09619bd8f442d6899e6a56b42f69dca536c",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:42",
+   "block": "MULTIPLICITY: `one` and `many` are DIFFERENT CELLS, not a conflict",
+   "input": "bound-lock/1 at=i:1 by=db form=alphabet measure=value multiplicity=one scope=ticket/state role=reads value=open|shut",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=i:1 by=db form=alphabet measure=value multiplicity=one role=reads scope=ticket/state value=open|shut",
+    "fields": {
+     "at": "i:1",
+     "by": "db",
+     "form": "alphabet",
+     "measure": "value",
+     "multiplicity": "one",
+     "scope": "ticket/state",
+     "role": "reads",
+     "value": "open|shut"
+    },
+    "sha256": "6205b5175f2e5f87454d03cfd089497380c3a19191fff7bd56aafefa4167a143",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:43",
+   "block": "MULTIPLICITY: `one` and `many` are DIFFERENT CELLS, not a conflict",
+   "input": "bound-lock/1 at=i:2 by=log form=alphabet measure=value multiplicity=many scope=ticket/state role=reads value=open|shut|merged",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=i:2 by=log form=alphabet measure=value multiplicity=many role=reads scope=ticket/state value=open|shut|merged",
+    "fields": {
+     "at": "i:2",
+     "by": "log",
+     "form": "alphabet",
+     "measure": "value",
+     "multiplicity": "many",
+     "scope": "ticket/state",
+     "role": "reads",
+     "value": "open|shut|merged"
+    },
+    "sha256": "aa2f29c40c93866e4763158ad8d9361314ffbba403900501612c01b431ba730a",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:46",
+   "block": "and UNKNOWN joins whichever side already exists",
+   "input": "bound-lock/1 at=j:1 by=db form=alphabet measure=value multiplicity=one scope=note/kind role=reads value=memo|todo",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=j:1 by=db form=alphabet measure=value multiplicity=one role=reads scope=note/kind value=memo|todo",
+    "fields": {
+     "at": "j:1",
+     "by": "db",
+     "form": "alphabet",
+     "measure": "value",
+     "multiplicity": "one",
+     "scope": "note/kind",
+     "role": "reads",
+     "value": "memo|todo"
+    },
+    "sha256": "1ff00c155dba8662824b9b440fd18f05540dee2c819a3f9ff72a58113b723e88",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:47",
+   "block": "and UNKNOWN joins whichever side already exists",
+   "input": "bound-lock/1 at=j:2 by=front form=alphabet measure=value scope=note/kind role=reads value=memo",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=j:2 by=front form=alphabet measure=value role=reads scope=note/kind value=memo",
+    "fields": {
+     "at": "j:2",
+     "by": "front",
+     "form": "alphabet",
+     "measure": "value",
+     "scope": "note/kind",
+     "role": "reads",
+     "value": "memo"
+    },
+    "sha256": "c73a47f9e05fdabcf05bcf695a6e50aca9cd63506f675629a3f41608c37cdaac",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:51",
+   "block": "ONE MEASURE, ONE FORM: two shapes on one measure DROPS it entirely",
+   "input": "bound-lock/1 at=k:1 by=api form=alphabet measure=mixed role=reads scope=one/here value=a|b",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=k:1 by=api form=alphabet measure=mixed role=reads scope=one/here value=a|b",
+    "fields": {
+     "at": "k:1",
+     "by": "api",
+     "form": "alphabet",
+     "measure": "mixed",
+     "role": "reads",
+     "scope": "one/here",
+     "value": "a|b"
+    },
+    "sha256": "ded59c88d279f188e74eefe91d2869a2d7948c88e1b756568773c4b1314562bc",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:52",
+   "block": "ONE MEASURE, ONE FORM: two shapes on one measure DROPS it entirely",
+   "input": "bound-lock/1 at=k:2 by=db form=interval measure=mixed role=reads scope=two/there value=0..9",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=k:2 by=db form=interval measure=mixed role=reads scope=two/there value=0..9",
+    "fields": {
+     "at": "k:2",
+     "by": "db",
+     "form": "interval",
+     "measure": "mixed",
+     "role": "reads",
+     "scope": "two/there",
+     "value": "0..9"
+    },
+    "sha256": "518cd16dc9e16f0bd7fd1a05c1bccbb4f10ce11283833bbae2f3ca4af3ff7b51",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:55",
+   "block": "UNITS: an unstated unit does not conflict with a stated one",
+   "input": "bound-lock/1 at=l:1 by=db form=interval measure=len role=reads scope=post/title unit=postgres:character_length value=0..80",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=l:1 by=db form=interval measure=len role=reads scope=post/title unit=postgres:character_length value=0..80",
+    "fields": {
+     "at": "l:1",
+     "by": "db",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "post/title",
+     "unit": "postgres:character_length",
+     "value": "0..80"
+    },
+    "sha256": "6b909fafcb4b6426b2d93edf9a0e61b72debb70454dcf30fa050048c7e6dfeea",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:56",
+   "block": "UNITS: an unstated unit does not conflict with a stated one",
+   "input": "bound-lock/1 at=l:2 by=front form=interval measure=len role=reads scope=post/title value=0..100",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=l:2 by=front form=interval measure=len role=reads scope=post/title value=0..100",
+    "fields": {
+     "at": "l:2",
+     "by": "front",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "post/title",
+     "value": "0..100"
+    },
+    "sha256": "a3d92cc2b92f301d0060d18c351fff4e345022d89265433ad35cf2b7cb78f870",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:59",
+   "block": "IDEMPOTENT: the same claim twice is the same claim once",
+   "input": "bound-lock/1 at=m:1 by=api form=alphabet measure=value role=reads scope=flag/on value=yes|no",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=m:1 by=api form=alphabet measure=value role=reads scope=flag/on value=yes|no",
+    "fields": {
+     "at": "m:1",
+     "by": "api",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "flag/on",
+     "value": "yes|no"
+    },
+    "sha256": "bc62947746c322d4d62f3f9c4da1c84e4e05ac650a1d7ce9458e9bfad6ca98db",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:60",
+   "block": "IDEMPOTENT: the same claim twice is the same claim once",
+   "input": "bound-lock/1 at=m:1 by=api form=alphabet measure=value role=reads scope=flag/on value=yes|no",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=m:1 by=api form=alphabet measure=value role=reads scope=flag/on value=yes|no",
+    "fields": {
+     "at": "m:1",
+     "by": "api",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "flag/on",
+     "value": "yes|no"
+    },
+    "sha256": "bc62947746c322d4d62f3f9c4da1c84e4e05ac650a1d7ce9458e9bfad6ca98db",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:63",
+   "block": "COMMUTATIVE: these two arrive in the opposite order to the first block",
+   "input": "bound-lock/1 at=n:2 by=db form=interval measure=len role=reads scope=tag/slug value=0..16",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=n:2 by=db form=interval measure=len role=reads scope=tag/slug value=0..16",
+    "fields": {
+     "at": "n:2",
+     "by": "db",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "tag/slug",
+     "value": "0..16"
+    },
+    "sha256": "cd5c57158009a4f166099ef3bfcfe6a421a7fc8bcc18395f1349d25a32069252",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:64",
+   "block": "COMMUTATIVE: these two arrive in the opposite order to the first block",
+   "input": "bound-lock/1 at=n:1 by=api form=interval measure=len role=reads scope=tag/slug value=0..64",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=n:1 by=api form=interval measure=len role=reads scope=tag/slug value=0..64",
+    "fields": {
+     "at": "n:1",
+     "by": "api",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "tag/slug",
+     "value": "0..64"
+    },
+    "sha256": "e3b2eaff457ed180e3ddf8f7fe27c34ca613c52925999bac989e551f7fc6a3bf",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:68",
+   "block": "TWO WRITERS JOIN into the CONVEX HULL, which claims the gap",
+   "input": "bound-lock/1 at=o:1 by=jobs form=interval measure=magnitude role=writes scope=batch/size value=10..10",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=o:1 by=jobs form=interval measure=magnitude role=writes scope=batch/size value=10..10",
+    "fields": {
+     "at": "o:1",
+     "by": "jobs",
+     "form": "interval",
+     "measure": "magnitude",
+     "role": "writes",
+     "scope": "batch/size",
+     "value": "10..10"
+    },
+    "sha256": "98145b09e6dfb235674bf13e6678be8a3cb90a3df30b7f6ca8efbfde22f49e01",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:69",
+   "block": "TWO WRITERS JOIN into the CONVEX HULL, which claims the gap",
+   "input": "bound-lock/1 at=o:2 by=cron form=interval measure=magnitude role=writes scope=batch/size value=90..90",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=o:2 by=cron form=interval measure=magnitude role=writes scope=batch/size value=90..90",
+    "fields": {
+     "at": "o:2",
+     "by": "cron",
+     "form": "interval",
+     "measure": "magnitude",
+     "role": "writes",
+     "scope": "batch/size",
+     "value": "90..90"
+    },
+    "sha256": "b32f4901025fb9f90c32f8ae2db6595fc15bbcd333d18924ad99026452ddee3b",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:70",
+   "block": "TWO WRITERS JOIN into the CONVEX HULL, which claims the gap",
+   "input": "bound-lock/1 at=o:3 by=db form=interval measure=magnitude role=reads scope=batch/size value=1..100",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=o:3 by=db form=interval measure=magnitude role=reads scope=batch/size value=1..100",
+    "fields": {
+     "at": "o:3",
+     "by": "db",
+     "form": "interval",
+     "measure": "magnitude",
+     "role": "reads",
+     "scope": "batch/size",
+     "value": "1..100"
+    },
+    "sha256": "782e287dd5134ccf2c976b5e633c275a826c4f3c87431e7ae11407c6add2a397",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:75",
+   "block": "CROSS-UNIT HEALTH: with no lens between the units, it is UNEVALUATED",
+   "input": "bound-lock/1 at=p:1 by=db form=interval measure=len role=reads scope=card/pan unit=postgres:character_length value=0..8",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=p:1 by=db form=interval measure=len role=reads scope=card/pan unit=postgres:character_length value=0..8",
+    "fields": {
+     "at": "p:1",
+     "by": "db",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "card/pan",
+     "unit": "postgres:character_length",
+     "value": "0..8"
+    },
+    "sha256": "21465191c32c5d1dd3c20812d13cb25921f08dc887a510c7962d0c2fe426f0b7",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:76",
+   "block": "CROSS-UNIT HEALTH: with no lens between the units, it is UNEVALUATED",
+   "input": "bound-lock/1 at=p:2 by=app form=interval measure=len role=writes scope=card/pan unit=js:String.length value=7..7",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=p:2 by=app form=interval measure=len role=writes scope=card/pan unit=js:String.length value=7..7",
+    "fields": {
+     "at": "p:2",
+     "by": "app",
+     "form": "interval",
+     "measure": "len",
+     "role": "writes",
+     "scope": "card/pan",
+     "unit": "js:String.length",
+     "value": "7..7"
+    },
+    "sha256": "f01ca5894fe1594c5d715ca8802be458bb695e8bf1fb370adf7fc27a1bf0a3c7",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:86",
+   "block": "RULE 3b: an element that CONTAINS the separator",
+   "input": "bound-lock/1 at=q:1 by=\"a|b\" form=alphabet measure=value role=reads scope=pipe/name value=x",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=q:1 by=a|b form=alphabet measure=value role=reads scope=pipe/name value=x",
+    "fields": {
+     "at": "q:1",
+     "by": "a|b",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "pipe/name",
+     "value": "x"
+    },
+    "sha256": "bac30948f35161355f88879e9b943932e719cd95343b8482f8aeb006e26aa65a",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:87",
+   "block": "RULE 3b: an element that CONTAINS the separator",
+   "input": "bound-lock/1 at=q:2 by=plain form=alphabet measure=value role=reads scope=pipe/name value=x",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=q:2 by=plain form=alphabet measure=value role=reads scope=pipe/name value=x",
+    "fields": {
+     "at": "q:2",
+     "by": "plain",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "pipe/name",
+     "value": "x"
+    },
+    "sha256": "0c0aade297fddf6373bd85f59c8bb1588754f664d59f7d68847cf28684b64cf7",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:91",
+   "block": "RULE 3b: an element that CONTAINS the separator",
+   "input": "bound-lock/1 at=r:1 by=api form=alphabet measure=value role=reads scope=pipe/member value=\"a\\\\|b|c\"",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=r:1 by=api form=alphabet measure=value role=reads scope=pipe/member value=\"a\\\\|b|c\"",
+    "fields": {
+     "at": "r:1",
+     "by": "api",
+     "form": "alphabet",
+     "measure": "value",
+     "role": "reads",
+     "scope": "pipe/member",
+     "value": "a\\|b|c"
+    },
+    "sha256": "c8689562f8988b6567a8dd213790a95dc18e844dc5a47537539a5388bb5898ca",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:97",
+   "block": "EVIDENCE: the floor takes the WEAKEST method among the writes",
+   "input": "bound-lock/1 at=e:1 by=db form=interval measure=len method=exact role=writes scope=evidence/floor value=4..4",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=e:1 by=db form=interval measure=len method=exact role=writes scope=evidence/floor value=4..4",
+    "fields": {
+     "at": "e:1",
+     "by": "db",
+     "form": "interval",
+     "measure": "len",
+     "method": "exact",
+     "role": "writes",
+     "scope": "evidence/floor",
+     "value": "4..4"
+    },
+    "sha256": "ba8fefe5554fbdb03c33b789f287915e756a7e67abcacb8b2acf6be9e6f35b95",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:98",
+   "block": "EVIDENCE: the floor takes the WEAKEST method among the writes",
+   "input": "bound-lock/1 at=e:2 by=api form=interval measure=len method=sample role=writes scope=evidence/floor value=6..6",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=e:2 by=api form=interval measure=len method=sample role=writes scope=evidence/floor value=6..6",
+    "fields": {
+     "at": "e:2",
+     "by": "api",
+     "form": "interval",
+     "measure": "len",
+     "method": "sample",
+     "role": "writes",
+     "scope": "evidence/floor",
+     "value": "6..6"
+    },
+    "sha256": "871a0564d646a2ba86f0b9d2b642ea800eb6a1693541f6792a2f90606ccc7a17",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:104",
+   "block": "and an ABSENT method is `declared`, the weakest rung",
+   "input": "bound-lock/1 at=f:1 by=db form=interval measure=len method=exact role=writes scope=evidence/absent value=3..3",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=f:1 by=db form=interval measure=len method=exact role=writes scope=evidence/absent value=3..3",
+    "fields": {
+     "at": "f:1",
+     "by": "db",
+     "form": "interval",
+     "measure": "len",
+     "method": "exact",
+     "role": "writes",
+     "scope": "evidence/absent",
+     "value": "3..3"
+    },
+    "sha256": "49530a954406aff9f312a7d5f2f1e58e053707375e94e9d4f7c45fcec9fc5bc3",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:105",
+   "block": "and an ABSENT method is `declared`, the weakest rung",
+   "input": "bound-lock/1 at=f:2 by=front form=interval measure=len role=writes scope=evidence/absent value=5..5",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=f:2 by=front form=interval measure=len role=writes scope=evidence/absent value=5..5",
+    "fields": {
+     "at": "f:2",
+     "by": "front",
+     "form": "interval",
+     "measure": "len",
+     "role": "writes",
+     "scope": "evidence/absent",
+     "value": "5..5"
+    },
+    "sha256": "8844a08a6039e450527650fc825cd7d7365e1b1d600c626146def5df329288ba",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:111",
+   "block": "COVERAGE MULTIPLIES, and the product is not idempotent",
+   "input": "bound-lock/1 at=g:1 by=db coverage=0.9 form=interval measure=len method=sample role=writes scope=order/note value=10..10",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=g:1 by=db coverage=0.9 form=interval measure=len method=sample role=writes scope=order/note value=10..10",
+    "fields": {
+     "at": "g:1",
+     "by": "db",
+     "coverage": "0.9",
+     "form": "interval",
+     "measure": "len",
+     "method": "sample",
+     "role": "writes",
+     "scope": "order/note",
+     "value": "10..10"
+    },
+    "sha256": "80eee47eea55b482d0e14f7d06f0516eeba15170244774ef971fec8228169a59",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:112",
+   "block": "COVERAGE MULTIPLIES, and the product is not idempotent",
+   "input": "bound-lock/1 at=g:2 by=api coverage=0.9 form=interval measure=len method=sample role=writes scope=order/note value=12..12",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=g:2 by=api coverage=0.9 form=interval measure=len method=sample role=writes scope=order/note value=12..12",
+    "fields": {
+     "at": "g:2",
+     "by": "api",
+     "coverage": "0.9",
+     "form": "interval",
+     "measure": "len",
+     "method": "sample",
+     "role": "writes",
+     "scope": "order/note",
+     "value": "12..12"
+    },
+    "sha256": "280f46656c4f4338cc76869b232cc608842e63bcd760d995543398e47098db3a",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:117",
+   "block": "the bytes are verbatim, and parsed only at the multiply",
+   "input": "bound-lock/1 at=h:1 by=db coverage=1.0 form=interval measure=magnitude method=sample role=writes scope=order/size value=1..1",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=h:1 by=db coverage=1.0 form=interval measure=magnitude method=sample role=writes scope=order/size value=1..1",
+    "fields": {
+     "at": "h:1",
+     "by": "db",
+     "coverage": "1.0",
+     "form": "interval",
+     "measure": "magnitude",
+     "method": "sample",
+     "role": "writes",
+     "scope": "order/size",
+     "value": "1..1"
+    },
+    "sha256": "ffbded9278550756f9d5117717b2e49f91aaf466eadb084221c087d2717af161",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:118",
+   "block": "the bytes are verbatim, and parsed only at the multiply",
+   "input": "bound-lock/1 at=h:2 by=api coverage=.5 form=interval measure=magnitude method=sample role=writes scope=order/size value=2..2",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=h:2 by=api coverage=.5 form=interval measure=magnitude method=sample role=writes scope=order/size value=2..2",
+    "fields": {
+     "at": "h:2",
+     "by": "api",
+     "coverage": ".5",
+     "form": "interval",
+     "measure": "magnitude",
+     "method": "sample",
+     "role": "writes",
+     "scope": "order/size",
+     "value": "2..2"
+    },
+    "sha256": "269b44e297cb8602b28a6e405620946135460110c1eac6b778a14e40b2f117b4",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:123",
+   "block": "ONE SOURCE SEEN TWICE IS ONE SOURCE — the fixed point depends on it",
+   "input": "bound-lock/1 at=i:1 by=db coverage=0.8 form=interval measure=len method=sample role=writes scope=order/tag value=7..7",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=i:1 by=db coverage=0.8 form=interval measure=len method=sample role=writes scope=order/tag value=7..7",
+    "fields": {
+     "at": "i:1",
+     "by": "db",
+     "coverage": "0.8",
+     "form": "interval",
+     "measure": "len",
+     "method": "sample",
+     "role": "writes",
+     "scope": "order/tag",
+     "value": "7..7"
+    },
+    "sha256": "3fb3c3e380adf41244ae6487d3e4da118bbf822a5463f8de9024b682b986eec5",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:124",
+   "block": "ONE SOURCE SEEN TWICE IS ONE SOURCE — the fixed point depends on it",
+   "input": "bound-lock/1 at=i:1 by=db coverage=0.8 form=interval measure=len method=sample role=writes scope=order/tag value=7..7",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=i:1 by=db coverage=0.8 form=interval measure=len method=sample role=writes scope=order/tag value=7..7",
+    "fields": {
+     "at": "i:1",
+     "by": "db",
+     "coverage": "0.8",
+     "form": "interval",
+     "measure": "len",
+     "method": "sample",
+     "role": "writes",
+     "scope": "order/tag",
+     "value": "7..7"
+    },
+    "sha256": "3fb3c3e380adf41244ae6487d3e4da118bbf822a5463f8de9024b682b986eec5",
+    "roundTrip": true
+   }
+  },
+  {
+   "name": "fold.txt:129",
+   "block": "a cell with no writer has NO floor kind",
+   "input": "bound-lock/1 at=j:1 by=api coverage=0.7 form=interval measure=len role=reads scope=order/slug value=0..64",
+   "expected": {
+    "kind": "fact",
+    "canonical": "bound-lock/1 at=j:1 by=api coverage=0.7 form=interval measure=len role=reads scope=order/slug value=0..64",
+    "fields": {
+     "at": "j:1",
+     "by": "api",
+     "coverage": "0.7",
+     "form": "interval",
+     "measure": "len",
+     "role": "reads",
+     "scope": "order/slug",
+     "value": "0..64"
+    },
+    "sha256": "5139e6b6334b032b103151a6433c52c4c4c20564415fbc0b38b4d516c5afc1a2",
+    "roundTrip": true
+   }
+  }
+ ]
+}

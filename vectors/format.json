@@ -1,0 +1,24 @@
+{
+ "about": [
+  "The format is closed: a line is read only through the fields the grammar declares, and any other field",
+  "refuses the whole line with its name. Lexing a line never admits it; the grammar does."
+ ],
+ "cases": [
+  {
+   "name": "declared fields are a claim",
+   "line": "bound-lock/1 scope=a role=reads form=alphabet measure=status value=x by=target at=w",
+   "kind": "fact"
+  },
+  {
+   "name": "an undeclared field refuses the line and names it",
+   "line": "bound-lock/1 scope=a role=reads form=alphabet measure=status value=x by=target at=w colour=red",
+   "kind": "refuse",
+   "names": "colour"
+  },
+  {
+   "name": "a field the grammar declares is read",
+   "line": "bound-lock/1 scope=a role=reads form=alphabet measure=status value=x by=target at=w job=j1",
+   "kind": "fact"
+  }
+ ]
+}

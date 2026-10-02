@@ -59,6 +59,6 @@ A world travels as a blob: capsule.bound and its build, split as ES modules, one
 
 ## The corpus
 
-- `vector/spec/bound-lock-1` · 
-- `vector/spec/fold` · 
-- `vector/spec/values` · 
+- `vector/spec/bound-lock-1` · pass
+- `vector/spec/fold` · pass
+- `vector/spec/values` · pass

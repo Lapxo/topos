@@ -2,7 +2,7 @@
 
 # @lapxo/topos
 
-![version 0.1.2](https://img.shields.io/badge/version-0.1.2-8c959f) ![license MIT](https://img.shields.io/badge/license-MIT-8c959f) ![node >=22.12](https://img.shields.io/badge/node-%3E%3D22.12-8c959f) ![dependencies 1](https://img.shields.io/badge/dependencies-1-8c959f) ![cases 12 hold](https://img.shields.io/badge/cases-12_hold-2da44e) ![verify agrees](https://img.shields.io/badge/verify-agrees-2da44e)
+![version 0.1.3](https://img.shields.io/badge/version-0.1.3-8c959f) ![license MIT](https://img.shields.io/badge/license-MIT-8c959f) ![node >=22.12](https://img.shields.io/badge/node-%3E%3D22.12-8c959f) ![dependencies 1](https://img.shields.io/badge/dependencies-1-8c959f) ![cases 12 hold](https://img.shields.io/badge/cases-12_hold-2da44e) ![verify grey](https://img.shields.io/badge/verify-grey-8c959f)
 
 One line for every fact.
 
@@ -18,7 +18,7 @@ Two meet at 21.2..21.4; radiator is apart: conflict.
 
 ## A world, built in front of you
 
-<p align="center"><img src="docs/img/world.svg" alt="declares measurements, runs on node, reaches none, held reads lang|form/prose/**|form/template/**|prose/*/measure/*|measure/**, readings reads lang|form/prose/**|prose/*/measure/*|measure/**, against topos sha256:a87ffd5ab77a99b9e40cc720acfdf0ee7f36d156c72085a20db1232b0653c1dd, packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780, a place adopts it with uses/topos-measure and run by the node host" width="640"></p>
+<p align="center"><img src="docs/img/world.svg" alt="declares measurements, runs on node, reaches none, held reads lang|form/prose/**|form/template/**|prose/*/measure/*|measure/**, readings reads lang|form/prose/**|prose/*/measure/*|measure/**, packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780, a place adopts it with uses/topos-measure and run by the node host" width="640"></p>
 
 ```bash
 node examples/release/world.ts
@@ -54,9 +54,13 @@ Three meet at 19.9..20.1: free.
 
 The line wire/line/fields, drawn field by field: 6 fields, each named by the wire.
 
-```bash
-npm install @lapxo/topos
-```
+## Line
+
+Add to your lock:
+sources/topos value=github:Lapxo/topos
+uses/topos sha256:<release digest>
+Fetch the release asset, verify its sha256 equals the uses/ line, place it in bound/cas/blobs/. Fold: its pages appear.
+open: line/install needs=host/resolve — when bound resolves sources/ itself, the fetch line leaves the page by fold.
 
 With it installed, run roundtrip: a line is parsed, written again and compared with the bytes it came from.
 
@@ -99,5 +103,4 @@ It rests on obligations. Nothing else.
 
 ## Pointers
 
-- [Reference](docs/reference.md)
 - [Wire](docs/wire.md)

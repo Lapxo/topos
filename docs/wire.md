@@ -40,7 +40,7 @@ A number has one spelling: decimal digits, a minus when it is negative and a fra
 
 ## A world's blob
 
-A world travels as a blob: its own lock and its build, the entry and one module per region, split as ES modules and packed as one tar, gzipped and named by the sha256 digest of its bytes. The entry names only where the world lies; the host reads the lock once and loads each region by its name and its role.
+A world travels as a blob: capsule.bound and its build, split as ES modules, one region per file — dist/index.js the entry, dist/regions/<name>.js each region the lock names — packed as one tar, gzipped and named by the sha256 digest of its bytes. The entry names only where the world lies; the host is handed the lock already parsed and loads each region from its own file by its name and its role.
 
 ## The reference
 

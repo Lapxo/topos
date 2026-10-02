@@ -322,6 +322,63 @@
    ]
   },
   {
+   "name": "a class withdrawn at one at and landed at another still admits",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "at": "witness:made",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/tree",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "2..4",
+     "by": "owner",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "withdraw",
+     "by": "owner",
+     "at": "witness:made",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "attest",
+     "by": "owner",
+     "at": "place:keys",
+     "sig": "ok:K0"
+    }
+   ],
+   "line": {
+    "scope": "audit/tree/lines",
+    "by": "ci",
+    "sig": "ok:K1"
+   },
+   "verdict": "admitted",
+   "potential": []
+  },
+  {
    "name": "an admission no admitted key signed admits nobody",
    "lock": [
     {
@@ -362,6 +419,57 @@
    "potential": [
     "ci"
    ]
+  },
+  {
+   "name": "a class signed later still admits epoch-1 lines the same lock already holds",
+   "lock": [
+    {
+     "scope": "keys/ci",
+     "measure": "class",
+     "value": "agent",
+     "by": "owner",
+     "epoch": "408",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "public-key",
+     "value": "K1",
+     "by": "owner",
+     "epoch": "408",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "coverage",
+     "value": "audit/**",
+     "by": "owner",
+     "epoch": "409",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "keys/ci",
+     "measure": "resolution",
+     "value": "1..16",
+     "by": "owner",
+     "epoch": "408",
+     "sig": "ok:K0"
+    },
+    {
+     "scope": "audit/tree/lines",
+     "by": "ci",
+     "epoch": "1",
+     "sig": "ok:K1"
+    }
+   ],
+   "line": {
+    "scope": "audit/tree/lines",
+    "by": "ci",
+    "epoch": "1",
+    "sig": "ok:K1"
+   },
+   "verdict": "admitted",
+   "potential": []
   }
  ]
 }

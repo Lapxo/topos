@@ -1,0 +1,52 @@
+{
+ "about": [
+  "A lock read as a release: its target lines carry no signature, the pin that names the release's digest is their signature, and a line signed by a key the release does not carry is refused."
+ ],
+ "cases": [
+  {
+   "name": "a target line stands where a pin names the release",
+   "lock": [],
+   "line": { "scope": "audit/tree/lines", "by": "target", "role": "reads", "measure": "count", "form": "interval", "value": "0..0", "at": "policy:audit" },
+   "published": { "digest": "sha256:aa", "pins": ["sha256:aa"] },
+   "verdict": "admitted"
+  },
+  {
+   "name": "a release no pin names stays grey: a file that carries a bootstrap is not true by itself",
+   "lock": [],
+   "line": { "scope": "audit/tree/lines", "by": "target", "role": "reads", "measure": "count", "form": "interval", "value": "0..0", "at": "policy:audit" },
+   "published": { "digest": "sha256:aa", "pins": [] },
+   "verdict": "grey"
+  },
+  {
+   "name": "a target line in a lock that is no release stays grey",
+   "lock": [],
+   "line": { "scope": "audit/tree/lines", "by": "target", "role": "reads", "measure": "count", "form": "interval", "value": "0..0", "at": "policy:audit" },
+   "verdict": "grey"
+  },
+  {
+   "name": "one byte changed is another digest, and the pin no longer names it",
+   "lock": [],
+   "line": { "scope": "audit/tree/lines", "by": "target", "role": "reads", "measure": "count", "form": "interval", "value": "0..0", "at": "policy:audit" },
+   "published": { "digest": "sha256:ab", "pins": ["sha256:aa"] },
+   "verdict": "grey"
+  },
+  {
+   "name": "a line a lane signed in a release is refused: lanes sign acts in the tree",
+   "lock": [],
+   "line": { "scope": "audit/tree/lines", "by": "lane-a", "epoch": "1", "sig": "ok:K1", "role": "reads", "measure": "count", "form": "interval", "value": "0..0", "at": "policy:audit" },
+   "published": { "digest": "sha256:aa", "pins": ["sha256:aa"] },
+   "verdict": "refuse"
+  },
+  {
+   "name": "a key the owner did not sign is not carried, so what it signs is refused",
+   "lock": [
+    { "scope": "keys/forged", "measure": "class", "value": "attest", "by": "owner", "epoch": "1", "sig": "bad" },
+    { "scope": "keys/forged", "measure": "public-key", "value": "K2", "by": "owner", "epoch": "1", "sig": "bad" },
+    { "scope": "keys/forged", "measure": "coverage", "value": "*", "by": "owner", "epoch": "1", "sig": "bad" }
+   ],
+   "line": { "scope": "audit/tree/lines", "by": "forged", "epoch": "1", "sig": "ok:K2", "role": "reads", "measure": "count", "form": "interval", "value": "0..0", "at": "policy:audit" },
+   "published": { "digest": "sha256:aa", "pins": ["sha256:aa"] },
+   "verdict": "refuse"
+  }
+ ]
+}

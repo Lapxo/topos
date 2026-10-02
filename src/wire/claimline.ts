@@ -278,13 +278,14 @@ export function signersOf(
       for (const id of ids) {
         if (admitted.has(id)) continue;
         const classLines = claimsOn(admitted, id, 'class');
-        const withdrawn = new Set(classLines.filter((f) => f['value'] === 'withdraw').map((f) => f['by'] ?? ''));
+        const withdrawn = new Set(classLines.filter((f) => f['value'] === 'withdraw').map((f) => `${f['by'] ?? ''} ${f['at'] ?? ''}`));
         const counted = classLines
-          .filter((f) => f['value'] !== 'withdraw' && !withdrawn.has(f['by'] ?? ''))
+          .filter((f) => f['value'] !== 'withdraw' && !withdrawn.has(`${f['by'] ?? ''} ${f['at'] ?? ''}`))
           .sort((a, b) => epochOf(a) - epochOf(b));
+        const history = classLines.filter((f) => f['value'] !== 'withdraw').sort((a, b) => epochOf(a) - epochOf(b));
         const admitters: string[] = [];
         let start: number | null = null;
-        for (const f of counted) {
+        for (const f of history) {
           const by = f['by'] ?? '';
           if (!admitters.includes(by)) admitters.push(by);
           if (admitters.length >= quorumAt(epochOf(f))) {
@@ -293,16 +294,19 @@ export function signersOf(
           }
         }
         const publicKey = claimsOn(admitted, id, 'public-key')[0]?.['value'] ?? '';
-        if (start === null || !publicKey) continue;
+        if (start === null || !counted.length || !publicKey) continue;
+        const born = lines.some((f) => (f['by'] ?? '') === id && epochOf(f) === 1 && !(f['scope'] ?? '').startsWith(`${KEYS}/`));
+        const covered = coverageOver(claimsOn(admitted, id, 'coverage'));
         admitted.set(id, closedAt({
           id,
           keyClass: counted.every((f) => f['value'] === 'authorize') ? 'authorize' : 'attest',
           publicKey,
-          ...coverageOver(claimsOn(admitted, id, 'coverage')),
+          coverage: covered.coverage,
+          spans: born ? covered.spans.map((span) => ({ ...span, from: Math.min(span.from, 1) })) : covered.spans,
           windows: windowsOver(claimsOn(admitted, id, 'epoch')),
           depth: depthWindow(claimsOn(admitted, id, 'resolution')[0]?.['value'] ?? '') ?? { lo: 1, hi: 1 },
           admittedBy: admitters,
-          epoch: { start, close: null },
+          epoch: { start: born ? Math.min(start, 1) : start, close: null },
         }, closes));
         grew = true;
       }
@@ -325,12 +329,30 @@ export function signersOf(
   return { admitted: [...admitted.values()], potential: ids.filter((id) => !admitted.has(id)) };
 }
 
+/** A lock read as a release: the digest of the bytes it came in, and the digests the installer's sources/ and uses/ lines name. */
+export interface Published {
+  readonly digest: string;
+  readonly pins: readonly string[];
+}
+
+/**
+ * Who stands behind a line. In a lock read as a release, a target line carries no signature: the pin that names the
+ * release's digest is its signature, so it stands only where one does, and a line signed by a key the release does not
+ * carry is refused.
+ */
 export function authorityOf(
   fields: Readonly<Record<string, string>>,
   signers: readonly Signer[],
   verify: Verify,
+  published?: Published,
 ): SignerVerdict {
   const by = fields['by'] ?? '';
+  if (published !== undefined && !fields['sig'] && by === 'target') {
+    return published.pins.includes(published.digest) ? { kind: 'admitted', signer: by } : { kind: 'grey', why: `unpinned: no sources/ or uses/ line names ${published.digest}` };
+  }
+  if (published !== undefined && fields['sig'] && !signers.some((s) => s.id === by)) {
+    return { kind: 'refuse', why: `REFUSE·authority ${by || '∅'} is no key this release carries`, named: by };
+  }
   if (!fields['sig']) return { kind: 'grey', why: 'unsigned' };
   const signer = signers.find((s) => s.id === by);
   if (!signer) return { kind: 'grey', why: `signer ${by || '∅'} is not admitted` };

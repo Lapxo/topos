@@ -46,19 +46,19 @@ A world travels as a blob: capsule.bound and its build, split as ES modules, one
 
 | function | as the language reads it |
 |---|---|
-| `parse` | `` |
-| `canonical` | `` |
-| `signedBytes` | `` |
-| `byBytes` | `` |
-| `alphabet` | `` |
-| `fields` | `` |
-| `steps` | `` |
-| `atResolution` | `` |
-| `requirement` | `` |
-| `decimal` | `` |
+| `parse` | `parse(text: string): Outcome<Line>` |
+| `canonical` | `canonical(fields: Readonly<Record<string, string>>, version = '1'): string` |
+| `signedBytes` | `signedBytes(fields: Readonly<Record<string, string>>, version = '1'): string` |
+| `byBytes` | `byBytes(a: string, b: string): number` |
+| `alphabet` | `alphabet(text: string): Alphabet; alphabet(value: Alphabet): string` |
+| `fields` | `fields(text: string): readonly Field[]; fields(value: readonly Field[]): string` |
+| `steps` | `steps(text: string): readonly string[]; steps(value: readonly string[]): string` |
+| `atResolution` | `atResolution(text: string): Resolution; atResolution(value: Resolution): string` |
+| `requirement` | `requirement(text: string): Requirement; requirement(value: Requirement): string` |
+| `decimal` | `decimal(n: number): string` |
 
 ## The corpus
 
-- `vector/spec/bound-lock-1` · 
-- `vector/spec/fold` · 
-- `vector/spec/values` · 
+- `vector/spec/bound-lock-1` · pass
+- `vector/spec/fold` · pass
+- `vector/spec/values` · pass

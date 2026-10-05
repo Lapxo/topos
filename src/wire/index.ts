@@ -24,3 +24,5 @@ export type {RecordKind} from './record-kind.ts';
 export {objectHistory} from './object-history.ts';
 export {restCoordinates} from './object-record.ts';
 export const OBJECT_VIEW='object' as const;
+
+export { publicationOf, publicLock } from './publication.ts';

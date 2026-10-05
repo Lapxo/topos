@@ -1,23 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 656 336" width="656" height="336" role="img" aria-label="declares measurements, runs on node, reaches none, held reads lang|form/prose/**|form/template/**|prose/*/measure/*|measure/**, readings reads lang|form/prose/**|prose/*/measure/*|measure/**, packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780, a place adopts it with uses/topos-measure and run by the node host">
-<style>
-text{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#59636e}rect{fill:none;stroke:#8c959f}line{stroke:#2da44e}
-@media (prefers-color-scheme:dark){text{fill:#9198a1}}
-</style>
-<rect x="20" y="8" width="616" height="36" rx="6"/>
-<text x="36" y="30">declares measurements, runs on node, reaches none</text>
-<rect x="20" y="64" width="616" height="36" rx="6"/>
-<text x="36" y="86">held reads lang|form/prose/**|form/template/**|prose/*/measure/*|measure/**</text>
-<line x1="328" y1="44" x2="328" y2="64"/>
-<rect x="20" y="120" width="616" height="36" rx="6"/>
-<text x="36" y="142">readings reads lang|form/prose/**|prose/*/measure/*|measure/**</text>
-<line x1="328" y1="100" x2="328" y2="120"/>
-<rect x="20" y="176" width="616" height="36" rx="6"/>
-<text x="36" y="198">packed as sha256:3252cbb877d9ca0c9ea990828c1490999de3d4853990d53d6bbd31861e6bb780</text>
-<line x1="328" y1="156" x2="328" y2="176"/>
-<rect x="20" y="232" width="616" height="36" rx="6"/>
-<text x="36" y="254">a place adopts it with uses/topos-measure</text>
-<line x1="328" y1="212" x2="328" y2="232"/>
-<rect x="20" y="288" width="616" height="36" rx="6"/>
-<text x="36" y="310">run by the node host</text>
-<line x1="328" y1="268" x2="328" y2="288"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-labelledby="title desc">
+<title id="title">One standing, many interpretations</title><desc id="desc">Wire, forms, classes and views are parts of a selected topos. Its standing identity is independent of host transport. Artifact dependencies are verified by digest.</desc>
+<style>text{font:15px ui-sans-serif,system-ui,sans-serif;fill:#526078}.label{font-size:18px;font-weight:600;fill:#23304c}.caption{font-size:13px}rect{fill:#f6f8fc;stroke:#ccd6e6}path{fill:none;stroke:#8b9cbc;stroke-width:1.6}.pin{fill:#e8e5fa;stroke:#a69cdb}@media(prefers-color-scheme:dark){text{fill:#aab9d1}.label{fill:#e0e8f7}rect{fill:#111d30;stroke:#334660}.pin{fill:#272347;stroke:#7469a7}}</style>
+<g><rect x="25" y="22" width="155" height="63" rx="16"/><text class="label" x="46" y="50">Wire</text><text x="46" y="71">record grammar</text>
+<rect x="25" y="99" width="155" height="63" rx="16"/><text class="label" x="46" y="127">Forms</text><text x="46" y="148">value interpretation</text>
+<rect x="25" y="176" width="155" height="63" rx="16"/><text class="label" x="46" y="204">Classes</text><text x="46" y="225">allowed references</text>
+<rect x="25" y="253" width="155" height="63" rx="16"/><text class="label" x="46" y="281">Views</text><text x="46" y="302">result presentation</text></g>
+<path d="M180 54 C250 54 240 170 300 170 M180 131 C250 131 240 170 300 170 M180 208 C250 208 240 170 300 170 M180 285 C250 285 240 170 300 170"/>
+<rect class="pin" x="300" y="121" width="190" height="98" rx="24"/><text class="label" x="326" y="156">Folded standing</text><text x="326" y="181">canonical live claims</text><text x="326" y="203">selected by digest</text>
+<path d="M490 170 C525 170 524 95 565 95 M490 170 C525 170 524 255 565 255"/>
+<rect x="565" y="54" width="170" height="80" rx="18"/><text class="label" x="584" y="87">Interpretation</text><text x="584" y="111">no runtime required</text>
+<rect x="565" y="214" width="170" height="80" rx="18"/><text class="label" x="584" y="248">Host</text><text x="584" y="272">resolve artifact bytes</text>
+<text class="caption" x="301" y="260">A capsule is an offer.</text><text class="caption" x="301" y="280">It is not the identity of the topos.</text>
 </svg>

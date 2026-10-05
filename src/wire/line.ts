@@ -7,6 +7,7 @@ export const PROTOCOL = 'bound-lock/1' as const;
 export interface Line {
   readonly version: string;
   readonly fields: Readonly<Record<string, string>>;
+  readonly keys?: readonly string[];
 }
 
 const NEEDS_QUOTE = /[ ="\n\\]/;
@@ -67,7 +68,7 @@ export function signedBytes(fields: Readonly<Record<string, string>>, version = 
 
 const ABSENT = '-';
 
-export function parse(text: string): Outcome<Line> {
+export function parse(text: string, options: { readonly preserveKeys?: boolean } = {}): Outcome<Line> {
   if (text.includes('\n')) {
     return refuse('a line is one line — a newline in a value must be escaped as `\\n`');
   }
@@ -84,6 +85,7 @@ export function parse(text: string): Outcome<Line> {
   }
 
   const fields: Record<string, string> = {};
+  const writtenKeys = new Set<string>();
   for (const token of tokensOf(space === -1 ? '' : text.slice(space + 1))) {
     if (token === null) return refuse('a quoted value is not closed');
 
@@ -91,8 +93,9 @@ export function parse(text: string): Outcome<Line> {
     if (at <= 0) return refuse(`\`${token.slice(0, 24)}\` is not \`key=value\``);
 
     const key = token.slice(0, at);
-    if (key in fields) return refuse(`\`${key}\` appears twice — one line, one value per key`);
+    if (writtenKeys.has(key)) return refuse(`\`${key}\` appears twice — one line, one value per key`);
 
+    writtenKeys.add(key);
     const value = unescape(token.slice(at + 1));
     if (value === null) return refuse(`\`${key}\` has an escaping this format does not define`);
 
@@ -100,7 +103,7 @@ export function parse(text: string): Outcome<Line> {
   }
 
   if (unwritten(fields)) return refuse(`\`${fields['value']}\` is no interval the wire reads: two ends, each decimal or *`);
-  return fact({ version, fields });
+  return fact({ version, fields, ...(options.preserveKeys ? { keys: [...writtenKeys] } : {}) });
 }
 
 function* tokensOf(rest: string): Generator<string | null> {
@@ -125,3 +128,11 @@ function* tokensOf(rest: string): Generator<string | null> {
   }
 }
 
+
+/** Signing cannot silently discard a key that was explicitly written as absent. */
+export function parseForSigning(text: string): Outcome<Line> {
+  const got = parse(text, {preserveKeys:true});
+  if(got.kind!=='fact') return got;
+  const absent = got.value.keys!.find(key => got.value.fields[key] === undefined);
+  return absent === undefined ? got : refuse(`signing cannot discard explicitly absent field ${absent}; omit the key`,absent);
+}

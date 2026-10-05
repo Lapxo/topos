@@ -1,7 +1,7 @@
 {
   "name": "@lapxo/topos",
-  "version": "0.1.4",
-  "description": "Bound's SDK: the wire, the forms, the contract and the shell you build a world with — a reader of any source or a renderer of any artefact, in an afternoon.",
+  "version": "0.1.6",
+  "description": "Wire, forms, authority and views for interpreting information.",
   "type": "module",
   "license": "MIT",
   "author": "Lapxo",
@@ -22,46 +22,85 @@
   "exports": {
     ".": {
       "types": "./dist/readers/index.d.ts",
-      "default": "./dist/readers/index.js"
+      "default": "./dist/readers/index.js",
+      "source": "./src/readers/index.ts"
     },
     "./authority": {
       "types": "./dist/authority/index.d.ts",
-      "default": "./dist/authority/index.js"
+      "default": "./dist/authority/index.js",
+      "source": "./src/authority/index.ts"
     },
     "./capsule": {
       "types": "./dist/capsule/index.d.ts",
-      "default": "./dist/capsule/index.js"
+      "default": "./dist/capsule/index.js",
+      "source": "./src/capsule/index.ts"
     },
     "./contract": {
       "types": "./dist/contract/index.d.ts",
-      "default": "./dist/contract/index.js"
+      "default": "./dist/contract/index.js",
+      "source": "./src/contract/index.ts"
     },
     "./forms": {
       "types": "./dist/forms/index.d.ts",
-      "default": "./dist/forms/index.js"
+      "default": "./dist/forms/index.js",
+      "source": "./src/forms/index.ts"
     },
     "./host": {
       "types": "./dist/host/index.d.ts",
-      "default": "./dist/host/index.js"
+      "default": "./dist/host/index.js",
+      "source": "./src/host/index.ts"
     },
     "./readers": {
       "types": "./dist/readers/index.d.ts",
-      "default": "./dist/readers/index.js"
+      "default": "./dist/readers/index.js",
+      "source": "./src/readers/index.ts"
     },
     "./wire": {
       "types": "./dist/wire/index.d.ts",
-      "default": "./dist/wire/index.js"
+      "default": "./dist/wire/index.js",
+      "source": "./src/wire/index.ts"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./object-provider": {
+      "source": "./src/host/object-provider.ts",
+      "types": "./dist/host/object-provider.d.ts",
+      "default": "./dist/host/object-provider.js"
+    },
+    "./standing": {
+      "source": "./src/topos/standing.ts",
+      "types": "./dist/topos/standing.d.ts",
+      "default": "./dist/topos/standing.js"
+    },
+    "./cells-view": {
+      "source": "./src/views/cells.ts",
+      "types": "./dist/views/cells.d.ts",
+      "default": "./dist/views/cells.js"
+    },
+    "./cell-inputs": {
+      "source": "./src/views/cell-inputs.ts",
+      "types": "./dist/views/cell-inputs.d.ts",
+      "default": "./dist/views/cell-inputs.js"
+    },
+    "./vectors/evidence.json": "./vectors/evidence.json",
+    "./receipts": {
+      "source": "./src/receipts.ts",
+      "types": "./dist/receipts.d.ts",
+      "default": "./dist/receipts.js"
+    }
   },
   "files": [
     "dist",
     "README.md",
+    "CONTRIBUTING.md",
     "LICENSE",
-    "TARGET.bound"
+    "TARGET.bound",
+    "receipts.bound",
+    "docs",
+    "vectors/evidence.json"
   ],
   "scripts": {
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "test": "node --conditions=source --import ./test/setup.ts --test test/*.test.ts"
   },
   "dependencies": {
     "@lapxo/obligations": "^0.3.5"

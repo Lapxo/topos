@@ -12,3 +12,7 @@ export { violationsIn } from './form.ts';
 export type { WireForm } from './form.ts';
 export { alphabetOfForm, budgetForm, distributionForm, intervalForm, ladderOfForm, latticeOfForm, phaseForm, rankForm, stretchForm };
 
+
+export { ALPHABETS, INTERVALS, idsOf, spanOf, configurationValues } from './configuration.ts';
+export { declaredConfig } from './declaration.ts';
+export type { Declared } from './declaration.ts';

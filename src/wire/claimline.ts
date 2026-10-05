@@ -7,6 +7,8 @@
  */
 import { intervals } from '@lapxo/obligations';
 import type { Interval } from '@lapxo/obligations';
+import { objectFromFields } from './object-record.ts';
+import type { ObjectGrammar, ObjectRecord } from './object-record.ts';
 import { parse as parseLine } from './line.ts';
 import { abstain, fact, refuse } from './outcome.ts';
 import type { Outcome } from './outcome.ts';
@@ -23,7 +25,8 @@ export const ENVELOPE: ReadonlySet<string> = new Set(['sig', 'expires', 'repo', 
 
 const WITHDRAW = 'withdraw';
 
-interface Wire {
+export interface Wire {
+  readonly object?: ObjectGrammar;
   readonly epoch: number;
   readonly fields: ReadonlySet<string>;
   readonly required: ReadonlySet<string>;
@@ -36,10 +39,18 @@ interface Wire {
   readonly lists: ReadonlyMap<string, ReadonlySet<string>>;
 }
 
-const LOCK = 'audit/wire/';
+const WIRE = 'wire/';
+const WAS = 'audit/wire/';
 
 export function isWireClaim(fields: Readonly<Record<string, string>>): boolean {
-  return (fields['scope'] ?? '').startsWith(LOCK);
+  const scope = fields['scope'] ?? '';
+  return scope.startsWith(WIRE) || scope.startsWith(WAS);
+}
+
+function listOf(scope: string): string | undefined {
+  if (scope.startsWith(WAS)) return scope.slice(WAS.length);
+  if (scope.startsWith(WIRE)) return scope.slice(WIRE.length);
+  return undefined;
 }
 
 function epochOf(fields: Readonly<Record<string, string>>): number {
@@ -52,25 +63,33 @@ function names(withdraw: Readonly<Record<string, string>>, line: Readonly<Record
 }
 
 export function wireAt(lines: readonly Readonly<Record<string, string>>[], epoch: number): Wire | null {
-  const mine = lines.filter((f) => (f['scope'] ?? '').startsWith(LOCK) && epochOf(f) <= epoch);
+  const mine = lines.filter((f) => listOf(f['scope'] ?? '') !== undefined && epochOf(f) <= epoch);
   const withdrawals = mine.filter((f) => f['value'] === WITHDRAW);
   const standing = new Map<string, Readonly<Record<string, string>>>();
   for (const f of mine) {
+    const key = listOf(f['scope'] ?? '') ?? '';
     if (f['value'] === WITHDRAW || withdrawals.some((w) => names(w, f))) continue;
-    const held = standing.get(f['scope'] ?? '');
-    if (!held || epochOf(f) >= epochOf(held)) standing.set(f['scope'] ?? '', f);
+    const held = standing.get(key);
+    const newer = held === undefined || epochOf(f) > epochOf(held)
+      || (epochOf(f) === epochOf(held) && (f['scope'] ?? '').startsWith(WIRE) && (held['scope'] ?? '').startsWith(WAS));
+    if (newer) standing.set(key, f);
   }
   if (!standing.size) return null;
-  const ids = (name: string): ReadonlySet<string> => new Set((standing.get(`${LOCK}${name}`)?.['value'] ?? '').split('|').filter(Boolean));
+  const ids = (name: string): ReadonlySet<string> => new Set((standing.get(name)?.['value'] ?? '').split('|').filter(Boolean));
   const formOf = new Map([...standing]
-    .filter(([scope]) => scope.startsWith(`${LOCK}form/`))
-    .map(([scope, f]) => [scope.slice(`${LOCK}form/`.length), f['value'] ?? ''] as const));
+    .filter(([name]) => name.startsWith('form/'))
+    .map(([name, f]) => [name.slice('form/'.length), f['value'] ?? ''] as const));
   const lists = new Map([...standing.keys()]
-    .map((scope) => scope.slice(LOCK.length))
     .filter((name) => !name.includes('/'))
     .map((name) => [name, ids(name)] as const));
   return {
     epoch,
+    ...(standing.has('object/types') ? {object: {
+      activation: epochOf(standing.get('object/types')!),
+      types: ids('object/types'), common: ids('object/common'), reserved: ids('object/reserved'), configuration: ids('object/allowed/config'),
+      required: new Map([...standing.keys()].filter(k => k.startsWith('object/required/')).map(k => [k.slice('object/required/'.length),ids(k)])),
+      allowed: new Map([...standing.keys()].filter(k => k.startsWith('object/allowed/')).map(k => [k.slice('object/allowed/'.length),ids(k)])),
+    }} : {}),
     fields: ids('fields'),
     required: ids('required'),
     roles: ids('roles'),
@@ -115,13 +134,31 @@ function debit(field: string, why: string): Outcome<Claim> {
   return refuse(why, field);
 }
 
-export function fromLine(text: string, wire: Wire | null, grammars?: readonly FormGrammar[]): Outcome<Claim> {
-  const line = parseLine(text);
+export function fromLine(text: string, wire: null, grammars?: readonly FormGrammar[]): Outcome<Claim>;
+export function fromLine(text: string, wire: Wire | null, grammars?: readonly FormGrammar[]): Outcome<Claim | ObjectRecord>;
+export function fromLine(text: string, wire: Wire | null, grammars?: readonly FormGrammar[]): Outcome<Claim | ObjectRecord> {
+  const line = parseLine(text, {preserveKeys:true});
   if (line.kind !== 'fact') {
     return line.kind === 'abstain' ? abstain(line.why) : refuse(line.why, line.named);
   }
   const f = line.value.fields;
+  const keys = line.value.keys!;
+  if (keys.includes('type')) {
+    if (!wire?.object) return refuse('typed object grammar is not admitted at this epoch','type');
+    if (!wire.object.configuration.size || !wire.object.reserved.size || [...wire.object.reserved].some(k=>wire.object!.configuration.has(k))) return refuse('typed wire has no closed configuration/object field contract','type');
+    const got = objectFromFields(f, keys, wire.object, wire.fields, wire.forms);
+    if(got.kind!=='fact') return got;
+    if(!FIELD_FORMS.signature!(f.sig!,wire)) return refuse('object signature grammar is not admitted','sig');
+    if(got.value.record==='cell'&&!admittedDigest(f.topos!,wire)) return refuse('cell topos is not an admitted digest','topos');
+    if(got.value.record==='cell'&&(f.restsOn??'').split('|').some(name=>admittedDigest(name,wire))) return refuse('cell restsOn names coordinates, not byte digests','restsOn');
+    return got;
+  }
   if (wire) {
+    if (wire.object) {
+      if (!wire.object.configuration.size || !wire.object.reserved.size || [...wire.object.reserved].some(k=>wire.object!.configuration.has(k))) return refuse('typed wire has no closed configuration/object field contract','type');
+      const reserved = keys.find(k => wire.object!.reserved.has(k) || !wire.object!.configuration.has(k));
+      if (reserved) return refuse(`\`${reserved}=\` is an object-only field: untyped configuration cannot carry it`, reserved);
+    }
     for (const k of Object.keys(f)) if (!wire.fields.has(k)) return debit(k, `\`${k}=\` is not a field of the wire at epoch ${wire.epoch}`);
     for (const k of wire.required) if (f[k] === undefined) return debit(k, `a claim with no \`${k}\``);
     for (const [k, form] of wire.formOf) {

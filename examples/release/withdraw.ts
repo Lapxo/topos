@@ -2,10 +2,10 @@
 import { parse, wireAt } from '@lapxo/topos/wire';
 
 const history = [
-  'bound-lock/1 at=policy:acme/forms by=owner epoch=1 form=alphabet measure=id role=writes scope=audit/wire/forms value=alphabet|interval',
-  'bound-lock/1 at=policy:acme/forms by=owner epoch=2 form=alphabet measure=id role=writes scope=audit/wire/forms value=withdraw',
-  'bound-lock/1 at=policy:acme/forms by=owner epoch=3 form=alphabet measure=id role=writes scope=audit/wire/forms value=alphabet|interval',
-  'bound-lock/1 at=witness:a-form-list-signed-again by=owner epoch=4 form=alphabet measure=id role=writes scope=audit/wire/forms value=alphabet|interval',
+  'bound-lock/1 at=policy:acme/forms by=owner epoch=1 form=alphabet measure=id role=writes scope=wire/forms value=alphabet|interval',
+  'bound-lock/1 at=policy:acme/forms by=owner epoch=2 form=alphabet measure=id role=writes scope=wire/forms value=withdraw',
+  'bound-lock/1 at=policy:acme/forms by=owner epoch=3 form=alphabet measure=id role=writes scope=wire/forms value=alphabet|interval',
+  'bound-lock/1 at=witness:a-form-list-signed-again by=owner epoch=4 form=alphabet measure=id role=writes scope=wire/forms value=alphabet|interval',
 ];
 const lines = history.flatMap((text) => ((read) => (read.kind === 'fact' ? [read.value.fields] : []))(parse(text)));
 const named = (epoch: number): string => ((wire) => (wire === null ? 'nothing' : [...wire.forms].join('|')))(wireAt(lines, epoch));

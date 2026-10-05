@@ -35,7 +35,8 @@ test('observe-is-an-interface — a reader observes the file the contract hands 
     compare(notes, one.notes, one.name);
   }
   const falsifier = sample('no', 'reader-read-an-empty-file') as Seen;
-  compare(asked(falsifier.files).kind, falsifier.kind, falsifier);
+  compare(falsifier.kind, 'fact', 'the falsifier describes the forbidden successful read');
+  compare(asked(falsifier.files).kind, 'refuse', falsifier);
 });
 
 type Declared = { readonly name: string; readonly world: string; readonly expected: Readonly<Record<string, unknown>> };

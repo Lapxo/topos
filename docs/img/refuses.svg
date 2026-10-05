@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 88" width="640" height="88" role="img" aria-label="Handed bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3, it refuses: `0..1..3` is no interval the wire reads: two ends, each decimal or *">
-<style>
-text{font:14px ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#59636e}.cross{fill:#cf222e;font-weight:600}
-.asked{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#cf222e;text-decoration:line-through}
-@media (prefers-color-scheme:dark){text{fill:#9198a1}}
-</style>
-<text class="cross" x="20" y="32">✕</text>
-<text class="asked" x="44" y="32">bound-lock/1 form=interval measure=len role=reads scope=x value=0..1..3</text>
-<text x="44" y="66">`0..1..3` is no interval the wire reads: two ends, each decimal or *</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-label="A missing declared artifact is refused without substituting local bytes"><style>text{font:15px ui-sans-serif,system-ui,sans-serif;fill:#526078}rect{fill:#f6f8fc;stroke:#ccd6e6}path{fill:none;stroke:#9dabc0;stroke-width:1.8}@media(prefers-color-scheme:dark){text{fill:#b7c6dd}rect{fill:#111d30;stroke:#334660}}</style><rect x="18" y="46" width="206" height="94" rx="18"/><text x="38" y="84">Declared standing</text><text x="38" y="111">names artifact bytes</text><path d="M224 94H284"/><rect x="284" y="46" width="175" height="94" rx="18"/><text x="305" y="84">Artifact absent</text><text x="305" y="111">identity unresolved</text><path d="M459 94H512"/><rect x="512" y="46" width="190" height="94" rx="18"/><text x="532" y="84">REFUSE</text><text x="532" y="111">no local substitute</text></svg>

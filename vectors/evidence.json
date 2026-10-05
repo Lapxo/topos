@@ -1,0 +1,292 @@
+{
+  "contract": "evidence@1",
+  "cases": [
+    {
+      "name": "absent-evidence",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        }
+      },
+      "expected": {
+        "relation": "absent"
+      }
+    },
+    {
+      "name": "declared-without-statement",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        }
+      },
+      "expected": {
+        "relation": "absent"
+      }
+    },
+    {
+      "name": "unadmitted-statement",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        },
+        "statement": {
+          "admitted": false,
+          "reference": "S",
+          "value": "R"
+        }
+      },
+      "expected": {
+        "relation": "unadmitted",
+        "source": "statement"
+      }
+    },
+    {
+      "name": "no-reference",
+      "input": {
+        "expected": {
+          "value": "R"
+        },
+        "statement": {
+          "admitted": true,
+          "reference": "S",
+          "value": "R"
+        }
+      },
+      "expected": {
+        "relation": "unresolved",
+        "source": "statement"
+      }
+    },
+    {
+      "name": "other-snapshot",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        },
+        "statement": {
+          "admitted": true,
+          "reference": "other",
+          "value": "R"
+        }
+      },
+      "expected": {
+        "relation": "stale",
+        "source": "statement"
+      }
+    },
+    {
+      "name": "same-reference-same-value",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        },
+        "statement": {
+          "admitted": true,
+          "reference": "S",
+          "value": "R"
+        }
+      },
+      "expected": {
+        "relation": "equal",
+        "source": "statement"
+      }
+    },
+    {
+      "name": "kept-disagreement",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        },
+        "statement": {
+          "admitted": true,
+          "reference": "S",
+          "value": "other"
+        }
+      },
+      "expected": {
+        "relation": "different",
+        "source": "statement"
+      }
+    },
+    {
+      "name": "unadmitted-comparison-does-not-rescue-stale",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        },
+        "statement": {
+          "admitted": true,
+          "reference": "old",
+          "value": "R"
+        },
+        "comparison": {
+          "admitted": false,
+          "reference": "S",
+          "equal": true
+        }
+      },
+      "expected": {
+        "relation": "stale",
+        "source": "statement"
+      }
+    },
+    {
+      "name": "comparison-of-another-set-is-stale",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        },
+        "statement": {
+          "admitted": true,
+          "reference": "old",
+          "value": "R"
+        },
+        "comparison": {
+          "admitted": true,
+          "reference": "different",
+          "equal": true
+        }
+      },
+      "expected": {
+        "relation": "stale",
+        "source": "statement"
+      }
+    },
+    {
+      "name": "current-admitted-comparison",
+      "input": {
+        "expected": {
+          "value": "R",
+          "reference": "S"
+        },
+        "statement": {
+          "admitted": true,
+          "reference": "old",
+          "value": "R"
+        },
+        "comparison": {
+          "admitted": true,
+          "reference": "S",
+          "equal": true
+        }
+      },
+      "expected": {
+        "relation": "equal",
+        "source": "comparison"
+      }
+    }
+  ],
+  "gates": [
+    {
+      "name": "absence-blocks-agreement",
+      "fields": {
+        "scope": "rule/check",
+        "value": "accepted",
+        "needs": "observation"
+      },
+      "evidence": [
+        {
+          "coordinate": "observation",
+          "value": "absent"
+        }
+      ],
+      "status": "blocked"
+    },
+    {
+      "name": "agreement-pays-explicit-gate",
+      "fields": {
+        "scope": "rule/check",
+        "value": "accepted",
+        "needs": "observation"
+      },
+      "evidence": [
+        {
+          "coordinate": "observation",
+          "value": "accepted"
+        }
+      ],
+      "status": "met"
+    },
+    {
+      "name": "missing-evidence-is-not-agreement",
+      "fields": {
+        "scope": "rule/check",
+        "value": "accepted",
+        "needs": "observation"
+      },
+      "evidence": [],
+      "status": "unresolved"
+    },
+    {
+      "name": "kept-conflicting-evidence",
+      "fields": {
+        "scope": "rule/check",
+        "value": "accepted",
+        "needs": "observation"
+      },
+      "evidence": [
+        {
+          "coordinate": "observation",
+          "value": "accepted"
+        },
+        {
+          "coordinate": "observation",
+          "value": "rejected"
+        }
+      ],
+      "status": "unresolved"
+    },
+    {
+      "name": "duplicate-evidence-pays-once",
+      "fields": {
+        "scope": "rule/check",
+        "value": "accepted",
+        "needs": "observation"
+      },
+      "evidence": [
+        {
+          "coordinate": "observation",
+          "value": "accepted"
+        },
+        {
+          "coordinate": "observation",
+          "value": "accepted"
+        }
+      ],
+      "status": "met"
+    },
+    {
+      "name": "place-overrides-coordinate-and-alphabet",
+      "fields": {
+        "scope": "rule/check",
+        "value": "same",
+        "needs": "independent/result"
+      },
+      "evidence": [
+        {
+          "coordinate": "independent/result",
+          "value": "same"
+        }
+      ],
+      "status": "met"
+    },
+    {
+      "name": "needs-is-not-an-expression",
+      "fields": {
+        "scope": "rule/check",
+        "value": "accepted",
+        "needs": "observation=agrees"
+      },
+      "evidence": [],
+      "status": "unresolved"
+    }
+  ]
+}

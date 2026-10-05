@@ -2,6 +2,7 @@
 import { handed } from '../capsule/index.ts';
 import type { Asked } from '../capsule/index.ts';
 import { PROTOCOL } from '../wire/line.ts';
+import { matches } from '../wire/classes.ts';
 import type { Request, Response } from '../wire/spec.ts';
 
 export type { Request, Response } from '../wire/spec.ts';
@@ -23,7 +24,7 @@ export function answer(module: Answering, request: Request, self: string): Respo
   try {
     const asked = (): Asked => {
       const reads = request.reads ?? [];
-      const regions = Object.fromEntries(Object.entries(request.regions ?? {}).filter(([name]) => reads.includes(`region/${name}`))
+      const regions = Object.fromEntries(Object.entries(request.regions ?? {}).filter(([name]) => reads.some((read) => matches(read, `region/${name}`)))
         .map(([name, held]) => [name, { lines: handed(['**'], held.lines), receipts: handed(['**'], held.receipts) }]));
       return { region: request.region ?? '', at: request.at ?? 3, shape: request.shape ?? '', name: request.name ?? '', reads, lines: handed(reads, request.lines ?? []), regions };
     };

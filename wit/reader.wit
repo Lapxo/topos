@@ -1,0 +1,12 @@
+package topos:reader@0.1.0;
+
+interface host {
+  digest: func(bytes: list<u8>) -> string;
+}
+
+world reader {
+  import host;
+  export describe: func() -> string;
+  export read: func(path: string, text: string) -> string;
+  export gate: func(descriptor: string) -> string;
+}

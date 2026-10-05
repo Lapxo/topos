@@ -27,6 +27,12 @@ A topos is the fold of its lock over its declared regions. Its identity is the d
 
 `uses/<name>` selects that standing by digest. An npm package supplies SDK code; its version or archive digest is a different identity. A capsule is an executable offer of a topos. Forms, classes and views need no capsule to be selected.
 
+## Publish a lock
+
+`publicationOf(live)` projects already admitted, folded configuration claims into a public lock. It removes delivery envelopes, preserves signed public-key records and orders canonical lines by wire bytes. It neither folds history nor grants authority. Withdrawals and typed object history require their own semantic projection and are refused.
+
+`publicLock(lines)` recognizes that representation for a reader. Signed delivery history returns to the ordinary authority reader; unsigned delivery envelopes are refused. Recognition does not verify public keys or grant authority.
+
 ## Build a domain
 
 - Use `@lapxo/topos/forms` to define how domain values are decoded and compared.

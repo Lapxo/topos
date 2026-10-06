@@ -1,6 +1,6 @@
 {
   "name": "@lapxo/topos",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Wire, forms, authority and views for interpreting information.",
   "type": "module",
   "license": "MIT",
@@ -86,7 +86,8 @@
       "source": "./src/receipts.ts",
       "types": "./dist/receipts.d.ts",
       "default": "./dist/receipts.js"
-    }
+    },
+    "./vectors/signing-port.json": "./vectors/signing-port.json"
   },
   "files": [
     "dist",
@@ -97,7 +98,8 @@
     "TARGET.bound",
     "receipts.bound",
     "docs",
-    "vectors/evidence.json"
+    "vectors/evidence.json",
+    "vectors/signing-port.json"
   ],
   "scripts": {
     "build": "tsc --build",

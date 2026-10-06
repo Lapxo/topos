@@ -295,6 +295,8 @@ export function signersOf(
     return QUORUMS.meet(QUORUMS.top, depthWindow(standing?.['value'] ?? '') ?? QUORUMS.top).lo;
   };
   const ids = [...new Set(lines
+    // Only authority declarations introduce candidates; host transport metadata does not.
+    .filter(f => ['class', 'public-key', 'coverage', 'epoch'].includes(f['measure'] ?? ''))
     .map((f) => f['scope'] ?? '')
     .filter((scope) => scope.startsWith(`${KEYS}/`))
     .map((scope) => scope.slice(KEYS.length + 1)))];

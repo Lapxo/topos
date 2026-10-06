@@ -1,0 +1,32 @@
+{
+  "contract": "signing-lot/1",
+  "evidence": "Grammar only; verification remains the admitted authority reader.",
+  "request": {
+    "encoding": "existing signedBytes, one LF-terminated line per input in original order",
+    "invocations": "one per lot",
+    "exclude": [
+      "sig"
+    ]
+  },
+  "response": {
+    "encoding": "canonical bound-lock/1 lexical envelope",
+    "fields": [
+      "by",
+      "sig"
+    ],
+    "records": "one per input in original order",
+    "key": "the already requested public-key id"
+  },
+  "cases": [
+    {
+      "inputBy": "device",
+      "responseBy": "device",
+      "valid": true
+    },
+    {
+      "inputBy": "device",
+      "responseBy": "unrequested",
+      "valid": false
+    }
+  ]
+}

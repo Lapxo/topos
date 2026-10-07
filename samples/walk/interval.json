@@ -1,0 +1,295 @@
+{
+  "status": "SDK fixture; not CLI walk acceptance",
+  "contract": "whole-region@1",
+  "origin": "sha256:a1e6c01761658a98f8f7bbb56ad453ac1422d2dacf3cfc22d9fd4821861db76b",
+  "context": "sha256:f21e939b8b2e0b2898c877fc6fe874e48a1f69cf8fc20228dc49f7f616afd6fe",
+  "base": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "identityFields": [
+    "about",
+    "at",
+    "by",
+    "condition",
+    "epoch",
+    "form",
+    "id",
+    "kind",
+    "measure",
+    "needs",
+    "origin",
+    "params",
+    "pole",
+    "reach",
+    "restsOn",
+    "role",
+    "scope",
+    "shape",
+    "sign",
+    "takes",
+    "topos",
+    "type",
+    "value",
+    "view",
+    "widens"
+  ],
+  "senderPublicKey": "MCowBQYDK2VwAyEAzus50LXByoBUQlOyQ04sBcCkW3j4BJENWVp0dA2icL8=",
+  "historicalWire": [
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/fields",
+      "value": "about|at|by|condition|epoch|form|id|kind|measure|needs|origin|params|pole|reach|restsOn|role|scope|shape|sig|sign|takes|topos|type|value|view|widens",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/required",
+      "value": "at|by|form|measure|role|scope|value",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/types",
+      "value": "cell|claim|mark",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/common",
+      "value": "by|epoch|id|scope|sig|type",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/reserved",
+      "value": "id|origin|params|pole|reach|sign|takes|topos|type|widens",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/config",
+      "value": "about|at|by|condition|epoch|form|kind|measure|needs|restsOn|role|scope|shape|sig|value|view",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/required/cell",
+      "value": "by|epoch|form|id|measure|params|restsOn|scope|sig|topos|type",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/cell",
+      "value": "by|epoch|form|id|measure|params|restsOn|scope|sig|topos|type",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/required/claim/positive",
+      "value": "by|epoch|id|origin|scope|sig|sign|type|value",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/claim/positive",
+      "value": "by|epoch|id|origin|scope|sig|sign|type|value",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/required/claim/negative",
+      "value": "by|epoch|id|scope|sig|sign|takes|type",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/claim/negative",
+      "value": "by|epoch|id|scope|sig|sign|takes|type",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/required/mark/travelling",
+      "value": "by|epoch|id|pole|reach|scope|sig|sign|type|value",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/mark/travelling",
+      "value": "by|epoch|id|pole|reach|scope|sig|sign|type|value",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/required/mark/local",
+      "value": "by|epoch|id|pole|reach|scope|sig|sign|type|value|widens",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/mark/local",
+      "value": "by|epoch|id|pole|reach|scope|sig|sign|type|value|widens",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/required/mark/floor-travelling",
+      "value": "by|epoch|id|pole|reach|scope|sig|sign|type|value",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/mark/floor-travelling",
+      "value": "by|epoch|id|pole|reach|scope|sig|sign|type|value",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/required/mark/negative",
+      "value": "by|epoch|id|scope|sig|sign|takes|type",
+      "epoch": "1"
+    },
+    {
+      "at": "policy:topos/fold",
+      "by": "target",
+      "form": "alphabet",
+      "measure": "id",
+      "role": "reads",
+      "scope": "wire/object/allowed/mark/negative",
+      "value": "by|epoch|id|scope|sig|sign|takes|type",
+      "epoch": "1"
+    },
+    {
+      "scope": "wire/era",
+      "role": "writes",
+      "form": "alphabet",
+      "measure": "id",
+      "value": "sample",
+      "at": "policy:sample",
+      "by": "owner",
+      "epoch": "1"
+    },
+    {
+      "scope": "wire/signature-algorithms",
+      "role": "writes",
+      "form": "alphabet",
+      "measure": "id",
+      "value": "ed25519:sample",
+      "at": "policy:sample",
+      "by": "owner",
+      "epoch": "1"
+    },
+    {
+      "scope": "wire/digest-algorithms",
+      "role": "writes",
+      "form": "alphabet",
+      "measure": "id",
+      "value": "sha256",
+      "at": "policy:sample",
+      "by": "owner",
+      "epoch": "1"
+    },
+    {
+      "scope": "wire/forms",
+      "role": "writes",
+      "form": "alphabet",
+      "measure": "id",
+      "value": "alphabet|interval",
+      "at": "policy:sample",
+      "by": "owner",
+      "epoch": "1"
+    }
+  ],
+  "lines": [
+    "bound-lock/1 at=receipt:sha256:f21e939b8b2e0b2898c877fc6fe874e48a1f69cf8fc20228dc49f7f616afd6fe by=remote-device condition=sha256:cf9e2de9e82d8a14f3ea468a08e6ba49b2ca6317a2e8c2f9d7f7243f2af1c31d epoch=4 form=alphabet measure=digest role=writes scope=walk/regions/receipts/B sig=\"ed25519:sample:yYHnVN8WxybR8WC32RhFYbPbpQzK7o8JVsEh5VAeM3LL2yiOW7U1cjUKS+U91q7k/GLGPlYx6LX9mhTBi5o/BA==\" value=sha256:c7e1a117e37c5e1536d9b4c84cbd34906fb7a6739c3b01a0cd74571f41211685",
+    "bound-lock/1 at=receipt:sha256:f21e939b8b2e0b2898c877fc6fe874e48a1f69cf8fc20228dc49f7f616afd6fe by=remote-device condition=sha256:cf9e2de9e82d8a14f3ea468a08e6ba49b2ca6317a2e8c2f9d7f7243f2af1c31d epoch=4 form=interval measure=count role=writes scope=walk/regions/receipts/B sig=\"ed25519:sample:e8Wql1ZdPPdGc1u0GN5AeM7MRD76fellNTegxO3W8A/KK0WZN27tFX5xW2lLLLMiluvQ4Eh2Gcl2KWM/pq7hCQ==\" value=3..3",
+    "bound-lock/1 at=receipt:sha256:f21e939b8b2e0b2898c877fc6fe874e48a1f69cf8fc20228dc49f7f616afd6fe by=remote-device condition=sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 epoch=4 form=alphabet measure=digest role=writes scope=walk/root sig=\"ed25519:sample:Db7NqAhkjVn9nd8lGRUocCsq+N9odEpGFD8BcX/yRkDRzAT++C0+th5xITyRW7EWyWSWjYTeqA5dTjrwjgJkCg==\" value=sha256:cf9e2de9e82d8a14f3ea468a08e6ba49b2ca6317a2e8c2f9d7f7243f2af1c31d",
+    "bound-lock/1 by=remote-device epoch=1 form=interval id=cell-B measure=id params=sha256:f528212a496dc7a0e9a57c129b561aa4609364d70f886c09d668e00797521eb5 restsOn=none scope=B sig=\"ed25519:sample:LqtbslHaeQ2czFt83BSY/Z9xlQy90TsYUKHL6MmBpNnAk0Y64tWPwpLT5RP97IoDlp5RjZWFVx+wlV3Isw0pAQ==\" topos=sha256:c31473fb809847634220dc26c1513cb7c0c27eddf9639c73f2d3e403d2a0340b type=cell",
+    "bound-lock/1 by=remote-device epoch=2 id=a pole=ceiling reach=travels scope=B sig=\"ed25519:sample:WNqUIAnQrdotW4SB+Pfrfq/2BmFeyeQ+zqerMf/jtuBH39Qo5D7TH+HeXXJi2TCTSEj3j9GJ4TqP+fHmh5dyAw==\" sign=+1 type=mark value=20..40",
+    "bound-lock/1 by=remote-device epoch=3 id=b pole=ceiling reach=travels scope=B sig=\"ed25519:sample:e5JXMg2t6xCuxcPH2SH/8qda3le2cHVgT4HlJ8Ts2QoVFQMHU8r7TxOw2hbxlQD009Wry6vizJkYaEXqN6+AAw==\" sign=+1 type=mark value=30..50"
+  ],
+  "expected": {
+    "identity": "sha256:1d8f4da1b609248c48436077161f86f56eb9f96bf8263f8b77dd41cebf00d3fb",
+    "senderEpoch": 4,
+    "records": [
+      "bound-lock/1 by=remote-device epoch=1 form=interval id=cell-B measure=id params=sha256:f528212a496dc7a0e9a57c129b561aa4609364d70f886c09d668e00797521eb5 restsOn=none scope=B sig=\"ed25519:sample:LqtbslHaeQ2czFt83BSY/Z9xlQy90TsYUKHL6MmBpNnAk0Y64tWPwpLT5RP97IoDlp5RjZWFVx+wlV3Isw0pAQ==\" topos=sha256:c31473fb809847634220dc26c1513cb7c0c27eddf9639c73f2d3e403d2a0340b type=cell",
+      "bound-lock/1 by=remote-device epoch=2 id=a pole=ceiling reach=travels scope=B sig=\"ed25519:sample:WNqUIAnQrdotW4SB+Pfrfq/2BmFeyeQ+zqerMf/jtuBH39Qo5D7TH+HeXXJi2TCTSEj3j9GJ4TqP+fHmh5dyAw==\" sign=+1 type=mark value=20..40",
+      "bound-lock/1 by=remote-device epoch=3 id=b pole=ceiling reach=travels scope=B sig=\"ed25519:sample:e5JXMg2t6xCuxcPH2SH/8qda3le2cHVgT4HlJ8Ts2QoVFQMHU8r7TxOw2hbxlQD009Wry6vizJkYaEXqN6+AAw==\" sign=+1 type=mark value=30..50"
+    ],
+    "importReceiptProposal": "bound-lock/1 at=receipt:sha256:f21e939b8b2e0b2898c877fc6fe874e48a1f69cf8fc20228dc49f7f616afd6fe by=target form=alphabet measure=digest role=writes scope=receipts value=sha256:1d8f4da1b609248c48436077161f86f56eb9f96bf8263f8b77dd41cebf00d3fb"
+  }
+}

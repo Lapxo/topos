@@ -1,0 +1,26 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {generateKeyPairSync,createHash,sign,verify} from 'node:crypto';
+import {canonical,parse,formatSignature,signedBytes,parseSignature} from '../src/wire/index.ts';
+import {walkSnapshot as snapshotOf,walkAt} from '../src/walk.ts';
+import {walkHeaders as headersOf,readWalkHeaders as headersFrom,readWalkPayload as payloadFrom} from '../src/walk.ts';
+const pair=generateKeyPairSync('ed25519'),hash=text=>'sha256:'+createHash('sha256').update(text).digest('hex');
+const fields=['scope','role','form','measure','value','by','at','epoch'];
+const signing=line=>{const f={...parse(line).value.fields,by:'sender',epoch:'2'};return canonical({...f,sig:formatSignature('ed25519:sample',sign(null,Buffer.from(signedBytes(f)),pair.privateKey).toString('base64'))})};
+const valid=lines=>lines.every(line=>{const f=parse(line).value.fields;if(typeof f.sig!=='string')return false;const s=parseSignature(f.sig);return s&&verify(null,Buffer.from(signedBytes(f)),pair.publicKey,Buffer.from(s.raw,'base64'))});
+const evidence=(scope,value)=>signing(canonical({scope,value,form:'alphabet',measure:'id',role:'reads',at:'origin:sample',by:'target'}));
+for(const prefix of ['measurement','artifact'])test('wire keeps unsigned metadata separate from ordinary batch admission: '+prefix,()=>{
+ const old=evidence(prefix+'/one','old'),fresh=evidence(prefix+'/one','new');
+ const peer=snapshotOf([old],fields,hash),own=snapshotOf([old,fresh],fields,hash),context=hash('shared interpreted contract');
+ const inventory=walkAt(own,peer,0),inventoryUnsigned=headersOf(inventory,context,peer.root,false);assert.throws(()=>headersFrom(inventoryUnsigned,context,peer.root,valid),/metadata is not authenticated/);
+ const inventorySigned=inventoryUnsigned.map(signing);const looked=headersFrom(inventorySigned,context,peer.root,valid);assert.equal(looked.regions[0].count,undefined,'absence is not zero');
+ const packet=walkAt(own,peer,8),headers=headersOf(packet,context,peer.root,true).map(signing);const options={context,base:peer.root,fields,digest:hash,authenticateMetadata:valid,admitBatch:valid};
+ const decoded=payloadFrom([...headers,...packet.records],options);assert.deepEqual(decoded.records,packet.records);
+ assert.throws(()=>payloadFrom([...headers,...packet.records],{...options,base:hash('later snapshot')}),/stale base/);
+ assert.throws(()=>payloadFrom([...headers,...packet.records],{...options,context:hash('another interpretation')}),/metadata context/);
+ assert.throws(()=>payloadFrom([...inventorySigned,...packet.records],options),/without its summary/);
+ assert.throws(()=>payloadFrom([...headers,...packet.records],{...options,admitBatch:()=>false}),/receiver does not admit/);
+ assert.throws(()=>payloadFrom([...headers,...packet.records.slice(1)],options),/mismatch|partial/);
+ assert.throws(()=>payloadFrom([...headers,headers[0],...packet.records],options),/ambiguous/);
+ assert.throws(()=>payloadFrom([...headers,...packet.records.map(line=>line.replace('value=new','value=tampered'))],options),/mismatch/);
+});

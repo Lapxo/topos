@@ -1,0 +1,153 @@
+{
+  "status": "Captured from the isolated candidate; not release acceptance",
+  "readerDigest": "sha256:147f699fbcb7c6d65b8198cf60fea0e18096bc76319912bc9bb9d71ef3fe157a",
+  "readerVersion": "0.1.5 candidate",
+  "commands": [
+    {
+      "args": [
+        "fold",
+        "<fixture>/topos-prepare.bound"
+      ],
+      "status": 0,
+      "stdout": "TOPOS bound-lock/1 at=policy:projection form=alphabet kind=capsule measure=digest restsOn=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02 role=writes scope=offers/programs value=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/ceiling value=clock/ceiling\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/elapsed value=clock/elapsed\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/evidence value=proofs\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/minimum value=tasks/minimum\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/profile value=admitted-demands@1\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/selection value=tasks/selection\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/provider-inputs value=standing-projection@1\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-card value=wire/programs/**\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-status value=wire/programs/**\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=reads role=writes scope=region/world value=wire/**|offers/**\nPIN sha256:564a4a6100b8778efe2739d254b024d4225917fbf082d0bcc74f37a69e946537\nbound-lock/1 at=policy:projection by=target form=alphabet measure=reads role=writes scope=region/world value=wire/**|offers/**\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/provider-inputs value=standing-projection@1\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/profile value=admitted-demands@1\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/selection value=tasks/selection\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/minimum value=tasks/minimum\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/evidence value=proofs\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/elapsed value=clock/elapsed\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/ceiling value=clock/ceiling\nbound-lock/1 at=policy:projection by=target form=alphabet kind=capsule measure=digest restsOn=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02 role=writes scope=offers/programs value=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02\nbound-lock/1 at=policy:projection by=target form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-status value=wire/programs/**\nbound-lock/1 at=policy:projection by=target form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-card value=wire/programs/**\nFACT     11 standing · 0 forks · topos-prepare.bound · readings · no encounters computed\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "land",
+        "--key",
+        "device",
+        "--key-file",
+        "<fixture>/prepare.pem"
+      ],
+      "status": 0,
+      "stdout": "FACT     landed 34 unique lines from 34 in TARGET · 0 of 34 signed lines fail admission by declared authority\nTARGET   34 claims · 0 superseded · 101 ms\nFACT     vouched · 0 sources under 2 locations · 0 needs refused as globs\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "programs"
+      ],
+      "status": 0,
+      "stdout": "PROGRAM deadline=unread closed=false\nDEMAND tasks/prepare unread blocked=none missing=none unread=proof/prepare carry=false\nDEMAND tasks/ship blocked blocked=tasks/prepare missing=none unread=proof/ship carry=false\nNEXT tasks/prepare\n",
+      "stderr": "OWN      imports 11 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 6 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 15 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 13 ms · own 40 ms · regions 1 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 98671a54 folded 0.3 s\nKEPT     fold 98671a54 miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · demand-status\n"
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "card"
+      ],
+      "status": 0,
+      "stdout": "PROGRAM deadline=unread closed=false\nDEMAND tasks/prepare unread blocked=none missing=none unread=proof/prepare carry=false\nDEMAND tasks/ship blocked blocked=tasks/prepare missing=none unread=proof/ship carry=false\nNEXT tasks/prepare\n",
+      "stderr": "OWN      imports 10 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 7 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 15 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 12 ms · own 35 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold 88fa7243 folded 0.2 s · 0.3 s folded\nKEPT     fold 88fa7243 miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · demand-card\n"
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "supplied"
+      ],
+      "status": 0,
+      "stdout": "bound-lock/0 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/claims value=34..34\nbound-lock/1 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/forks value=0..0\nbound-lock/2 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/refused value=0..0\nbound-lock/3 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/vacuous value=0..0\nbound-lock/4 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/history value=0..0\nbound-lock/5 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/met value=4..4\nbound-lock/6 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/short value=0..0\nbound-lock/7 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/over value=0..0\nbound-lock/8 at=place:fold by=fold form=alphabet measure=fact role=writes scope=verdict/computation value=readings\nbound-lock/9 at=place:fold by=fold form=alphabet measure=fact role=writes scope=verdict/encounters value=uncomputed\n",
+      "stderr": "OWN      imports 9 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 1 ms · capsules 0 ms · regions 7 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 0 ms · laid 14 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 12 ms · own 34 ms · regions 1 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 61c89107 folded 0.2 s · 0.3 s folded\nKEPT     fold 61c89107 miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · supplied\n"
+    },
+    {
+      "args": [
+        "land",
+        "--key",
+        "device",
+        "--key-file",
+        "<fixture>/prepare.pem"
+      ],
+      "status": 0,
+      "stdout": "FACT     landed 34 unique lines from 34 in TARGET · 0 of 34 signed lines fail admission by declared authority\nTARGET   34 claims · 0 superseded · 100 ms\nFACT     vouched · 0 sources under 2 locations · 0 needs refused as globs\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "programs"
+      ],
+      "status": 1,
+      "stdout": "",
+      "stderr": "OWN      imports 11 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 7 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 16 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 13 ms · own 39 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold c3ef44af folded 0.3 s\nKEPT     fold c3ef44af miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · demand-status\nclosing: REFUSE·capsule sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02 · demand-status · Error: REFUSE·program dependency cycle tasks/prepare\n"
+    },
+    {
+      "args": [
+        "fold",
+        "<fixture>/topos-sow.bound"
+      ],
+      "status": 0,
+      "stdout": "TOPOS bound-lock/1 at=policy:projection form=alphabet kind=capsule measure=digest restsOn=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02 role=writes scope=offers/programs value=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/ceiling value=clock/ceiling\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/elapsed value=clock/elapsed\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/evidence value=proofs\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/minimum value=tasks/minimum\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/profile value=admitted-demands@1\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/programs/selection value=tasks/selection\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=id role=writes scope=wire/provider-inputs value=standing-projection@1\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-card value=wire/programs/**\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-status value=wire/programs/**\nTOPOS bound-lock/1 at=policy:projection form=alphabet measure=reads role=writes scope=region/world value=wire/**|offers/**\nPIN sha256:564a4a6100b8778efe2739d254b024d4225917fbf082d0bcc74f37a69e946537\nbound-lock/1 at=policy:projection by=target form=alphabet measure=reads role=writes scope=region/world value=wire/**|offers/**\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/provider-inputs value=standing-projection@1\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/profile value=admitted-demands@1\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/selection value=tasks/selection\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/minimum value=tasks/minimum\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/evidence value=proofs\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/elapsed value=clock/elapsed\nbound-lock/1 at=policy:projection by=target form=alphabet measure=id role=writes scope=wire/programs/ceiling value=clock/ceiling\nbound-lock/1 at=policy:projection by=target form=alphabet kind=capsule measure=digest restsOn=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02 role=writes scope=offers/programs value=sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02\nbound-lock/1 at=policy:projection by=target form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-status value=wire/programs/**\nbound-lock/1 at=policy:projection by=target form=alphabet measure=reads role=demands scope=offers/programs/inputs/demand-card value=wire/programs/**\nFACT     11 standing · 0 forks · topos-sow.bound · readings · no encounters computed\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "land",
+        "--key",
+        "device",
+        "--key-file",
+        "<fixture>/sow.pem"
+      ],
+      "status": 0,
+      "stdout": "FACT     landed 34 unique lines from 34 in TARGET · 0 of 34 signed lines fail admission by declared authority\nTARGET   34 claims · 0 superseded · 102 ms\nFACT     vouched · 0 sources under 2 locations · 0 needs refused as globs\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "programs"
+      ],
+      "status": 0,
+      "stdout": "PROGRAM deadline=unread closed=false\nDEMAND tasks/sow unread blocked=none missing=none unread=proof/sow carry=false\nDEMAND tasks/harvest blocked blocked=tasks/sow missing=none unread=proof/harvest carry=false\nNEXT tasks/sow\n",
+      "stderr": "OWN      imports 12 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 7 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 0 ms · laid 16 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 13 ms · own 38 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold d509de5e folded 0.3 s\nKEPT     fold d509de5e miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · demand-status\n"
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "card"
+      ],
+      "status": 0,
+      "stdout": "PROGRAM deadline=unread closed=false\nDEMAND tasks/sow unread blocked=none missing=none unread=proof/sow carry=false\nDEMAND tasks/harvest blocked blocked=tasks/sow missing=none unread=proof/harvest carry=false\nNEXT tasks/sow\n",
+      "stderr": "OWN      imports 9 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 7 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 2 ms · laid 17 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 11 ms · own 38 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 9f208a60 folded 0.2 s · 0.3 s folded\nKEPT     fold 9f208a60 miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · demand-card\n"
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "supplied"
+      ],
+      "status": 0,
+      "stdout": "bound-lock/0 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/claims value=34..34\nbound-lock/1 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/forks value=0..0\nbound-lock/2 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/refused value=0..0\nbound-lock/3 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/vacuous value=0..0\nbound-lock/4 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/history value=0..0\nbound-lock/5 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/met value=4..4\nbound-lock/6 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/short value=0..0\nbound-lock/7 at=place:fold by=fold form=interval measure=count role=writes scope=verdict/over value=0..0\nbound-lock/8 at=place:fold by=fold form=alphabet measure=fact role=writes scope=verdict/computation value=readings\nbound-lock/9 at=place:fold by=fold form=alphabet measure=fact role=writes scope=verdict/encounters value=uncomputed\n",
+      "stderr": "OWN      imports 9 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 8 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 13 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 11 ms · own 35 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold d3f7faaf folded 0.2 s · 0.3 s folded\nKEPT     fold d3f7faaf miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · supplied\n"
+    },
+    {
+      "args": [
+        "land",
+        "--key",
+        "device",
+        "--key-file",
+        "<fixture>/sow.pem"
+      ],
+      "status": 0,
+      "stdout": "FACT     landed 34 unique lines from 34 in TARGET · 0 of 34 signed lines fail admission by declared authority\nTARGET   34 claims · 0 superseded · 94 ms\nFACT     vouched · 0 sources under 2 locations · 0 needs refused as globs\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "fold",
+        "--as",
+        "programs"
+      ],
+      "status": 1,
+      "stdout": "",
+      "stderr": "OWN      imports 11 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 7 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 14 ms · resets 1 ms · store 0 ms · ship 1 ms\nSPENT    fold capsules 12 ms · own 36 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold a451bc8c folded 0.3 s\nKEPT     fold a451bc8c miss · no fold was kept before this one\nCAPSULE  2880683a63d5 · 1 asked · 1 run · demand-status\nclosing: REFUSE·capsule sha256:2880683a63d5208e10e55a8d56eab09ddd13dd2964c871010dabe97f3a13dc02 · demand-status · Error: REFUSE·program dependency cycle tasks/harvest\n"
+    }
+  ]
+}

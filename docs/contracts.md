@@ -51,3 +51,55 @@ Inventory and summary can show declared groups or exact coordinates. Summary ack
 The sender context pins the history field and partition contract. The receiver decodes under that context, not its own partition or fields. Earlier verified complete-coordinate prefixes remain required, with original epochs and exact-origin withdrawals unchanged. A previously unasked coordinate is not claimed to have a verified earlier prefix. Changing an admitted origin context still requires separately declared lineage; refinement labels do not migrate history or rewrite its signatures.
 
 The shipped reference sample declares cuts at 0, 1, 4, 6 and 8, with 4 showing an intermediate coordinate depth and 6 carrying complete histories. These are example labels and depths, not limits. Other Topos partition interpretations require their own declared contract; scope-coordinates@1 does not claim to implement them.
+
+## Typed cell, claim and mark records
+
+The object profile is selected by admitted `wire/object/*` claims in a historical wire snapshot. The epoch of `wire/object/types` is its activation E; a typed record must have epoch >= E. An older record keeps the older grammar. Merely adding object words to `wire/fields` does not admit a typed profile.
+
+`fromLine` selects grammar before validating required fields: a record without `type` remains configuration, retaining its required `at`, `role`, `form`, `measure` and `value`; a typed record selects its exact required/allowed row. Configuration cannot carry object-only fields. An incomplete typed record receives no configuration defaults. The parse result distinguishes configuration from cell/claim/mark. `sign=+1|-1` is an object act, `sig` its signature envelope, and a host sign operation produces that envelope.
+
+The common object envelope is `type`, `scope`, `id`, `epoch`, `by`, `sig`. Object records reject `at`: epoch orders acts, and `widens` names a local join witness. The following is the shipped reference profile. The admitted row alphabets, not this table or a host decoder, are the source of required/allowed field permission.
+
+| Row | Fields in addition to the common envelope | Meaning |
+| --- | --- | --- |
+| cell | form, measure, params, restsOn, topos | Define a cell and its selected form/context. |
+| claim/positive | sign, origin, value | Observe an encoded span, sign=+1. |
+| claim/negative | sign, takes | Withdraw an exact claim ID, sign=-1. |
+| mark/travelling | sign, pole, reach, value | Ceiling sign: sign=+1, pole=ceiling, reach=travels. |
+| mark/local | sign, pole, reach, value, widens | Local join: sign=+1, pole=ceiling, reach=local; another mark, retaining the travelling sign. |
+| mark/floor-travelling | sign, pole, reach, value | Travelling require: sign=+1, pole=floor, reach=travels; no widens. |
+| mark/negative | sign, takes | Withdraw an exact mark ID, sign=-1; no pole/reach/widens. |
+
+Each row has both `wire/object/required/<row>` and `wire/object/allowed/<row>`. Unknown keys, missing required keys, floor/local, floor+widens, and travelling widening refuse without coercion. A configuration demand is unrelated to a floor mark. `by` authenticates a signing key; it is not an independent observation origin.
+
+For a cell, `restsOn=none` represents no parents; otherwise it is a canonical byte-ordered alphabet of coordinates. Several parents are permitted. Only declared cell-coordinate edges form object rest; a directory prefix, a configuration artifact digest, and a host source location do not. Context validation rejects reachable cycles before algebraic parts are requested.
+
+The cell's `topos` names folded standing, and its `params` identifies declared parameter bytes. A selected provider decodes values and supplies origin/witness authorization from admitted evidence. A host does not infer interval endpoints, map a key to an origin, or accept widens as its own witness. Missing pin, artifact, decoder, origin or witness refuses by cause. Cell definitions and pins are immutable in this profile; migration is not inferred.
+
+`objectHistory` preserves typed history separately from configuration; `validateObjectContext` checks IDs, cell ownership, exact takes, witness order and declared rest under the selected context. Exact redelivery is idempotent; one ID with different canonical content refuses. Signature-envelope differences never bypass verification.
+
+After admission, the instrument projects the acts into Obligations. Sign and require travel along declared rest; a witnessed join is local. Descendants inherit travelling marks without local widening. Live exact-ID withdrawals remain confined to their authenticated history. Keys, snapshots, signing devices and repeated receipts do not create independent origins. Compatible meets are not forks. Object states and their precedence come from Obligations; configuration folds do not compute object encounters.
+
+The package's `samples/walk/interval.json`, `interval.no.json`, `alphabet.json` and `alphabet.no.json` carry exact historical wire declarations and signed positive/negative exchange records. They are examples of declared profiles, not a production activation epoch or a promise that their keys authorize another place. Host-native object output remains a separate product vector.
+
+## Demands, evidence and declared dependencies
+
+`@lapxo/topos/contract` exports `programsOf`, `programInputs` and `renderPrograms`. These project explicit program coordinates, their `needs`, their `restsOn` predecessors and admitted evidence. They do not admit lines, execute work or compute cell states.
+
+`programsOf({programs, evidence, minimum, elapsed?, ceiling?})` takes programs with `scope`, `needs` and `restsOn`, plus an admitted evidence map. Evidence labels are `met`, `unmet`, `unread` and `refused`. The caller verifies evidence before passing it. A file at a requirement's coordinate does not establish its meaning or conformance.
+
+A missing proof remains unread. An empty requirement is vacuous and never completes a program. An absent minimum refuses. Unknown coordinates, duplicate declarations and dependency cycles refuse by coordinate. An unmet predecessor blocks successors. `next` retains all eligible unresolved programs; presentation order cannot authorize a successor. Only explicitly optional programs carry over after a measured deadline; no version arithmetic or stage numbers are inferred. An absent elapsed reading keeps the deadline unread.
+
+The native `admitted-demands@1` view profile reads its selectors from the selected provider's standing projection, separately from place lines. `wire/programs/{selection,minimum,evidence,elapsed,ceiling}` each names a coordinate or handed evidence region; `wire/programs/profile` names the profile. The selected demand lines provide their own `needs` and `restsOn`. Evidence statuses come from the declared region's receipts. Elapsed time also comes from that region, as an exact finite interval; a configured elapsed value is not an observation. The ceiling is a declared interval, and both measurements must use the same unit. `restsOn` here names program predecessors, never cell rest or artifact bytes.
+
+A place chooses its view names and the offered regions. The instrument's historical `programs` summary need not be replaced: a declared `view/programs` may select this provider's demand projection. The provider performs no filesystem, network, signing or admission work. Its output names demands, prerequisites, missing or unread evidence and eligible next coordinates. None of these labels introduces another Obligatory state.
+
+`samples/programs/yes.json` supplies two unrelated plans. `samples/programs/no.json` supplies ambiguous or cyclic inputs. `samples/programs/cli.vector.json` captures native programs/card requests in fresh isolated places, including unread evidence and named cycle refusals. These captures are evidence for that candidate reader and those provider bytes; they are not receipts for another place's work.
+
+## Publication coverage
+
+`@lapxo/topos/contract` also exports `publicationCoverage(rows, artifacts, proofs, digest)`. Each selected public coordinate declares members with the roles `contract`, `yes`, `vector` and `no`, each by digest. The artifact map supplies the corresponding bytes; the supplied digest implementation verifies them. A changed or corrupt member refuses by coordinate.
+
+Proofs are conformance readings already admitted by the caller. Each proof records its exact quartet of input identities and its status. Stale input identities refuse. Four available members without an admitted proof remain unread; a refused or unmet proof cannot close the coordinate. Empty surface selection is vacuous and refuses. The result reports every unresolved coordinate and a missing count. This projection cannot create a receipt, run a vector or authenticate the observer. Those operations belong to the selected measurer and host admission boundary.
+
+Supported operations and outstanding capability demands must be inventoried separately. A demand does not become an exported implementation because its name appears in a lock. Removing public support requires its explicit compatibility decision; missing documentation cannot be hidden by renaming or excluding an implemented surface.

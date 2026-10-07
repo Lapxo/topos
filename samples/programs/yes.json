@@ -1,0 +1,81 @@
+{
+  "profile": "admitted-demands@1",
+  "cases": [
+    {
+      "programs": [
+        {
+          "scope": "prepare",
+          "needs": [
+            "proof/prepare"
+          ],
+          "restsOn": []
+        },
+        {
+          "scope": "ship",
+          "needs": [
+            "proof/ship"
+          ],
+          "restsOn": [
+            "prepare"
+          ]
+        }
+      ],
+      "minimum": [
+        "prepare",
+        "ship"
+      ],
+      "evidence": [
+        [
+          "proof/prepare",
+          "met"
+        ]
+      ],
+      "expected": {
+        "closed": false,
+        "next": [
+          "ship"
+        ],
+        "deadline": "unread"
+      }
+    },
+    {
+      "programs": [
+        {
+          "scope": "sow",
+          "needs": [
+            "proof/sow"
+          ],
+          "restsOn": []
+        },
+        {
+          "scope": "harvest",
+          "needs": [
+            "proof/harvest"
+          ],
+          "restsOn": [
+            "sow"
+          ]
+        }
+      ],
+      "minimum": [
+        "sow",
+        "harvest"
+      ],
+      "evidence": [
+        [
+          "proof/sow",
+          "met"
+        ],
+        [
+          "proof/harvest",
+          "met"
+        ]
+      ],
+      "expected": {
+        "closed": true,
+        "next": [],
+        "deadline": "unread"
+      }
+    }
+  ]
+}

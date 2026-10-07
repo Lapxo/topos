@@ -1,0 +1,56 @@
+{
+  "profile": "admitted-demands@1",
+  "cases": [
+    {
+      "name": "cycle",
+      "programs": [
+        {
+          "scope": "a",
+          "needs": [
+            "x"
+          ],
+          "restsOn": [
+            "b"
+          ]
+        },
+        {
+          "scope": "b",
+          "needs": [
+            "y"
+          ],
+          "restsOn": [
+            "a"
+          ]
+        }
+      ],
+      "minimum": [
+        "a"
+      ],
+      "refusal": "dependency cycle"
+    },
+    {
+      "name": "empty minimum",
+      "programs": [],
+      "minimum": [],
+      "refusal": "vacuity cannot close a program"
+    },
+    {
+      "name": "unknown dependency",
+      "programs": [
+        {
+          "scope": "a",
+          "needs": [
+            "x"
+          ],
+          "restsOn": [
+            "missing"
+          ]
+        }
+      ],
+      "minimum": [
+        "a"
+      ],
+      "refusal": "unknown dependency missing"
+    }
+  ]
+}

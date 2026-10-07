@@ -17,7 +17,7 @@ const record = (line: string) => {const got=parse(line);if(got.kind!=='fact')ret
 /** Ledger identity is explicit context data. Neither a key nor a snapshot mints it. */
 export function walkOrigin(parts:readonly Readonly<Record<string,string>>[]):string {
  const rows=parts.filter(f=>f.scope==='walk/origin'&&f.role==='writes'&&f.form==='alphabet'&&f.measure==='id'&&f.value!=='withdraw');
- if(rows.length!==1||!rows[0]!.value||/[\s/]/.test(rows[0]!.value!))return refuse('missing or conflicting declared ledger origin');
+ if(rows.length!==1||!rows[0]!.value)return refuse('missing or conflicting declared ledger origin');
  return rows[0]!.value!;
 }
 
@@ -52,7 +52,7 @@ export function walkSnapshot(records: readonly string[], fields: readonly string
   return line;
  }))].sort(byBytes);
  const projection=receiptProjection(complete,fields,digest);
- const regions=projection.regions.map(region=>({...region,records:complete.filter(line=>record(line).fields.scope!.split('/')[0]===region.scope.slice('receipts/'.length)),scope:origin?'receipts/'+origin+'/'+region.scope.slice('receipts/'.length):region.scope}));
+ const regions=projection.regions.map(region=>({...region,records:complete.filter(line=>record(line).fields.scope!.split('/')[0]===region.scope.slice('receipts/'.length)),scope:origin?'receipts/'+encodeURIComponent(origin)+'/'+region.scope.slice('receipts/'.length):region.scope}));
  return {root:origin?walkInventory([regions],digest).root:projection.root,regions};
 }
 
@@ -68,8 +68,18 @@ export function walkInventory(groups:readonly (readonly ReceiptRegion[])[],diges
 }
 
 /** Peer summaries must be authenticated before selection. Selection performs no transport or invocation. */
-export function walkAt(own: WalkSnapshot, peer: WalkSummary, resolution: number, requested?: readonly string[]): Walk {
- if(![0,1,8].includes(resolution))refuse('unsupported resolution');
+export type WalkProjection = 'inventory' | 'summary' | 'history';
+export interface WalkResolution {readonly resolution: number; readonly projection: WalkProjection}
+/** Resolve only a declared projection. Numeric labels carry no implicit meaning. */
+export function walkProjection(profile: readonly WalkResolution[], resolution: number | undefined): WalkProjection {
+ if(resolution!==undefined&&(!Number.isSafeInteger(resolution)||resolution<0))return refuse('invalid resolution');
+ const selected=profile.filter(point=>resolution===undefined?point.projection==='inventory':point.resolution===resolution);
+ if(selected.length!==1)return refuse('undeclared or ambiguous resolution');
+ if(!['inventory','summary','history'].includes(selected[0]!.projection))return refuse('unsupported declared projection');
+ return selected[0]!.projection;
+}
+export function walkAt(own: WalkSnapshot, peer: WalkSummary, resolution: number | undefined, profile: readonly WalkResolution[], requested?: readonly string[]): Walk {
+ const projection=walkProjection(profile,resolution);
  const known=new Map<string,string>();
  for(const region of peer.regions){if(known.has(region.scope))refuse('ambiguous peer region '+region.scope);known.set(region.scope,region.digest)}
  const differences=own.regions.filter(region=>known.get(region.scope)!==region.digest);
@@ -77,7 +87,7 @@ export function walkAt(own: WalkSnapshot, peer: WalkSummary, resolution: number,
  if(new Set(wanted).size!==wanted.length)refuse('duplicate requested region');
  for(const name of wanted)if(!differences.some(region=>region.scope===name))refuse('region is not an open requested difference '+name);
  const selected=differences.filter(region=>wanted.includes(region.scope));
- return {root:own.root,regions:(resolution===0?own.regions:selected).map(({records,...region})=>region),records:resolution===8?[...new Set(selected.flatMap(region=>region.records))].sort(byBytes):[],touched:resolution===8?selected.length:0,open:differences.length};
+ return {root:own.root,regions:(projection==='inventory'?own.regions:selected).map(({records,...region})=>region),records:projection==='history'?[...new Set(selected.flatMap(region=>region.records))].sort(byBytes):[],touched:projection==='history'?selected.length:0,open:differences.length};
 }
 
 /** Completeness precedes the receiver's whole-lot boundary. This operation never commits or grants coverage. */
@@ -204,7 +214,7 @@ export function readForeignWalk(lines: readonly string[], contract: ForeignWalkC
  return {origin:contract.origin,senderEpoch,records,headers,identity,importReceiptProposal:canonical({scope:'receipts',role:'writes',form:'alphabet',measure:'digest',value:identity,at:'receipt:'+contract.context,by:'target'})};
 }
 
-export interface WalkSelection {readonly contract: 'whole-region@1'; readonly fields: readonly string[]; readonly metadataFields: readonly string[]; readonly resolutions: readonly number[]}
+export interface WalkSelection {readonly contract: 'whole-region@1'; readonly fields: readonly string[]; readonly metadataFields: readonly string[]; readonly resolutions: readonly number[]; readonly projections: readonly WalkResolution[]}
 /** Read an already folded, admitted contract. These claims grant no signer coverage and select no transport. */
 export function walkSelection(standing: readonly string[]): WalkSelection {
  const at=(scope: string): string=>{
@@ -214,11 +224,18 @@ export function walkSelection(standing: readonly string[]): WalkSelection {
  };
  if(at('wire/walk/contract')!=='whole-region@1')refuse('unsupported declared exchange contract');
  const fields=at('wire/walk/fields').split('|'),metadataFields=at('wire/walk/metadata-fields').split('|'),resolutionTokens=at('wire/walk/resolutions').split('|');
- if(resolutionTokens.some(token=>!['0','1','8'].includes(token)))refuse('unsupported declared resolutions');
+ if(resolutionTokens.some(token=>!/^(0|[1-9][0-9]*)$/.test(token)||!Number.isSafeInteger(Number(token))))refuse('invalid declared resolutions');
  const resolutions=resolutionTokens.map(Number);
  if(new Set(fields).size!==fields.length||['scope','by','epoch'].some(key=>!fields.includes(key))||fields.some(key=>!key||key==='sig'))refuse('incomplete history identity field contract');
  const required=['scope','role','form','measure','value','condition','by','at','epoch','sig'];
  if(metadataFields.length!==required.length||new Set(metadataFields).size!==metadataFields.length||required.some(key=>!metadataFields.includes(key)))refuse('unsupported metadata field contract');
- if(resolutions.length!==3||new Set(resolutions).size!==3||[0,1,8].some(n=>!resolutions.includes(n)))refuse('unsupported declared resolutions');
- return {contract:'whole-region@1',fields,metadataFields,resolutions};
+ if(!resolutions.length||new Set(resolutions).size!==resolutions.length)refuse('missing or conflicting declared resolutions');
+ const projections=at('wire/walk/projections').split('|').map(token=>{
+  const pair=token.split(':');if(pair.length!==2||!/^(0|[1-9][0-9]*)$/.test(pair[0]!))return refuse('invalid declared projection');
+  const resolution=Number(pair[0]),projection=pair[1];
+  if(!Number.isSafeInteger(resolution)||!['inventory','summary','history'].includes(projection!))return refuse('unsupported declared projection');
+  return {resolution,projection:projection as WalkProjection};
+ });
+ if(projections.length!==resolutions.length||new Set(projections.map(point=>point.resolution)).size!==projections.length||projections.some(point=>!resolutions.includes(point.resolution)))refuse('projection does not match declared resolutions');
+ return {contract:'whole-region@1',fields,metadataFields,resolutions,projections};
 }

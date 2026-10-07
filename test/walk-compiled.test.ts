@@ -1,3 +1,4 @@
+import {projections} from './walk-profile.ts';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash,generateKeyPairSync,sign,verify} from 'node:crypto';
@@ -10,13 +11,15 @@ const admitted=line=>{const f=parse(line).value.fields,sig=parseSignature(f.sig)
 for(const [first,second] of [['reading/site-a','weather/site-b'],['artifact/manual','source/main']])test('native region identity and retained disagreement: '+first,()=>{
  const old=record(first,'one'),kept=record(second,'kept'),other=record(first,'two');
  const peer=snapshotOf([old,kept],fields,hash),own=snapshotOf([old,other,kept],fields,hash);
- assert.equal(walkAt(own,peer,0).records.length,0);assert.equal(walkAt(own,peer,1).records.length,0);
- const packet=walkAt(own,peer,8);assert.equal(packet.touched<=packet.open,true);const lines=payloadOf(packet.records,packet.regions,fields,hash,records=>records.every(admitted));assert.ok(lines.includes(old));assert.ok(lines.includes(other));
- const union=snapshotOf([...peer.regions.flatMap(p=>p.records),...lines],fields,hash);assert.equal(union.root,own.root);assert.equal(walkAt(own,union,8).records.length,0,'identical replay carries no semantic payload');
+ assert.equal(walkAt(own,peer,0,projections).records.length,0);assert.equal(walkAt(own,peer,1,projections).records.length,0);
+ const extended=[{resolution:2,projection:'inventory'},{resolution:4,projection:'summary'},{resolution:6,projection:'history'},{resolution:4096,projection:'history'}];
+ assert.equal(walkAt(own,peer,2,extended).records.length,0);assert.equal(walkAt(own,peer,4,extended).records.length,0);
+ const packet=walkAt(own,peer,6,extended);assert.deepEqual(packet,walkAt(own,peer,8,projections));assert.deepEqual(packet,walkAt(own,peer,4096,extended));assert.equal(packet.touched<=packet.open,true);const lines=payloadOf(packet.records,packet.regions,fields,hash,records=>records.every(admitted));assert.ok(lines.includes(old));assert.ok(lines.includes(other));
+ const union=snapshotOf([...peer.regions.flatMap(p=>p.records),...lines],fields,hash);assert.equal(union.root,own.root);assert.equal(walkAt(own,union,8,projections).records.length,0,'identical replay carries no semantic payload');
  assert.throws(()=>payloadOf(lines.slice(1),packet.regions,fields,hash,records=>records.every(admitted)),/REFUSE·walk/);
  assert.throws(()=>payloadOf(lines.map(l=>l.replace('value=two','value=changed')),packet.regions,fields,hash,records=>records.every(admitted)),/REFUSE·walk/);
  assert.throws(()=>payloadOf(lines,packet.regions,fields,hash,()=>false),/receiver does not admit/);
  assert.throws(()=>snapshotOf(lines,fields.filter(f=>f!=='by'),hash),/identity omits by/);
- assert.throws(()=>walkAt(own,peer,2),/unsupported resolution/);
- assert.throws(()=>walkAt(own,peer,8,['missing']),/open requested difference/);
+ assert.throws(()=>walkAt(own,peer,2,projections),/undeclared or ambiguous resolution/);
+ assert.throws(()=>walkAt(own,peer,8,projections,['missing']),/open requested difference/);
 });

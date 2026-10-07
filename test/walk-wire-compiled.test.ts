@@ -1,3 +1,4 @@
+import {projections} from './walk-profile.ts';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {generateKeyPairSync,createHash,sign,verify} from 'node:crypto';
@@ -12,9 +13,9 @@ const evidence=(scope,value)=>signing(canonical({scope,value,form:'alphabet',mea
 for(const prefix of ['measurement','artifact'])test('wire keeps unsigned metadata separate from ordinary batch admission: '+prefix,()=>{
  const old=evidence(prefix+'/one','old'),fresh=evidence(prefix+'/one','new');
  const peer=snapshotOf([old],fields,hash),own=snapshotOf([old,fresh],fields,hash),context=hash('shared interpreted contract');
- const inventory=walkAt(own,peer,0),inventoryUnsigned=headersOf(inventory,context,peer.root,false);assert.throws(()=>headersFrom(inventoryUnsigned,context,peer.root,valid),/metadata is not authenticated/);
+ const inventory=walkAt(own,peer,0,projections),inventoryUnsigned=headersOf(inventory,context,peer.root,false);assert.throws(()=>headersFrom(inventoryUnsigned,context,peer.root,valid),/metadata is not authenticated/);
  const inventorySigned=inventoryUnsigned.map(signing);const looked=headersFrom(inventorySigned,context,peer.root,valid);assert.equal(looked.regions[0].count,undefined,'absence is not zero');
- const packet=walkAt(own,peer,8),headers=headersOf(packet,context,peer.root,true).map(signing);const options={context,base:peer.root,fields,digest:hash,authenticateMetadata:valid,admitBatch:valid};
+ const packet=walkAt(own,peer,8,projections),headers=headersOf(packet,context,peer.root,true).map(signing);const options={context,base:peer.root,fields,digest:hash,authenticateMetadata:valid,admitBatch:valid};
  const decoded=payloadFrom([...headers,...packet.records],options);assert.deepEqual(decoded.records,packet.records);
  assert.throws(()=>payloadFrom([...headers,...packet.records],{...options,base:hash('later snapshot')}),/stale base/);
  assert.throws(()=>payloadFrom([...headers,...packet.records],{...options,context:hash('another interpretation')}),/metadata context/);

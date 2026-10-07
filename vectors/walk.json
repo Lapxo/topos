@@ -1,15 +1,15 @@
 {
-  "status": "SDK and host-port capture; not product CLI acceptance",
-  "capture": "\u2714 two clocks and isolated foreign history: interval (20.519917ms)\n\u2714 two clocks and isolated foreign history: alphabet (10.998458ms)\nINTERRUPTED 0 admitted evidence lines \u00b7 0 import receipts\nEXCHANGE 226 payload bytes \u00b7 1306 protocol bytes \u00b7 1532 new evidence bytes \u00b7 357 new receipt bytes\nONCE 0 new lines \u00b7 1 retained import receipt\nEXCHANGE 226 payload bytes \u00b7 1306 protocol bytes \u00b7 0 new evidence bytes \u00b7 0 new receipt bytes\nINTERRUPTED 0 admitted evidence lines \u00b7 0 import receipts\nEXCHANGE 223 payload bytes \u00b7 1300 protocol bytes \u00b7 1523 new evidence bytes \u00b7 357 new receipt bytes\nONCE 0 new lines \u00b7 1 retained import receipt\nEXCHANGE 223 payload bytes \u00b7 1300 protocol bytes \u00b7 0 new evidence bytes \u00b7 0 new receipt bytes\n\u2714 one signed local receipt and foreign evidence commit together: measurement (128.150125ms)\n\u2714 one signed local receipt and foreign evidence commit together: artifact (116.40275ms)\n\u2714 native region identity and retained disagreement: reading/site-a (4.351709ms)\n\u2714 native region identity and retained disagreement: artifact/manual (0.926ms)\n\u2714 walk exists only under its admitted explicit contract (2.109041ms)\n\u2714 wire keeps unsigned metadata separate from ordinary batch admission: measurement (9.171916ms)\n\u2714 wire keeps unsigned metadata separate from ordinary batch admission: artifact (4.756125ms)\n\u2139 tests 9\n\u2139 suites 0\n\u2139 pass 9\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 387.245667\n",
-  "sha256": "13dcafee35dab3409c460f6734c5e04b64d6045f62021812276a563d23833bf7",
+  "status": "SDK capture; not Bound CLI release acceptance",
+  "capture": "\u2714 two clocks and isolated foreign history: interval (69.471042ms)\n\u2714 two clocks and isolated foreign history: alphabet (17.423584ms)\n\u2714 pinned context authenticates declared keys only; journal identities do not become signers (3.688292ms)\n\u2714 native region identity and retained disagreement: reading/site-a (3.341625ms)\n\u2714 native region identity and retained disagreement: artifact/manual (3.113375ms)\n\u2714 inventories retain contextual regions; acknowledging a prefix sends no payload (2.240042ms)\n\u2714 opaque ledger names are escaped as one region coordinate segment (0.313583ms)\n\u2714 walk exists only under its admitted explicit contract (2.329375ms)\n\u2714 resolution meaning is declared and can grow without a new numeric whitelist (0.713584ms)\n\u2714 wire keeps unsigned metadata separate from ordinary batch admission: measurement (10.628458ms)\n\u2714 wire keeps unsigned metadata separate from ordinary batch admission: artifact (3.212958ms)\n\u2714 a wire alphabet refuses disagreement by name and never becomes vacuous (1.627958ms)\n\u2139 tests 12\n\u2139 suites 0\n\u2139 pass 12\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 316.012708\n",
+  "sha256": "a02ecd3431b081641c7fbaea997bb72cb2982ae97cb7d473dae54608fff97d61",
   "samples": {
     "alphabet.json": "b96733a2cd69e2b80ca71a78179d6fe9e286a6a01b5d724f97b10842c841a837",
     "alphabet.no.json": "fd10a5564f0698a054e6cd7e2c3a181631c6d9d36078d2635dafa40c88774e32",
-    "interval.no.json": "6560f648cf7b16fa29c3672ab06f00aba485de77f10808d713162fc19d80b810",
-    "declarations.json": "66639b29d32fbb1fd336c66ab83907c2308c3ccbf52d9ffb7712d945353aa3b3",
+    "declarations.json": "9da4457a4168a8ad2000fc74c6577058fa93ab5d924edef833af7f1b1fd3d06d",
     "interval.json": "3d94eecbb7ac6c0145547f94dd002a48361280d5c6e21b98e067f4ffd79c1853",
+    "interval.no.json": "6560f648cf7b16fa29c3672ab06f00aba485de77f10808d713162fc19d80b810",
     "wire.json": "88a4c15c7bbe5c322e9457bc80c2e9fcce9f896f951cc23ab614c65f967cd148"
   },
-  "nativeWalkUnpaid": true,
+  "nativeWalkReleaseUnpaid": true,
   "nativePolicyUnpaid": true
 }

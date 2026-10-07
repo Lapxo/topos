@@ -11,7 +11,7 @@ Content-request/1 asks a host mechanism for already pinned immutable bytes. Sour
 
 ## Whole-region walk
 
-The whole-region@1 contract exchanges authenticated history at three resolutions: @0 lists region identities; @1 gives signed region digests and exact counts; @8 carries only complete requested regions that differ. A digest is not a proof for an arbitrary slice or an unseen suffix. Verified regional prefixes retain all earlier records and reject insertion at already verified epochs.
+The whole-region@1 contract reads its resolution labels from wire/walk/resolutions and their projections from wire/walk/projections. Labels are nonnegative discrete coordinates, not hardcoded levels or a measure of information. This profile offers inventory (region identities), summary (digests and exact counts for differences), and history (complete requested regions that differ). The reference declaration maps @0 to inventory, @1 to summary and @8 to history; a place can declare @4, @6 or further labels without changing code. Every label needs exactly one declared projection; an undeclared label refuses rather than inventing detail. A digest is not a proof for an arbitrary slice or an unseen suffix. Verified regional prefixes retain all earlier records and reject insertion at already verified epochs.
 
 Two clocks remain separate. Original signed records keep their origin-ledger epoch. They are evidence, never receiver authority or key coverage. The receiver creates its own signed import receipt through its declared signer, at its next local epoch. Evidence and receipt must become visible in one transaction; an interrupted pre-publication import admits neither. Exact replay retains one receipt and adds no lines or origins.
 
@@ -31,3 +31,10 @@ walkSnapshot may qualify regions with the declared origin. walkInventory joins v
 ## Wire declaration disagreement
 
 Conflicting live declarations of one wire alphabet refuse by its wire coordinate. A writer may supersede its own earlier alphabet at a newer epoch under the existing admission contract; independently retained writers must agree. An ambiguous fields or required list never becomes an empty alphabet.
+
+
+## Profile boundaries
+
+A resolution label does not count regions or create information. Inventory, summary and whole-history are the encodings implemented by this named exchange profile, not a universal alphabet of Topos offers. The native receipt-family partition remains the first scope coordinate; this profile does not claim arbitrary nested-region refinement. Semantic cell folds and their region contract remain separate.
+
+Ledger origins are opaque identifiers. When projected into region coordinates their bytes are percent-encoded as one segment; slashes, spaces and percent signs cannot create a namespace collision. Context lineage, signatures, complete region commitments and origin-local exact withdrawals remain required. Numeric epochs, counts and resolution labels currently refuse values outside the implementation's exact integer range; no lossy conversion is accepted.

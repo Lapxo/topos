@@ -17,7 +17,7 @@ Two clocks remain separate. Original signed records keep their origin-ledger epo
 
 Withdrawals resolve against exact IDs within the same origin's authenticated history. They never target local lines merely sharing a scope or ID. Keys, snapshots and delivery copies do not establish independent object origins. The selected form/provider contract still decides attribution and independence; no extra meet or state is computed here.
 
-walkSelection reads the four admitted wire/walk declarations. walkSnapshot reuses native receipt projection for exchange history, separate from semantic cell-region receipt identity. walkAt selects the requested resolution without transport. walkHeaders returns unsigned statements for the declared signer. readWalkHeaders checks authenticated framing. readForeignWalk verifies whole-region commitments and earlier prefixes against the selected origin contract, returning verified foreign evidence and an unsigned native-format import-receipt proposal. It never signs, lands, grants coverage or advances a clock.
+walkSelection reads the admitted wire/walk declarations. walkSnapshot reuses native receipt projection for exchange history, separate from semantic cell-region receipt identity. walkAt selects the requested resolution without transport. walkHeaders returns unsigned statements for the declared signer. readWalkHeaders checks authenticated framing. readForeignWalk verifies whole-region commitments and earlier prefixes against the selected origin contract, returning verified foreign evidence and an unsigned native-format import-receipt proposal. It never signs, lands, grants coverage or advances a clock.
 
 The receiver authenticates the declared sender context, historical wire and provider before calling the SDK. The host verifies and signs the local proposal, then atomically publishes the foreign evidence, sender metadata and signed receiver receipt. Delivered payload bytes, protocol bytes and newly committed bytes are distinct measurements.
 
@@ -35,6 +35,19 @@ Conflicting live declarations of one wire alphabet refuse by its wire coordinate
 
 ## Profile boundaries
 
-A resolution label does not count regions or create information. Inventory, summary and whole-history are the encodings implemented by this named exchange profile, not a universal alphabet of Topos offers. The native receipt-family partition remains the first scope coordinate; this profile does not claim arbitrary nested-region refinement. Semantic cell folds and their region contract remain separate.
+A resolution label does not count regions or create information. Inventory, summary and whole-history are the encodings implemented by this named exchange profile, not a universal alphabet of Topos offers. Without a partition declaration, historical whole-region@1 keeps its native receipt-family partition. The optional scope-coordinates@1 profile below refines exchange coordinates. It does not change semantic cell folds or their region contract.
 
 Ledger origins are opaque identifiers. When projected into region coordinates their bytes are percent-encoded as one segment; slashes, spaces and percent signs cannot create a namespace collision. Context lineage, signatures, complete region commitments and origin-local exact withdrawals remain required. Numeric epochs, counts and resolution labels currently refuse values outside the implementation's exact integer range; no lossy conversion is accepted.
+
+
+## Declared coordinate refinement
+
+wire/walk/partition=scope-coordinates@1 selects complete signed history at each exact source scope as the exchange unit. Source scope segments and the opaque origin are escaped independently in receipt coordinates. New source coordinates create new units without a new alphabet or a fixed region count. This is a coordinate projection of authenticated history, not a filesystem traversal, a cell restsOn relation, or a new information measure.
+
+wire/walk/refinements maps every declared resolution label to a positive coordinate depth or all. A depth groups complete coordinate commitments by that declared source prefix. all exposes the exact source coordinates. Groups fold canonical child-coordinate digest and count claims using the native receipt projection; they are not separately stored trees or artifacts. The root remains the same complete-coordinate inventory root at every detail. Raising a numeric label has no implicit effect: the declared cut determines the answer.
+
+Inventory and summary can show declared groups or exact coordinates. Summary acknowledges verified regional inventory, including foreign evidence under its own origin namespace. History requires all and carries complete differing coordinate histories; a grouped digest cannot admit a record fragment. An equal verified group covers its children; an equal verified set of exact children covers their group. Differing groups can be refined before requesting history, and verified unchanged children are reused. No provider, transport or key material is invoked to compute a cut. Metadata is signed only through the existing declared signer.
+
+The sender context pins the history field and partition contract. The receiver decodes under that context, not its own partition or fields. Earlier verified complete-coordinate prefixes remain required, with original epochs and exact-origin withdrawals unchanged. A previously unasked coordinate is not claimed to have a verified earlier prefix. Changing an admitted origin context still requires separately declared lineage; refinement labels do not migrate history or rewrite its signatures.
+
+The shipped reference sample declares cuts at 0, 1, 4, 6 and 8, with 4 showing an intermediate coordinate depth and 6 carrying complete histories. These are example labels and depths, not limits. Other Topos partition interpretations require their own declared contract; scope-coordinates@1 does not claim to implement them.

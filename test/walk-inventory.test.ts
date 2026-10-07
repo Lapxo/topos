@@ -10,7 +10,9 @@ test('inventories retain contextual regions; acknowledging a prefix sends no pay
  const a=walkSnapshot([fixture('a','one')],fields,digest,'origin-a'),b=walkSnapshot([fixture('b','other')],fields,digest,'origin-b');
  const together=walkInventory([a.regions,b.regions],digest);assert.equal(together.regions.length,2);assert.equal(together.root,walkInventory([b.regions,a.regions],digest).root);
  assert.equal(walkAt(a,together,8,projections).records.length,0);assert.equal(walkAt(b,together,8,projections).records.length,0);
- assert.throws(()=>walkInventory([a.regions,a.regions],digest),/ambiguous inventory/);
+ assert.deepEqual(walkInventory([a.regions,a.regions],digest),walkInventory([a.regions],digest),'duplicate verified commitments are the same set');
+ assert.throws(()=>walkInventory([a.regions,a.regions.map(r=>({...r,digest:digest('different')}))],digest),/ambiguous inventory/);
+ assert.throws(()=>walkInventory([a.regions,a.regions.map(r=>({...r,count:r.count+1}))],digest),/ambiguous inventory/);
  assert.throws(()=>walkOrigin([{scope:'keys/a',measure:'public-key',value:'key'}]),/declared ledger origin/);
  const origin={scope:'walk/origin',role:'writes',form:'alphabet',measure:'id',value:'one-ledger'};
  assert.equal(walkOrigin([origin]),'one-ledger');assert.throws(()=>walkOrigin([origin,origin]),/conflicting declared ledger origin/);

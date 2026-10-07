@@ -65,6 +65,20 @@ function names(withdraw: Readonly<Record<string, string>>, line: Readonly<Record
 export function wireAt(lines: readonly Readonly<Record<string, string>>[], epoch: number): Wire | null {
   const mine = lines.filter((f) => listOf(f['scope'] ?? '') !== undefined && epochOf(f) <= epoch);
   const withdrawals = mine.filter((f) => f['value'] === WITHDRAW);
+  // A writer can revise its own alphabet at a newer epoch. Independent live
+  // declarations must agree; a tie is disagreement, never an empty alphabet.
+  const candidates=new Map<string,Readonly<Record<string,string>>[]>();
+  for(const f of mine){
+    if(f['value']===WITHDRAW||withdrawals.some(w=>names(w,f)))continue;
+    const key=(listOf(f['scope']??'')??'')+'\0'+(f['by']??'');
+    const held=candidates.get(key)??[];
+    const newest=held.length?epochOf(held[0]!):-1;
+    if(epochOf(f)>newest)candidates.set(key,[f]);
+    else if(epochOf(f)===newest)candidates.set(key,[...held,f]);
+  }
+  const live=[...candidates.values()].flatMap(rows=>rows.some(f=>(f['scope']??'').startsWith(WIRE))?rows.filter(f=>(f['scope']??'').startsWith(WIRE)):rows);
+  const values=new Map<string,string>();
+  for(const f of live){const key=listOf(f['scope']??'')??'',prior=values.get(key);if(prior!==undefined&&prior!==f['value'])throw Error(`REFUSE·wire wire/${key} has conflicting live declarations`);values.set(key,f['value']??'');}
   const standing = new Map<string, Readonly<Record<string, string>>>();
   for (const f of mine) {
     const key = listOf(f['scope'] ?? '') ?? '';

@@ -1,0 +1,22 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createHash,generateKeyPairSync,sign,verify} from 'node:crypto';
+import {canonical,signedBytes,formatSignature,parseSignature,parse} from '../src/wire/index.ts';
+import {walkSnapshot as snapshotOf,walkAt,walkPayload as payloadOf} from '../src/walk.ts';
+const pair=generateKeyPairSync('ed25519'),hash=text=>'sha256:'+createHash('sha256').update(text).digest('hex');
+const fields=['scope','role','form','measure','value','by','at','epoch'];
+const record=(scope,value)=>{const f={scope,value,role:'reads',form:'alphabet',measure:'id',by:'device',at:'origin:sample',epoch:'1'};return canonical({...f,sig:formatSignature('ed25519:sample',sign(null,Buffer.from(signedBytes(f)),pair.privateKey).toString('base64'))})};
+const admitted=line=>{const f=parse(line).value.fields,sig=parseSignature(f.sig);return sig&&verify(null,Buffer.from(signedBytes(f)),pair.publicKey,Buffer.from(sig.raw,'base64'))};
+for(const [first,second] of [['reading/site-a','weather/site-b'],['artifact/manual','source/main']])test('native region identity and retained disagreement: '+first,()=>{
+ const old=record(first,'one'),kept=record(second,'kept'),other=record(first,'two');
+ const peer=snapshotOf([old,kept],fields,hash),own=snapshotOf([old,other,kept],fields,hash);
+ assert.equal(walkAt(own,peer,0).records.length,0);assert.equal(walkAt(own,peer,1).records.length,0);
+ const packet=walkAt(own,peer,8);assert.equal(packet.touched<=packet.open,true);const lines=payloadOf(packet.records,packet.regions,fields,hash,records=>records.every(admitted));assert.ok(lines.includes(old));assert.ok(lines.includes(other));
+ const union=snapshotOf([...peer.regions.flatMap(p=>p.records),...lines],fields,hash);assert.equal(union.root,own.root);assert.equal(walkAt(own,union,8).records.length,0,'identical replay carries no semantic payload');
+ assert.throws(()=>payloadOf(lines.slice(1),packet.regions,fields,hash,records=>records.every(admitted)),/REFUSE·walk/);
+ assert.throws(()=>payloadOf(lines.map(l=>l.replace('value=two','value=changed')),packet.regions,fields,hash,records=>records.every(admitted)),/REFUSE·walk/);
+ assert.throws(()=>payloadOf(lines,packet.regions,fields,hash,()=>false),/receiver does not admit/);
+ assert.throws(()=>snapshotOf(lines,fields.filter(f=>f!=='by'),hash),/identity omits by/);
+ assert.throws(()=>walkAt(own,peer,2),/unsupported resolution/);
+ assert.throws(()=>walkAt(own,peer,8,['missing']),/open requested difference/);
+});

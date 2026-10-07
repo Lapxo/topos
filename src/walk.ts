@@ -6,7 +6,9 @@ import type {Signer} from './wire/claimline.ts';
 import {wireAt} from './wire/claimline.ts';
 
 export interface WalkRegion extends ReceiptRegion {readonly records: readonly string[]}
-export interface WalkSnapshot {readonly root: string; readonly regions: readonly WalkRegion[]}
+export interface WalkPartition {readonly kind: 'scope-coordinates@1'; readonly depths: readonly number[]}
+export interface WalkRefinement {readonly depth: number; readonly regions: readonly ReceiptRegion[]}
+export interface WalkSnapshot {readonly root: string; readonly regions: readonly WalkRegion[]; readonly refinements?: readonly WalkRefinement[]}
 export interface WalkSummary {readonly root: string; readonly regions: readonly {readonly scope: string; readonly digest: string}[]}
 export interface Walk {readonly root: string; readonly regions: readonly ReceiptRegion[]; readonly records: readonly string[]; readonly touched: number; readonly open: number}
 export type Digest = (bytes: string) => string;
@@ -43,7 +45,7 @@ export function walkAuthority(parts: readonly Readonly<Record<string,string>>[],
 }
 
 /** The caller selects authenticated history under its declared region contract. This is not cell-receipt identity. */
-export function walkSnapshot(records: readonly string[], fields: readonly string[], digest: Digest, origin?:string): WalkSnapshot {
+export function walkSnapshot(records: readonly string[], fields: readonly string[], digest: Digest, origin?:string, partition?:WalkPartition): WalkSnapshot {
  const complete=[...new Set(records.map(line=>{
   const got=record(line);
   if(canonical(got.fields,got.version)!==line)refuse('noncanonical record');
@@ -51,6 +53,18 @@ export function walkSnapshot(records: readonly string[], fields: readonly string
   for(const key of Object.keys(got.fields))if(key!=='sig'&&!fields.includes(key))refuse('identity omits '+key);
   return line;
  }))].sort(byBytes);
+ if(partition){
+  if(!origin)return refuse('coordinate partition requires a declared origin');
+  const groups=new Map<string,{claims:Set<string>;records:string[]}>();
+  for(const line of complete){
+   const f=record(line).fields;if(!f.scope)return refuse('coordinate record has no scope');
+   const scope='receipts/'+encodeURIComponent(origin)+'/'+f.scope!.split('/').map(encodeURIComponent).join('/');
+   const group=groups.get(scope)??{claims:new Set<string>(),records:[]};
+   group.claims.add(canonical(Object.fromEntries(fields.filter(key=>f[key]!==undefined).map(key=>[key,f[key]!]))));group.records.push(line);groups.set(scope,group);
+  }
+  const regions=[...groups].map(([scope,group])=>({scope,count:group.claims.size,digest:digest([...group.claims].sort(byBytes).map(line=>line+'\n').join('')),records:group.records})).sort((a,b)=>byBytes(a.scope,b.scope));
+  return {...walkInventory([regions],digest,partition),regions};
+ }
  const projection=receiptProjection(complete,fields,digest);
  const regions=projection.regions.map(region=>({...region,records:complete.filter(line=>record(line).fields.scope!.split('/')[0]===region.scope.slice('receipts/'.length)),scope:origin?'receipts/'+encodeURIComponent(origin)+'/'+region.scope.slice('receipts/'.length):region.scope}));
  return {root:origin?walkInventory([regions],digest).root:projection.root,regions};
@@ -59,17 +73,32 @@ export function walkSnapshot(records: readonly string[], fields: readonly string
 /** Inventory acknowledges verified origin-qualified prefixes. It is not a new
  * origin, an authority grant, or a digest of a Topos. No payload is re-signed.
  */
-export function walkInventory(groups:readonly (readonly ReceiptRegion[])[],digest:Digest):WalkSnapshot {
+export function walkInventory(groups:readonly (readonly ReceiptRegion[])[],digest:Digest,partition?:WalkPartition):WalkSnapshot {
  const regions=new Map<string,ReceiptRegion>();
- for(const group of groups)for(const region of group){const held=regions.get(region.scope);if(held&&(held.digest!==region.digest||held.count!==region.count))refuse('ambiguous inventory region '+region.scope);if(!held)regions.set(region.scope,region)}
+ for(const group of groups)for(const region of group){if(!Number.isSafeInteger(region.count)||region.count<0)return refuse('invalid inventory count '+region.scope);const held=regions.get(region.scope);if(held&&(held.digest!==region.digest||held.count!==region.count))refuse('ambiguous inventory region '+region.scope);if(!held)regions.set(region.scope,region)}
  const ordered=[...regions.values()].sort((a,b)=>byBytes(a.scope,b.scope));
  const claims=ordered.flatMap(region=>[canonical({scope:region.scope,role:'writes',form:'alphabet',measure:'digest',value:region.digest,by:'target',at:'receipt:walk'}),canonical({scope:region.scope,role:'writes',form:'interval',measure:'count',value:`${region.count}..${region.count}`,by:'target',at:'receipt:walk'})]);
- return {root:receiptProjection(claims,['scope','role','form','measure','value'],digest).root,regions:ordered.map(region=>({...region,records:[]}))};
+ const root=receiptProjection(claims,['scope','role','form','measure','value'],digest).root;
+ if(!partition)return {root,regions:ordered.map(region=>({...region,records:[]}))};
+ if(partition.kind!=='scope-coordinates@1'||new Set(partition.depths).size!==partition.depths.length||partition.depths.some(depth=>!Number.isSafeInteger(depth)||depth<1))return refuse('invalid declared coordinate partition');
+ const refinements=partition.depths.map(depth=>{
+  const groups=new Map<string,ReceiptRegion[]>();
+  for(const region of ordered){
+   const path=region.scope.split('/');if(path.length<3||path[0]!=='receipts')return refuse('coordinate region has no origin namespace');
+   const scope=path.slice(0,2+depth).join('/');const held=groups.get(scope)??[];held.push(region);groups.set(scope,held);
+  }
+   return {depth,regions:[...groups].map(([scope,children])=>{
+   if(children.length===1&&children[0]!.scope===scope)return children[0]!;
+   const count=children.reduce((sum,region)=>sum+region.count,0);if(!Number.isSafeInteger(count))return refuse('coordinate group count is outside the exact range');
+   return {scope,count,digest:walkInventory([children],digest).root};
+  }).sort((a,b)=>byBytes(a.scope,b.scope))};
+ });
+ return {root,regions:ordered.map(region=>({...region,records:[]})),refinements};
 }
 
 /** Peer summaries must be authenticated before selection. Selection performs no transport or invocation. */
 export type WalkProjection = 'inventory' | 'summary' | 'history';
-export interface WalkResolution {readonly resolution: number; readonly projection: WalkProjection}
+export interface WalkResolution {readonly resolution: number; readonly projection: WalkProjection; readonly depth?: number | 'all'}
 /** Resolve only a declared projection. Numeric labels carry no implicit meaning. */
 export function walkProjection(profile: readonly WalkResolution[], resolution: number | undefined): WalkProjection {
  if(resolution!==undefined&&(!Number.isSafeInteger(resolution)||resolution<0))return refuse('invalid resolution');
@@ -82,17 +111,33 @@ export function walkAt(own: WalkSnapshot, peer: WalkSummary, resolution: number 
  const projection=walkProjection(profile,resolution);
  const known=new Map<string,string>();
  for(const region of peer.regions){if(known.has(region.scope))refuse('ambiguous peer region '+region.scope);known.set(region.scope,region.digest)}
- const differences=own.regions.filter(region=>known.get(region.scope)!==region.digest);
+ const point=profile.filter(point=>resolution===undefined?point.projection==='inventory':point.resolution===resolution)[0]!;
+ let frontier:readonly ReceiptRegion[]=own.regions;
+ if(point.depth!==undefined&&!own.refinements)return refuse('declared refinement requires a matching snapshot partition');
+ if(own.refinements){
+  if(point.depth===undefined)return refuse('refined snapshot has no declared resolution partition');
+  if(projection==='history'&&point.depth!=='all')return refuse('history requires complete coordinate regions');
+  if(point.depth!=='all'){const level=own.refinements.find(level=>level.depth===point.depth);if(!level)return refuse('undeclared coordinate refinement');frontier=level.regions;}
+ }
+ const covered=(region:ReceiptRegion)=>{
+  if(known.get(region.scope)===region.digest)return true;
+  if(own.refinements?.some(level=>level.regions.some(parent=>(region.scope===parent.scope||region.scope.startsWith(parent.scope+'/'))&&known.get(parent.scope)===parent.digest)))return true;
+  if(!own.refinements||own.regions.some(leaf=>leaf.scope===region.scope))return false;
+  const children=own.regions.filter(leaf=>leaf.scope.startsWith(region.scope+'/'));
+  const held=[...known.keys()].filter(scope=>scope.startsWith(region.scope+'/'));
+  return children.length>0&&held.length===children.length&&children.every(leaf=>known.get(leaf.scope)===leaf.digest);
+ };
+ const differences=frontier.filter(region=>!covered(region));
  const wanted=requested??differences.map(region=>region.scope);
  if(new Set(wanted).size!==wanted.length)refuse('duplicate requested region');
  for(const name of wanted)if(!differences.some(region=>region.scope===name))refuse('region is not an open requested difference '+name);
  const selected=differences.filter(region=>wanted.includes(region.scope));
- return {root:own.root,regions:(projection==='inventory'?own.regions:selected).map(({records,...region})=>region),records:projection==='history'?[...new Set(selected.flatMap(region=>region.records))].sort(byBytes):[],touched:projection==='history'?selected.length:0,open:differences.length};
+ return {root:own.root,regions:(projection==='inventory'?frontier:selected).map(region=>({scope:region.scope,digest:region.digest,count:region.count})),records:projection==='history'?[...new Set(selected.flatMap(region=>own.regions.find(leaf=>leaf.scope===region.scope)?.records??[]))].sort(byBytes):[],touched:projection==='history'?selected.length:0,open:differences.length};
 }
 
 /** Completeness precedes the receiver's whole-lot boundary. This operation never commits or grants coverage. */
-export function walkPayload(records: readonly string[], expected: readonly ReceiptRegion[], fields: readonly string[], digest: Digest, admit: Authenticate, origin?:string): readonly string[] {
- const actual=walkSnapshot(records,fields,digest,origin);
+export function walkPayload(records: readonly string[], expected: readonly ReceiptRegion[], fields: readonly string[], digest: Digest, admit: Authenticate, origin?:string, partition?:WalkPartition): readonly string[] {
+ const actual=walkSnapshot(records,fields,digest,origin,partition);
  if(new Set(expected.map(region=>region.scope)).size!==expected.length)refuse('ambiguous expected region');
  if(actual.regions.length!==expected.length)refuse('partial or extra payload');
  for(const wanted of expected){const got=actual.regions.find(region=>region.scope===wanted.scope);if(!got||got.digest!==wanted.digest||got.count!==wanted.count)refuse('region digest or count mismatch '+wanted.scope)}
@@ -159,6 +204,7 @@ export interface ForeignWalkContract {
  readonly origin: string;
  /** Explicit contextual namespace, when the admitted caller exchanges qualified region inventories. */
  readonly regionOrigin?:string;
+ readonly partition?:WalkPartition;
  readonly context: string;
  readonly base: string;
  readonly fields: readonly string[];
@@ -197,8 +243,8 @@ export function readForeignWalk(lines: readonly string[], contract: ForeignWalkC
  }
  if(metadata.regions.some(region=>region.count===undefined))refuse('prefix was offered without its summary');
  const expected=metadata.regions.map(region=>({...region,count:region.count!}));
- const records=walkPayload(payload,expected,contract.fields,contract.digest,records=>contract.authenticateEvidence(records)===true&&contract.validateOriginHistory(records)===true,contract.regionOrigin);
- const current=walkSnapshot(records,contract.fields,contract.digest,contract.regionOrigin);
+ const records=walkPayload(payload,expected,contract.fields,contract.digest,records=>contract.authenticateEvidence(records)===true&&contract.validateOriginHistory(records)===true,contract.regionOrigin,contract.partition);
+ const current=walkSnapshot(records,contract.fields,contract.digest,contract.regionOrigin,contract.partition);
  for(const region of current.regions){
   const previous=contract.previousPrefixes.filter(prefix=>prefix.scope===region.scope);
   if(previous.length>1)refuse('ambiguous previous origin prefix');
@@ -214,7 +260,7 @@ export function readForeignWalk(lines: readonly string[], contract: ForeignWalkC
  return {origin:contract.origin,senderEpoch,records,headers,identity,importReceiptProposal:canonical({scope:'receipts',role:'writes',form:'alphabet',measure:'digest',value:identity,at:'receipt:'+contract.context,by:'target'})};
 }
 
-export interface WalkSelection {readonly contract: 'whole-region@1'; readonly fields: readonly string[]; readonly metadataFields: readonly string[]; readonly resolutions: readonly number[]; readonly projections: readonly WalkResolution[]}
+export interface WalkSelection {readonly contract: 'whole-region@1'; readonly fields: readonly string[]; readonly metadataFields: readonly string[]; readonly resolutions: readonly number[]; readonly projections: readonly WalkResolution[]; readonly partition?:WalkPartition}
 /** Read an already folded, admitted contract. These claims grant no signer coverage and select no transport. */
 export function walkSelection(standing: readonly string[]): WalkSelection {
  const at=(scope: string): string=>{
@@ -237,5 +283,17 @@ export function walkSelection(standing: readonly string[]): WalkSelection {
   return {resolution,projection:projection as WalkProjection};
  });
  if(projections.length!==resolutions.length||new Set(projections.map(point=>point.resolution)).size!==projections.length||projections.some(point=>!resolutions.includes(point.resolution)))refuse('projection does not match declared resolutions');
- return {contract:'whole-region@1',fields,metadataFields,resolutions,projections};
+ const optional=(scope:string)=>{const found=standing.map(record).map(got=>got.fields).filter(f=>f.scope===scope&&f.value!=='withdraw');return found.length?at(scope):undefined};
+ const kind=optional('wire/walk/partition'),refinement=optional('wire/walk/refinements');
+ if(kind===undefined&&refinement===undefined)return {contract:'whole-region@1',fields,metadataFields,resolutions,projections};
+ if(kind!=='scope-coordinates@1'||refinement===undefined)return refuse('missing or unsupported coordinate partition contract');
+ const cuts=refinement.split('|').map(token=>{
+  const pair=token.split(':');if(pair.length!==2||!/^(0|[1-9][0-9]*)$/.test(pair[0]!)||(pair[1]!=='all'&&!/^[1-9][0-9]*$/.test(pair[1]!)))return refuse('invalid declared coordinate refinement');
+  const resolution=Number(pair[0]),depth=pair[1]==='all'?'all' as const:Number(pair[1]);if(!Number.isSafeInteger(resolution)||(depth!=='all'&&!Number.isSafeInteger(depth)))return refuse('invalid declared coordinate refinement');return {resolution,depth};
+ });
+ if(cuts.length!==projections.length||new Set(cuts.map(cut=>cut.resolution)).size!==cuts.length||cuts.some(cut=>!resolutions.includes(cut.resolution)))return refuse('refinement does not match declared resolutions');
+ const refined=projections.map(point=>({...point,depth:cuts.find(cut=>cut.resolution===point.resolution)!.depth}));
+ if(refined.some(point=>point.projection==='history'&&point.depth!=='all'))return refuse('history requires complete coordinate regions');
+ const partition:WalkPartition={kind,depths:[...new Set(cuts.flatMap(cut=>cut.depth==='all'?[]:[cut.depth]))]};
+ return {contract:'whole-region@1',fields,metadataFields,resolutions,projections:refined,partition};
 }

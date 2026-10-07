@@ -56,3 +56,7 @@ export function capsuleOffers(topos: StandingTopos): readonly Readonly<Record<st
     return part;
   });
 }
+
+export {providerInputs,providerFields,providerInputRegions} from './provider-inputs.ts';
+export type {ProviderInputs} from './provider-inputs.ts';
+export {capsuleDescriptor,assertCapsuleDescriptor} from './capsule-descriptor.ts';

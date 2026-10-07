@@ -1,3 +1,4 @@
+import type {providerFields} from '../topos/provider-inputs.ts';
 import { alphabet } from '../wire/grammar.ts';
 
 export type Handed = Readonly<Record<string, string>>;
@@ -13,6 +14,7 @@ interface Held {
  * fields, never as its text.
  */
 export interface Asked {
+  readonly provider?: ReturnType<typeof providerFields>;
   readonly region: string;
   readonly at: number;
   readonly shape: string;

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Cite it as @lapxo/topos."
 type: software
 title: "@lapxo/topos"
-version: "0.1.8"
+version: "0.1.9"
 authors:
   - name: "Lapxo"
 repository-code: "https://github.com/Lapxo/topos"

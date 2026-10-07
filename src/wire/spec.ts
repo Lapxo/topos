@@ -1,3 +1,4 @@
+import type {ProviderInputs} from '../topos/provider-inputs.ts';
 import { PROTOCOL } from './index.ts';
 
 export interface Request {
@@ -5,6 +6,7 @@ export interface Request {
   readonly verb: 'describe' | 'read' | 'render';
   readonly rootScope: string;
   readonly files: readonly { readonly place: string; readonly text: string }[];
+  readonly provider?: ProviderInputs;
   readonly held?: readonly (readonly [string, string])[];
   readonly region?: string;
   readonly at?: number;

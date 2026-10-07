@@ -1,3 +1,4 @@
+import {providerFields} from '../topos/provider-inputs.ts';
 /** It answers what a world answers — render, receipt, observe, run — what does a world owe? */
 import { handed } from '../capsule/index.ts';
 import type { Asked } from '../capsule/index.ts';
@@ -8,8 +9,8 @@ import type { Request, Response } from '../wire/spec.ts';
 export type { Request, Response } from '../wire/spec.ts';
 
 type Answering = {
-  readonly observe?: (bytes: Uint8Array, place: string, region?: string, files?: readonly { readonly place: string; readonly text: string }[]) => readonly unknown[];
-  readonly run?: (place: string, self: string, held: readonly (readonly [string, string])[], region?: string) => readonly unknown[];
+  readonly observe?: (bytes: Uint8Array, place: string, region?: string, files?: readonly { readonly place: string; readonly text: string }[], context?: Asked) => readonly unknown[];
+  readonly run?: (place: string, self: string, held: readonly (readonly [string, string])[], region: string | undefined, context?: Asked) => readonly unknown[];
   readonly render?: (asked: Asked) => readonly string[];
   readonly receipt?: (asked: Asked) => readonly unknown[];
 };
@@ -26,15 +27,15 @@ export function answer(module: Answering, request: Request, self: string): Respo
       const reads = request.reads ?? [];
       const regions = Object.fromEntries(Object.entries(request.regions ?? {}).filter(([name]) => reads.some((read) => matches(read, `region/${name}`)))
         .map(([name, held]) => [name, { lines: handed(['**'], held.lines), receipts: handed(['**'], held.receipts) }]));
-      return { region: request.region ?? '', at: request.at ?? 3, shape: request.shape ?? '', name: request.name ?? '', reads, lines: handed(reads, request.lines ?? []), regions };
+      return { ...(request.provider===undefined?{}:{provider:providerFields(request.provider)}), region: request.region ?? '', at: request.at ?? 3, shape: request.shape ?? '', name: request.name ?? '', reads, lines: handed(reads, request.lines ?? []), regions };
     };
     if (request.verb === 'render' && module.render) return { protocol: PROTOCOL, kind: 'fact', lines: module.render(asked()) };
     if (request.verb === 'read' && module.receipt && request.reads !== undefined) return { protocol: PROTOCOL, kind: 'fact', claims: module.receipt(asked()) };
     const file = request.files[0];
     if (request.verb === 'read' && module.observe && file !== undefined) {
-      return { protocol: PROTOCOL, kind: 'fact', claims: module.observe(new TextEncoder().encode(file.text), request.rootScope, request.region, request.files) };
+      return { protocol: PROTOCOL, kind: 'fact', claims: module.observe(new TextEncoder().encode(file.text), request.rootScope, request.region, request.files, asked()) };
     }
-    if (request.verb === 'read' && module.run) return { protocol: PROTOCOL, kind: 'fact', claims: module.run(request.rootScope, self, request.held ?? [], request.region) };
+    if (request.verb === 'read' && module.run) return { protocol: PROTOCOL, kind: 'fact', claims: module.run(request.rootScope, self, request.held ?? [], request.region, asked()) };
     if (request.verb === 'read' && module.observe) return { protocol: PROTOCOL, kind: 'refuse', why: 'no file was handed to observe' };
     return { protocol: PROTOCOL, kind: 'abstain', why: `no export answers ${request.verb}` };
   } catch (thrown) {

@@ -26,7 +26,7 @@ The receiver authenticates the declared sender context, historical wire and prov
 
 walkOrigin reads exactly one declared walk/origin. It is the ledger attribution, not a key, snapshot or automatically independent object origin. walkAuthority reads explicit public keys, classes, coverage and resolution from a pinned origin context; journal identities without public keys are not signers. Sender signatures authenticate history under that snapshot and grant no receiver authority. Payload key declarations cannot replace the pinned context. Context rotation requires a separately declared lineage; the native profile refuses a changed context for an already received origin.
 
-walkSnapshot may qualify regions with the declared origin. walkInventory joins verified region commitments, retaining distinct origin namespaces and refusing duplicate coordinates. A receiver announces already verified prefixes at @0; the sender still exports only its own history at @8. An acknowledged prefix transfers no semantic payload. Inventory commitments neither re-sign foreign history nor create independent origins.
+walkSnapshot may qualify regions with the declared origin. walkInventory joins verified region commitments, retaining distinct origin namespaces, merging identical region commitments idempotently, and refusing different digests or counts for one coordinate. A receiver announces already verified prefixes at @0; the sender still exports only its own history at @8. An acknowledged prefix transfers no semantic payload. Inventory commitments neither re-sign foreign history nor create independent origins.
 
 ## Wire declaration disagreement
 

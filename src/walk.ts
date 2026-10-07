@@ -61,7 +61,7 @@ export function walkSnapshot(records: readonly string[], fields: readonly string
  */
 export function walkInventory(groups:readonly (readonly ReceiptRegion[])[],digest:Digest):WalkSnapshot {
  const regions=new Map<string,ReceiptRegion>();
- for(const group of groups)for(const region of group){if(regions.has(region.scope))refuse('ambiguous inventory region '+region.scope);regions.set(region.scope,region)}
+ for(const group of groups)for(const region of group){const held=regions.get(region.scope);if(held&&(held.digest!==region.digest||held.count!==region.count))refuse('ambiguous inventory region '+region.scope);if(!held)regions.set(region.scope,region)}
  const ordered=[...regions.values()].sort((a,b)=>byBytes(a.scope,b.scope));
  const claims=ordered.flatMap(region=>[canonical({scope:region.scope,role:'writes',form:'alphabet',measure:'digest',value:region.digest,by:'target',at:'receipt:walk'}),canonical({scope:region.scope,role:'writes',form:'interval',measure:'count',value:`${region.count}..${region.count}`,by:'target',at:'receipt:walk'})]);
  return {root:receiptProjection(claims,['scope','role','form','measure','value'],digest).root,regions:ordered.map(region=>({...region,records:[]}))};

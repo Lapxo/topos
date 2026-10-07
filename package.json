@@ -1,6 +1,6 @@
 {
   "name": "@lapxo/topos",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Wire, forms, authority and views for interpreting information.",
   "type": "module",
   "license": "MIT",
@@ -107,7 +107,8 @@
     "vectors/signing-port.json",
     "samples/walk/*.json",
     "vectors/walk.json",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "samples/programs/*.json"
   ],
   "scripts": {
     "build": "tsc --build",

@@ -1,4 +1,9 @@
 import {providerFields} from '../topos/provider-inputs.ts';
+export {programsOf} from './programs.ts';
+export type {Program, ProgramInputs, EvidenceStatus} from './programs.ts';
+export {programInputs, renderPrograms} from '../views/programs.ts';
+export {publicationCoverage} from './publication.ts';
+export type {PublicationRole, PublicationMember, PublicationRow, PublicationProof} from './publication.ts';
 /** It answers what a world answers — render, receipt, observe, run — what does a world owe? */
 import { handed } from '../capsule/index.ts';
 import type { Asked } from '../capsule/index.ts';

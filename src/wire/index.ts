@@ -28,7 +28,9 @@ export {publicationOf,publicLock} from './publication.ts';
 export { requestBytes as signerRequestBytes, responseBytes as signerResponseBytes,
   responseOf as signerResponseOf, signerSelection } from './signing-port.ts';
 export {readerLifetime} from './reader-lifetime.ts';
-export type {ReaderLifetime} from './reader-lifetime.ts';
+export type {ReaderLifetime,ReaderReference} from './reader-lifetime.ts';
 export {readerAllowsEmpty,assertReaderInputs} from './reader-lifetime.ts';
 export {transportSelection,contentRequest} from './transport-port.ts';
 export type {TransportSelection,ContentRequest} from './transport-port.ts';
+export {actBytes,actIdentity,actResultOf,actResultProfile} from './act-result.ts';
+export type {ActResult,ActResultContract,ActPlacement} from './act-result.ts';

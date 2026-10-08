@@ -1,0 +1,50 @@
+{
+  "contract": "public-boundary@1",
+  "evidence": "Captured SDK output, not CLI admission or release acceptance",
+  "output": [
+    {
+      "kind": "act",
+      "case": 0,
+      "identity": "sha256:1e0abc1a6c63167a9c250cac62499e73053ce7335d3ff948188d89fa83a138e4",
+      "epoch": 7,
+      "records": 2
+    },
+    {
+      "kind": "refuse",
+      "case": 0,
+      "change": "reverse-records",
+      "why": "REFUSE·act receipt does not bind this act"
+    },
+    {
+      "kind": "refuse",
+      "case": 0,
+      "change": "deny-record-authority",
+      "why": "REFUSE·act record not admitted"
+    },
+    {
+      "kind": "act",
+      "case": 1,
+      "identity": "sha256:47f60138504749782e39fe1721918f8c9dc286a28650a3397965238a43df7eba",
+      "epoch": 7,
+      "records": 2
+    },
+    {
+      "kind": "refuse",
+      "case": 1,
+      "change": "foreign-receipt-context",
+      "why": "REFUSE·act receipt does not bind this act"
+    },
+    {
+      "kind": "reader",
+      "value": {
+        "timeoutMs": 30,
+        "responseBytes": 8192
+      }
+    },
+    {
+      "kind": "refuse",
+      "change": "disjoint-reader-limits",
+      "why": "REFUSE·reader catalogue conflicting timeout"
+    }
+  ]
+}

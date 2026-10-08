@@ -1,0 +1,66 @@
+{
+  "acts": [
+    {
+      "case": 0,
+      "change": "reverse-records"
+    },
+    {
+      "case": 1,
+      "change": "foreign-receipt-context"
+    },
+    {
+      "case": 0,
+      "change": "deny-record-authority"
+    }
+  ],
+  "reader": {
+    "reference": {
+      "id": "catalogue",
+      "module": "provider.mjs"
+    },
+    "lines": [
+      {
+        "scope": "wire/reader-lifetime",
+        "role": "writes",
+        "form": "alphabet",
+        "measure": "id",
+        "value": "bounded-process@2"
+      },
+      {
+        "scope": "reader/timeout",
+        "role": "writes",
+        "form": "interval",
+        "measure": "milliseconds",
+        "value": "0..100"
+      },
+      {
+        "scope": "reader/response-bytes",
+        "role": "writes",
+        "form": "interval",
+        "measure": "bytes",
+        "value": "0..8192"
+      },
+      {
+        "scope": "reader/catalogue/timeout",
+        "role": "writes",
+        "form": "interval",
+        "measure": "milliseconds",
+        "value": "0..30"
+      },
+      {
+        "scope": "reader/provider.mjs/timeout",
+        "role": "writes",
+        "form": "interval",
+        "measure": "milliseconds",
+        "value": "0..80"
+      },
+      {
+        "scope": "reader/catalogue/timeout",
+        "role": "writes",
+        "form": "interval",
+        "measure": "milliseconds",
+        "value": "200..300"
+      }
+    ]
+  }
+}

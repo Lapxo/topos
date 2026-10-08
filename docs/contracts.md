@@ -103,3 +103,18 @@ A place chooses its view names and the offered regions. The instrument's histori
 Proofs are conformance readings already admitted by the caller. Each proof records its exact quartet of input identities and its status. Stale input identities refuse. Four available members without an admitted proof remain unread; a refused or unmet proof cannot close the coordinate. Empty surface selection is vacuous and refuses. The result reports every unresolved coordinate and a missing count. This projection cannot create a receipt, run a vector or authenticate the observer. Those operations belong to the selected measurer and host admission boundary.
 
 Supported operations and outstanding capability demands must be inventoried separately. A demand does not become an exported implementation because its name appears in a lock. Removing public support requires its explicit compatibility decision; missing documentation cannot be hidden by renaming or excluding an implemented surface.
+## Public act results
+
+An act preserves canonical signed records in effective order, including their signer and origin clock; actBytes excludes only sig. actIdentity additionally binds the receiving coordinate, declared result context, local commit epoch and logical placements. These are act identities, not Topos standing pins. Placement coordinates are relative logical names; host paths never enter this identity.
+
+actResultOf verifies records and the native digest receipt through separate callbacks. Record authentication and coverage do not follow from the receipt. local-act@1 is explicitly selected by wire/act-result, wire/act-result-scope and wire/act-result-context; absent selection retains the historical path. Conflicting or incomplete selections refuse. The host publishes the original records, routing and receipt atomically. Replay returns that committed pair without advancing the clock. An error after commit does not establish rollback.
+
+Historical inspection uses the authority, digest alphabet, native receipt identity and result profile admitted before that act. Retiring a key or changing a profile does not erase authenticated history, and inspecting history does not authorize a new act or claim conformance. A missing or corrupt result refuses by identity.
+
+## Current reader policy and retained evidence
+
+ReaderReference separates the declared reader id from its executable module. bounded-process@1 retains its module-coordinate and upper-ceiling semantics. bounded-process@2 meets the global and declared-reader interval limits through Obligatory; an empty meet refuses by reader and limit. No arbitrary default reader or profile is invented.
+
+The host validates the effective policy before cache lookup. Current-response identity includes those execution limits alongside implementation and complete inputs. A changed effective policy reopens the reading; unchanged policy and inputs reuse its verified response. This applies to direct readers, capsule answers and independent regional reading receipts. Retained evidence is history, not unconditional permission to answer today. Preview does not execute to fill a missing response. Operational failure, interruption and partial output are never successful receipts.
+
+The shipped samples/public-boundary/yes.json and no.json contain two unrelated signed fixture lots, a correctly bound receipt and named rejected changes. vectors/public-boundary.json captures the SDK result projection and lifetime verdicts. The fixture signatures are not committed Bound receipts or release acceptance. Consumers verify record authority and native receipt provenance through the declared boundary.

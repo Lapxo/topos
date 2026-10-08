@@ -1,0 +1,93 @@
+{
+  "evidence": "SDK fixture signatures; not a committed Bound act or portable native receipt authority",
+  "publicKey": "MCowBQYDK2VwAyEAzH/Ln2mzFUyKYS9Q8xPA9w0uxtLv6I48hoIJAJtptpI=",
+  "acts": [
+    {
+      "records": [
+        "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=catalogue/items sig=\"ed25519:3uVjykoaf5LflSS4kEliPqzv/nMWKC8vlVMWB8IhlUQbhUjqS6VjdWlQt8UtXoiIpwalEbfb3rJgSSD6s3fUDw==\" value=first",
+        "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=catalogue/items sig=\"ed25519:mQ6qa5a8JSvoFpt59kr/V9rDIiRAenPAd0sIg0dk0/nTCA5rL5foHP9Fivj67ckgKBj5KrvFcnffvoyeyj49CQ==\" value=second"
+      ],
+      "receipt": "bound-lock/1 at=receipt:local by=fixture epoch=7 form=alphabet measure=digest role=writes scope=receipts/acts sig=\"ed25519:R+spSPBL4GL9To96NLBPkUTHmG+VS9rJXkdMCGy4fkyKWF96Xpj8qzsqo1ACK48fc+f81ihZ6gHENvKaQJGtDw==\" value=sha256:1e0abc1a6c63167a9c250cac62499e73053ce7335d3ff948188d89fa83a138e4",
+      "scope": "receipts/acts",
+      "context": "receipt:local",
+      "localEpoch": 7,
+      "placements": [
+        {
+          "place": ".",
+          "records": [
+            "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=catalogue/items sig=\"ed25519:3uVjykoaf5LflSS4kEliPqzv/nMWKC8vlVMWB8IhlUQbhUjqS6VjdWlQt8UtXoiIpwalEbfb3rJgSSD6s3fUDw==\" value=first",
+            "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=catalogue/items sig=\"ed25519:mQ6qa5a8JSvoFpt59kr/V9rDIiRAenPAd0sIg0dk0/nTCA5rL5foHP9Fivj67ckgKBj5KrvFcnffvoyeyj49CQ==\" value=second"
+          ]
+        }
+      ],
+      "identity": "sha256:1e0abc1a6c63167a9c250cac62499e73053ce7335d3ff948188d89fa83a138e4"
+    },
+    {
+      "records": [
+        "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=research/observations sig=\"ed25519:42vu0++PDnHhkDw4I9Ez/9W/eVctQF0Shuqhc4BQyaOEPBmrJRR2uQ7U+5v8LdAex//GHdm3cgdl0A3hjLFQBQ==\" value=first",
+        "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=research/observations sig=\"ed25519:m9xdxEN6c4e2QXcVfTZwIMvsZvvvyjJJXrAR1gWA9l4bVgSYCpYAhsvzsrJjRuObqR7gcf+utkdHKLoe2c5QCQ==\" value=second"
+      ],
+      "receipt": "bound-lock/1 at=receipt:local by=fixture epoch=7 form=alphabet measure=digest role=writes scope=receipts/acts sig=\"ed25519:lYkDwBPjNAm/EQ2UzXc6B1CvlWu8Xu9GB4tDM6YGaZYgWyNia009JZnkEf4wrYXouqskjVF3S1yO8s/4RuhBDg==\" value=sha256:47f60138504749782e39fe1721918f8c9dc286a28650a3397965238a43df7eba",
+      "scope": "receipts/acts",
+      "context": "receipt:local",
+      "localEpoch": 7,
+      "placements": [
+        {
+          "place": ".",
+          "records": [
+            "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=research/observations sig=\"ed25519:42vu0++PDnHhkDw4I9Ez/9W/eVctQF0Shuqhc4BQyaOEPBmrJRR2uQ7U+5v8LdAex//GHdm3cgdl0A3hjLFQBQ==\" value=first",
+            "bound-lock/1 at=place:own by=fixture epoch=7 form=alphabet measure=id role=writes scope=research/observations sig=\"ed25519:m9xdxEN6c4e2QXcVfTZwIMvsZvvvyjJJXrAR1gWA9l4bVgSYCpYAhsvzsrJjRuObqR7gcf+utkdHKLoe2c5QCQ==\" value=second"
+          ]
+        }
+      ],
+      "identity": "sha256:47f60138504749782e39fe1721918f8c9dc286a28650a3397965238a43df7eba"
+    }
+  ],
+  "reader": {
+    "reference": {
+      "id": "catalogue",
+      "module": "provider.mjs"
+    },
+    "lines": [
+      {
+        "scope": "wire/reader-lifetime",
+        "role": "writes",
+        "form": "alphabet",
+        "measure": "id",
+        "value": "bounded-process@2"
+      },
+      {
+        "scope": "reader/timeout",
+        "role": "writes",
+        "form": "interval",
+        "measure": "milliseconds",
+        "value": "0..100"
+      },
+      {
+        "scope": "reader/response-bytes",
+        "role": "writes",
+        "form": "interval",
+        "measure": "bytes",
+        "value": "0..8192"
+      },
+      {
+        "scope": "reader/catalogue/timeout",
+        "role": "writes",
+        "form": "interval",
+        "measure": "milliseconds",
+        "value": "0..30"
+      },
+      {
+        "scope": "reader/provider.mjs/timeout",
+        "role": "writes",
+        "form": "interval",
+        "measure": "milliseconds",
+        "value": "0..80"
+      }
+    ],
+    "expected": {
+      "timeoutMs": 30,
+      "responseBytes": 8192
+    }
+  }
+}

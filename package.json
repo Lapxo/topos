@@ -1,6 +1,6 @@
 {
   "name": "@lapxo/topos",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Wire, forms, authority and views for interpreting information.",
   "type": "module",
   "license": "MIT",
@@ -110,7 +110,9 @@
     "src/**/*.ts",
     "samples/programs/*.json",
     "samples/public-boundary/*.json",
-    "vectors/public-boundary.json"
+    "vectors/public-boundary.json",
+    "samples/readings/*.json",
+    "vectors/readings.json"
   ],
   "scripts": {
     "build": "tsc --build",

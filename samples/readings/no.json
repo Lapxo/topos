@@ -1,0 +1,161 @@
+{
+  "contract": "readings@1",
+  "evidence": "Rejected SDK inputs; no successful receipt is claimed",
+  "cases": [
+    {
+      "kind": "projection",
+      "lines": [
+        "bound-lock/1 scope=name value=withdraw"
+      ],
+      "error": "REFUSE·projection"
+    },
+    {
+      "kind": "projection-bytes",
+      "bytes": "{\"manifest\":\"not standing\"}\n",
+      "error": "REFUSE·projection"
+    },
+    {
+      "kind": "writer",
+      "coordinate": "survey.txt",
+      "writers": [
+        "world-a",
+        "world-b"
+      ],
+      "error": "REFUSE·render survey.txt"
+    },
+    {
+      "kind": "origin",
+      "coordinate": "region/source",
+      "lines": [
+        "bound-lock/1 measure=origin role=writes scope=region/source value=source:a",
+        "bound-lock/1 measure=origin role=writes scope=region/source value=source:b"
+      ],
+      "error": "REFUSE·region"
+    },
+    {
+      "kind": "lineage",
+      "current": "sha256:a",
+      "links": [
+        {
+          "digest": "sha256:a",
+          "predecessor": "sha256:b"
+        },
+        {
+          "digest": "sha256:b",
+          "predecessor": "sha256:a"
+        }
+      ],
+      "error": "REFUSE·lineage"
+    },
+    {
+      "kind": "weight",
+      "entries": [
+        {
+          "digest": "sha256:a",
+          "bytes": 3,
+          "named": true
+        },
+        {
+          "digest": "sha256:a",
+          "bytes": 4,
+          "named": true
+        }
+      ],
+      "error": "REFUSE·weight"
+    },
+    {
+      "kind": "wire",
+      "epoch": 2,
+      "lines": [
+        {
+          "scope": "wire/fields",
+          "role": "writes",
+          "form": "alphabet",
+          "measure": "id",
+          "by": "one",
+          "epoch": "2",
+          "value": "scope|value"
+        },
+        {
+          "scope": "wire/fields",
+          "role": "writes",
+          "form": "alphabet",
+          "measure": "id",
+          "by": "two",
+          "epoch": "2",
+          "value": "scope|value|by"
+        }
+      ],
+      "error": "REFUSE·wire wire/fields"
+    },
+    {
+      "kind": "port",
+      "port": {
+        "coordinate": "port/fixture",
+        "implementation": "sha256:9dfe885474f83501fbef4c59816282eb171d2f504c095491707582f0914f0197",
+        "closure": [
+          "sha256:9dfe885474f83501fbef4c59816282eb171d2f504c095491707582f0914f0197"
+        ],
+        "timeoutMs": 1000,
+        "responseBytes": 4096,
+        "environment": [
+          "LANG"
+        ],
+        "stderr": "reject"
+      },
+      "admitted": false,
+      "covered": true,
+      "verified": true,
+      "error": "REFUSE·port port/fixture declaration not admitted"
+    },
+    {
+      "kind": "port",
+      "port": {
+        "coordinate": "port/fixture",
+        "implementation": "sha256:9dfe885474f83501fbef4c59816282eb171d2f504c095491707582f0914f0197",
+        "closure": [
+          "sha256:9dfe885474f83501fbef4c59816282eb171d2f504c095491707582f0914f0197"
+        ],
+        "timeoutMs": 1000,
+        "responseBytes": 4096,
+        "environment": [
+          "LANG"
+        ],
+        "stderr": "reject"
+      },
+      "admitted": true,
+      "covered": true,
+      "verified": false,
+      "error": "REFUSE·port port/fixture unverified executable closure"
+    },
+    {
+      "kind": "response",
+      "port": {
+        "coordinate": "port/fixture",
+        "implementation": "sha256:9dfe885474f83501fbef4c59816282eb171d2f504c095491707582f0914f0197",
+        "closure": [
+          "sha256:9dfe885474f83501fbef4c59816282eb171d2f504c095491707582f0914f0197"
+        ],
+        "timeoutMs": 1000,
+        "responseBytes": 4096,
+        "environment": [
+          "LANG"
+        ],
+        "stderr": "reject"
+      },
+      "lot": {
+        "identity": "fixture:lot",
+        "requests": [
+          "one"
+        ]
+      },
+      "execution": {
+        "status": 1,
+        "interrupted": false,
+        "stdout": "",
+        "stderr": ""
+      },
+      "error": "REFUSE·port port/fixture status 1"
+    }
+  ]
+}

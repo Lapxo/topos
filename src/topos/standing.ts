@@ -1,5 +1,6 @@
 import {byBytes,canonical,parse} from '../wire/line.ts';
 import {matches} from '../wire/classes.ts';
+export {semanticStandingBytes,readSemanticStanding} from './semantic-projection.ts';
 
 export interface StandingTopos {
   readonly lines: readonly string[];

@@ -219,14 +219,14 @@ bound-lock/1 at=witness:card-shape-lived-in-bound by=target form=alphabet measur
 bound-lock/1 at=witness:declared-coordinate-refinement by=target form=alphabet measure=id role=writes scope=wire/walk/projections value=0:inventory|1:summary|4:summary|6:history|8:history
 bound-lock/1 at=witness:declared-coordinate-refinement by=target form=alphabet measure=id role=writes scope=wire/walk/resolutions value=0|1|4|6|8
 bound-lock/1 at=witness:destination-read-the-world-now-reads-the-fold by=target form=alphabet measure=status role=demands scope=audit/a-vector-cites-names shape=reader value=present
+bound-lock/1 at=witness:every-release-asset-verified by=target form=alphabet measure=digest role=writes scope=dep/runtime-topos-github shape=dist/index.js value=sha256:1b6385f068b4d35d6688150e964694353c96c8ed027bac95cc5ef5d90e6035c0
+bound-lock/1 at=witness:every-release-asset-verified by=target form=alphabet measure=digest role=writes scope=uses/topos-github value=sha256:ce09169123e270319fcd9cfb46c414d8693d6e28800e1cf58cc4716e531915cb
+bound-lock/1 at=witness:every-release-asset-verified by=target form=alphabet measure=id role=writes scope=sources/runtime-topos-github value=https://github.com/Lapxo/topos-github/releases/download/v0.1.3/1b6385f068b4d35d6688150e964694353c96c8ed027bac95cc5ef5d90e6035c0
+bound-lock/1 at=witness:every-release-asset-verified by=target form=alphabet measure=id role=writes scope=sources/topos-github value=https://github.com/Lapxo/topos-github/releases/download/v0.1.3/ce09169123e270319fcd9cfb46c414d8693d6e28800e1cf58cc4716e531915cb
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=coordinates role=writes scope=region/captures value=samples/line-reader.mjs|samples/no/wire-input.capture.json|samples/no/wire-why.capture.json
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=coordinates role=writes scope=region/sample-lines value=samples/yes/two-origins-meet-on-one-scope.json|samples/yes/three-origins-two-meet-one-apart.json|samples/yes/render-world.json
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=digest role=writes scope=dep/process-captures shape=dist/index.js value=sha256:d783686dc4bcc5e43a13e9b51ac07b37263ef3afa562204de1e160553341e5ab
-bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=digest role=writes scope=dep/topos-doc shape=dist/index.js value=sha256:f52246d14002559cb4b8c8a5e5c9a9aa650d9206a0ae5033aba0f041f35cdcac
-bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=digest role=writes scope=dep/topos-node shape=dist/index.js value=sha256:e2afc5a0909efddfb6a09150ab1c204e559065d1629b1c685843910905f1948f
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=digest role=writes scope=uses/process-captures value=sha256:b3e2609e6efcf53789a5844dfa6a5cf8e3dbf6d05b91adb9b5e42a3143b3450c
-bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=digest role=writes scope=uses/topos-doc value=sha256:6af6548868c3ed6119e966ca932be6812f7d026022b12d42dcb0dbf2b573436e
-bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=digest role=writes scope=uses/topos-node value=sha256:c3f8596516d2d4ef6fd96c2ed4dad450eb73f19a55405c34f3f2df9e548ad51c
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=id role=writes scope=build/allowImportingTsExtensions shape=tsconfig.json value=true
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=id role=writes scope=build/declaration shape=tsconfig.json value=true
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=id role=writes scope=build/esModuleInterop shape=tsconfig.json value=true
@@ -317,14 +317,13 @@ bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measu
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=id role=writes scope=wire/rules value=declarations|identity|envelopes
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=receipts role=writes scope=region/captures value=capture/**
 bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=alphabet measure=receipts role=writes scope=region/laws value=said/lines
+bound-lock/1 at=witness:foreign-coordinate-name by=target form=alphabet measure=role role=writes scope=coordinate-role/node_modules value=foreign
 bound-lock/1 at=witness:four-lists-computed-never-classified by=target form=alphabet measure=id role=reads scope=audit/wire/form/kind value=kinds
 bound-lock/1 at=witness:four-lists-computed-never-classified by=target form=alphabet measure=id role=reads scope=audit/wire/form/view value=views
 bound-lock/1 at=witness:four-lists-computed-never-classified by=target form=alphabet measure=id role=reads scope=audit/wire/kinds value=axiom|definition|theorem|corollary|form|check|capsule
 bound-lock/1 at=witness:four-lists-computed-never-classified by=target form=alphabet measure=id role=reads scope=audit/wire/views value=field|spectrum|ideal|chain|complement|dual|product|quotient|valuation|galois|forms
 bound-lock/1 at=witness:losing-a-key-breaks-nothing by=target form=alphabet measure=status needs=src/wire/claimline.ts|vectors/rotation.json|samples/yes/|samples/no/ role=demands scope=audit/key-rotation-ceremony shape=decision value=present
 bound-lock/1 at=witness:one-owner-key-hardcoded by=target form=alphabet measure=status needs=src/wire/claimline.ts|vectors/signers.json|samples/yes/|samples/no/|src/authority/admit.ts role=demands scope=audit/signers-are-a-lock shape=vector value=present
-bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=digest role=writes scope=dep/topos-github shape=dist/index.js value=sha256:e8f4f1f121eeeba0026193888aec250db78538956cf216e139880881862edcb1
-bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=digest role=writes scope=uses/topos-github value=sha256:a8e4651ef393c07b20b519a21ac7c49d035f2420b6a0c6b4b9b717841f93a0ff
 bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=id role=writes scope=pipeline/environment value=release
 bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=id role=writes scope=pipeline/name value="node -p \"require('./package.json').name\""
 bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=id role=writes scope=pipeline/publish/auth value=trusted
@@ -332,6 +331,14 @@ bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target for
 bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=id role=writes scope=pipeline/publish/npm value=12.1.0
 bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=id role=writes scope=pipeline/publish/once value=present
 bound-lock/1 at=witness:one-verified-archive-for-release-and-stage by=target form=alphabet measure=id role=writes scope=pipeline/published value="npm view"
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=digest role=writes scope=dep/runtime-topos-doc shape=dist/index.js value=sha256:159ce79a262e08840b8e79bc7279abaef958e369115062f937fd7bf3bee9bf1e
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=digest role=writes scope=dep/runtime-topos-node shape=dist/index.js value=sha256:76aba07865464ef09c7695cff3eb755935877d2fe07c0d325d49166268cb19da
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=digest role=writes scope=uses/topos-doc value=sha256:79f67c38e9533f08bea37944cbf9eeef272b415fa798de89f82f4fccfcc4ca54
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=digest role=writes scope=uses/topos-node value=sha256:47434ee39db8454c60d7e814b237e9dbf327a01b7d740f64b21c2c4aa81eed2b
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=id role=writes scope=sources/runtime-topos-doc value=https://github.com/Lapxo/topos-doc/releases/download/v0.1.3/159ce79a262e08840b8e79bc7279abaef958e369115062f937fd7bf3bee9bf1e
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=id role=writes scope=sources/runtime-topos-node value=https://github.com/Lapxo/topos-node/releases/download/v0.1.3/76aba07865464ef09c7695cff3eb755935877d2fe07c0d325d49166268cb19da
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=id role=writes scope=sources/topos-doc value=https://github.com/Lapxo/topos-doc/releases/download/v0.1.3/79f67c38e9533f08bea37944cbf9eeef272b415fa798de89f82f4fccfcc4ca54
+bound-lock/1 at=witness:public-render-inputs by=target form=alphabet measure=id role=writes scope=sources/topos-node value=https://github.com/Lapxo/topos-node/releases/download/v0.1.3/47434ee39db8454c60d7e814b237e9dbf327a01b7d740f64b21c2c4aa81eed2b
 bound-lock/1 at=witness:reading-contracts-013 by=target form=alphabet measure=id role=writes scope=version value=0.1.13
 bound-lock/1 at=witness:replay-planned-as-a-procedure by=target form=alphabet measure=status role=demands scope=audit/bound-store-is-a-domain shape=reader value=present
 bound-lock/1 at=witness:stdout-read-before-close by=target form=alphabet measure=status needs=src/wire/claimline.ts|samples/no/* role=demands scope=audit/observation-has-a-close shape=vector value=present

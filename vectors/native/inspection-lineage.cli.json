@@ -1,0 +1,152 @@
+{
+  "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+  "readerDigest": "sha256:d145622d6da3375137eb6a3abe7b9edf0224633d6ae311c3a05ee3f2d64c6ccf",
+  "captures": [
+    {
+      "group": "inspection-lineage",
+      "place": "survey",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 387 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 638
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:ce6e56773a33869f806f3ed87a5c37eae52b57a72a1a58bc25943e1dc0d697d3 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=ce6e56773a33869f\nbound-lock/1 at=place:sha256:ce6e56773a33869f806f3ed87a5c37eae52b57a72a1a58bc25943e1dc0d697d3 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/inspection-lineage/survey value=\"{\\\"successors\\\":[{\\\"digest\\\":\\\"sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0\\\",\\\"predecessor\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\"},{\\\"digest\\\":\\\"sha256:811f2a14b9850c9d9c7562f29228754bfabbd03407fb41f00994180bd9de98f2\\\",\\\"predecessor\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\"}],\\\"selection\\\":[\\\"survey\\\"],\\\"weight\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":19,\\\"total\\\":19,\\\"unreferenced\\\":7},\\\"missing\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":null,\\\"total\\\":null,\\\"unreferenced\\\":null},\\\"window\\\":{\\\"unit\\\":\\\"epochs\\\",\\\"from\\\":15,\\\"through\\\":17,\\\"reading\\\":\\\"unknown\\\"}}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 330 ms\nSPENT    observe reader.mjs 6+334 ms\nOBSERVE  1 run · 0 read by key · 341 ms\nOWN      imports 70 ms · bodies 1 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 3 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 3 ms · laid 5 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 87 ms · regions 6 ms · ceilings 4 ms · paid 0 ms · docs 1 ms · ceilings 2 ms\nBEAT     fold a8a19438 folded 0.7 s\nKEPT     fold a8a19438 miss · no fold was kept before this one\n",
+          "runtimeMs": 1021
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:ce6e56773a33869f806f3ed87a5c37eae52b57a72a1a58bc25943e1dc0d697d3 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=ce6e56773a33869f\nbound-lock/1 at=place:sha256:ce6e56773a33869f806f3ed87a5c37eae52b57a72a1a58bc25943e1dc0d697d3 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/inspection-lineage/survey value=\"{\\\"successors\\\":[{\\\"digest\\\":\\\"sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0\\\",\\\"predecessor\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\"},{\\\"digest\\\":\\\"sha256:811f2a14b9850c9d9c7562f29228754bfabbd03407fb41f00994180bd9de98f2\\\",\\\"predecessor\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\"}],\\\"selection\\\":[\\\"survey\\\"],\\\"weight\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":19,\\\"total\\\":19,\\\"unreferenced\\\":7},\\\"missing\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":null,\\\"total\\\":null,\\\"unreferenced\\\":null},\\\"window\\\":{\\\"unit\\\":\\\"epochs\\\",\\\"from\\\":15,\\\"through\\\":17,\\\"reading\\\":\\\"unknown\\\"}}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 6 ms\nOWN      imports 72 ms · bodies 1 ms · removed 0 ms · readers 3 ms · alphabets 0 ms · capsules 0 ms · regions 3 ms · vectors 0 ms · zoom 0 ms · nos 2 ms · zoomed 0 ms · applied 2 ms · laid 7 ms · resets 1 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 10 ms · own 98 ms · regions 6 ms · ceilings 3 ms · paid 1 ms · docs 2 ms · ceilings 3 ms\nBEAT     fold a8a19438 folded 0.3 s · 0.7 s folded\nKEPT     fold a8a19438 miss · no fold was kept before this one\n",
+          "runtimeMs": 609
+        }
+      ]
+    },
+    {
+      "group": "inspection-lineage",
+      "place": "survey",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 349 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 547
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-survey-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\nOBSERVE  0 run · 0 read by key · 304 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-survey-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\n",
+          "runtimeMs": 612
+        }
+      ]
+    },
+    {
+      "group": "inspection-lineage",
+      "place": "stock",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 323 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 532
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:d82e78ee1157493fce40c428b8d73f08a0aa377442584456965fbf20810c6800 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=d82e78ee1157493f\nbound-lock/1 at=place:sha256:d82e78ee1157493fce40c428b8d73f08a0aa377442584456965fbf20810c6800 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/inspection-lineage/stock value=\"{\\\"successors\\\":[{\\\"digest\\\":\\\"sha256:08c4242b5f585628bb8cef8ede40e9895b8719eb8070aee2d96613583ee3904a\\\",\\\"predecessor\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\"},{\\\"digest\\\":\\\"sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e\\\",\\\"predecessor\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\"}],\\\"selection\\\":[\\\"stock\\\"],\\\"weight\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":19,\\\"total\\\":19,\\\"unreferenced\\\":7},\\\"missing\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":null,\\\"total\\\":null,\\\"unreferenced\\\":null},\\\"window\\\":{\\\"unit\\\":\\\"epochs\\\",\\\"from\\\":21,\\\"through\\\":23,\\\"reading\\\":\\\"unknown\\\"}}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 297 ms\nSPENT    observe reader.mjs 3+303 ms\nOBSERVE  1 run · 0 read by key · 308 ms\nOWN      imports 68 ms · bodies 1 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 3 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 2 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 11 ms · own 83 ms · regions 7 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 92fa7d87 folded 0.7 s\nKEPT     fold 92fa7d87 miss · no fold was kept before this one\n",
+          "runtimeMs": 988
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:d82e78ee1157493fce40c428b8d73f08a0aa377442584456965fbf20810c6800 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=d82e78ee1157493f\nbound-lock/1 at=place:sha256:d82e78ee1157493fce40c428b8d73f08a0aa377442584456965fbf20810c6800 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/inspection-lineage/stock value=\"{\\\"successors\\\":[{\\\"digest\\\":\\\"sha256:08c4242b5f585628bb8cef8ede40e9895b8719eb8070aee2d96613583ee3904a\\\",\\\"predecessor\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\"},{\\\"digest\\\":\\\"sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e\\\",\\\"predecessor\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\"}],\\\"selection\\\":[\\\"stock\\\"],\\\"weight\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":19,\\\"total\\\":19,\\\"unreferenced\\\":7},\\\"missing\\\":{\\\"unit\\\":\\\"bytes\\\",\\\"known\\\":null,\\\"total\\\":null,\\\"unreferenced\\\":null},\\\"window\\\":{\\\"unit\\\":\\\"epochs\\\",\\\"from\\\":21,\\\"through\\\":23,\\\"reading\\\":\\\"unknown\\\"}}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 69 ms · bodies 0 ms · removed 0 ms · readers 5 ms · alphabets 1 ms · capsules 0 ms · regions 2 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 2 ms · laid 5 ms · resets 0 ms · store 1 ms · ship 1 ms\nSPENT    fold capsules 13 ms · own 92 ms · regions 10 ms · ceilings 3 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 92fa7d87 folded 0.3 s · 0.7 s folded\nKEPT     fold 92fa7d87 miss · no fold was kept before this one\n",
+          "runtimeMs": 550
+        }
+      ]
+    },
+    {
+      "group": "inspection-lineage",
+      "place": "stock",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 406 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 621
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-stock-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\nOBSERVE  0 run · 0 read by key · 323 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-stock-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\n",
+          "runtimeMs": 623
+        }
+      ]
+    }
+  ]
+}

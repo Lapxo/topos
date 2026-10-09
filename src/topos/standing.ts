@@ -1,6 +1,8 @@
 import {byBytes,canonical,parse} from '../wire/line.ts';
 import {matches} from '../wire/classes.ts';
 export {semanticStandingBytes,readSemanticStanding} from './semantic-projection.ts';
+export {shadowProfile,shadowAt} from './shadow.ts';
+export type {ShadowProfile} from './shadow.ts';
 
 export interface StandingTopos {
   readonly lines: readonly string[];

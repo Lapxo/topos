@@ -1,0 +1,162 @@
+{
+  "places": [
+    {
+      "name": "survey",
+      "sign": "0..50",
+      "join": "0..100",
+      "readings": [
+        "2..3",
+        "5..6"
+      ],
+      "source": "source:survey",
+      "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+      "clock": "clock:survey",
+      "observed": "17",
+      "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+    },
+    {
+      "name": "stock",
+      "sign": "0..30",
+      "join": "0..90",
+      "readings": [
+        "4..7",
+        "9..10"
+      ],
+      "source": "source:stock",
+      "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+      "clock": "clock:stock",
+      "observed": "23",
+      "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+    }
+  ],
+  "quartets": [
+    {
+      "group": "shadow",
+      "scope": "release/contracts/shadow",
+      "heading": "## Semantic shadow and compatibility",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/shadow.cli.json",
+        "samples/readings/no.json"
+      ],
+      "vector": "vectors/native/shadow.cli.json"
+    },
+    {
+      "group": "readings",
+      "scope": "release/contracts/readings",
+      "heading": "## Reading contracts (0.1.13)",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/readings.cli.json",
+        "samples/readings/no.json"
+      ],
+      "vector": "vectors/native/readings.cli.json"
+    },
+    {
+      "group": "origins-snapshots",
+      "scope": "release/contracts/origins-snapshots",
+      "heading": "## Reading contracts (0.1.13)",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/origins-snapshots.cli.json",
+        "samples/readings/no.json"
+      ],
+      "vector": "vectors/native/origins-snapshots.cli.json"
+    },
+    {
+      "group": "policy",
+      "scope": "release/contracts/policy",
+      "heading": "## Reading contracts (0.1.13)",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/policy.cli.json",
+        "samples/readings/no.json"
+      ],
+      "vector": "vectors/native/policy.cli.json"
+    },
+    {
+      "group": "command-port",
+      "scope": "release/contracts/command-port",
+      "heading": "## Reading contracts (0.1.13)",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/command-port.cli.json",
+        "samples/readings/no.json"
+      ],
+      "vector": "vectors/native/command-port.cli.json"
+    },
+    {
+      "group": "inspection-lineage",
+      "scope": "release/contracts/inspection-lineage",
+      "heading": "## Reading contracts (0.1.13)",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/inspection-lineage.cli.json",
+        "samples/readings/no.json"
+      ],
+      "vector": "vectors/native/inspection-lineage.cli.json"
+    },
+    {
+      "group": "adoption",
+      "scope": "release/contracts/adoption",
+      "heading": "## World adoption and release discovery",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/adoption.cli.json",
+        "samples/readings/no.json"
+      ],
+      "vector": "vectors/native/adoption.cli.json"
+    },
+    {
+      "group": "wire-fields",
+      "scope": "audit/wire-fields-are-claims",
+      "heading": "## Native SDK conformance",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/readings.cli.json",
+        "samples/readings/no.json",
+        "src/wire/claimline.ts",
+        "vectors/wire/fields.json"
+      ],
+      "vector": "vectors/native/readings.cli.json",
+      "captureKey": "wire-fields"
+    },
+    {
+      "group": "form-axioms",
+      "scope": "audit/forms-obey-lattice-axioms",
+      "heading": "## Native SDK conformance",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/readings.cli.json",
+        "samples/readings/no.json",
+        "src/forms/index.ts",
+        "vectors/forms.json"
+      ],
+      "vector": "vectors/native/readings.cli.json",
+      "captureKey": "form-axioms"
+    },
+    {
+      "group": "capsule-admission",
+      "scope": "audit/capsule-admitted-by-vectors",
+      "heading": "## Native SDK conformance",
+      "needs": [
+        "docs/contracts.md",
+        "samples/readings/yes.json",
+        "vectors/native/readings.cli.json",
+        "samples/readings/no.json",
+        "src/capsule/index.ts"
+      ],
+      "vector": "vectors/native/readings.cli.json",
+      "captureKey": "capsule-admission"
+    }
+  ]
+}

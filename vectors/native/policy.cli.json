@@ -1,0 +1,152 @@
+{
+  "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+  "readerDigest": "sha256:d145622d6da3375137eb6a3abe7b9edf0224633d6ae311c3a05ee3f2d64c6ccf",
+  "captures": [
+    {
+      "group": "policy",
+      "place": "survey",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 379 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 618
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:9b80b91b2a5506dcfb4b6d8d2c0c55c8a1901776eec302af21a6d599cc2cb41a by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=9b80b91b2a5506dc\nbound-lock/1 at=place:sha256:9b80b91b2a5506dcfb4b6d8d2c0c55c8a1901776eec302af21a6d599cc2cb41a by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/policy/survey value=\"{\\\"composed\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":5,\\\"hi\\\":3},\\\"evidence\\\":[{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"2..3\\\"},{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"5..6\\\"}]},\\\"permutation\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":5,\\\"hi\\\":3},\\\"evidence\\\":[{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"5..6\\\"},{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"2..3\\\"}]},\\\"absent\\\":\\\"unread\\\",\\\"widening\\\":\\\"widening-needs-authority\\\",\\\"narrowing\\\":\\\"narrowing\\\",\\\"own\\\":\\\"compatible\\\",\\\"exact\\\":\\\"incompatible\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 320 ms\nSPENT    observe reader.mjs 5+321 ms\nOBSERVE  1 run · 0 read by key · 328 ms\nOWN      imports 70 ms · bodies 1 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 1 ms · applied 2 ms · laid 7 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 8 ms · own 90 ms · regions 5 ms · ceilings 3 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold e42a818b folded 0.8 s\nKEPT     fold e42a818b miss · no fold was kept before this one\n",
+          "runtimeMs": 1031
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:9b80b91b2a5506dcfb4b6d8d2c0c55c8a1901776eec302af21a6d599cc2cb41a by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=9b80b91b2a5506dc\nbound-lock/1 at=place:sha256:9b80b91b2a5506dcfb4b6d8d2c0c55c8a1901776eec302af21a6d599cc2cb41a by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/policy/survey value=\"{\\\"composed\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":5,\\\"hi\\\":3},\\\"evidence\\\":[{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"2..3\\\"},{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"5..6\\\"}]},\\\"permutation\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":5,\\\"hi\\\":3},\\\"evidence\\\":[{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"5..6\\\"},{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"2..3\\\"}]},\\\"absent\\\":\\\"unread\\\",\\\"widening\\\":\\\"widening-needs-authority\\\",\\\"narrowing\\\":\\\"narrowing\\\",\\\"own\\\":\\\"compatible\\\",\\\"exact\\\":\\\"incompatible\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 7 ms\nOWN      imports 72 ms · bodies 0 ms · removed 0 ms · readers 2 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 4 ms · laid 6 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 12 ms · own 93 ms · regions 7 ms · ceilings 3 ms · paid 1 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold e42a818b folded 0.3 s · 0.8 s folded\nKEPT     fold e42a818b miss · no fold was kept before this one\n",
+          "runtimeMs": 542
+        }
+      ]
+    },
+    {
+      "group": "policy",
+      "place": "survey",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 325 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 552
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/policy-survey-no/reader.mjs · Error: REFUSE·policy survey undeclared composition\nOBSERVE  0 run · 0 read by key · 328 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/policy-survey-no/reader.mjs · Error: REFUSE·policy survey undeclared composition\n",
+          "runtimeMs": 611
+        }
+      ]
+    },
+    {
+      "group": "policy",
+      "place": "stock",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 283 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 497
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:2146a5dee83591a7a38a7c57711369b8900b14472d7a0a16e6d7564b0cc1b73c by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=2146a5dee83591a7\nbound-lock/1 at=place:sha256:2146a5dee83591a7a38a7c57711369b8900b14472d7a0a16e6d7564b0cc1b73c by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/policy/stock value=\"{\\\"composed\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":9,\\\"hi\\\":7},\\\"evidence\\\":[{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"4..7\\\"},{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"9..10\\\"}]},\\\"permutation\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":9,\\\"hi\\\":7},\\\"evidence\\\":[{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"9..10\\\"},{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"4..7\\\"}]},\\\"absent\\\":\\\"unread\\\",\\\"widening\\\":\\\"widening-needs-authority\\\",\\\"narrowing\\\":\\\"narrowing\\\",\\\"own\\\":\\\"compatible\\\",\\\"exact\\\":\\\"incompatible\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 308 ms\nSPENT    observe reader.mjs 3+309 ms\nOBSERVE  1 run · 0 read by key · 313 ms\nOWN      imports 66 ms · bodies 1 ms · removed 0 ms · readers 2 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 3 ms · laid 5 ms · resets 1 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 9 ms · own 87 ms · regions 5 ms · ceilings 1 ms · paid 1 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 5789144d folded 0.7 s\nKEPT     fold 5789144d miss · no fold was kept before this one\n",
+          "runtimeMs": 968
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:2146a5dee83591a7a38a7c57711369b8900b14472d7a0a16e6d7564b0cc1b73c by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=2146a5dee83591a7\nbound-lock/1 at=place:sha256:2146a5dee83591a7a38a7c57711369b8900b14472d7a0a16e6d7564b0cc1b73c by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/policy/stock value=\"{\\\"composed\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":9,\\\"hi\\\":7},\\\"evidence\\\":[{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"4..7\\\"},{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"9..10\\\"}]},\\\"permutation\\\":{\\\"kind\\\":\\\"incompatible\\\",\\\"value\\\":{\\\"lo\\\":9,\\\"hi\\\":7},\\\"evidence\\\":[{\\\"source\\\":\\\"1\\\",\\\"own\\\":true,\\\"value\\\":\\\"9..10\\\"},{\\\"source\\\":\\\"0\\\",\\\"own\\\":false,\\\"value\\\":\\\"4..7\\\"}]},\\\"absent\\\":\\\"unread\\\",\\\"widening\\\":\\\"widening-needs-authority\\\",\\\"narrowing\\\":\\\"narrowing\\\",\\\"own\\\":\\\"compatible\\\",\\\"exact\\\":\\\"incompatible\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 69 ms · bodies 0 ms · removed 1 ms · readers 1 ms · alphabets 0 ms · capsules 1 ms · regions 2 ms · vectors 1 ms · zoom 1 ms · nos 0 ms · zoomed 1 ms · applied 2 ms · laid 5 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 10 ms · own 87 ms · regions 6 ms · ceilings 2 ms · paid 1 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 5789144d folded 0.3 s · 0.7 s folded\nKEPT     fold 5789144d miss · no fold was kept before this one\n",
+          "runtimeMs": 586
+        }
+      ]
+    },
+    {
+      "group": "policy",
+      "place": "stock",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 297 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 513
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/policy-stock-no/reader.mjs · Error: REFUSE·policy stock undeclared composition\nOBSERVE  0 run · 0 read by key · 317 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/policy-stock-no/reader.mjs · Error: REFUSE·policy stock undeclared composition\n",
+          "runtimeMs": 652
+        }
+      ]
+    }
+  ]
+}

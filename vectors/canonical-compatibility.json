@@ -1,0 +1,24 @@
+{
+  "contract": "bound-lock/1-compatibility",
+  "evidence": "Language-independent expected wire bytes; not an instrument receipt",
+  "cases": [
+    {"name":"key-order","input":"bound-lock/1 value=sample scope=a","canonical":"bound-lock/1 scope=a value=sample"},
+    {"name":"spacing","input":"bound-lock/1  scope=a   value=sample ","canonical":"bound-lock/1 scope=a value=sample"},
+    {"name":"large-number-is-text","input":"bound-lock/1 scope=a value=9007199254740993","canonical":"bound-lock/1 scope=a value=9007199254740993"},
+    {"name":"decimal-is-text","input":"bound-lock/1 scope=a value=0.10000000000000001","canonical":"bound-lock/1 scope=a value=0.10000000000000001"},
+    {"name":"exponent-is-text-before-form-interpretation","input":"bound-lock/1 scope=a value=1e3","canonical":"bound-lock/1 scope=a value=1e3"},
+    {"name":"unicode-composed","input":"bound-lock/1 scope=a value=é","canonical":"bound-lock/1 scope=a value=é"},
+    {"name":"unicode-decomposed","input":"bound-lock/1 scope=a value=é","canonical":"bound-lock/1 scope=a value=é"},
+    {"name":"quoted-none-retains-the-existing-contextual-meaning","input":"bound-lock/1 scope=a value=\"none\"","canonical":"bound-lock/1 scope=a value=none"},
+    {"name":"escaped-newline","input":"bound-lock/1 scope=a value=\"first\\nsecond\"","canonical":"bound-lock/1 scope=a value=\"first\\nsecond\""},
+    {"name":"empty-text-is-not-absence","input":"bound-lock/1 scope=a value=\"\"","canonical":"bound-lock/1 scope=a value="},
+    {"name":"duplicate-field","input":"bound-lock/1 scope=a scope=b value=sample","refuse":"appears twice"},
+    {"name":"raw-newline","input":"bound-lock/1 scope=a value=first\nsecond","refuse":"a line is one line"},
+    {"name":"undefined-escape","input":"bound-lock/1 scope=a value=\"\\t\"","refuse":"escaping this format does not define"}
+  ],
+  "bytes": [
+    {"name":"utf8-composed","text":"é","hex":"c3a9"},
+    {"name":"utf8-decomposed","text":"é","hex":"65cc81"},
+    {"name":"invalid-utf8-does-not-identify-replacement-text","hex":"ff","replacementText":"�","replacementHex":"efbfbd"}
+  ]
+}

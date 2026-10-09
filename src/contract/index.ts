@@ -1,3 +1,5 @@
+export {readReleaseDelivery,placeRequirements} from './adoption.ts';
+export type {ReleaseDelivery,PlaceRequirement} from './adoption.ts';
 import {providerFields} from '../topos/provider-inputs.ts';
 export {unionReadings,renderWriter,foldedEvidence} from './readings.ts';
 export type {WorldReading,ReadingUnion,EvidenceProjectionContract} from './readings.ts';

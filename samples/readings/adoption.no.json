@@ -1,0 +1,31 @@
+{
+  "contract": "place-requirements@1",
+  "evidence": "Counterexamples; no foreign record is an authorized local act",
+  "cases": [
+    {
+      "kind": "metadata",
+      "value": {
+        "standing": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "blob": "https://example.invalid/archive"
+      },
+      "refusal": "REFUSE·release"
+    },
+    {
+      "kind": "undeclared-requirements",
+      "world": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "standing": [
+        "bound-lock/1 form=alphabet measure=line role=demands scope=needs/place/catalogue value=\"bound-lock/1 form=alphabet measure=id role=writes scope=wire/region-measures value=coordinates|origin\""
+      ],
+      "refusal": "REFUSE·adoption"
+    },
+    {
+      "kind": "foreign-history",
+      "world": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "standing": [
+        "bound-lock/1 form=alphabet measure=id role=writes scope=wire/adoption/profile value=place-requirements@1",
+        "bound-lock/1 measure=line role=demands scope=needs/place/borrowed value=\"bound-lock/1 by=foreign epoch=4 scope=wire/forms sig=foreign value=alphabet\""
+      ],
+      "refusal": "REFUSE·adoption"
+    }
+  ]
+}

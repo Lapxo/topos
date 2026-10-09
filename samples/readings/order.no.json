@@ -1,0 +1,22 @@
+{
+  "contract": "semantic-standing@1",
+  "evidence": "Counterexample to sorting effective history; ceilings are read through Obligatory",
+  "cases": [
+    {
+      "name": "sign-then-join",
+      "lines": [
+        "bound-lock/1 epoch=1 id=s pole=ceiling reach=travels scope=B sign=+1 type=mark value=0..50",
+        "bound-lock/1 epoch=2 id=j pole=ceiling reach=local scope=B sign=+1 type=mark value=0..100 widens=w"
+      ],
+      "signed": {"lo":0,"hi":100}
+    },
+    {
+      "name": "join-then-sign",
+      "lines": [
+        "bound-lock/1 epoch=1 id=j pole=ceiling reach=local scope=B sign=+1 type=mark value=0..100 widens=w",
+        "bound-lock/1 epoch=2 id=s pole=ceiling reach=travels scope=B sign=+1 type=mark value=0..50"
+      ],
+      "signed": {"lo":0,"hi":50}
+    }
+  ]
+}

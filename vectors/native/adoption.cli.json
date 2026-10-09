@@ -1,0 +1,152 @@
+{
+  "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+  "readerDigest": "sha256:d145622d6da3375137eb6a3abe7b9edf0224633d6ae311c3a05ee3f2d64c6ccf",
+  "captures": [
+    {
+      "group": "adoption",
+      "place": "survey",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 376 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 619
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:b7f579d9038c3039c99110c4ac133984e5d9d8234054f95ce2e98a3ef22f3e3e by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=b7f579d9038c3039\nbound-lock/1 at=place:sha256:b7f579d9038c3039c99110c4ac133984e5d9d8234054f95ce2e98a3ef22f3e3e by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/adoption/survey value=\"{\\\"delivery\\\":{\\\"standing\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\",\\\"blob\\\":\\\"sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0\\\"},\\\"requirements\\\":[{\\\"world\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\",\\\"coordinate\\\":\\\"needs/place/input\\\",\\\"line\\\":\\\"bound-lock/1 form=alphabet measure=coordinates role=writes scope=region/survey value=input.json\\\"}],\\\"absent\\\":[]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 302 ms\nSPENT    observe reader.mjs 5+305 ms\nOBSERVE  1 run · 0 read by key · 314 ms\nOWN      imports 72 ms · bodies 0 ms · removed 1 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 4 ms · vectors 1 ms · zoom 0 ms · nos 2 ms · zoomed 0 ms · applied 7 ms · laid 7 ms · resets 1 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 15 ms · own 101 ms · regions 9 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold 99d6864f folded 0.8 s\nKEPT     fold 99d6864f miss · no fold was kept before this one\n",
+          "runtimeMs": 1052
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:b7f579d9038c3039c99110c4ac133984e5d9d8234054f95ce2e98a3ef22f3e3e by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=b7f579d9038c3039\nbound-lock/1 at=place:sha256:b7f579d9038c3039c99110c4ac133984e5d9d8234054f95ce2e98a3ef22f3e3e by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/adoption/survey value=\"{\\\"delivery\\\":{\\\"standing\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\",\\\"blob\\\":\\\"sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0\\\"},\\\"requirements\\\":[{\\\"world\\\":\\\"sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278\\\",\\\"coordinate\\\":\\\"needs/place/input\\\",\\\"line\\\":\\\"bound-lock/1 form=alphabet measure=coordinates role=writes scope=region/survey value=input.json\\\"}],\\\"absent\\\":[]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 10 ms\nOWN      imports 85 ms · bodies 0 ms · removed 1 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 3 ms · laid 8 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 8 ms · own 105 ms · regions 7 ms · ceilings 3 ms · paid 2 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 99d6864f folded 0.3 s · 0.8 s folded\nKEPT     fold 99d6864f miss · no fold was kept before this one\n",
+          "runtimeMs": 591
+        }
+      ]
+    },
+    {
+      "group": "adoption",
+      "place": "survey",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 307 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 516
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-survey-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-survey-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\n",
+          "runtimeMs": 638
+        }
+      ]
+    },
+    {
+      "group": "adoption",
+      "place": "stock",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 335 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 543
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:c2e2e14516d4e0d95124dbb786131f2e724cb7ebfb33d0980938c203764695b3 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=c2e2e14516d4e0d9\nbound-lock/1 at=place:sha256:c2e2e14516d4e0d95124dbb786131f2e724cb7ebfb33d0980938c203764695b3 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/adoption/stock value=\"{\\\"delivery\\\":{\\\"standing\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\",\\\"blob\\\":\\\"sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e\\\"},\\\"requirements\\\":[{\\\"world\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\",\\\"coordinate\\\":\\\"needs/place/input\\\",\\\"line\\\":\\\"bound-lock/1 form=alphabet measure=coordinates role=writes scope=region/stock value=input.json\\\"}],\\\"absent\\\":[]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 253 ms\nSPENT    observe reader.mjs 6+255 ms\nOBSERVE  1 run · 0 read by key · 263 ms\nOWN      imports 63 ms · bodies 0 ms · removed 2 ms · readers 1 ms · alphabets 1 ms · capsules 0 ms · regions 4 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 2 ms · laid 3 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 16 ms · own 82 ms · regions 8 ms · ceilings 4 ms · paid 1 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold cb1074df folded 0.7 s\nKEPT     fold cb1074df miss · no fold was kept before this one\n",
+          "runtimeMs": 925
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:c2e2e14516d4e0d95124dbb786131f2e724cb7ebfb33d0980938c203764695b3 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=c2e2e14516d4e0d9\nbound-lock/1 at=place:sha256:c2e2e14516d4e0d95124dbb786131f2e724cb7ebfb33d0980938c203764695b3 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/adoption/stock value=\"{\\\"delivery\\\":{\\\"standing\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\",\\\"blob\\\":\\\"sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e\\\"},\\\"requirements\\\":[{\\\"world\\\":\\\"sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9\\\",\\\"coordinate\\\":\\\"needs/place/input\\\",\\\"line\\\":\\\"bound-lock/1 form=alphabet measure=coordinates role=writes scope=region/stock value=input.json\\\"}],\\\"absent\\\":[]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 4 ms\nOWN      imports 69 ms · bodies 0 ms · removed 1 ms · readers 2 ms · alphabets 0 ms · capsules 0 ms · regions 4 ms · vectors 1 ms · zoom 1 ms · nos 1 ms · zoomed 0 ms · applied 8 ms · laid 7 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 9 ms · own 99 ms · regions 6 ms · ceilings 3 ms · paid 0 ms · docs 0 ms · ceilings 5 ms\nBEAT     fold cb1074df folded 0.3 s · 0.7 s folded\nKEPT     fold cb1074df miss · no fold was kept before this one\n",
+          "runtimeMs": 593
+        }
+      ]
+    },
+    {
+      "group": "adoption",
+      "place": "stock",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 337 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 593
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-stock-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\nOBSERVE  0 run · 0 read by key · 306 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-stock-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\n",
+          "runtimeMs": 631
+        }
+      ]
+    }
+  ]
+}

@@ -26,3 +26,15 @@ test('receipt contract requires semantic identity without inventing valuation',(
  assert.throws(()=>cellReceiptContract([]),/REFUSE·receipt/);
  assert.throws(()=>cellReceiptContract([identity,{scope:'valuation/cells',value:'0'}]),/REFUSE·valuation/);
 });
+
+test('ordered profile keeps the native sign/join counterexample distinct without redefining the set profile',()=>{
+ const signThenJoin=[...definitions,travel,join];
+ const joinThenSign=[...definitions,{...join,fields:{...join.fields,epoch:'2'}},{...travel,fields:{...travel.fields,epoch:'3'}}];
+ assert.deepEqual(cellInputs(signThenJoin),cellInputs(joinThenSign),'legacy set meaning is unchanged');
+ assert.notDeepEqual(cellInputs(signThenJoin,'semantic-live@2').get('root'),cellInputs(joinThenSign,'semantic-live@2').get('root'));
+ assert.deepEqual(cellInputs(signThenJoin,'semantic-live@2').get('child'),cellInputs(joinThenSign,'semantic-live@2').get('child'),'the local join does not travel');
+ const withoutJoin=cellInputs([...definitions,travel],'semantic-live@2');
+ assert.deepEqual(withoutJoin.get('child'),cellInputs(signThenJoin,'semantic-live@2').get('child'));
+ assert.deepEqual(cellInputs([...signThenJoin,join],'semantic-live@2'),cellInputs(signThenJoin,'semantic-live@2'));
+ assert.deepEqual(cellInputs([...definitions,join,travel],'semantic-live@2'),cellInputs(signThenJoin,'semantic-live@2'),'delivery order cannot replace the logical order');
+});

@@ -155,3 +155,46 @@ releaseSuccessors reads authenticated predecessor links, keeps alternate success
 ### Compatibility
 
 Canonical UTF-8 field and set order, contextual none and named refusal for incompatible live wire declarations retain their existing meaning. New order-sensitive place projection does not reinterpret old Topos pins. No operation above changes REQUIRED, FREE, CONFLICT or FORBIDDEN.
+
+
+## Semantic shadow and compatibility
+
+The opt-in semantic-standing@1 profile projects already folded live lines in effective order, without the delivery envelope. The instrument supplies that order; the SDK neither authenticates nor folds history. wire/identity/{profile,form,shadow,projections} declares the form, shadow resolution and projection labels. A commitment is <form>@<shadow-resolution>:<algorithm:hex>, computed from the canonical UTF-8 shadow bytes. Undeclared labels refuse. Resolution labels are exact text, not a fixed list or machine-number range.
+
+The existing set standing format retains its meaning. vectors/canonical-compatibility.json records key order, spacing, literal number text, Unicode, quoted none and byte/text distinctions without changing that meaning. Form interpretation is separate from wire canonicalization.
+
+## Ordered cell receipt inputs
+
+semantic-live@1 retains the published sorted-set input encoding. It cannot distinguish a sign followed by a local join from the reverse order. semantic-live@2 is an explicit opt-in: live own marks retain effective act order; travelling ancestor marks exclude local widenings; claims, rest coordinates, selected standing and implementation inputs remain part of identity. Signature and delivery fields are excluded. The host must preserve the ordered input sequence when hashing it and bind the selected profile.
+
+The native counterexample is captured in vectors/order.cli.json: sign then join yields signed 0..100, join then sign yields signed 0..50, with distinct receipts and idle unchanged folds. These are source-candidate CLI captures, not installed release acceptance.
+
+## Pure interpretation entry
+
+@lapxo/topos/core exposes pure wire, projection and declared-contract functions. Storage, authentication, execution and transport remain host work. Its transitive runtime imports are checked with the compiler syntax tree; the declaration of this entry does not certify native release closure.
+
+
+## World adoption and release discovery
+
+A world is a place selected by its canonical standing commitment; sources names locations and uses names identity. Required artifacts and files follow the selected standing's declared regions and restsOn closure. Delivery archives are not standing identity. The semantic-standing@1 profile is opt-in; existing published set pins are not rewritten as new projection identities.
+
+Until authenticated lineage discovery is available, a world release delivers release.json with standing and blob digests; predecessor is optional delivery metadata. readReleaseDelivery reads only that declared release-delivery@1 record. It does not authenticate lineage, verify content, grant authority or bless a URL. The host verifies downloaded standing and every named artifact. releaseSuccessors accepts authenticated predecessor links and retains alternative successors; it never selects newest by URL. A Bound bump or needs proposal must carry the selected standing digest from that verified lineage, and a person signs the proposed local act. Those host views require their own native acceptance before being advertised.
+
+A selected standing may declare wire/adoption/profile=place-requirements@1. Its needs/place/<coordinate> demands use measure=line and value containing one canonical semantic place declaration. placeRequirements returns the requesting world's digest, requirement coordinate and desired line. Identical deliveries add no authority; differing requirements remain separate. Borrowed signatures, signer ids, epochs and withdrawals refuse. Absence declares no requirements; an undeclared requirements profile refuses. No wire field is added.
+
+The host repair view compares these requirements with the place before adoption, checks its grammar, conflicts and coverage, and proposes missing declarations as an unsigned local lot. It never copies world history into the place or signs on the person's behalf. Prose separators, region-measures and other required place lines belong to the world's declaration rather than a consumer-specific prelude. A requirement is not a paid demand or an authorized act.
+
+The SDK samples cover two unrelated places and missing-profile/borrowed-history refusals. Native repair, one-pin acquisition, bump and release-asset delivery remain host/world acceptance work, not claims established by these pure SDK readers.
+
+
+## Native SDK conformance
+
+Wire fields are interpreted using the declared historical wire. The positive sample retains fields from their own era; the negative sample requires an undeclared field and refuses by name. The native captures include both read and refused lines, on two places.
+
+Every offered form delegates its lattice and generator to Obligatory. The native vector checks the lattice axioms and encoding roundtrip on the declared generated points. Broken meet, reversed order and a missing top law are separate counterexamples; the negative sample exposes the missing top law. This is sampled conformance, not a proof over unsampled points.
+
+A capsule answers only a declared region and only the reads it is handed. The positive sample projects a declared input while excluding a private line. The negative sample withholds a required read; an unoffered region also refuses. Receipt admission is a verified publication reading of these samples and the captured instrument output, not a declaration paying itself.
+
+The shared native readings vector carries the three captures under named audit coordinates. Each quartet is retained separately by its implementation and handed input digests. Missing inputs or a captured output disagreement refuse by coordinate.
+
+The historical SDK agent-effects ceiling is retired as inert here: the SDK interprets declarations and framing but performs no network act. Network-effect observation and authorization remain host responsibilities; this retirement does not declare zero network acts or relax a host ceiling.

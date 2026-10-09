@@ -1,0 +1,28 @@
+{
+  "scope": "capture/wire/refused/0",
+  "measure": "input",
+  "result": "stdout",
+  "cases": [
+    {
+      "program": "runtime",
+      "args": [
+        "samples/line-reader.mjs"
+      ],
+      "cwd": ".",
+      "stdin": "bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2",
+      "timeoutMs": 5000,
+      "maxBytes": 65536,
+      "exit": 1,
+      "inputs": [
+        "samples/line-reader.mjs",
+        "samples/no/wire-input.capture.json"
+      ],
+      "matches": [
+        {
+          "stream": "stderr",
+          "pattern": "form=ghost"
+        }
+      ]
+    }
+  ]
+}

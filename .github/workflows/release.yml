@@ -8,6 +8,9 @@ on:
 jobs:
   release:
     if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
+    outputs:
+      artifact: ${{ steps.artifact.outputs.artifact }}
+      digest: ${{ steps.artifact.outputs.digest }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,17 +18,29 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: 24
       - run: npm ci
       - run: npm run build
-      - env:
+      - run: npm test
+      - id: artifact
+        env:
           GH_TOKEN: ${{ github.token }}
         run: |
           version="v$(node -p "require('./package.json').version")"
-          gh release view "$version" >/dev/null 2>&1 && exit 0
-          gh release create "$version" "$(npm pack --silent)" --title "$version" --notes "$(git log -1 --format=%B)"
+          asset="$(npm pack --silent)"
+          test -f "$asset"
+          expected="$(sha256sum "$asset")"
+          if ! gh release view "$version" >/dev/null 2>&1; then
+            gh release create "$version" "$asset" --title "$version" --notes "$version"
+          fi
+          gh release download "$version" --pattern "$(basename "$asset")" --dir "$RUNNER_TEMP/release-back"
+          actual="$(sha256sum "$RUNNER_TEMP/release-back/$(basename "$asset")")"
+          test "${expected%% *}" = "${actual%% *}"
+          printf 'artifact=%s\n' "$(basename "$asset")" >> "$GITHUB_OUTPUT"
+          printf 'digest=%s\n' "${expected%% *}" >> "$GITHUB_OUTPUT"
   publish:
     needs: release
     environment: release
@@ -40,9 +55,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: npm ci
-      - run: npm run build
       - run: npm install --global npm@'12.1.0'
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_ARTIFACT: ${{ needs.release.outputs.artifact }}
+          RELEASE_DIGEST: ${{ needs.release.outputs.digest }}
+        run: |
+          version="v$(node -p "require('./package.json').version")"
+          test -n "$RELEASE_ARTIFACT"
+          test -n "$RELEASE_DIGEST"
+          gh release download "$version" --pattern "$RELEASE_ARTIFACT" --dir "$RUNNER_TEMP/publish"
+          asset="$RUNNER_TEMP/publish/$RELEASE_ARTIFACT"
+          actual="$(sha256sum "$asset")"
+          test "${actual%% *}" = "$RELEASE_DIGEST"
+          printf 'RELEASE_ASSET=%s\n' "$asset" >> "$GITHUB_ENV"
       - run: |
           npm view "$(node -p "require('./package.json').name")@$(node -p "require('./package.json').version")" version >/dev/null 2>&1 && exit 0
-          npm stage publish
+          asset="$RELEASE_ASSET"
+          npm stage publish "$asset" --access public --ignore-scripts

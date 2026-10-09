@@ -22,75 +22,75 @@
   "exports": {
     ".": {
       "types": "./dist/readers/index.d.ts",
-      "default": "./dist/readers/index.js",
-      "source": "./src/readers/index.ts"
+      "source": "./src/readers/index.ts",
+      "default": "./dist/readers/index.js"
     },
     "./authority": {
       "types": "./dist/authority/index.d.ts",
-      "default": "./dist/authority/index.js",
-      "source": "./src/authority/index.ts"
+      "source": "./src/authority/index.ts",
+      "default": "./dist/authority/index.js"
     },
     "./capsule": {
       "types": "./dist/capsule/index.d.ts",
-      "default": "./dist/capsule/index.js",
-      "source": "./src/capsule/index.ts"
+      "source": "./src/capsule/index.ts",
+      "default": "./dist/capsule/index.js"
     },
     "./contract": {
       "types": "./dist/contract/index.d.ts",
-      "default": "./dist/contract/index.js",
-      "source": "./src/contract/index.ts"
+      "source": "./src/contract/index.ts",
+      "default": "./dist/contract/index.js"
     },
     "./forms": {
       "types": "./dist/forms/index.d.ts",
-      "default": "./dist/forms/index.js",
-      "source": "./src/forms/index.ts"
+      "source": "./src/forms/index.ts",
+      "default": "./dist/forms/index.js"
     },
     "./host": {
       "types": "./dist/host/index.d.ts",
-      "default": "./dist/host/index.js",
-      "source": "./src/host/index.ts"
+      "source": "./src/host/index.ts",
+      "default": "./dist/host/index.js"
     },
     "./readers": {
       "types": "./dist/readers/index.d.ts",
-      "default": "./dist/readers/index.js",
-      "source": "./src/readers/index.ts"
+      "source": "./src/readers/index.ts",
+      "default": "./dist/readers/index.js"
     },
     "./wire": {
       "types": "./dist/wire/index.d.ts",
-      "default": "./dist/wire/index.js",
-      "source": "./src/wire/index.ts"
+      "source": "./src/wire/index.ts",
+      "default": "./dist/wire/index.js"
     },
     "./package.json": "./package.json",
     "./object-provider": {
-      "source": "./src/host/object-provider.ts",
       "types": "./dist/host/object-provider.d.ts",
+      "source": "./src/host/object-provider.ts",
       "default": "./dist/host/object-provider.js"
     },
     "./standing": {
-      "source": "./src/topos/standing.ts",
       "types": "./dist/topos/standing.d.ts",
+      "source": "./src/topos/standing.ts",
       "default": "./dist/topos/standing.js"
     },
     "./cells-view": {
-      "source": "./src/views/cells.ts",
       "types": "./dist/views/cells.d.ts",
+      "source": "./src/views/cells.ts",
       "default": "./dist/views/cells.js"
     },
     "./cell-inputs": {
-      "source": "./src/views/cell-inputs.ts",
       "types": "./dist/views/cell-inputs.d.ts",
+      "source": "./src/views/cell-inputs.ts",
       "default": "./dist/views/cell-inputs.js"
     },
     "./vectors/evidence.json": "./vectors/evidence.json",
     "./receipts": {
-      "source": "./src/receipts.ts",
       "types": "./dist/receipts.d.ts",
+      "source": "./src/receipts.ts",
       "default": "./dist/receipts.js"
     },
     "./vectors/signing-port.json": "./vectors/signing-port.json",
     "./walk": {
-      "source": "./src/walk.ts",
       "types": "./dist/walk.d.ts",
+      "source": "./src/walk.ts",
       "default": "./dist/walk.js"
     }
   },
@@ -112,7 +112,13 @@
     "samples/public-boundary/*.json",
     "vectors/public-boundary.json",
     "samples/readings/*.json",
-    "vectors/readings.json"
+    "vectors/readings.json",
+    "samples/yes/two-origins-meet-on-one-scope.json",
+    "samples/yes/three-origins-two-meet-one-apart.json",
+    "samples/yes/render-world.json",
+    "samples/line-reader.mjs",
+    "samples/no/wire-input.capture.json",
+    "samples/no/wire-why.capture.json"
   ],
   "scripts": {
     "build": "tsc --build",

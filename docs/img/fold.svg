@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 184" width="640" height="184" role="img" aria-label="21.2..21.4 · free and radiator apart · conflict">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" width="480" height="200" role="img" aria-label="Illustrated meet: 21.2..21.4 and radiator is apart from the illustrated meet.">
 <style>
-text{font:14px ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#59636e}
-@media (prefers-color-scheme:dark){text{fill:#9198a1}}
+text{font:14px sans-serif;fill:#202020}
 </style>
-<line x1="143.7" y1="92" x2="496.3" y2="92" stroke="#8c959f"/>
-<rect x="143.7" y="8" width="62.2" height="18" rx="4" fill="#8c959f"></rect>
-<rect x="164.4" y="36" width="20.7" height="18" rx="4" fill="#8c959f"></rect>
-<rect x="164.4" y="64" width="20.7" height="18" rx="4" fill="#8c959f"></rect>
-<rect x="454.8" y="108" width="41.5" height="18" rx="4" fill="#8c959f"></rect>
-<text x="40" y="144">21.2..21.4 · free</text>
-<text x="40" y="168">radiator apart · conflict</text>
+<line x1="99" y1="104" x2="381" y2="104" stroke="#666666"/>
+<rect x="99" y="8" width="49.8" height="20" rx="2" fill="#666666"><animate attributeName="x" from="87" to="99" dur="1.0s" fill="freeze"/><animate attributeName="fill" from="#666666" to="#884488" begin="2.0s" fill="freeze"/><animate attributeName="fill" from="#884488" to="#666666" begin="3.0s" fill="freeze"/></rect>
+<rect x="115.6" y="40" width="16.6" height="20" rx="2" fill="#666666"><animate attributeName="x" from="127.6" to="115.6" dur="1.0s" fill="freeze"/><animate attributeName="fill" from="#666666" to="#884488" begin="2.0s" fill="freeze"/><animate attributeName="fill" from="#884488" to="#666666" begin="3.0s" fill="freeze"/></rect>
+<rect x="115.6" y="72" width="16.6" height="20" rx="2" fill="#666666"><animate attributeName="fill" from="#666666" to="#2255aa" begin="1.0s" fill="freeze"/><animate attributeName="fill" from="#2255aa" to="#884488" begin="2.0s" fill="freeze"/><animate attributeName="fill" from="#884488" to="#2255aa" begin="3.0s" fill="freeze"/></rect>
+<rect x="347.9" y="112" width="33.2" height="20" rx="2" fill="#666666"><animate attributeName="x" values="115.6;115.6;347.9" dur="2.0s" fill="freeze"/><animate attributeName="fill" from="#666666" to="#884488" begin="2.0s" fill="freeze"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;0.7;1" dur="3.0s" fill="freeze"/></rect>
+<text x="16" y="160">Illustrated meet: 21.2..21.4<animate attributeName="opacity" values="0;0;1" fill="freeze"/></text>
+<text x="16" y="184">radiator is apart from the illustrated meet.<animate attributeName="opacity" values="0;0;1" fill="freeze"/></text>
 </svg>

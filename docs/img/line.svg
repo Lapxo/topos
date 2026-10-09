@@ -1,18 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 176" width="640" height="176" role="img" aria-label="A configuration record, shown field by field">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" width="480" height="160" role="img" aria-label="An illustrative wire line: wire/line/fields">
 <style>
-text{font:13px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#59636e}.field{fill:#2da44e;font-weight:600}
-@media (prefers-color-scheme:dark){text{fill:#9198a1}}
+text{font:14px monospace;fill:#202020}.field{fill:#666666}
 </style>
-<text class="field" x="104" y="30" text-anchor="end">scope</text>
-<text x="116" y="30">wire/line/fields</text>
-<text class="field" x="104" y="56" text-anchor="end">role</text>
-<text x="116" y="56">reads</text>
-<text class="field" x="104" y="82" text-anchor="end">measure</text>
-<text x="116" y="82">count</text>
-<text class="field" x="104" y="108" text-anchor="end">form</text>
-<text x="116" y="108">interval</text>
-<text class="field" x="104" y="134" text-anchor="end">value</text>
-<text x="116" y="134">7..16</text>
-<text class="field" x="104" y="160" text-anchor="end">at</text>
-<text x="116" y="160">policy:wire/fields</text>
+<text class="field" x="90" y="24" text-anchor="end">scope</text>
+<text x="110" y="24">wire/line/fields</text>
+<text class="field" x="90" y="48" text-anchor="end">role</text>
+<text x="110" y="48">reads</text>
+<text class="field" x="90" y="72" text-anchor="end">form</text>
+<text x="110" y="72">interval</text>
+<text class="field" x="90" y="96" text-anchor="end">measure</text>
+<text x="110" y="96">count</text>
+<text class="field" x="90" y="120" text-anchor="end">value</text>
+<text x="110" y="120">7..16</text>
+<text class="field" x="90" y="144" text-anchor="end">by</text>
+<text x="110" y="144">a</text>
 </svg>

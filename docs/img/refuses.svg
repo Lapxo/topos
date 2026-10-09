@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 190" role="img" aria-label="A missing declared artifact is refused without substituting local bytes"><style>text{font:15px ui-sans-serif,system-ui,sans-serif;fill:#526078}rect{fill:#f6f8fc;stroke:#ccd6e6}path{fill:none;stroke:#9dabc0;stroke-width:1.8}@media(prefers-color-scheme:dark){text{fill:#b7c6dd}rect{fill:#111d30;stroke:#334660}}</style><rect x="18" y="46" width="206" height="94" rx="18"/><text x="38" y="84">Declared standing</text><text x="38" y="111">names artifact bytes</text><path d="M224 94H284"/><rect x="284" y="46" width="175" height="94" rx="18"/><text x="305" y="84">Artifact absent</text><text x="305" y="111">identity unresolved</text><path d="M459 94H512"/><rect x="512" y="46" width="190" height="94" rx="18"/><text x="532" y="84">REFUSE</text><text x="532" y="111">no local substitute</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120" role="img" aria-label="Refused input: bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2. Reason: `form=ghost` is a form this reader does not know
+">
+<style>
+text{font:14px sans-serif;fill:#202020}.cross{fill:#884488}
+.asked{font:14px monospace;fill:#884488;text-decoration:line-through}
+</style>
+<text class="cross" x="12" y="32"></text>
+<text class="asked" x="32" y="32">bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2</text>
+<text x="32" y="96">`form=ghost` is a form this reader does not know
+</text>
+</svg>

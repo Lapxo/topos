@@ -1,4 +1,3 @@
-# Contributing
+# Contributing to Topos
 
-Clone, `npm ci && npm run build`. A leaf that differs from what its lines render is the contribution: send it with the lines it was handed.
-Nothing else is asked. Lines land through the fold, never by hand; a page and the lock disagree, the lock is right.
+Propose declarations and their contracts together. Keep disagreement visible. Include a positive sample, a negative sample and a captured vector for a changed contract.

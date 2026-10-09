@@ -1,0 +1,152 @@
+{
+  "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+  "readerDigest": "sha256:d145622d6da3375137eb6a3abe7b9edf0224633d6ae311c3a05ee3f2d64c6ccf",
+  "captures": [
+    {
+      "group": "shadow",
+      "place": "survey",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 133 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 258
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:71a3b82365f2a9ca0279d59977ebe3f835cb33cfca3beaf8dca4b6cdef1599c6 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=71a3b82365f2a9ca\nbound-lock/1 at=place:sha256:71a3b82365f2a9ca0279d59977ebe3f835cb33cfca3beaf8dca4b6cdef1599c6 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/shadow/survey value=\"{\\\"a\\\":\\\"alphabet@1:sha256:41276e66e7e78074cd4f1b125a675b9e6fe0711c91b77602beefeaca7e8c6948\\\",\\\"b\\\":\\\"alphabet@1:sha256:4693bb6b64b19330476e871114308681a30e52c7efbaf3513d49d629cf8bd039\\\",\\\"orderedDistinct\\\":true,\\\"naiveEqual\\\":true,\\\"resolutions\\\":[{\\\"at\\\":\\\"1\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"4\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"6\\\",\\\"kind\\\":\\\"shadow\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 180 ms\nOBSERVE  1 run · 0 read by key · 185 ms\nOWN      imports 23 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 2 ms · laid 2 ms · resets 1 ms · store 0 ms · ship 1 ms\nSPENT    fold capsules 4 ms · own 33 ms · regions 3 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 16e33ba3 folded 0.4 s\nKEPT     fold 16e33ba3 miss · no fold was kept before this one\n",
+          "runtimeMs": 500
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:71a3b82365f2a9ca0279d59977ebe3f835cb33cfca3beaf8dca4b6cdef1599c6 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=71a3b82365f2a9ca\nbound-lock/1 at=place:sha256:71a3b82365f2a9ca0279d59977ebe3f835cb33cfca3beaf8dca4b6cdef1599c6 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/shadow/survey value=\"{\\\"a\\\":\\\"alphabet@1:sha256:41276e66e7e78074cd4f1b125a675b9e6fe0711c91b77602beefeaca7e8c6948\\\",\\\"b\\\":\\\"alphabet@1:sha256:4693bb6b64b19330476e871114308681a30e52c7efbaf3513d49d629cf8bd039\\\",\\\"orderedDistinct\\\":true,\\\"naiveEqual\\\":true,\\\"resolutions\\\":[{\\\"at\\\":\\\"1\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"4\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"6\\\",\\\"kind\\\":\\\"shadow\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 21 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 1 ms\nSPENT    fold capsules 5 ms · own 29 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold 16e33ba3 folded 0.1 s · 0.4 s folded\nKEPT     fold 16e33ba3 miss · no fold was kept before this one\n",
+          "runtimeMs": 272
+        }
+      ]
+    },
+    {
+      "group": "shadow",
+      "place": "survey",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 143 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 306
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/shadow-survey-no/reader.mjs · Error: REFUSE·shadow conflicting wire/identity/form\nOBSERVE  0 run · 0 read by key · 172 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/shadow-survey-no/reader.mjs · Error: REFUSE·shadow conflicting wire/identity/form\n",
+          "runtimeMs": 328
+        }
+      ]
+    },
+    {
+      "group": "shadow",
+      "place": "stock",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 128 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 242
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:2c7871bf6ce803221949ef250d7bca70e19b6c01e8d9311818cd84553a4915d6 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=2c7871bf6ce80322\nbound-lock/1 at=place:sha256:2c7871bf6ce803221949ef250d7bca70e19b6c01e8d9311818cd84553a4915d6 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/shadow/stock value=\"{\\\"a\\\":\\\"alphabet@1:sha256:b850bc431df91746450d429fb48533325679a27e54ab45c0e06ca5f9460b1ebd\\\",\\\"b\\\":\\\"alphabet@1:sha256:9e7354c0a4d7e87e0f7ec7f4f8a138fe312adb8a7fa5db1bf05a5c857237ca61\\\",\\\"orderedDistinct\\\":true,\\\"naiveEqual\\\":true,\\\"resolutions\\\":[{\\\"at\\\":\\\"1\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"4\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"6\\\",\\\"kind\\\":\\\"shadow\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 171 ms\nOBSERVE  1 run · 0 read by key · 174 ms\nOWN      imports 20 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 2 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 29 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 16c39ca0 folded 0.3 s\nKEPT     fold 16c39ca0 miss · no fold was kept before this one\n",
+          "runtimeMs": 471
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:2c7871bf6ce803221949ef250d7bca70e19b6c01e8d9311818cd84553a4915d6 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=2c7871bf6ce80322\nbound-lock/1 at=place:sha256:2c7871bf6ce803221949ef250d7bca70e19b6c01e8d9311818cd84553a4915d6 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/shadow/stock value=\"{\\\"a\\\":\\\"alphabet@1:sha256:b850bc431df91746450d429fb48533325679a27e54ab45c0e06ca5f9460b1ebd\\\",\\\"b\\\":\\\"alphabet@1:sha256:9e7354c0a4d7e87e0f7ec7f4f8a138fe312adb8a7fa5db1bf05a5c857237ca61\\\",\\\"orderedDistinct\\\":true,\\\"naiveEqual\\\":true,\\\"resolutions\\\":[{\\\"at\\\":\\\"1\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"4\\\",\\\"kind\\\":\\\"shadow\\\"},{\\\"at\\\":\\\"6\\\",\\\"kind\\\":\\\"shadow\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 18 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 2 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 26 ms · regions 3 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 16c39ca0 folded 0.1 s · 0.3 s folded\nKEPT     fold 16c39ca0 miss · no fold was kept before this one\n",
+          "runtimeMs": 245
+        }
+      ]
+    },
+    {
+      "group": "shadow",
+      "place": "stock",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 127 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 292
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/shadow-stock-no/reader.mjs · Error: REFUSE·shadow conflicting wire/identity/form\nOBSERVE  0 run · 0 read by key · 170 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/shadow-stock-no/reader.mjs · Error: REFUSE·shadow conflicting wire/identity/form\n",
+          "runtimeMs": 328
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+{
+  "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+  "readerDigest": "sha256:d145622d6da3375137eb6a3abe7b9edf0224633d6ae311c3a05ee3f2d64c6ccf",
+  "captures": [
+    {
+      "group": "readings",
+      "place": "survey",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 376 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 623
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:5a19bcc9c3332dba90f49788c5e84f63ca2647b360c40d053c5be5fd5c51a141 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=5a19bcc9c3332dba\nbound-lock/1 at=place:sha256:5a19bcc9c3332dba90f49788c5e84f63ca2647b360c40d053c5be5fd5c51a141 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/readings/survey value=\"{\\\"union\\\":{\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/survey value=2..3\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/survey value=5..6\\\"],\\\"attribution\\\":[{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/survey value=2..3\\\",\\\"worlds\\\":[\\\"world-0\\\"]},{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/survey value=5..6\\\",\\\"worlds\\\":[\\\"world-1\\\"]}],\\\"disagreements\\\":[{\\\"coordinate\\\":\\\"bound-lock/1 measure=span region=survey role=writes scope=reading/survey\\\",\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/survey value=2..3\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/survey value=5..6\\\"]}]},\\\"permutationEqual\\\":true,\\\"duplicateEqual\\\":true,\\\"writer\\\":\\\"world-a\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 325 ms\nSPENT    observe reader.mjs 2+328 ms\nOBSERVE  1 run · 0 read by key · 332 ms\nOWN      imports 40 ms · bodies 0 ms · removed 0 ms · readers 3 ms · alphabets 0 ms · capsules 1 ms · regions 4 ms · vectors 1 ms · zoom 0 ms · nos 2 ms · zoomed 0 ms · applied 3 ms · laid 5 ms · resets 1 ms · store 1 ms · ship 1 ms\nSPENT    fold capsules 11 ms · own 67 ms · regions 9 ms · ceilings 7 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold d1234075 folded 0.7 s\nKEPT     fold d1234075 miss · no fold was kept before this one\n",
+          "runtimeMs": 987
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:5a19bcc9c3332dba90f49788c5e84f63ca2647b360c40d053c5be5fd5c51a141 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=5a19bcc9c3332dba\nbound-lock/1 at=place:sha256:5a19bcc9c3332dba90f49788c5e84f63ca2647b360c40d053c5be5fd5c51a141 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/readings/survey value=\"{\\\"union\\\":{\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/survey value=2..3\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/survey value=5..6\\\"],\\\"attribution\\\":[{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/survey value=2..3\\\",\\\"worlds\\\":[\\\"world-0\\\"]},{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/survey value=5..6\\\",\\\"worlds\\\":[\\\"world-1\\\"]}],\\\"disagreements\\\":[{\\\"coordinate\\\":\\\"bound-lock/1 measure=span region=survey role=writes scope=reading/survey\\\",\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/survey value=2..3\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/survey value=5..6\\\"]}]},\\\"permutationEqual\\\":true,\\\"duplicateEqual\\\":true,\\\"writer\\\":\\\"world-a\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 83 ms · bodies 1 ms · removed 0 ms · readers 0 ms · alphabets 1 ms · capsules 0 ms · regions 5 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 1 ms · applied 3 ms · laid 5 ms · resets 1 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 6 ms · own 105 ms · regions 10 ms · ceilings 2 ms · paid 1 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold d1234075 folded 0.3 s · 0.7 s folded\nKEPT     fold d1234075 miss · no fold was kept before this one\n",
+          "runtimeMs": 576
+        }
+      ]
+    },
+    {
+      "group": "readings",
+      "place": "survey",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 286 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 522
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-survey-no/reader.mjs · Error: REFUSE·render survey.txt needs one writer\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-survey-no/reader.mjs · Error: REFUSE·render survey.txt needs one writer\n",
+          "runtimeMs": 673
+        }
+      ]
+    },
+    {
+      "group": "readings",
+      "place": "stock",
+      "negative": false,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 326 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 546
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:649e3964f8c986b3df214d78bbc96abb3d16d387bd07be14da88d0a432934981 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=649e3964f8c986b3\nbound-lock/1 at=place:sha256:649e3964f8c986b3df214d78bbc96abb3d16d387bd07be14da88d0a432934981 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/readings/stock value=\"{\\\"union\\\":{\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/stock value=4..7\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/stock value=9..10\\\"],\\\"attribution\\\":[{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/stock value=4..7\\\",\\\"worlds\\\":[\\\"world-0\\\"]},{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/stock value=9..10\\\",\\\"worlds\\\":[\\\"world-1\\\"]}],\\\"disagreements\\\":[{\\\"coordinate\\\":\\\"bound-lock/1 measure=span region=stock role=writes scope=reading/stock\\\",\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/stock value=4..7\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/stock value=9..10\\\"]}]},\\\"permutationEqual\\\":true,\\\"duplicateEqual\\\":true,\\\"writer\\\":\\\"world-a\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "READER   reader.mjs · 1 run · 299 ms\nSPENT    observe reader.mjs 4+301 ms\nOBSERVE  1 run · 0 read by key · 307 ms\nOWN      imports 63 ms · bodies 1 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 4 ms · laid 7 ms · resets 2 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 15 ms · own 83 ms · regions 4 ms · ceilings 1 ms · paid 1 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold e99699f7 folded 0.7 s\nKEPT     fold e99699f7 miss · no fold was kept before this one\n",
+          "runtimeMs": 1013
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:649e3964f8c986b3df214d78bbc96abb3d16d387bd07be14da88d0a432934981 by=reader:f2a3687aa0b0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=649e3964f8c986b3\nbound-lock/1 at=place:sha256:649e3964f8c986b3df214d78bbc96abb3d16d387bd07be14da88d0a432934981 by=reader:f2a3687aa0b0 form=alphabet measure=result role=writes scope=conformance/readings/stock value=\"{\\\"union\\\":{\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/stock value=4..7\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/stock value=9..10\\\"],\\\"attribution\\\":[{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/stock value=4..7\\\",\\\"worlds\\\":[\\\"world-0\\\"]},{\\\"line\\\":\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/stock value=9..10\\\",\\\"worlds\\\":[\\\"world-1\\\"]}],\\\"disagreements\\\":[{\\\"coordinate\\\":\\\"bound-lock/1 measure=span region=stock role=writes scope=reading/stock\\\",\\\"lines\\\":[\\\"bound-lock/1 form=interval measure=span origin=source-0 role=writes scope=reading/stock value=4..7\\\",\\\"bound-lock/1 form=interval measure=span origin=source-1 role=writes scope=reading/stock value=9..10\\\"]}]},\\\"permutationEqual\\\":true,\\\"duplicateEqual\\\":true,\\\"writer\\\":\\\"world-a\\\"}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 4 ms\nOWN      imports 80 ms · bodies 1 ms · removed 0 ms · readers 3 ms · alphabets 0 ms · capsules 0 ms · regions 3 ms · vectors 1 ms · zoom 0 ms · nos 2 ms · zoomed 0 ms · applied 6 ms · laid 5 ms · resets 1 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 10 ms · own 106 ms · regions 6 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold e99699f7 folded 0.3 s · 0.7 s folded\nKEPT     fold e99699f7 miss · no fold was kept before this one\n",
+          "runtimeMs": 564
+        }
+      ]
+    },
+    {
+      "group": "readings",
+      "place": "stock",
+      "negative": true,
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 353 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": "",
+          "runtimeMs": 590
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-stock-no/reader.mjs · Error: REFUSE·render stock.txt needs one writer\nOBSERVE  0 run · 0 read by key · 315 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-stock-no/reader.mjs · Error: REFUSE·render stock.txt needs one writer\n",
+          "runtimeMs": 626
+        }
+      ]
+    }
+  ],
+  "audits": {
+    "wire-fields": {
+      "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+      "readerDigest": "sha256:b523da7074816b3813cab98963aec2ddec052eb2cf70f2ef881af536aa89de59",
+      "captures": [
+        {
+          "group": "wire-fields",
+          "place": "survey",
+          "negative": false,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 125 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 247
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:5e89a3f139e4f8a3b801c42987072566b65654fa5fb40034e6a03e4d3488bbb5 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=5e89a3f139e4f8a3\nbound-lock/1 at=place:sha256:5e89a3f139e4f8a3b801c42987072566b65654fa5fb40034e6a03e4d3488bbb5 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/wire-fields/survey value=\"{\\\"place\\\":\\\"survey\\\",\\\"cases\\\":24,\\\"results\\\":[{\\\"name\\\":\\\"a line signed before the lock had any line is history, read as it was\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"every field named, at a wire class, needs a region, sig by digest: read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock does not name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`colour=` is not a field of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a field of its time: shape is open at epoch 3\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock closed at epoch 5 refuses a line signed after it\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`shape=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"the same closed field still reads its own time as history\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a claim with no at is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"a claim with no `at`\\\"},{\\\"name\\\":\\\"at names a place by the digest of its bytes\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at names an origin\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at with an instrument's class is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=leaf:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"at with a card is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=card:cccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a digest taken with an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=receipt:md5:dddddddddddddddddddddddddddddddd` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs as a path from the root is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=/srv/disk/a` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs that steps up is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/../b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs with a step that is not a prefix is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/*/b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a trailing run of steps is the region before it\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"sig naming its algorithm by name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=ed25519:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"sig naming an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"an epoch is a count\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`epoch=three` is not a count of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a kind before the lock names the field is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"a kind the lock lists is read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a kind the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=lemma` is not a kinds of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a view the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=lattice` is not a views of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a list is one id, never several\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=field|quotient` is not a views of the wire at epoch 7\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "READER   reader.mjs · 1 run · 164 ms\nOBSERVE  1 run · 0 read by key · 168 ms\nOWN      imports 19 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 1 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 2 ms · laid 2 ms · resets 0 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 27 ms · regions 3 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 109d6987 folded 0.3 s\nKEPT     fold 109d6987 miss · no fold was kept before this one\n",
+              "runtimeMs": 450
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:5e89a3f139e4f8a3b801c42987072566b65654fa5fb40034e6a03e4d3488bbb5 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=5e89a3f139e4f8a3\nbound-lock/1 at=place:sha256:5e89a3f139e4f8a3b801c42987072566b65654fa5fb40034e6a03e4d3488bbb5 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/wire-fields/survey value=\"{\\\"place\\\":\\\"survey\\\",\\\"cases\\\":24,\\\"results\\\":[{\\\"name\\\":\\\"a line signed before the lock had any line is history, read as it was\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"every field named, at a wire class, needs a region, sig by digest: read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock does not name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`colour=` is not a field of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a field of its time: shape is open at epoch 3\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock closed at epoch 5 refuses a line signed after it\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`shape=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"the same closed field still reads its own time as history\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a claim with no at is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"a claim with no `at`\\\"},{\\\"name\\\":\\\"at names a place by the digest of its bytes\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at names an origin\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at with an instrument's class is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=leaf:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"at with a card is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=card:cccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a digest taken with an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=receipt:md5:dddddddddddddddddddddddddddddddd` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs as a path from the root is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=/srv/disk/a` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs that steps up is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/../b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs with a step that is not a prefix is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/*/b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a trailing run of steps is the region before it\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"sig naming its algorithm by name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=ed25519:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"sig naming an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"an epoch is a count\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`epoch=three` is not a count of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a kind before the lock names the field is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"a kind the lock lists is read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a kind the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=lemma` is not a kinds of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a view the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=lattice` is not a views of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a list is one id, never several\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=field|quotient` is not a views of the wire at epoch 7\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 2 ms\nOWN      imports 18 ms · bodies 0 ms · removed 1 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 1 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 2 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 27 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold 109d6987 folded 0.1 s · 0.3 s folded\nKEPT     fold 109d6987 miss · no fold was kept before this one\n",
+              "runtimeMs": 236
+            }
+          ]
+        },
+        {
+          "group": "wire-fields",
+          "place": "survey",
+          "negative": true,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 128 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 244
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 1,
+              "stdout": "",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-survey-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\nOBSERVE  0 run · 0 read by key · 171 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-survey-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\n",
+              "runtimeMs": 325
+            }
+          ]
+        },
+        {
+          "group": "wire-fields",
+          "place": "stock",
+          "negative": false,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 126 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 238
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:a90c1932c64d90fba09322753278817161f5329188347fb864be48b08f184fa2 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=a90c1932c64d90fb\nbound-lock/1 at=place:sha256:a90c1932c64d90fba09322753278817161f5329188347fb864be48b08f184fa2 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/wire-fields/stock value=\"{\\\"place\\\":\\\"stock\\\",\\\"cases\\\":24,\\\"results\\\":[{\\\"name\\\":\\\"a line signed before the lock had any line is history, read as it was\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"every field named, at a wire class, needs a region, sig by digest: read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock does not name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`colour=` is not a field of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a field of its time: shape is open at epoch 3\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock closed at epoch 5 refuses a line signed after it\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`shape=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"the same closed field still reads its own time as history\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a claim with no at is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"a claim with no `at`\\\"},{\\\"name\\\":\\\"at names a place by the digest of its bytes\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at names an origin\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at with an instrument's class is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=leaf:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"at with a card is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=card:cccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a digest taken with an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=receipt:md5:dddddddddddddddddddddddddddddddd` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs as a path from the root is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=/srv/disk/a` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs that steps up is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/../b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs with a step that is not a prefix is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/*/b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a trailing run of steps is the region before it\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"sig naming its algorithm by name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=ed25519:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"sig naming an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"an epoch is a count\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`epoch=three` is not a count of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a kind before the lock names the field is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"a kind the lock lists is read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a kind the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=lemma` is not a kinds of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a view the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=lattice` is not a views of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a list is one id, never several\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=field|quotient` is not a views of the wire at epoch 7\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "READER   reader.mjs · 1 run · 170 ms\nOBSERVE  1 run · 0 read by key · 174 ms\nOWN      imports 23 ms · bodies 1 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 33 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 8a780aab folded 0.3 s\nKEPT     fold 8a780aab miss · no fold was kept before this one\n",
+              "runtimeMs": 471
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:a90c1932c64d90fba09322753278817161f5329188347fb864be48b08f184fa2 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=a90c1932c64d90fb\nbound-lock/1 at=place:sha256:a90c1932c64d90fba09322753278817161f5329188347fb864be48b08f184fa2 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/wire-fields/stock value=\"{\\\"place\\\":\\\"stock\\\",\\\"cases\\\":24,\\\"results\\\":[{\\\"name\\\":\\\"a line signed before the lock had any line is history, read as it was\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"every field named, at a wire class, needs a region, sig by digest: read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock does not name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`colour=` is not a field of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a field of its time: shape is open at epoch 3\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a field the lock closed at epoch 5 refuses a line signed after it\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`shape=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"the same closed field still reads its own time as history\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a claim with no at is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"a claim with no `at`\\\"},{\\\"name\\\":\\\"at names a place by the digest of its bytes\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at names an origin\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"at with an instrument's class is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=leaf:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"at with a card is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=card:cccccccccccccccc` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a digest taken with an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`at=receipt:md5:dddddddddddddddddddddddddddddddd` is not a class of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs as a path from the root is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=/srv/disk/a` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs that steps up is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/../b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"needs with a step that is not a prefix is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`needs=a/*/b` is not a region of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a trailing run of steps is the region before it\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"sig naming its algorithm by name is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=ed25519:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"sig naming an algorithm the lock does not admit is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`sig=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee:QUJD` is not a signature of the wire at epoch 3\\\"},{\\\"name\\\":\\\"an epoch is a count\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`epoch=three` is not a count of the wire at epoch 3\\\"},{\\\"name\\\":\\\"a kind before the lock names the field is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=` is not a field of the wire at epoch 6\\\"},{\\\"name\\\":\\\"a kind the lock lists is read\\\",\\\"kind\\\":\\\"fact\\\"},{\\\"name\\\":\\\"a kind the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`kind=lemma` is not a kinds of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a view the lock does not list is refused\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=lattice` is not a views of the wire at epoch 7\\\"},{\\\"name\\\":\\\"a list is one id, never several\\\",\\\"kind\\\":\\\"refuse\\\",\\\"why\\\":\\\"`view=field|quotient` is not a views of the wire at epoch 7\\\"}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 20 ms · bodies 1 ms · removed 0 ms · readers 0 ms · alphabets 1 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 29 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 8a780aab folded 0.1 s · 0.3 s folded\nKEPT     fold 8a780aab miss · no fold was kept before this one\n",
+              "runtimeMs": 247
+            }
+          ]
+        },
+        {
+          "group": "wire-fields",
+          "place": "stock",
+          "negative": true,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 128 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 241
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 1,
+              "stdout": "",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-stock-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\nOBSERVE  0 run · 0 read by key · 176 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-stock-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\n",
+              "runtimeMs": 331
+            }
+          ]
+        }
+      ]
+    },
+    "form-axioms": {
+      "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+      "readerDigest": "sha256:b523da7074816b3813cab98963aec2ddec052eb2cf70f2ef881af536aa89de59",
+      "captures": [
+        {
+          "group": "form-axioms",
+          "place": "survey",
+          "negative": false,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 132 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 244
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:4075ffb7b210c3757efb13e9366501ec3c501b424c08d5d498acf15a54a7e640 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=4075ffb7b210c375\nbound-lock/1 at=place:sha256:4075ffb7b210c3757efb13e9366501ec3c501b424c08d5d498acf15a54a7e640 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/form-axioms/survey value=\"{\\\"place\\\":\\\"survey\\\",\\\"forms\\\":10,\\\"results\\\":[{\\\"form\\\":\\\"interval\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,182,12]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"ladder\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[256,104,24]},{\\\"form\\\":\\\"lattice\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[251,123,24]},{\\\"form\\\":\\\"budget\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"rank\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,179,14]},{\\\"form\\\":\\\"phase\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"stretch\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,183,14]},{\\\"form\\\":\\\"distribution\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[272,36,24]}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "READER   reader.mjs · 1 run · 214 ms\nOBSERVE  1 run · 0 read by key · 219 ms\nOWN      imports 20 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 1 ms · applied 1 ms · laid 2 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 29 ms · regions 2 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold e5a4609b folded 0.4 s\nKEPT     fold e5a4609b miss · no fold was kept before this one\n",
+              "runtimeMs": 514
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:4075ffb7b210c3757efb13e9366501ec3c501b424c08d5d498acf15a54a7e640 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=4075ffb7b210c375\nbound-lock/1 at=place:sha256:4075ffb7b210c3757efb13e9366501ec3c501b424c08d5d498acf15a54a7e640 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/form-axioms/survey value=\"{\\\"place\\\":\\\"survey\\\",\\\"forms\\\":10,\\\"results\\\":[{\\\"form\\\":\\\"interval\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,182,12]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"ladder\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[256,104,24]},{\\\"form\\\":\\\"lattice\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[251,123,24]},{\\\"form\\\":\\\"budget\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"rank\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,179,14]},{\\\"form\\\":\\\"phase\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"stretch\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,183,14]},{\\\"form\\\":\\\"distribution\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[272,36,24]}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 19 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 1 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 2 ms · resets 0 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 26 ms · regions 2 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold e5a4609b folded 0.1 s · 0.4 s folded\nKEPT     fold e5a4609b miss · no fold was kept before this one\n",
+              "runtimeMs": 244
+            }
+          ]
+        },
+        {
+          "group": "form-axioms",
+          "place": "survey",
+          "negative": true,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 130 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 246
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 1,
+              "stdout": "",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-survey-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\nOBSERVE  0 run · 0 read by key · 176 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-survey-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\n",
+              "runtimeMs": 340
+            }
+          ]
+        },
+        {
+          "group": "form-axioms",
+          "place": "stock",
+          "negative": false,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 129 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 245
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:aca3929e9988fa1c1638963af9b285b005fd73932eefedf533c0b3c7f854aec9 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=aca3929e9988fa1c\nbound-lock/1 at=place:sha256:aca3929e9988fa1c1638963af9b285b005fd73932eefedf533c0b3c7f854aec9 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/form-axioms/stock value=\"{\\\"place\\\":\\\"stock\\\",\\\"forms\\\":10,\\\"results\\\":[{\\\"form\\\":\\\"interval\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,182,12]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"ladder\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[256,104,24]},{\\\"form\\\":\\\"lattice\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[251,123,24]},{\\\"form\\\":\\\"budget\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"rank\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,179,14]},{\\\"form\\\":\\\"phase\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"stretch\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,183,14]},{\\\"form\\\":\\\"distribution\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[272,36,24]}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "READER   reader.mjs · 1 run · 218 ms\nOBSERVE  1 run · 0 read by key · 222 ms\nOWN      imports 19 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 28 ms · regions 3 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold a5780f81 folded 0.4 s\nKEPT     fold a5780f81 miss · no fold was kept before this one\n",
+              "runtimeMs": 525
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:aca3929e9988fa1c1638963af9b285b005fd73932eefedf533c0b3c7f854aec9 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=aca3929e9988fa1c\nbound-lock/1 at=place:sha256:aca3929e9988fa1c1638963af9b285b005fd73932eefedf533c0b3c7f854aec9 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/form-axioms/stock value=\"{\\\"place\\\":\\\"stock\\\",\\\"forms\\\":10,\\\"results\\\":[{\\\"form\\\":\\\"interval\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,182,12]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"alphabet\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[260,143,22]},{\\\"form\\\":\\\"ladder\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[256,104,24]},{\\\"form\\\":\\\"lattice\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[251,123,24]},{\\\"form\\\":\\\"budget\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"rank\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,179,14]},{\\\"form\\\":\\\"phase\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[216,178,12]},{\\\"form\\\":\\\"stretch\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[236,183,14]},{\\\"form\\\":\\\"distribution\\\",\\\"points\\\":12,\\\"violations\\\":[],\\\"mutants\\\":[272,36,24]}]}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 20 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 4 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 29 ms · regions 3 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold a5780f81 folded 0.1 s · 0.4 s folded\nKEPT     fold a5780f81 miss · no fold was kept before this one\n",
+              "runtimeMs": 256
+            }
+          ]
+        },
+        {
+          "group": "form-axioms",
+          "place": "stock",
+          "negative": true,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 127 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 242
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 1,
+              "stdout": "",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-stock-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\nOBSERVE  0 run · 0 read by key · 174 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-stock-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\n",
+              "runtimeMs": 331
+            }
+          ]
+        }
+      ]
+    },
+    "capsule-admission": {
+      "kind": "Captured installed Bound 0.1.6 instrument output; fixture authority only",
+      "readerDigest": "sha256:b523da7074816b3813cab98963aec2ddec052eb2cf70f2ef881af536aa89de59",
+      "captures": [
+        {
+          "group": "capsule-admission",
+          "place": "survey",
+          "negative": false,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 131 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 250
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:04be36cbba08c52305b09582a00274423483832eb7718f611ba3079b4ee789f4 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=04be36cbba08c523\nbound-lock/1 at=place:sha256:04be36cbba08c52305b09582a00274423483832eb7718f611ba3079b4ee789f4 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/capsule-admission/survey value=\"{\\\"place\\\":\\\"survey\\\",\\\"results\\\":[{\\\"region\\\":\\\"survey\\\",\\\"values\\\":[\\\"survey\\\"]}],\\\"undeclaredRefused\\\":true}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "READER   reader.mjs · 1 run · 168 ms\nOBSERVE  1 run · 0 read by key · 172 ms\nOWN      imports 20 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 2 ms · laid 2 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 29 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 3222bed7 folded 0.3 s\nKEPT     fold 3222bed7 miss · no fold was kept before this one\n",
+              "runtimeMs": 475
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:04be36cbba08c52305b09582a00274423483832eb7718f611ba3079b4ee789f4 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=04be36cbba08c523\nbound-lock/1 at=place:sha256:04be36cbba08c52305b09582a00274423483832eb7718f611ba3079b4ee789f4 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/capsule-admission/survey value=\"{\\\"place\\\":\\\"survey\\\",\\\"results\\\":[{\\\"region\\\":\\\"survey\\\",\\\"values\\\":[\\\"survey\\\"]}],\\\"undeclaredRefused\\\":true}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 19 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 1 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 28 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 3222bed7 folded 0.1 s · 0.3 s folded\nKEPT     fold 3222bed7 miss · no fold was kept before this one\n",
+              "runtimeMs": 246
+            }
+          ]
+        },
+        {
+          "group": "capsule-admission",
+          "place": "survey",
+          "negative": true,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 132 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 246
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 1,
+              "stdout": "",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-survey-no/reader.mjs · Error: REFUSE·region survey: handed less than it declares, without input/**\nOBSERVE  0 run · 0 read by key · 178 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-survey-no/reader.mjs · Error: REFUSE·region survey: handed less than it declares, without input/**\n",
+              "runtimeMs": 337
+            }
+          ]
+        },
+        {
+          "group": "capsule-admission",
+          "place": "stock",
+          "negative": false,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 132 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 249
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:1a6ed47f27351e136c53613342156d8c8ad4ece383123ac69ba426275b0badc2 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=1a6ed47f27351e13\nbound-lock/1 at=place:sha256:1a6ed47f27351e136c53613342156d8c8ad4ece383123ac69ba426275b0badc2 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/capsule-admission/stock value=\"{\\\"place\\\":\\\"stock\\\",\\\"results\\\":[{\\\"region\\\":\\\"stock\\\",\\\"values\\\":[\\\"stock\\\"]}],\\\"undeclaredRefused\\\":true}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "READER   reader.mjs · 1 run · 169 ms\nOBSERVE  1 run · 0 read by key · 174 ms\nOWN      imports 22 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 1 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 31 ms · regions 2 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold dbff7bb2 folded 0.3 s\nKEPT     fold dbff7bb2 miss · no fold was kept before this one\n",
+              "runtimeMs": 473
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 0,
+              "stdout": "bound-lock/1 at=place:sha256:1a6ed47f27351e136c53613342156d8c8ad4ece383123ac69ba426275b0badc2 by=reader:d6d54fbfd8cc form=alphabet measure=observed role=writes scope=inputs/sample.json value=1a6ed47f27351e13\nbound-lock/1 at=place:sha256:1a6ed47f27351e136c53613342156d8c8ad4ece383123ac69ba426275b0badc2 by=reader:d6d54fbfd8cc form=alphabet measure=result role=writes scope=conformance/capsule-admission/stock value=\"{\\\"place\\\":\\\"stock\\\",\\\"results\\\":[{\\\"region\\\":\\\"stock\\\",\\\"values\\\":[\\\"stock\\\"]}],\\\"undeclaredRefused\\\":true}\"\nbound-lock/1 at=place:sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:82d3010064cef600a72e2b316ba5564b23750b0a0701f5b3861017ee653c16d6\n",
+              "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 19 ms · bodies 1 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 28 ms · regions 2 ms · ceilings 1 ms · paid 1 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold dbff7bb2 folded 0.1 s · 0.3 s folded\nKEPT     fold dbff7bb2 miss · no fold was kept before this one\n",
+              "runtimeMs": 255
+            }
+          ]
+        },
+        {
+          "group": "capsule-admission",
+          "place": "stock",
+          "negative": true,
+          "events": [
+            {
+              "args": [
+                "land",
+                "--key",
+                "device",
+                "--key-file",
+                "<fixture-key>"
+              ],
+              "status": 0,
+              "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 131 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+              "stderr": "",
+              "runtimeMs": 248
+            },
+            {
+              "args": [
+                "fold",
+                "--as",
+                "receipts"
+              ],
+              "status": 1,
+              "stdout": "",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-stock-no/reader.mjs · Error: REFUSE·region stock: handed less than it declares, without input/**\nOBSERVE  0 run · 0 read by key · 178 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-stock-no/reader.mjs · Error: REFUSE·region stock: handed less than it declares, without input/**\n",
+              "runtimeMs": 341
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

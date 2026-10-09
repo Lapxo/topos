@@ -1,0 +1,48 @@
+{
+  "contract": "semantic-live@2",
+  "evidence": "Captured native CLI output on two fixture-authorized places. Source candidate preflight; not installed-package acceptance.",
+  "cases": [
+    {
+      "name": "catalogue",
+      "order": [
+        "sign",
+        "join"
+      ],
+      "folds": [
+        {
+          "command": "bound fold --as cells",
+          "status": 0,
+          "stdout": "RECEIPT receipts/cells/B@1 · sha256:6c43097ab346464dbf2bb2bb19e880c2ab2e6a74b738d0f179e46f0181b3e9c4 · opened\nRECEIPTS 1 read · 1 opened · context checked · provider 1\nCELL {\"cell\":\"B\",\"state\":\"REQUIRED\",\"parts\":{\"floor\":{\"lo\":0,\"hi\":100},\"ceiling\":{\"lo\":0,\"hi\":100},\"origins\":[],\"rest\":[],\"required\":{\"lo\":0,\"hi\":100},\"signed\":{\"lo\":0,\"hi\":100}},\"rest\":[],\"ownMarks\":[\"s-B\",\"j-B\"],\"ownClaims\":[],\"marks\":[{\"pole\":\"ceiling\",\"reach\":\"travels\",\"span\":{\"lo\":0,\"hi\":50},\"id\":\"s-B\",\"at\":3},{\"pole\":\"ceiling\",\"reach\":\"local\",\"span\":{\"lo\":0,\"hi\":100},\"widens\":\"local-opening\",\"at\":4,\"id\":\"j-B\"}],\"claims\":[]}\nCOST cells@1 · 79.366 ms · admission/context/receipt/render included\n",
+          "stderr": "OWN      imports 44 ms · bodies 1 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 8 ms · vectors 2 ms · zoom 0 ms · nos 1 ms · zoomed 1 ms · applied 4 ms · laid 16 ms · resets 1 ms · store 0 ms · ship 1 ms\nSPENT    fold capsules 20 ms · own 91 ms · regions 28 ms · ceilings 3 ms · paid 1 ms · docs 1 ms · ceilings 2 ms\nBEAT     fold 2ad98c5e folded 0.7 s\nKEPT     fold 2ad98c5e miss · no fold was kept before this one\n(node:20604) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+        },
+        {
+          "command": "bound fold --as cells",
+          "status": 0,
+          "stdout": "RECEIPT receipts/cells/B@1 · sha256:6c43097ab346464dbf2bb2bb19e880c2ab2e6a74b738d0f179e46f0181b3e9c4 · same\nRECEIPTS 1 read · 0 opened · idle · provider 0\nCELL {\"cell\":\"B\",\"state\":\"REQUIRED\",\"parts\":{\"floor\":{\"lo\":0,\"hi\":100},\"ceiling\":{\"lo\":0,\"hi\":100},\"origins\":[],\"rest\":[],\"required\":{\"lo\":0,\"hi\":100},\"signed\":{\"lo\":0,\"hi\":100}},\"rest\":[],\"ownMarks\":[\"s-B\",\"j-B\"],\"ownClaims\":[],\"marks\":[{\"pole\":\"ceiling\",\"reach\":\"travels\",\"span\":{\"lo\":0,\"hi\":50},\"id\":\"s-B\",\"at\":3},{\"pole\":\"ceiling\",\"reach\":\"local\",\"span\":{\"lo\":0,\"hi\":100},\"widens\":\"local-opening\",\"at\":4,\"id\":\"j-B\"}],\"claims\":[]}\nCOST cells@1 · 20.722 ms · admission/context/receipt/render included\n",
+          "stderr": "OWN      imports 47 ms · bodies 1 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 7 ms · vectors 1 ms · zoom 1 ms · nos 2 ms · zoomed 0 ms · applied 3 ms · laid 21 ms · resets 1 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 18 ms · own 95 ms · regions 34 ms · ceilings 2 ms · paid 1 ms · docs 1 ms · ceilings 2 ms\nBEAT     fold 57e75eb2 folded 0.4 s · 0.7 s folded\nKEPT     fold 57e75eb2 miss · no fold was kept before this one\n"
+        }
+      ]
+    },
+    {
+      "name": "measurement",
+      "order": [
+        "join",
+        "sign"
+      ],
+      "folds": [
+        {
+          "command": "bound fold --as cells",
+          "status": 0,
+          "stdout": "RECEIPT receipts/cells/B@1 · sha256:e99a807d9b63056899334c781b48cdfb85afeb288127a25c3a61b3aaebccf8c0 · opened\nRECEIPTS 1 read · 1 opened · context checked · provider 1\nCELL {\"cell\":\"B\",\"state\":\"REQUIRED\",\"parts\":{\"floor\":{\"lo\":0,\"hi\":100},\"ceiling\":{\"lo\":0,\"hi\":50},\"origins\":[],\"rest\":[],\"required\":{\"lo\":0,\"hi\":100},\"signed\":{\"lo\":0,\"hi\":50}},\"rest\":[],\"ownMarks\":[\"j-B\",\"s-B\"],\"ownClaims\":[],\"marks\":[{\"pole\":\"ceiling\",\"reach\":\"local\",\"span\":{\"lo\":0,\"hi\":100},\"widens\":\"local-opening\",\"at\":3,\"id\":\"j-B\"},{\"pole\":\"ceiling\",\"reach\":\"travels\",\"span\":{\"lo\":0,\"hi\":50},\"id\":\"s-B\",\"at\":4}],\"claims\":[]}\nCOST cells@1 · 58.515 ms · admission/context/receipt/render included\n",
+          "stderr": "OWN      imports 40 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 8 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 2 ms · laid 16 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 17 ms · own 81 ms · regions 26 ms · ceilings 2 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 5a062277 folded 0.6 s\nKEPT     fold 5a062277 miss · no fold was kept before this one\n(node:20935) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+        },
+        {
+          "command": "bound fold --as cells",
+          "status": 0,
+          "stdout": "RECEIPT receipts/cells/B@1 · sha256:e99a807d9b63056899334c781b48cdfb85afeb288127a25c3a61b3aaebccf8c0 · same\nRECEIPTS 1 read · 0 opened · idle · provider 0\nCELL {\"cell\":\"B\",\"state\":\"REQUIRED\",\"parts\":{\"floor\":{\"lo\":0,\"hi\":100},\"ceiling\":{\"lo\":0,\"hi\":50},\"origins\":[],\"rest\":[],\"required\":{\"lo\":0,\"hi\":100},\"signed\":{\"lo\":0,\"hi\":50}},\"rest\":[],\"ownMarks\":[\"j-B\",\"s-B\"],\"ownClaims\":[],\"marks\":[{\"pole\":\"ceiling\",\"reach\":\"local\",\"span\":{\"lo\":0,\"hi\":100},\"widens\":\"local-opening\",\"at\":3,\"id\":\"j-B\"},{\"pole\":\"ceiling\",\"reach\":\"travels\",\"span\":{\"lo\":0,\"hi\":50},\"id\":\"s-B\",\"at\":4}],\"claims\":[]}\nCOST cells@1 · 19.039 ms · admission/context/receipt/render included\n",
+          "stderr": "OWN      imports 32 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 6 ms · vectors 1 ms · zoom 1 ms · nos 1 ms · zoomed 0 ms · applied 4 ms · laid 14 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 14 ms · own 69 ms · regions 28 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 22b2d13d folded 0.3 s · 0.6 s folded\nKEPT     fold 22b2d13d miss · no fold was kept before this one\n"
+        }
+      ]
+    }
+  ]
+}

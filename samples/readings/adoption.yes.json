@@ -1,0 +1,30 @@
+{
+  "contract": "place-requirements@1",
+  "evidence": "SDK sample data; no native repair or adoption receipt claimed",
+  "places": [
+    {
+      "name": "catalogue",
+      "world": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "delivery": {
+        "standing": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "blob": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "standing": [
+        "bound-lock/1 form=alphabet measure=id role=writes scope=wire/adoption/profile value=place-requirements@1",
+        "bound-lock/1 form=alphabet measure=line role=demands scope=needs/place/catalogue value=\"bound-lock/1 form=alphabet measure=id role=writes scope=wire/region-measures value=coordinates|origin\""
+      ]
+    },
+    {
+      "name": "measurement",
+      "world": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "delivery": {
+        "standing": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "blob": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "standing": [
+        "bound-lock/1 form=alphabet measure=id role=writes scope=wire/adoption/profile value=place-requirements@1",
+        "bound-lock/1 form=alphabet measure=line role=demands scope=needs/place/measurement value=\"bound-lock/1 form=alphabet measure=id role=writes scope=prose/separator value=\\\"\\\\n\\\"\""
+      ]
+    }
+  ]
+}

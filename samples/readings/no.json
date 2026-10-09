@@ -1,6 +1,6 @@
 {
   "contract": "readings@1",
-  "evidence": "Rejected SDK inputs; no successful receipt is claimed",
+  "evidence": "SDK counterexamples; refusal, incompatible and unknown are distinct outcomes. No successful instrument receipt is claimed.",
   "cases": [
     {
       "kind": "projection",
@@ -156,6 +156,1186 @@
         "stderr": ""
       },
       "error": "REFUSE·port port/fixture status 1"
+    },
+    {
+      "kind": "policy",
+      "coordinate": "policy/window",
+      "values": [
+        "2..3",
+        "5..6"
+      ],
+      "expected": "incompatible"
+    },
+    {
+      "kind": "snapshot-access",
+      "snapshot": {
+        "source": "source:a",
+        "content": "sha256:content",
+        "observed": "17",
+        "clock": "clock:a",
+        "freshness": "sha256:policy",
+        "implementation": "sha256:reader"
+      },
+      "context": {
+        "principal": "person-a",
+        "authorization": "sha256:grant",
+        "implementation": "sha256:reader",
+        "request": "sha256:request"
+      },
+      "changes": {
+        "principal": "person-b"
+      },
+      "expected": {
+        "inspect": true,
+        "reuse": false
+      }
+    },
+    {
+      "kind": "snapshot-access",
+      "snapshot": {
+        "source": "source:a",
+        "content": "sha256:content",
+        "observed": "17",
+        "clock": "clock:a",
+        "freshness": "sha256:policy",
+        "implementation": "sha256:reader"
+      },
+      "context": {
+        "principal": "person-a",
+        "authorization": "sha256:grant",
+        "implementation": "sha256:reader",
+        "request": "sha256:request"
+      },
+      "changes": {},
+      "freshness": "unknown",
+      "expected": {
+        "inspect": true,
+        "reuse": false
+      }
+    },
+    {
+      "kind": "evidence",
+      "history": [
+        "bound-lock/1 scope=item value=one"
+      ],
+      "folded": [
+        "bound-lock/1 scope=item value=two"
+      ],
+      "error": "REFUSE·evidence"
+    },
+    {
+      "kind": "vacuity",
+      "now": 17,
+      "window": 3,
+      "epochs": [],
+      "complete": false,
+      "expected": "unknown"
+    },
+    {
+      "kind": "vacuity",
+      "now": 17,
+      "window": 0,
+      "epochs": [],
+      "complete": true,
+      "error": "REFUSE·vacuous"
+    },
+    {
+      "kind": "inspection",
+      "selection": [
+        "missing/item"
+      ],
+      "admitted": [
+        "catalogue/item"
+      ],
+      "error": "REFUSE·inspection"
+    }
+  ],
+  "native": [
+    {
+      "group": "shadow",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true
+    },
+    {
+      "group": "shadow",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true
+    },
+    {
+      "group": "readings",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true
+    },
+    {
+      "group": "readings",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true
+    },
+    {
+      "group": "origins-snapshots",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true
+    },
+    {
+      "group": "origins-snapshots",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true
+    },
+    {
+      "group": "policy",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true
+    },
+    {
+      "group": "policy",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true
+    },
+    {
+      "group": "command-port",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true
+    },
+    {
+      "group": "command-port",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true
+    },
+    {
+      "group": "inspection-lineage",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true
+    },
+    {
+      "group": "inspection-lineage",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true
+    },
+    {
+      "group": "adoption",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true
+    },
+    {
+      "group": "adoption",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true
+    },
+    {
+      "group": "wire-fields",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true,
+      "vector": {
+        "about": [
+          "The wire is a lock. Its fields, their alphabets and forms, and the algorithms its digests and signatures name are lines of that lock, each with the epoch it was signed at; a claim is read by the lock as it stood when the claim was signed.",
+          "A field the lock does not name is refused. A field the lock closed reads a claim of its own time as history and refuses a later one. A line signed before the lock had any line is history: read, never judged by rules that came after it.",
+          "at carries only the wire's classes; needs is a region, a coordinate prefix at its resolution, never a path; sig names its algorithm by the digest of the blob that defines it, and a digest names its own algorithm from the digest lock.",
+          "The wire that reads a claim of one epoch folds the lock of that epoch, not a grammar remembered beside it."
+        ],
+        "lock": [
+          "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch|shape by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/required role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/roles role=reads form=alphabet measure=id value=reads|writes|demands by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/forms role=reads form=alphabet measure=id value=interval|alphabet|ladder by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/at-classes role=reads form=alphabet measure=id value=origin|place|receipt|witness|policy by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/digest-algorithms role=reads form=alphabet measure=id value=sha256 by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/signature-algorithms role=reads form=alphabet measure=id value=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/at role=reads form=alphabet measure=id value=class by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/needs role=reads form=alphabet measure=id value=region by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/sig role=reads form=alphabet measure=id value=signature by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/epoch role=reads form=alphabet measure=id value=count by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch by=owner at=policy:wire-without-shape epoch=5",
+          "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch|restsOn|about|kind|view by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/kinds role=reads form=alphabet measure=id value=axiom|definition|theorem|corollary by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/views role=reads form=alphabet measure=id value=field|spectrum|ideal|chain|complement|dual|product|quotient|valuation|galois by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/form/kind role=reads form=alphabet measure=id value=kinds by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/form/view role=reads form=alphabet measure=id value=views by=owner at=policy:wire-kinds-and-views epoch=7"
+        ],
+        "cases": [
+          {
+            "name": "a line signed before the lock had any line is history, read as it was",
+            "epoch": 0,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=leaf:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb colour=red epoch=0",
+            "read": "fact"
+          },
+          {
+            "name": "every field named, at a wire class, needs a region, sig by digest: read",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/b|c/d/ sig=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:QUJD epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "a field the lock does not name is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x colour=red epoch=3",
+            "read": "refuse",
+            "field": "colour"
+          },
+          {
+            "name": "a field of its time: shape is open at epoch 3",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "a field the lock closed at epoch 5 refuses a line signed after it",
+            "epoch": 6,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=6",
+            "read": "refuse",
+            "field": "shape"
+          },
+          {
+            "name": "the same closed field still reads its own time as history",
+            "epoch": 4,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=4",
+            "read": "fact"
+          },
+          {
+            "name": "a claim with no at is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "at names a place by the digest of its bytes",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=place:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "at names an origin",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=origin:reader epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "at with an instrument's class is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=leaf:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "at with a card is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=card:cccccccccccccccc epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "a digest taken with an algorithm the lock does not admit is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=receipt:md5:dddddddddddddddddddddddddddddddd epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "needs as a path from the root is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=/srv/disk/a epoch=3",
+            "read": "refuse",
+            "field": "needs"
+          },
+          {
+            "name": "needs that steps up is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/../b epoch=3",
+            "read": "refuse",
+            "field": "needs"
+          },
+          {
+            "name": "needs with a step that is not a prefix is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/*/b epoch=3",
+            "read": "refuse",
+            "field": "needs"
+          },
+          {
+            "name": "a trailing run of steps is the region before it",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/b/** epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "sig naming its algorithm by name is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x sig=ed25519:QUJD epoch=3",
+            "read": "refuse",
+            "field": "sig"
+          },
+          {
+            "name": "sig naming an algorithm the lock does not admit is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x sig=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee:QUJD epoch=3",
+            "read": "refuse",
+            "field": "sig"
+          },
+          {
+            "name": "an epoch is a count",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x epoch=three",
+            "read": "refuse",
+            "field": "epoch"
+          },
+          {
+            "name": "a kind before the lock names the field is refused",
+            "epoch": 6,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=theorem epoch=6",
+            "read": "refuse",
+            "field": "kind"
+          },
+          {
+            "name": "a kind the lock lists is read",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=theorem view=valuation restsOn=law/y about=\"it holds\" epoch=7",
+            "read": "fact"
+          },
+          {
+            "name": "a kind the lock does not list is refused",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=lemma epoch=7",
+            "read": "refuse",
+            "field": "kind"
+          },
+          {
+            "name": "a view the lock does not list is refused",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x view=lattice epoch=7",
+            "read": "refuse",
+            "field": "view"
+          },
+          {
+            "name": "a list is one id, never several",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x view=field|quotient epoch=7",
+            "read": "refuse",
+            "field": "view"
+          }
+        ],
+        "then": {
+          "fieldsNamingThisEra": 0,
+          "because": [
+            "a sig that names its algorithm by name is refused",
+            "an at whose class is an instrument's is refused",
+            "a needs that is a path is refused"
+          ]
+        }
+      }
+    },
+    {
+      "group": "wire-fields",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true,
+      "vector": {
+        "about": [
+          "The wire is a lock. Its fields, their alphabets and forms, and the algorithms its digests and signatures name are lines of that lock, each with the epoch it was signed at; a claim is read by the lock as it stood when the claim was signed.",
+          "A field the lock does not name is refused. A field the lock closed reads a claim of its own time as history and refuses a later one. A line signed before the lock had any line is history: read, never judged by rules that came after it.",
+          "at carries only the wire's classes; needs is a region, a coordinate prefix at its resolution, never a path; sig names its algorithm by the digest of the blob that defines it, and a digest names its own algorithm from the digest lock.",
+          "The wire that reads a claim of one epoch folds the lock of that epoch, not a grammar remembered beside it."
+        ],
+        "lock": [
+          "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch|shape by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/required role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/roles role=reads form=alphabet measure=id value=reads|writes|demands by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/forms role=reads form=alphabet measure=id value=interval|alphabet|ladder by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/at-classes role=reads form=alphabet measure=id value=origin|place|receipt|witness|policy by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/digest-algorithms role=reads form=alphabet measure=id value=sha256 by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/signature-algorithms role=reads form=alphabet measure=id value=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/at role=reads form=alphabet measure=id value=class by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/needs role=reads form=alphabet measure=id value=region by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/sig role=reads form=alphabet measure=id value=signature by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/form/epoch role=reads form=alphabet measure=id value=count by=owner at=policy:wire epoch=1",
+          "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch by=owner at=policy:wire-without-shape epoch=5",
+          "bound-lock/1 scope=audit/wire/fields role=reads form=alphabet measure=id value=scope|role|form|measure|value|by|at|needs|sig|epoch|restsOn|about|kind|view by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/kinds role=reads form=alphabet measure=id value=axiom|definition|theorem|corollary by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/views role=reads form=alphabet measure=id value=field|spectrum|ideal|chain|complement|dual|product|quotient|valuation|galois by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/form/kind role=reads form=alphabet measure=id value=kinds by=owner at=policy:wire-kinds-and-views epoch=7",
+          "bound-lock/1 scope=audit/wire/form/view role=reads form=alphabet measure=id value=views by=owner at=policy:wire-kinds-and-views epoch=7"
+        ],
+        "cases": [
+          {
+            "name": "a line signed before the lock had any line is history, read as it was",
+            "epoch": 0,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=leaf:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb colour=red epoch=0",
+            "read": "fact"
+          },
+          {
+            "name": "every field named, at a wire class, needs a region, sig by digest: read",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/b|c/d/ sig=sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:QUJD epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "a field the lock does not name is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x colour=red epoch=3",
+            "read": "refuse",
+            "field": "colour"
+          },
+          {
+            "name": "a field of its time: shape is open at epoch 3",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "a field the lock closed at epoch 5 refuses a line signed after it",
+            "epoch": 6,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=6",
+            "read": "refuse",
+            "field": "shape"
+          },
+          {
+            "name": "the same closed field still reads its own time as history",
+            "epoch": 4,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x shape=vector epoch=4",
+            "read": "fact"
+          },
+          {
+            "name": "a claim with no at is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "at names a place by the digest of its bytes",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=place:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "at names an origin",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=origin:reader epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "at with an instrument's class is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=leaf:sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "at with a card is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=card:cccccccccccccccc epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "a digest taken with an algorithm the lock does not admit is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=receipt:md5:dddddddddddddddddddddddddddddddd epoch=3",
+            "read": "refuse",
+            "field": "at"
+          },
+          {
+            "name": "needs as a path from the root is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=/srv/disk/a epoch=3",
+            "read": "refuse",
+            "field": "needs"
+          },
+          {
+            "name": "needs that steps up is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/../b epoch=3",
+            "read": "refuse",
+            "field": "needs"
+          },
+          {
+            "name": "needs with a step that is not a prefix is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/*/b epoch=3",
+            "read": "refuse",
+            "field": "needs"
+          },
+          {
+            "name": "a trailing run of steps is the region before it",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x needs=a/b/** epoch=3",
+            "read": "fact"
+          },
+          {
+            "name": "sig naming its algorithm by name is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x sig=ed25519:QUJD epoch=3",
+            "read": "refuse",
+            "field": "sig"
+          },
+          {
+            "name": "sig naming an algorithm the lock does not admit is refused",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x sig=sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee:QUJD epoch=3",
+            "read": "refuse",
+            "field": "sig"
+          },
+          {
+            "name": "an epoch is a count",
+            "epoch": 3,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x epoch=three",
+            "read": "refuse",
+            "field": "epoch"
+          },
+          {
+            "name": "a kind before the lock names the field is refused",
+            "epoch": 6,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=theorem epoch=6",
+            "read": "refuse",
+            "field": "kind"
+          },
+          {
+            "name": "a kind the lock lists is read",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=theorem view=valuation restsOn=law/y about=\"it holds\" epoch=7",
+            "read": "fact"
+          },
+          {
+            "name": "a kind the lock does not list is refused",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x kind=lemma epoch=7",
+            "read": "refuse",
+            "field": "kind"
+          },
+          {
+            "name": "a view the lock does not list is refused",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x view=lattice epoch=7",
+            "read": "refuse",
+            "field": "view"
+          },
+          {
+            "name": "a list is one id, never several",
+            "epoch": 7,
+            "line": "bound-lock/1 scope=law/x role=demands form=alphabet measure=status value=present by=owner at=witness:x view=field|quotient epoch=7",
+            "read": "refuse",
+            "field": "view"
+          }
+        ],
+        "then": {
+          "fieldsNamingThisEra": 0,
+          "because": [
+            "a sig that names its algorithm by name is refused",
+            "an at whose class is an instrument's is refused",
+            "a needs that is a path is refused"
+          ]
+        }
+      }
+    },
+    {
+      "group": "form-axioms",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true,
+      "vector": {
+        "about": [
+          "The points every reading over the wire's forms takes: for each form, the parameters of the lattice of the algebra it is read in, a seed and how many points.",
+          "The check is the algebra's own, handed on; it runs over the points and over three broken copies of each lattice, its meet taken as its join, its order reversed and one law removed by taking its top as its bottom. A copy the check passes is a form it cannot see."
+        ],
+        "cases": [
+          {
+            "form": "interval",
+            "params": {
+              "lo": 0,
+              "hi": 10
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "alphabet",
+            "params": {
+              "tokens": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "alphabet",
+            "params": {
+              "tokens": [
+                "a|b",
+                "￿",
+                "𐀀",
+                "c"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "ladder",
+            "params": {
+              "levels": [
+                "xs",
+                "s",
+                "m",
+                "l",
+                "xl"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "lattice",
+            "params": {
+              "levels": [
+                "bottom",
+                "left",
+                "right",
+                "top"
+              ],
+              "leq": [
+                [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                [
+                  false,
+                  true,
+                  false,
+                  true
+                ],
+                [
+                  false,
+                  false,
+                  true,
+                  true
+                ],
+                [
+                  false,
+                  false,
+                  false,
+                  true
+                ]
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "budget",
+            "params": {
+              "lo": 0,
+              "hi": 64
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "rank",
+            "params": {
+              "n": 12
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "phase",
+            "params": {
+              "lo": 1,
+              "hi": 140
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "stretch",
+            "params": {
+              "lo": 1,
+              "hi": 8
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "distribution",
+            "params": {
+              "buckets": [
+                "low",
+                "mid",
+                "high"
+              ],
+              "levels": [
+                "none",
+                "some",
+                "most"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          }
+        ],
+        "coverage": {
+          "size": 9,
+          "criterion": "one case per form the wire writes, each with points enough to make a triple mean something",
+          "could_exclude_counterexamples": true,
+          "why": "a sample of each lattice, not every element of it; the three broken copies show the sample is wide enough to see a law break"
+        }
+      }
+    },
+    {
+      "group": "form-axioms",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true,
+      "vector": {
+        "about": [
+          "The points every reading over the wire's forms takes: for each form, the parameters of the lattice of the algebra it is read in, a seed and how many points.",
+          "The check is the algebra's own, handed on; it runs over the points and over three broken copies of each lattice, its meet taken as its join, its order reversed and one law removed by taking its top as its bottom. A copy the check passes is a form it cannot see."
+        ],
+        "cases": [
+          {
+            "form": "interval",
+            "params": {
+              "lo": 0,
+              "hi": 10
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "alphabet",
+            "params": {
+              "tokens": [
+                "a",
+                "b",
+                "c",
+                "d"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "alphabet",
+            "params": {
+              "tokens": [
+                "a|b",
+                "￿",
+                "𐀀",
+                "c"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "ladder",
+            "params": {
+              "levels": [
+                "xs",
+                "s",
+                "m",
+                "l",
+                "xl"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "lattice",
+            "params": {
+              "levels": [
+                "bottom",
+                "left",
+                "right",
+                "top"
+              ],
+              "leq": [
+                [
+                  true,
+                  true,
+                  true,
+                  true
+                ],
+                [
+                  false,
+                  true,
+                  false,
+                  true
+                ],
+                [
+                  false,
+                  false,
+                  true,
+                  true
+                ],
+                [
+                  false,
+                  false,
+                  false,
+                  true
+                ]
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "budget",
+            "params": {
+              "lo": 0,
+              "hi": 64
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "rank",
+            "params": {
+              "n": 12
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "phase",
+            "params": {
+              "lo": 1,
+              "hi": 140
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "stretch",
+            "params": {
+              "lo": 1,
+              "hi": 8
+            },
+            "seed": 7,
+            "n": 12
+          },
+          {
+            "form": "distribution",
+            "params": {
+              "buckets": [
+                "low",
+                "mid",
+                "high"
+              ],
+              "levels": [
+                "none",
+                "some",
+                "most"
+              ]
+            },
+            "seed": 7,
+            "n": 12
+          }
+        ],
+        "coverage": {
+          "size": 9,
+          "criterion": "one case per form the wire writes, each with points enough to make a triple mean something",
+          "could_exclude_counterexamples": true,
+          "why": "a sample of each lattice, not every element of it; the three broken copies show the sample is wide enough to see a law break"
+        }
+      }
+    },
+    {
+      "group": "capsule-admission",
+      "place": {
+        "name": "survey",
+        "sign": "0..50",
+        "join": "0..100",
+        "readings": [
+          "2..3",
+          "5..6"
+        ],
+        "source": "source:survey",
+        "content": "sha256:537b44b42e1af357938ae025a3a1988481aaa1e3558166ee88ef3001d2a3b278",
+        "clock": "clock:survey",
+        "observed": "17",
+        "implementation": "sha256:562a5a6f7739cfec487b673582a9227f0c7ffcc53d5c809fdd0fe33fb20327c0"
+      },
+      "negative": true,
+      "regions": [
+        {
+          "name": "survey",
+          "reads": [
+            "input/**"
+          ]
+        }
+      ],
+      "lines": [
+        "bound-lock/1 scope=input/survey role=writes form=alphabet measure=id value=survey",
+        "bound-lock/1 scope=private/survey role=writes form=alphabet measure=id value=excluded"
+      ]
+    },
+    {
+      "group": "capsule-admission",
+      "place": {
+        "name": "stock",
+        "sign": "0..30",
+        "join": "0..90",
+        "readings": [
+          "4..7",
+          "9..10"
+        ],
+        "source": "source:stock",
+        "content": "sha256:041fb686c0233ab195b3a98914f95d8ad53e2c07cef2ba98b8eb86361eb992f9",
+        "clock": "clock:stock",
+        "observed": "23",
+        "implementation": "sha256:d4ec17d7314184dd20bf7e9669246294f4f2979860d9afd57d86006428b7731e"
+      },
+      "negative": true,
+      "regions": [
+        {
+          "name": "stock",
+          "reads": [
+            "input/**"
+          ]
+        }
+      ],
+      "lines": [
+        "bound-lock/1 scope=input/stock role=writes form=alphabet measure=id value=stock",
+        "bound-lock/1 scope=private/stock role=writes form=alphabet measure=id value=excluded"
+      ]
     }
   ]
 }

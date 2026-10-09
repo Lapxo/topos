@@ -1,136 +1,48 @@
 name: release
 on:
-  release:
-    types: [published]
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: Released tag
-        required: true
-        type: string
+  workflow_run:
+    workflows: [tag]
+    types: [completed]
+  push:
+    tags: ['v*']
 jobs:
-  delivery:
-    environment: release
+  release:
+    if: github.event_name == 'push' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
-    defaults:
-      run:
-        shell: bash
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name || inputs.tag }}
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
-          node-version-file: package.json
-      - run: |
-          set -euo pipefail
-          npm ci
-          npm run build
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
       - env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
-          RELEASE_MODE: ${{ github.event_name == 'release' && 'stage' || 'verify-registry' }}
         run: |
-          set -euo pipefail
-          mkdir -p "$RUNNER_TEMP/approved-release"
-          approval="$RUNNER_TEMP/approved-release/approval-signed"
-          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern 'approval-signed' --dir "$RUNNER_TEMP/approved-release"
-          export APPROVAL_FILE="$approval"
-          node --input-type=module > "$RUNNER_TEMP/approved-release/artifact.tsv" <<'NODE'
-          import {readFileSync} from 'node:fs';
-          import * as crypto from 'node:crypto';
-          import * as wire from './dist/wire/index.js';
-          function verifiedApproval(approval, lock, tag, wire, crypto) {
-            const read = text => text.split('\n').filter(Boolean).map(line => {
-              const parsed = wire.parse(line);
-              if (parsed.kind !== 'fact') throw Error('REFUSE·release approval wire');
-              return parsed.value;
-            });
-            const trusted = read(lock).map(row => row.fields);
-            const one = (rows, scope, measure) => {
-              const found = rows.filter(row => row.scope === scope && (!measure || row.measure === measure) && row.value !== 'withdraw');
-              if (found.length !== 1) throw Error('REFUSE·release ' + scope + ' needs one declaration');
-              return found[0].value;
-            };
-            if (one(trusted, 'keys/owner', 'class') !== 'authorize') throw Error('REFUSE·release owner authority');
-            const coverage = one(trusted, 'keys/owner', 'coverage').split('|');
-            const covers = scope => coverage.some(mask => mask === '*' || mask === scope || (mask.endsWith('/**') && scope.startsWith(mask.slice(0, -2))));
-            const publicKey = one(trusted, 'keys/owner', 'public-key');
-            const key = crypto.createPublicKey(publicKey.startsWith('-----') ? publicKey : {key:Buffer.from(publicKey,'base64'),format:'der',type:'spki'});
-            if (key.asymmetricKeyType !== 'ed25519') throw Error('REFUSE·release unsupported owner key');
-            const rows = read(approval);
-            for (const {fields, version} of rows) {
-              const signature = wire.parseSignature(fields.sig);
-              if (fields.by !== 'owner' || !covers(fields.scope) || !signature || !crypto.verify(null, Buffer.from(wire.signedBytes(fields, version)), key, Buffer.from(signature.raw,'base64'))) {
-                throw Error('REFUSE·release signature does not verify against keys/owner');
-              }
-            }
-            const fields = rows.map(row => row.fields);
-            // The era declaration is itself authenticated by the existing owner, never by a key in the packet.
-            const eras = one(fields, 'wire/signature-algorithms').split('|');
-            if (rows.some(row => !eras.includes(wire.parseSignature(row.fields.sig).algorithm))) throw Error('REFUSE·release undeclared signature era');
-            const digest = one(fields, 'release/' + tag), name = one(fields, 'release/artifact'), source = one(fields, 'sources/archive');
-            if (!/^sha256:[a-f0-9]{64}$/.test(digest) || !/^[A-Za-z0-9][A-Za-z0-9._-]*\.tgz$/.test(name)) throw Error('REFUSE·release archive identity');
-            const url = new URL(source);
-            if (url.protocol !== 'https:' || url.username || url.password || /[\r\n\t]/.test(source)) throw Error('REFUSE·release archive source');
-            const npm = one(trusted, 'pipeline/publish/npm');
-            if (!/^\d+\.\d+\.\d+$/.test(npm)) throw Error('REFUSE·release npm runtime');
-            return {digest,name,source,npm};
-          }
-          const bytes=readFileSync(process.env.APPROVAL_FILE,'utf8');
-          const approved=verifiedApproval(bytes,readFileSync('TARGET.bound','utf8'),process.env.RELEASE_TAG,wire,crypto);
-          console.error('APPROVAL keys/owner signature verified · sha256:'+crypto.createHash('sha256').update(bytes).digest('hex'));
-          console.log([approved.digest.slice(7),approved.name,approved.source,approved.npm].join('	'));
-          NODE
-          IFS=$'	' read -r expected name source npm_runtime < "$RUNNER_TEMP/approved-release/artifact.tsv"
-          asset="$RUNNER_TEMP/approved-release/$name"
-          if test -f "$asset"; then
-            served="laid:$asset"
-          else
-            served="$source"
-            curl --fail --location --proto '=https' --proto-redir '=https' --max-time 30 --max-filesize 67108864 --output "$asset" "$source"
-          fi
-          printf '%s  %s
-          ' "$expected" "$asset" | sha256sum -c -
-          printf 'SOURCE %s · sha256:%s
-          ' "$served" "$expected"
-          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json assets > "$RUNNER_TEMP/approved-release/assets.json"
-          export ARCHIVE_NAME="$name"
-          exists=$(node --input-type=module -e 'import {readFileSync} from "node:fs";const {assets}=JSON.parse(readFileSync(process.argv[1],"utf8"));const found=assets.filter(a=>a.name===process.env.ARCHIVE_NAME);if(found.length>1)throw Error("REFUSE·release duplicate archive assets");console.log(found.length);' "$RUNNER_TEMP/approved-release/assets.json")
-          if test "$exists" = 0; then
-            gh release upload "$RELEASE_TAG" "$asset" --repo "$GITHUB_REPOSITORY"
-            printf 'ATTACHED github:%s/%s/%s · sha256:%s
-          ' "$GITHUB_REPOSITORY" "$RELEASE_TAG" "$name" "$expected"
-          fi
-          mkdir -p "$RUNNER_TEMP/approved-release/github-readback"
-          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --pattern "$name" --dir "$RUNNER_TEMP/approved-release/github-readback"
-          printf '%s  %s
-          ' "$expected" "$RUNNER_TEMP/approved-release/github-readback/$name" | sha256sum -c -
-          printf 'GITHUB existing archive verified · sha256:%s
-          ' "$expected"
-          npm install --global "npm@$npm_runtime"
-          tar -xOf "$asset" package/package.json > "$RUNNER_TEMP/approved-release/package.json"
-          package=$(node --input-type=module -e 'import{readFileSync}from"node:fs";const p=JSON.parse(readFileSync(process.argv[1],"utf8"));if(!/^(@[a-z0-9._-]+\/)?[a-z0-9._-]+$/.test(p.name)||!/^\d+\.\d+\.\d+([+-][a-zA-Z0-9.-]+)?$/.test(p.version))throw Error("REFUSE·release package identity");console.log(p.name+"@"+p.version);' "$RUNNER_TEMP/approved-release/package.json")
-          expected_shasum=$(sha1sum "$asset" | cut -d ' ' -f 1)
-          if test "$RELEASE_MODE" = verify-registry; then
-            npm view "$package" dist --json --prefer-online > "$RUNNER_TEMP/approved-release/registry.json"
-            node --input-type=module -e 'import{readFileSync}from"node:fs";const d=JSON.parse(readFileSync(process.argv[1],"utf8"));if(d.shasum!==process.argv[2])throw Error("REFUSE·release registry shasum differs");const u=new URL(d.tarball);if(u.protocol!=="https:"||u.username||u.password)throw Error("REFUSE·release registry source");console.error("REGISTRY shasum:"+d.shasum);console.log(d.tarball);' "$RUNNER_TEMP/approved-release/registry.json" "$expected_shasum" > "$RUNNER_TEMP/approved-release/registry-url"
-            IFS= read -r registry_source < "$RUNNER_TEMP/approved-release/registry-url"
-            curl --fail --location --proto '=https' --proto-redir '=https' --max-time 30 --max-filesize 67108864 --output "$RUNNER_TEMP/approved-release/registry.tgz" "$registry_source"
-            printf '%s  %s
-          ' "$expected" "$RUNNER_TEMP/approved-release/registry.tgz" | sha256sum -c -
-            printf 'REGISTRY %s · sha1:%s · sha256:%s
-          ' "$package" "$expected_shasum" "$expected"
-          elif test "$RELEASE_MODE" = stage; then
-            npm stage publish "$asset" --access public --ignore-scripts --json > "$RUNNER_TEMP/approved-release/stage.json"
-            cat "$RUNNER_TEMP/approved-release/stage.json"
-            printf 'STAGED %s · sha1:%s · sha256:%s · owner approval pending
-          ' "$package" "$expected_shasum" "$expected"
-          else
-            printf 'REFUSE·release unknown delivery mode: %s
-          ' "$RELEASE_MODE" >&2
-            exit 1
-          fi
+          version="v$(node -p "require('./package.json').version")"
+          gh release view "$version" >/dev/null 2>&1 && exit 0
+          gh release create "$version" "$(npm pack --silent)" --title "$version" --notes "$(git log -1 --format=%B)"
+  publish:
+    needs: release
+    environment: release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: npm run build
+      - run: npm install --global npm@'12.1.0'
+      - run: |
+          npm view "$(node -p "require('./package.json').name")@$(node -p "require('./package.json').version")" version >/dev/null 2>&1 && exit 0
+          npm stage publish

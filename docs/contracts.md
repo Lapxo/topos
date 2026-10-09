@@ -118,3 +118,40 @@ ReaderReference separates the declared reader id from its executable module. bou
 The host validates the effective policy before cache lookup. Current-response identity includes those execution limits alongside implementation and complete inputs. A changed effective policy reopens the reading; unchanged policy and inputs reuse its verified response. This applies to direct readers, capsule answers and independent regional reading receipts. Retained evidence is history, not unconditional permission to answer today. Preview does not execute to fill a missing response. Operational failure, interruption and partial output are never successful receipts.
 
 The shipped samples/public-boundary/yes.json and no.json contain two unrelated signed fixture lots, a correctly bound receipt and named rejected changes. vectors/public-boundary.json captures the SDK result projection and lifetime verdicts. The fixture signatures are not committed Bound receipts or release acceptance. Consumers verify record authority and native receipt provenance through the declared boundary.
+
+
+## Reading contracts (0.1.13)
+
+The functions below are pure projections. They read supplied, admitted inputs; they do not fetch, execute, sign, land or create receipts. Their conformance inputs are samples/readings/yes.json and no.json, with the reviewed SDK vector vectors/readings.json. Those outputs are not CLI admission or host conformance.
+
+### Semantic standing
+
+semanticStandingBytes and readSemanticStanding implement semantic-standing@1: canonical live claims in effective order, excluding sig, by, epoch, expires, repo and shape. Re-delivery adds no inscription. Sorting sign and join would identify distinct acts; reversing their effective order changes these bytes. The historical standingBytes/readStanding set encoding stays unchanged. A host must select the new profile explicitly before resolving a place by its projection. Archives and JSON manifests are not semantic standing.
+
+### Readings and evidence
+
+unionReadings retains every world's reading with attribution. World-order permutation and exact replay preserve the union; an empty reader cannot suppress another. Alternative value encodings are named by coordinate; the selected form interprets compatibility, and Obligations computes object states. Worlds, keys, snapshots and copies do not create independent origins. renderWriter requires one declared writer for a file, even if two writers propose identical output.
+
+foldedEvidence receives historical classification and the instrument's existing fold. Local authenticated history, foreign evidence and unadmitted inscriptions remain distinct. The callback cannot manufacture an authenticated inscription. Supersessions and withdrawals are applied by the existing fold; withdrawal markers remain history and are excluded from the projected standing. This projection never supplies receiver coverage or replaces its authority lock.
+
+### Sources and snapshots
+
+originRegion distinguishes an explicit origin-backed region from coordinate and leaf regions. Conflicting source projections refuse by coordinate. The host resolves the declared source and transport; selecting a descriptor initiates no retrieval or execution.
+
+snapshotIdentity commits source, content digest, observation under a declared clock, optional declared freshness and interpreter identity. It is neither a standing pin nor an independent origin. Missing freshness remains unknown. responseIdentity binds that snapshot, principal, authorization, request and implementation. snapshotAccess reads separate folded permissions for historical inspection and current reuse; unknown freshness or a changed account, grant, request, snapshot or implementation prevents current reuse. These functions cannot authenticate an observation or mint its receipt. The host must verify bytes and commit complete authenticated evidence atomically.
+
+### Policies
+
+composePolicy requires a selected field interpretation: meet, exact, or explicitly own. Obligations supplies meet and order; an empty meet stays empty. Own values never bypass inherited meet constraints. Conflicting exact or own encodings remain incompatible. policyTransition distinguishes compatibility, narrowing, empty intersection, widening-needs-authority and non-meet fields. A widening verdict grants no authority; the existing witness and coverage boundary remains required.
+
+### Command port
+
+The explicit command-lot@1 profile carries opaque UTF-8 request strings in one framed invocation per lot. checkCommandPort requires an admitted declaration coordinate under port/, its coverage, verified executable closure, positive exact time/byte bounds, explicit environment names and stderr policy. A URL, standing or program output cannot register an executable. commandRequest frames the declared coordinate, implementation and lot identity. commandResponse binds the complete response to them, checks byte limits and every response member, and rejects interruption, nonzero status, forbidden stderr and incomplete output. The host invokes without a shell, forwards only the declared environment, applies time and cancellation limits, and commits durable evidence after complete validation. The SDK does none of that execution. The existing signing-lot/1 contract stays unchanged; adapting it to this host port does not change signed bytes or verification.
+
+### Inspection and lineage
+
+releaseSuccessors reads authenticated predecessor links, keeps alternate successors and rejects conflicts or cycles; it never chooses newest by URL. inspectionSelection names existing admitted coordinates for keep/follow without fetching or granting authority. Actual materialization and bump remain host views, not new verbs. weightOf reports verified bytes by digest: absent or incomplete scans remain unknown, copies count once, conflicting sizes refuse. vacuityOf reads a declared complete epoch window; no observation is neither correctness nor another object state.
+
+### Compatibility
+
+Canonical UTF-8 field and set order, contextual none and named refusal for incompatible live wire declarations retain their existing meaning. New order-sensitive place projection does not reinterpret old Topos pins. No operation above changes REQUIRED, FREE, CONFLICT or FORBIDDEN.

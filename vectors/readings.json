@@ -1,0 +1,48 @@
+{
+  "contract": "readings@1",
+  "evidence": "Reviewed expected SDK outputs; not native receipts or host execution",
+  "output": [
+    {
+      "place": "survey",
+      "projectionOrderDistinct": true,
+      "worldPermutationEqual": true,
+      "duplicateOriginAdded": false,
+      "incompatibleValuesRetained": 2,
+      "unknownFreshnessReuse": false,
+      "missingScan": null,
+      "emptyMeet": "incompatible",
+      "originResolved": true,
+      "historyKept": 2,
+      "standingLive": 1,
+      "completeLot": [
+        "accepted",
+        "accepted"
+      ],
+      "successorsKept": 2,
+      "selectionKept": 1,
+      "knownBytes": 19,
+      "vacuity": "unknown"
+    },
+    {
+      "place": "stock",
+      "projectionOrderDistinct": true,
+      "worldPermutationEqual": true,
+      "duplicateOriginAdded": false,
+      "incompatibleValuesRetained": 2,
+      "unknownFreshnessReuse": false,
+      "missingScan": null,
+      "emptyMeet": "incompatible",
+      "originResolved": true,
+      "historyKept": 2,
+      "standingLive": 1,
+      "completeLot": [
+        "accepted",
+        "accepted"
+      ],
+      "successorsKept": 2,
+      "selectionKept": 1,
+      "knownBytes": 19,
+      "vacuity": "unknown"
+    }
+  ]
+}

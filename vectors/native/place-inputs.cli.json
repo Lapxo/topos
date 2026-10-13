@@ -100,7 +100,7 @@
         },
         {
           "file": "wire/claimline.js",
-          "sha256": "b019726377edeb924a63a7d0164c9919e59d2316eb9bb1826cf9bafa2a90209f"
+          "sha256": "aadc3029a57954d3cce9ebc01d13e29887a7bc77fb4c55ad3644406ec520028b"
         },
         {
           "file": "wire/classes.js",
@@ -141,7 +141,7 @@
             "<fixture-key>"
           ],
           "status": 0,
-          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 128 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 145 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
           "stderr": ""
         },
         {
@@ -152,7 +152,7 @@
           ],
           "status": 0,
           "stdout": "bound-lock/1 at=place:sha256:fab610babdf6f855caab7abf53f1187f2e8ed5871ee3831430d2176f500662c9 by=reader:20e63b3508d0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=fab610babdf6f855\nbound-lock/1 at=place:sha256:fab610babdf6f855caab7abf53f1187f2e8ed5871ee3831430d2176f500662c9 by=reader:20e63b3508d0 form=alphabet measure=result role=writes scope=conformance/place-inputs/result value=\"{\\\"profile\\\":\\\"admitted-place-inputs@1\\\",\\\"digest\\\":\\\"sha256:0dabca962bd01d0fcfe725cd62b8880883e2cd5d3d67bd42d7790c4497a5e4ef\\\",\\\"selectors\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**\\\"],\\\"lines\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001\\\",\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'\\\"]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
-          "stderr": "READER   reader.js · 1 run · 176 ms\nOBSERVE  1 run · 0 read by key · 180 ms\nOWN      imports 18 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 27 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold ee5f2d23 folded 0.4 s\nKEPT     fold ee5f2d23 miss · no fold was kept before this one\n"
+          "stderr": "READER   reader.js · 1 run · 199 ms\nOBSERVE  1 run · 0 read by key · 204 ms\nOWN      imports 19 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 29 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 76f6bbe3 folded 0.4 s\nKEPT     fold 76f6bbe3 miss · no fold was kept before this one\n"
         },
         {
           "args": [
@@ -162,7 +162,7 @@
           ],
           "status": 0,
           "stdout": "bound-lock/1 at=place:sha256:fab610babdf6f855caab7abf53f1187f2e8ed5871ee3831430d2176f500662c9 by=reader:20e63b3508d0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=fab610babdf6f855\nbound-lock/1 at=place:sha256:fab610babdf6f855caab7abf53f1187f2e8ed5871ee3831430d2176f500662c9 by=reader:20e63b3508d0 form=alphabet measure=result role=writes scope=conformance/place-inputs/result value=\"{\\\"profile\\\":\\\"admitted-place-inputs@1\\\",\\\"digest\\\":\\\"sha256:0dabca962bd01d0fcfe725cd62b8880883e2cd5d3d67bd42d7790c4497a5e4ef\\\",\\\"selectors\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**\\\"],\\\"lines\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001\\\",\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'\\\"]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
-          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 2 ms\nOWN      imports 18 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 27 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold ee5f2d23 folded 0.1 s · 0.4 s folded\nKEPT     fold ee5f2d23 miss · no fold was kept before this one\n"
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 22 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 32 ms · regions 10 ms · ceilings 1 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold 76f6bbe3 folded 0.1 s · 0.4 s folded\nKEPT     fold 76f6bbe3 miss · no fold was kept before this one\n"
         }
       ]
     },
@@ -264,7 +264,7 @@
         },
         {
           "file": "wire/claimline.js",
-          "sha256": "b019726377edeb924a63a7d0164c9919e59d2316eb9bb1826cf9bafa2a90209f"
+          "sha256": "aadc3029a57954d3cce9ebc01d13e29887a7bc77fb4c55ad3644406ec520028b"
         },
         {
           "file": "wire/classes.js",
@@ -305,7 +305,7 @@
             "<fixture-key>"
           ],
           "status": 0,
-          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 130 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 139 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
           "stderr": ""
         },
         {
@@ -316,7 +316,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.15/places-respond-repair-v2/survey-no/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\nOBSERVE  0 run · 0 read by key · 176 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.15/places-respond-repair-v2/survey-no/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/survey-no/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\nOBSERVE  0 run · 0 read by key · 307 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/survey-no/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\n"
         }
       ]
     },
@@ -418,7 +418,7 @@
         },
         {
           "file": "wire/claimline.js",
-          "sha256": "b019726377edeb924a63a7d0164c9919e59d2316eb9bb1826cf9bafa2a90209f"
+          "sha256": "aadc3029a57954d3cce9ebc01d13e29887a7bc77fb4c55ad3644406ec520028b"
         },
         {
           "file": "wire/classes.js",
@@ -459,7 +459,7 @@
             "<fixture-key>"
           ],
           "status": 0,
-          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 127 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 153 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
           "stderr": ""
         },
         {
@@ -470,7 +470,7 @@
           ],
           "status": 0,
           "stdout": "bound-lock/1 at=place:sha256:be4cf5cf20f4efbedbf5ede25d08eaef8bea17ebb71c159d2a5944a34682969f by=reader:20e63b3508d0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=be4cf5cf20f4efbe\nbound-lock/1 at=place:sha256:be4cf5cf20f4efbedbf5ede25d08eaef8bea17ebb71c159d2a5944a34682969f by=reader:20e63b3508d0 form=alphabet measure=result role=writes scope=conformance/place-inputs/result value=\"{\\\"profile\\\":\\\"admitted-place-inputs@1\\\",\\\"digest\\\":\\\"sha256:3c7a187c6cc7857e0960fcc9c68f3a59d9440f147bbbcedaea5149d2624204f3\\\",\\\"selectors\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**\\\"],\\\"lines\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'\\\",\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001\\\"]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
-          "stderr": "READER   reader.js · 1 run · 184 ms\nOBSERVE  1 run · 0 read by key · 190 ms\nOWN      imports 17 ms · bodies 1 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 0 ms · laid 3 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 27 ms · regions 8 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 2643df10 folded 0.4 s\nKEPT     fold 2643df10 miss · no fold was kept before this one\n"
+          "stderr": "READER   reader.js · 1 run · 250 ms\nSPENT    observe reader.js 2+252 ms\nOBSERVE  1 run · 0 read by key · 256 ms\nOWN      imports 31 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 1 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 4 ms · resets 2 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 9 ms · own 47 ms · regions 12 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold a1f985c7 folded 0.5 s\nKEPT     fold a1f985c7 miss · no fold was kept before this one\n"
         },
         {
           "args": [
@@ -480,7 +480,7 @@
           ],
           "status": 0,
           "stdout": "bound-lock/1 at=place:sha256:be4cf5cf20f4efbedbf5ede25d08eaef8bea17ebb71c159d2a5944a34682969f by=reader:20e63b3508d0 form=alphabet measure=observed role=writes scope=inputs/sample.json value=be4cf5cf20f4efbe\nbound-lock/1 at=place:sha256:be4cf5cf20f4efbedbf5ede25d08eaef8bea17ebb71c159d2a5944a34682969f by=reader:20e63b3508d0 form=alphabet measure=result role=writes scope=conformance/place-inputs/result value=\"{\\\"profile\\\":\\\"admitted-place-inputs@1\\\",\\\"digest\\\":\\\"sha256:3c7a187c6cc7857e0960fcc9c68f3a59d9440f147bbbcedaea5149d2624204f3\\\",\\\"selectors\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**\\\"],\\\"lines\\\":[\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'\\\",\\\"bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001\\\"]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
-          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 2 ms\nOWN      imports 17 ms · bodies 1 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 6 ms · own 26 ms · regions 9 ms · ceilings 1 ms · paid 1 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 2643df10 folded 0.1 s · 0.4 s folded\nKEPT     fold 2643df10 miss · no fold was kept before this one\n"
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 4 ms\nOWN      imports 26 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 4 ms · resets 1 ms · store 0 ms · ship 1 ms\nSPENT    fold capsules 7 ms · own 39 ms · regions 11 ms · ceilings 2 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold a1f985c7 folded 0.2 s · 0.5 s folded\nKEPT     fold a1f985c7 miss · no fold was kept before this one\n"
         }
       ]
     },
@@ -582,7 +582,7 @@
         },
         {
           "file": "wire/claimline.js",
-          "sha256": "b019726377edeb924a63a7d0164c9919e59d2316eb9bb1826cf9bafa2a90209f"
+          "sha256": "aadc3029a57954d3cce9ebc01d13e29887a7bc77fb4c55ad3644406ec520028b"
         },
         {
           "file": "wire/classes.js",
@@ -623,7 +623,7 @@
             "<fixture-key>"
           ],
           "status": 0,
-          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 127 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 166 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
           "stderr": ""
         },
         {
@@ -634,7 +634,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.15/places-respond-repair-v2/catalog-no/reader.js · Error: REFUSE·projection history is not standing\nOBSERVE  0 run · 0 read by key · 178 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.15/places-respond-repair-v2/catalog-no/reader.js · Error: REFUSE·projection history is not standing\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/catalog-no/reader.js · Error: REFUSE·projection history is not standing\nOBSERVE  0 run · 0 read by key · 218 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/catalog-no/reader.js · Error: REFUSE·projection history is not standing\n"
         }
       ]
     }

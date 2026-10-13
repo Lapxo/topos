@@ -1,0 +1,253 @@
+{
+  "state": "focused pure SDK prototype; native instrument quartet/public profile still pending",
+  "captures": [
+    {
+      "name": "two unrelated places, unchanged original epoch2, grant5 at root6",
+      "expected": "valid",
+      "observed": "valid",
+      "output": {
+        "identity": "sha256:a9a56e9d369093695cbdc1b2c2e68187f6a134178bea8e5aaafddcc1d71922c2",
+        "places": [
+          {
+            "place": "catalog/TARGET.bound",
+            "epoch": "2"
+          },
+          {
+            "place": "inventory/TARGET.bound",
+            "epoch": "2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "canonical roundtrip",
+      "expected": "valid",
+      "observed": "valid",
+      "output": {
+        "exact": true
+      }
+    },
+    {
+      "name": "local-act@1/legacy authorityOf unchanged",
+      "expected": "grey-before-grant",
+      "observed": "grey",
+      "output": {
+        "kind": "grey",
+        "why": "signed at epoch 2, before lane was admitted at 5"
+      }
+    },
+    {
+      "name": "namespace not admitted",
+      "expected": "REFUSE·place-act namespace not admitted",
+      "observed": "REFUSE·place-act namespace not admitted"
+    },
+    {
+      "name": "filesystem discovery is not namespace authority",
+      "expected": "REFUSE·place-act namespace not admitted",
+      "observed": "REFUSE·place-act namespace not admitted"
+    },
+    {
+      "name": "missing instrument verifier",
+      "expected": "REFUSE·place-act missing instrument verifier verifiesOriginal",
+      "observed": "REFUSE·place-act missing instrument verifier verifiesOriginal"
+    },
+    {
+      "name": "missing trust",
+      "expected": "REFUSE·place-act missing instrument trust",
+      "observed": "REFUSE·place-act missing instrument trust"
+    },
+    {
+      "name": "truthy object is not authenticated root",
+      "expected": "REFUSE·place-act unauthenticated authority context",
+      "observed": "REFUSE·place-act unauthenticated authority context"
+    },
+    {
+      "name": "origin proof tamper",
+      "expected": "REFUSE·place-act origin proof signature",
+      "observed": "REFUSE·place-act origin proof signature"
+    },
+    {
+      "name": "borrowed signer proof",
+      "expected": "REFUSE·place-act missing/borrowed origin proof",
+      "observed": "REFUSE·place-act missing/borrowed origin proof"
+    },
+    {
+      "name": "root prefix unauthenticated",
+      "expected": "REFUSE·place-act unauthenticated authority context",
+      "observed": "REFUSE·place-act unauthenticated authority context"
+    },
+    {
+      "name": "different root clock",
+      "expected": "REFUSE·place-act unauthenticated authority context",
+      "observed": "REFUSE·place-act unauthenticated authority context"
+    },
+    {
+      "name": "historical globally clocked record cannot adopt child prefix",
+      "expected": "REFUSE·place-act origin prefix or legacy reinterpretation",
+      "observed": "REFUSE·place-act origin prefix or legacy reinterpretation"
+    },
+    {
+      "name": "catalog-only coverage cannot authorize inventory",
+      "expected": "REFUSE·place-act authority refuse REFUSE·authority lane does not cover region/inventory/items/value",
+      "observed": "REFUSE·place-act authority refuse REFUSE·authority lane does not cover region/inventory/items/value"
+    },
+    {
+      "name": "root grant revoked",
+      "expected": "REFUSE·place-act authority refuse REFUSE·authority lane authority evaluated at epoch 6, after its epoch closed at 5",
+      "observed": "REFUSE·place-act authority refuse REFUSE·authority lane authority evaluated at epoch 6, after its epoch closed at 5"
+    },
+    {
+      "name": "missing receipt",
+      "expected": "REFUSE·place-act incomplete/duplicate receiver receipts",
+      "observed": "REFUSE·place-act incomplete/duplicate receiver receipts"
+    },
+    {
+      "name": "duplicate receipt",
+      "expected": "REFUSE·place-act incomplete/duplicate receiver receipts",
+      "observed": "REFUSE·place-act incomplete/duplicate receiver receipts"
+    },
+    {
+      "name": "receiver signature mismatch",
+      "expected": "REFUSE·place-act receiver receipt signature",
+      "observed": "REFUSE·place-act receiver receipt signature"
+    },
+    {
+      "name": "signed receipt scope cannot be substituted",
+      "expected": "REFUSE·place-act receiver receipt signature",
+      "observed": "REFUSE·place-act receiver receipt signature"
+    },
+    {
+      "name": "receiver key has no scope coverage",
+      "expected": "REFUSE·place-act receiver authority refuse REFUSE·authority owner does not cover receipts",
+      "observed": "REFUSE·place-act receiver authority refuse REFUSE·authority owner does not cover receipts"
+    },
+    {
+      "name": "unknown clock not zero",
+      "expected": "REFUSE·place-act unknown place context",
+      "observed": "REFUSE·place-act unknown place context"
+    },
+    {
+      "name": "budget before any authority/hash/proof callback",
+      "expected": "REFUSE·place-act byte budget",
+      "observed": "REFUSE·place-act byte budget"
+    },
+    {
+      "name": "unknown/missing resources",
+      "expected": "REFUSE·place-act missing resource records",
+      "observed": "REFUSE·place-act missing resource records"
+    },
+    {
+      "name": "no packet-selected verifier",
+      "expected": "REFUSE·place-act unsupported clock profile",
+      "observed": "REFUSE·place-act unsupported clock profile"
+    },
+    {
+      "name": "no extra uncommitted fields",
+      "expected": "REFUSE·place-act unsupported clock profile",
+      "observed": "REFUSE·place-act unsupported clock profile"
+    },
+    {
+      "name": "foreign/replayed namespace frame routed locally",
+      "expected": "REFUSE·place-act origin prefix or legacy reinterpretation",
+      "observed": "REFUSE·place-act origin prefix or legacy reinterpretation"
+    },
+    {
+      "name": "standalone original API validates complete admitted context",
+      "expected": "valid",
+      "observed": "valid",
+      "output": {
+        "originalUnchanged": true
+      }
+    },
+    {
+      "name": "standalone original cannot bypass namespace",
+      "expected": "REFUSE·place-act namespace not admitted",
+      "observed": "REFUSE·place-act namespace not admitted"
+    },
+    {
+      "name": "standalone original cannot bypass missing budget",
+      "expected": "REFUSE·place-act missing resource budget",
+      "observed": "REFUSE·place-act missing resource budget"
+    },
+    {
+      "name": "origin constructor requires budget",
+      "expected": "REFUSE·place-act missing resource budget",
+      "observed": "REFUSE·place-act missing resource budget"
+    },
+    {
+      "name": "receipt constructor requires budget",
+      "expected": "REFUSE·place-act missing resource budget",
+      "observed": "REFUSE·place-act missing resource budget"
+    },
+    {
+      "name": "duplicate signer ids refuse before first choice",
+      "expected": "REFUSE·place-act duplicate signer id",
+      "observed": "REFUSE·place-act duplicate signer id"
+    },
+    {
+      "name": "receipt signature bytes bounded before checks",
+      "expected": "REFUSE·place-act receipt byte budget",
+      "observed": "REFUSE·place-act receipt byte budget"
+    },
+    {
+      "name": "authority depth preserved",
+      "expected": "REFUSE·place-act authority refuse REFUSE·authority lane may not sign at depth 2",
+      "observed": "REFUSE·place-act authority refuse REFUSE·authority lane may not sign at depth 2"
+    },
+    {
+      "name": "closed coverage span at root authority epoch",
+      "expected": "REFUSE·place-act authority refuse REFUSE·authority lane does not cover region/catalog/items/value",
+      "observed": "REFUSE·place-act authority refuse REFUSE·authority lane does not cover region/catalog/items/value"
+    },
+    {
+      "name": "28 legacy eligibility verdicts byte-identical",
+      "expected": "identical",
+      "observed": "identical"
+    },
+    {
+      "name": "authority helper rejects NaN",
+      "expected": "REFUSE·authority lane has unknown or invalid authority epoch",
+      "observed": "REFUSE·authority lane has unknown or invalid authority epoch"
+    },
+    {
+      "name": "null receiver receipt named refusal",
+      "expected": "REFUSE·place-act unknown receiver receipt",
+      "observed": "REFUSE·place-act unknown receiver receipt"
+    },
+    {
+      "name": "constructor bounds individual string before JSON",
+      "expected": "REFUSE·place-act byte budget",
+      "observed": "REFUSE·place-act byte budget"
+    },
+    {
+      "name": "pure result returns references, never grants freshness",
+      "expected": "valid",
+      "observed": "valid",
+      "output": {
+        "namespace": "root-origin",
+        "snapshot": "sha256:c9e952673f9615f9491f24f4175313716600cb80610203b617e8ad479f32f020",
+        "epoch": "6",
+        "prefix": "sha256:a9240665d1b42c49b7eb6a132d6fcab2e39dd907ea6ebcf0d65b0e373d693e3f",
+        "head": "sha256:a9240665d1b42c49b7eb6a132d6fcab2e39dd907ea6ebcf0d65b0e373d693e3f",
+        "policies": [
+          "sha256:10d4975742719573e02faabacf1e3f269b1fbf6207fd10f8215b7a874f993be8"
+        ]
+      }
+    }
+  ],
+  "callbacksBeforeBudgetFailure": 0,
+  "clockChecks": {
+    "original": "2",
+    "receiverEach": "2",
+    "rootAuthority": "6",
+    "grantStart": "5"
+  },
+  "rootCheckpoint": {
+    "epoch": "6",
+    "scope": "receipts",
+    "signatureVerified": true,
+    "priorPrefix": "sha256:5f6b7dda9aa1c85f62d9ccbfce8da592bfd95c78e5c6a821ee3e5e568e75abd6"
+  },
+  "historicalContract": "local-act@1 unchanged",
+  "currentAdmission": "host guard compares returned dependencies atomically; pure success is not freshness permission"
+}

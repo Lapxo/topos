@@ -1,6 +1,6 @@
 {
   "name": "@lapxo/topos",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Wire, forms, authority and views for interpreting information.",
   "type": "module",
   "license": "MIT",
@@ -126,7 +126,9 @@
     "vectors/native/*.cli.json",
     "vectors/wire/fields.json",
     "vectors/forms.json",
-    "vectors/reading-identity.json"
+    "vectors/reading-identity.json",
+    "samples/place-inputs/*.json",
+    "vectors/native/place-inputs.cli.json"
   ],
   "scripts": {
     "build": "tsc --build",

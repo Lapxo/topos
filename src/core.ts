@@ -1,3 +1,5 @@
+export {placeInputs,withPlaceInputs} from './topos/place-inputs.ts';
+export type {PlaceInputs} from './topos/place-inputs.ts';
 /** Pure interpretation boundary. Storage, module loading and execution are host work. */
 export {readingIdentityBytes,readingIdentity,readingReceiptBytes,readingReceiptIdentity} from './contract/reading-identity.ts';
 export type {ReadingIdentityContext} from './contract/reading-identity.ts';

@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "name": "required selected input absent",
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/place-inputs value=admitted-place-inputs@1",
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "live": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=unrelated value=present"
+      ],
+      "refusal": "required member absent"
+    },
+    {
+      "name": "withdrawal history is not a live shadow",
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/place-inputs value=admitted-place-inputs@1",
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "live": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/a value=withdraw"
+      ],
+      "refusal": "history is not standing"
+    },
+    {
+      "name": "provider profile cannot substitute for consumer profile",
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**",
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/provider-inputs value=standing-projection@1"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "live": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/a value=present"
+      ],
+      "refusal": "missing or conflicting profile"
+    }
+  ]
+}

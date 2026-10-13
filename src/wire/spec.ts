@@ -1,3 +1,4 @@
+import type {PlaceInputs} from '../topos/place-inputs.ts';
 import type {ProviderInputs} from '../topos/provider-inputs.ts';
 import { PROTOCOL } from './index.ts';
 
@@ -6,6 +7,8 @@ export interface Request {
   readonly verb: 'describe' | 'read' | 'render';
   readonly rootScope: string;
   readonly files: readonly { readonly place: string; readonly text: string }[];
+  /** Authenticated live consumer shadow selected by its world; never provider history. */
+  readonly place?: PlaceInputs;
   readonly provider?: ProviderInputs;
   readonly held?: readonly (readonly [string, string])[];
   readonly region?: string;

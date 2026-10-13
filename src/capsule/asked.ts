@@ -1,3 +1,4 @@
+import type {PlaceInputs} from '../topos/place-inputs.ts';
 import type {providerFields} from '../topos/provider-inputs.ts';
 import { alphabet } from '../wire/grammar.ts';
 
@@ -14,6 +15,8 @@ interface Held {
  * fields, never as its text.
  */
 export interface Asked {
+  /** Authenticated live consumer shadow selected by its world; never provider history. */
+  readonly place?: PlaceInputs;
   readonly provider?: ReturnType<typeof providerFields>;
   readonly region: string;
   readonly at: number;

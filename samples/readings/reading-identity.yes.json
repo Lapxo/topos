@@ -1,0 +1,54 @@
+{
+  "profile": "reading-context@1",
+  "cases": [
+    {
+      "name": "two-transitive-inputs",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "z",
+            "input-z"
+          ],
+          [
+            "a",
+            "input-a"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ]
+      },
+      "expected": "[\"reading-context@1\",\"instrument-a\",\"reader-a\",\"policy-a\",[[\"a\",\"input-a\"],[\"z\",\"input-z\"]],[[\"locale\",\"locale-a\"],[\"runtime\",\"runtime-a\"]]]\n"
+    },
+    {
+      "name": "explicit-empty-environment-and-literal-text",
+      "context": {
+        "instrument": "instrument-b",
+        "implementation": "reader-b",
+        "policy": "policy-b",
+        "inputs": [
+          [
+            "résultat",
+            "none"
+          ],
+          [
+            "source",
+            "literal-01"
+          ]
+        ],
+        "environment": []
+      },
+      "expected": "[\"reading-context@1\",\"instrument-b\",\"reader-b\",\"policy-b\",[[\"résultat\",\"none\"],[\"source\",\"literal-01\"]],[]]\n"
+    }
+  ]
+}

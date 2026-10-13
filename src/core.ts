@@ -1,4 +1,6 @@
 /** Pure interpretation boundary. Storage, module loading and execution are host work. */
+export {readingIdentityBytes,readingIdentity,readingReceiptBytes,readingReceiptIdentity} from './contract/reading-identity.ts';
+export type {ReadingIdentityContext} from './contract/reading-identity.ts';
 export {byBytes,canonical,parse,signedBytes} from './wire/line.ts';
 export {alphabet,fields,steps,atResolution,requirement} from './wire/grammar.ts';
 export {formatSignature,parseSignature,signedFieldsOf} from './wire/sig.ts';

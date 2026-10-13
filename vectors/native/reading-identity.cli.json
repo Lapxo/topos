@@ -1,0 +1,210 @@
+{
+  "instrument": "published Bound 0.1.8",
+  "state": "fixture authority only; no owner admission or host-reuse acceptance",
+  "captures": [
+    {
+      "name": "survey-yes",
+      "negative": false,
+      "modules": [
+        {
+          "file": "contract/reading-identity.js",
+          "sha256": "b8b2b8e12ba183942c7e62e0314858e264c872366f8d93382837e8a899124ab4"
+        },
+        {
+          "file": "wire/line.js",
+          "sha256": "d683feba756bcd4153ed1860f5094972687db795f394ef3ec17924bc367c96ac"
+        },
+        {
+          "file": "wire/values.js",
+          "sha256": "5b883395c0dc4ecde724a91d6a263c68d180a8e53fac6319daf51087af214d62"
+        },
+        {
+          "file": "wire/outcome.js",
+          "sha256": "deab53c58c078862088ac4bf424fb13ed68793913e399815871031e3a7e41a9a"
+        }
+      ],
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 123 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:a882f0d69049c1e3f00553d57f2f312430659a939efcfdf63d8d586a101731f3 by=reader:9dcf275dfb04 form=alphabet measure=observed role=writes scope=inputs/sample.json value=a882f0d69049c1e3\nbound-lock/1 at=place:sha256:a882f0d69049c1e3f00553d57f2f312430659a939efcfdf63d8d586a101731f3 by=reader:9dcf275dfb04 form=alphabet measure=result role=writes scope=conformance/reading-context/two-transitive-inputs value=\"{\\\"profile\\\":\\\"reading-context@1\\\",\\\"canonical\\\":\\\"[\\\\\\\"reading-context@1\\\\\\\",\\\\\\\"instrument-a\\\\\\\",\\\\\\\"reader-a\\\\\\\",\\\\\\\"policy-a\\\\\\\",[[\\\\\\\"a\\\\\\\",\\\\\\\"input-a\\\\\\\"],[\\\\\\\"z\\\\\\\",\\\\\\\"input-z\\\\\\\"]],[[\\\\\\\"locale\\\\\\\",\\\\\\\"locale-a\\\\\\\"],[\\\\\\\"runtime\\\\\\\",\\\\\\\"runtime-a\\\\\\\"]]]\\\\n\\\",\\\"name\\\":\\\"sha256:cac2c7adde8cd16e2550af588c938d1e29989521dc3ec14f5d5a742986b7e9c0\\\",\\\"receipt\\\":\\\"sha256:357551c649fdf05fbf0fa1eeec2f162d7c2dffc1dc91e62464b7b86839f5e50c\\\"}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "READER   reader.js · 1 run · 171 ms\nOBSERVE  1 run · 0 read by key · 176 ms\nOWN      imports 18 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 28 ms · regions 8 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 57007985 folded 0.4 s\nKEPT     fold 57007985 miss · no fold was kept before this one\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:a882f0d69049c1e3f00553d57f2f312430659a939efcfdf63d8d586a101731f3 by=reader:9dcf275dfb04 form=alphabet measure=observed role=writes scope=inputs/sample.json value=a882f0d69049c1e3\nbound-lock/1 at=place:sha256:a882f0d69049c1e3f00553d57f2f312430659a939efcfdf63d8d586a101731f3 by=reader:9dcf275dfb04 form=alphabet measure=result role=writes scope=conformance/reading-context/two-transitive-inputs value=\"{\\\"profile\\\":\\\"reading-context@1\\\",\\\"canonical\\\":\\\"[\\\\\\\"reading-context@1\\\\\\\",\\\\\\\"instrument-a\\\\\\\",\\\\\\\"reader-a\\\\\\\",\\\\\\\"policy-a\\\\\\\",[[\\\\\\\"a\\\\\\\",\\\\\\\"input-a\\\\\\\"],[\\\\\\\"z\\\\\\\",\\\\\\\"input-z\\\\\\\"]],[[\\\\\\\"locale\\\\\\\",\\\\\\\"locale-a\\\\\\\"],[\\\\\\\"runtime\\\\\\\",\\\\\\\"runtime-a\\\\\\\"]]]\\\\n\\\",\\\"name\\\":\\\"sha256:cac2c7adde8cd16e2550af588c938d1e29989521dc3ec14f5d5a742986b7e9c0\\\",\\\"receipt\\\":\\\"sha256:357551c649fdf05fbf0fa1eeec2f162d7c2dffc1dc91e62464b7b86839f5e50c\\\"}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 2 ms\nOWN      imports 20 ms · bodies 1 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 32 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 57007985 folded 0.1 s · 0.4 s folded\nKEPT     fold 57007985 miss · no fold was kept before this one\n"
+        }
+      ]
+    },
+    {
+      "name": "survey-no",
+      "negative": true,
+      "modules": [
+        {
+          "file": "contract/reading-identity.js",
+          "sha256": "b8b2b8e12ba183942c7e62e0314858e264c872366f8d93382837e8a899124ab4"
+        },
+        {
+          "file": "wire/line.js",
+          "sha256": "d683feba756bcd4153ed1860f5094972687db795f394ef3ec17924bc367c96ac"
+        },
+        {
+          "file": "wire/values.js",
+          "sha256": "5b883395c0dc4ecde724a91d6a263c68d180a8e53fac6319daf51087af214d62"
+        },
+        {
+          "file": "wire/outcome.js",
+          "sha256": "deab53c58c078862088ac4bf424fb13ed68793913e399815871031e3a7e41a9a"
+        }
+      ],
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 128 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/survey-no/reader.js · Error: REFUSE·reading identity missing policy\nOBSERVE  0 run · 0 read by key · 172 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/survey-no/reader.js · Error: REFUSE·reading identity missing policy\n"
+        }
+      ]
+    },
+    {
+      "name": "catalog-yes",
+      "negative": false,
+      "modules": [
+        {
+          "file": "contract/reading-identity.js",
+          "sha256": "b8b2b8e12ba183942c7e62e0314858e264c872366f8d93382837e8a899124ab4"
+        },
+        {
+          "file": "wire/line.js",
+          "sha256": "d683feba756bcd4153ed1860f5094972687db795f394ef3ec17924bc367c96ac"
+        },
+        {
+          "file": "wire/values.js",
+          "sha256": "5b883395c0dc4ecde724a91d6a263c68d180a8e53fac6319daf51087af214d62"
+        },
+        {
+          "file": "wire/outcome.js",
+          "sha256": "deab53c58c078862088ac4bf424fb13ed68793913e399815871031e3a7e41a9a"
+        }
+      ],
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 125 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:92e33b54d9946faa5a8487ef527c8c36528e1bc02871dd7a9cb3d110c85e32cd by=reader:9dcf275dfb04 form=alphabet measure=observed role=writes scope=inputs/sample.json value=92e33b54d9946faa\nbound-lock/1 at=place:sha256:92e33b54d9946faa5a8487ef527c8c36528e1bc02871dd7a9cb3d110c85e32cd by=reader:9dcf275dfb04 form=alphabet measure=result role=writes scope=conformance/reading-context/explicit-empty-environment-and-literal-text value=\"{\\\"profile\\\":\\\"reading-context@1\\\",\\\"canonical\\\":\\\"[\\\\\\\"reading-context@1\\\\\\\",\\\\\\\"instrument-b\\\\\\\",\\\\\\\"reader-b\\\\\\\",\\\\\\\"policy-b\\\\\\\",[[\\\\\\\"résultat\\\\\\\",\\\\\\\"none\\\\\\\"],[\\\\\\\"source\\\\\\\",\\\\\\\"literal-01\\\\\\\"]],[]]\\\\n\\\",\\\"name\\\":\\\"sha256:93f2f934780170ac5dd7f7611430f8259d5788fb72664397c886d6c6647b9cba\\\",\\\"receipt\\\":\\\"sha256:ae7e2ec621f59b015fd88e1ce578419a556361b3fe1ae81efa213bc5163da483\\\"}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "READER   reader.js · 1 run · 168 ms\nOBSERVE  1 run · 0 read by key · 171 ms\nOWN      imports 19 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 1 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 27 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold df949c95 folded 0.3 s\nKEPT     fold df949c95 miss · no fold was kept before this one\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:92e33b54d9946faa5a8487ef527c8c36528e1bc02871dd7a9cb3d110c85e32cd by=reader:9dcf275dfb04 form=alphabet measure=observed role=writes scope=inputs/sample.json value=92e33b54d9946faa\nbound-lock/1 at=place:sha256:92e33b54d9946faa5a8487ef527c8c36528e1bc02871dd7a9cb3d110c85e32cd by=reader:9dcf275dfb04 form=alphabet measure=result role=writes scope=conformance/reading-context/explicit-empty-environment-and-literal-text value=\"{\\\"profile\\\":\\\"reading-context@1\\\",\\\"canonical\\\":\\\"[\\\\\\\"reading-context@1\\\\\\\",\\\\\\\"instrument-b\\\\\\\",\\\\\\\"reader-b\\\\\\\",\\\\\\\"policy-b\\\\\\\",[[\\\\\\\"résultat\\\\\\\",\\\\\\\"none\\\\\\\"],[\\\\\\\"source\\\\\\\",\\\\\\\"literal-01\\\\\\\"]],[]]\\\\n\\\",\\\"name\\\":\\\"sha256:93f2f934780170ac5dd7f7611430f8259d5788fb72664397c886d6c6647b9cba\\\",\\\"receipt\\\":\\\"sha256:ae7e2ec621f59b015fd88e1ce578419a556361b3fe1ae81efa213bc5163da483\\\"}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 18 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 1 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 1 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 1 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 28 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold df949c95 folded 0.1 s · 0.3 s folded\nKEPT     fold df949c95 miss · no fold was kept before this one\n"
+        }
+      ]
+    },
+    {
+      "name": "catalog-no",
+      "negative": true,
+      "modules": [
+        {
+          "file": "contract/reading-identity.js",
+          "sha256": "b8b2b8e12ba183942c7e62e0314858e264c872366f8d93382837e8a899124ab4"
+        },
+        {
+          "file": "wire/line.js",
+          "sha256": "d683feba756bcd4153ed1860f5094972687db795f394ef3ec17924bc367c96ac"
+        },
+        {
+          "file": "wire/values.js",
+          "sha256": "5b883395c0dc4ecde724a91d6a263c68d180a8e53fac6319daf51087af214d62"
+        },
+        {
+          "file": "wire/outcome.js",
+          "sha256": "deab53c58c078862088ac4bf424fb13ed68793913e399815871031e3a7e41a9a"
+        }
+      ],
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 127 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/catalog-no/reader.js · Error: REFUSE·reading identity undeclared context field principal\nOBSERVE  0 run · 0 read by key · 173 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/catalog-no/reader.js · Error: REFUSE·reading identity undeclared context field principal\n"
+        }
+      ]
+    }
+  ]
+}

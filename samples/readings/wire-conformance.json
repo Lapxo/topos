@@ -1,0 +1,9 @@
+{
+  "profile": "wire-conformance@1",
+  "scope": "capture/wire/refused/0",
+  "line": "bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2",
+  "expected": {
+    "kind": "abstain",
+    "why": "`form=ghost` is a form this reader does not know"
+  }
+}

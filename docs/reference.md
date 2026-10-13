@@ -8,4 +8,5 @@ These are the declared region inputs and outputs. Their presence does not establ
 | figure-line | figure/line/** | No output declared. |
 | figure-refuses | figure/refuses/** | No output declared. |
 | figure-world | figure/world/** | No output declared. |
+| pipeline-release | prose/en/files/workflow/release | No output declared. |
 | wire | audit/wire/** | No output declared. |

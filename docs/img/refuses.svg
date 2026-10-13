@@ -1,11 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120" role="img" aria-label="Refused input: bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2. Reason: `form=ghost` is a form this reader does not know
-">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120" role="img" aria-label="Refused input: bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2. Reason: `form=ghost` is a form this reader does not know">
 <style>
 text{font:14px sans-serif;fill:#202020}.cross{fill:#884488}
 .asked{font:14px monospace;fill:#884488;text-decoration:line-through}
 </style>
 <text class="cross" x="12" y="32"></text>
 <text class="asked" x="32" y="32">bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2</text>
-<text x="32" y="96">`form=ghost` is a form this reader does not know
-</text>
+<text x="32" y="96">`form=ghost` is a form this reader does not know</text>
 </svg>

@@ -1,6 +1,6 @@
 {
   "name": "@lapxo/topos",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Wire, forms, authority and views for interpreting information.",
   "type": "module",
   "license": "MIT",
@@ -121,14 +121,12 @@
     "samples/yes/two-origins-meet-on-one-scope.json",
     "samples/yes/three-origins-two-meet-one-apart.json",
     "samples/yes/render-world.json",
-    "samples/line-reader.mjs",
-    "samples/no/wire-input.capture.json",
-    "samples/no/wire-why.capture.json",
     "vectors/canonical-compatibility.json",
     "vectors/order.cli.json",
     "vectors/native/*.cli.json",
     "vectors/wire/fields.json",
-    "vectors/forms.json"
+    "vectors/forms.json",
+    "vectors/reading-identity.json"
   ],
   "scripts": {
     "build": "tsc --build",

@@ -1,6 +1,8 @@
 export {readReleaseDelivery,placeRequirements} from './adoption.ts';
 export type {ReleaseDelivery,PlaceRequirement} from './adoption.ts';
 import {providerFields} from '../topos/provider-inputs.ts';
+export {readingIdentityBytes,readingIdentity,readingReceiptBytes,readingReceiptIdentity} from './reading-identity.ts';
+export type {ReadingIdentityContext} from './reading-identity.ts';
 export {unionReadings,renderWriter,foldedEvidence} from './readings.ts';
 export type {WorldReading,ReadingUnion,EvidenceProjectionContract} from './readings.ts';
 export {snapshotIdentity,responseIdentity,snapshotAccess,originRegion} from './snapshots.ts';

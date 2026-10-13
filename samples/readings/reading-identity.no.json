@@ -1,0 +1,241 @@
+{
+  "profile": "reading-context@1",
+  "cases": [
+    {
+      "name": "missing-instrument",
+      "context": {
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "z",
+            "input-z"
+          ],
+          [
+            "a",
+            "input-a"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity missing instrument"
+    },
+    {
+      "name": "missing-implementation",
+      "context": {
+        "instrument": "instrument-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "z",
+            "input-z"
+          ],
+          [
+            "a",
+            "input-a"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity missing implementation"
+    },
+    {
+      "name": "missing-policy",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "inputs": [
+          [
+            "z",
+            "input-z"
+          ],
+          [
+            "a",
+            "input-a"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity missing policy"
+    },
+    {
+      "name": "missing-inputs",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity missing inputs"
+    },
+    {
+      "name": "missing-environment",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "z",
+            "input-z"
+          ],
+          [
+            "a",
+            "input-a"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity missing environment"
+    },
+    {
+      "name": "ambiguous-input-coordinate",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "a",
+            "first"
+          ],
+          [
+            "a",
+            "second"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity duplicate inputs coordinate a"
+    },
+    {
+      "name": "ambiguous-environment-coordinate",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "z",
+            "input-z"
+          ],
+          [
+            "a",
+            "input-a"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "first"
+          ],
+          [
+            "runtime",
+            "second"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity duplicate environment coordinate runtime"
+    },
+    {
+      "name": "uncommitted-principal-field",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "z",
+            "input-z"
+          ],
+          [
+            "a",
+            "input-a"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ],
+        "principal": "different-account"
+      },
+      "refusal": "REFUSE·reading identity undeclared context field principal"
+    },
+    {
+      "name": "invalid-input-tuple",
+      "context": {
+        "instrument": "instrument-a",
+        "implementation": "reader-a",
+        "policy": "policy-a",
+        "inputs": [
+          [
+            "a",
+            "input-a",
+            "hidden"
+          ]
+        ],
+        "environment": [
+          [
+            "runtime",
+            "runtime-a"
+          ],
+          [
+            "locale",
+            "locale-a"
+          ]
+        ]
+      },
+      "refusal": "REFUSE·reading identity invalid inputs reference"
+    }
+  ]
+}

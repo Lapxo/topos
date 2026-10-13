@@ -198,3 +198,15 @@ A capsule answers only a declared region and only the reads it is handed. The po
 The shared native readings vector carries the three captures under named audit coordinates. Each quartet is retained separately by its implementation and handed input digests. Missing inputs or a captured output disagreement refuse by coordinate.
 
 The historical SDK agent-effects ceiling is retired as inert here: the SDK interprets declarations and framing but performs no network act. Network-effect observation and authorization remain host responsibilities; this retirement does not declare zero network acts or relax a host ceiling.
+
+
+## Reading context and semantic receipt names
+
+The opt-in reading-context@1 profile names a reading from the admitted instrument identity, complete executable implementation, interpreted policy, complete transitive inputs and explicitly declared relevant environment. readingIdentityBytes emits a domain-separated UTF-8 JSON tuple; readingIdentity applies the caller-supplied admitted digest. Coordinate/reference pairs sort by the existing UTF-8 order. Missing collections remain unknown and refuse; explicit empty collections remain explicit. Duplicate coordinates and undeclared context fields refuse by name. References remain opaque; these pure operations cannot verify a closure, authenticate a reader or authorize reuse.
+
+The reading-receipt@1 profile commits the reading identity and complete result identity. Distinct results keep distinct receipt names even for the same reading. The result identity includes the complete outcome, including refusal, interruption or failure; none is a successful receipt merely because it has a name. Time, signatures and execution diagnostics stay in an authenticated delivery envelope. No receipt is created or stored by the SDK. Current responses also commit the existing responseIdentity context as a named input and must pass snapshotAccess at reuse time; naming a retained receipt never bypasses principal, grants, snapshot, freshness or current permissions.
+
+Samples/readings/reading-identity.yes.json and reading-identity.no.json cover two unrelated contexts and named refusals. vectors/reading-identity.json fixes language-independent canonical bytes. vectors/native/reading-identity.cli.json records published Bound 0.1.8 output and replay on two fixture-authorized places. These are SDK conformance results, not acceptance of Bound caching or lane scheduling. No field is added to the wire, no standing format is reinterpreted, and no object state changes.
+
+
+The wire-conformance@1 reference reader delegates to the maintained fromLine parser. It observes declared JSON cases and retains input, explanation and source kind. A matched negative case is conformance evidence, never admission of the rejected line. The previous bundled stdin sample and its process captures are withdrawn with their memberships; this replacement invokes no subprocess.

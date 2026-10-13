@@ -1,3 +1,5 @@
+export {placeInputs,withPlaceInputs} from '../topos/place-inputs.ts';
+export type {PlaceInputs} from '../topos/place-inputs.ts';
 export {readReleaseDelivery,placeRequirements} from './adoption.ts';
 export type {ReleaseDelivery,PlaceRequirement} from './adoption.ts';
 import {providerFields} from '../topos/provider-inputs.ts';

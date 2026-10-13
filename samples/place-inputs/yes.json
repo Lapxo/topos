@@ -1,0 +1,127 @@
+{
+  "profile": "admitted-place-inputs@1",
+  "hash": "sha256 of canonical UTF-8 profile/selector/ordered-selected-projection bytes; no signatures verified by this encoder",
+  "cases": [
+    {
+      "name": "two effective claims",
+      "live": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001",
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'"
+      ],
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/place-inputs value=admitted-place-inputs@1",
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "expected": {
+        "profile": "admitted-place-inputs@1",
+        "digest": "sha256:0dabca962bd01d0fcfe725cd62b8880883e2cd5d3d67bd42d7790c4497a5e4ef",
+        "selectors": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+        ],
+        "lines": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001",
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'"
+        ]
+      }
+    },
+    {
+      "name": "reversed effective order",
+      "live": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'",
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001"
+      ],
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/place-inputs value=admitted-place-inputs@1",
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "expected": {
+        "profile": "admitted-place-inputs@1",
+        "digest": "sha256:3c7a187c6cc7857e0960fcc9c68f3a59d9440f147bbbcedaea5149d2624204f3",
+        "selectors": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+        ],
+        "lines": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'",
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001"
+        ]
+      }
+    },
+    {
+      "name": "unrelated live claim omitted",
+      "live": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001",
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=unrelated/value value=ignored",
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'"
+      ],
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/place-inputs value=admitted-place-inputs@1",
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "expected": {
+        "profile": "admitted-place-inputs@1",
+        "digest": "sha256:0dabca962bd01d0fcfe725cd62b8880883e2cd5d3d67bd42d7790c4497a5e4ef",
+        "selectors": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+        ],
+        "lines": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001",
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'"
+        ]
+      }
+    },
+    {
+      "name": "admission wrappers excluded",
+      "live": [
+        "bound-lock/1 at=policy:vector by=device epoch=2 form=alphabet measure=id role=writes scope=proof/β sig=opaque-envelope value=001",
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'"
+      ],
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/place-inputs value=admitted-place-inputs@1",
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "expected": {
+        "profile": "admitted-place-inputs@1",
+        "digest": "sha256:0dabca962bd01d0fcfe725cd62b8880883e2cd5d3d67bd42d7790c4497a5e4ef",
+        "selectors": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+        ],
+        "lines": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/β value=001",
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/α value='none'"
+        ]
+      }
+    },
+    {
+      "name": "conflicting live members preserved",
+      "live": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/a value=first",
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/a value=second"
+      ],
+      "world": [
+        "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=wire/place-inputs value=admitted-place-inputs@1",
+        "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+      ],
+      "offer": "offers/test",
+      "region": "reading",
+      "expected": {
+        "profile": "admitted-place-inputs@1",
+        "digest": "sha256:b708a14d3cdcd4cc4f518b1dabce00fc13592f9de7c2850488ee70d161e6b04f",
+        "selectors": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=reads role=demands scope=offers/test/place-inputs/reading value=proof/**"
+        ],
+        "lines": [
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/a value=first",
+          "bound-lock/1 at=policy:vector form=alphabet measure=id role=writes scope=proof/a value=second"
+        ]
+      }
+    }
+  ]
+}

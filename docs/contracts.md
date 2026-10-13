@@ -210,3 +210,16 @@ Samples/readings/reading-identity.yes.json and reading-identity.no.json cover tw
 
 
 The wire-conformance@1 reference reader delegates to the maintained fromLine parser. It observes declared JSON cases and retains input, explanation and source kind. A matched negative case is conformance evidence, never admission of the rejected line. The previous bundled stdin sample and its process captures are withdrawn with their memberships; this replacement invokes no subprocess.
+
+
+## Admitted place inputs
+
+The opt-in admitted-place-inputs@1 profile selects consumer evidence without changing provider-owned standing inputs. A world declares wire/place-inputs role=writes measure=id value=admitted-place-inputs@1 and offers/<offer>/place-inputs/<region> measure=reads, role=reads for optional input or role=demands for required input, with scope masks in value. Required absence refuses by selector name; optional absence stays empty and pays no demand.
+
+placeInputs(world, offer, region, live, hash) is pure: the host must supply an authenticated, already folded live canonical consumer shadow in effective order. The function neither verifies authority nor folds raw history. It reuses semantic-standing@1 envelope exclusion, removes exact redelivery, retains effective order and conflicting live claims, and rejects withdrawal history. The selector never chooses a winning claim.
+
+Identity is canonical UTF-8 JSON [profile, ordered semantic selectors, ordered selected live claims], followed by newline and hashed by the declared digest function. An unrelated live claim does not change this identity. withPlaceInputs appends the projection digest to reading-context@1 inputs without dropping instrument, implementation, policy, transitive inputs, environment or current-answer references; duplicate coordinates refuse.
+
+Request and Asked carry optional place: PlaceInputs, distinct from provider, lines and regional receipts. JSON framing and render/receipt shells preserve this field. An absent field preserves legacy delivery. This profile conveys evidence, never grants authority or proves independence. SDK framing does not itself activate a host handoff; the consuming host must establish its authenticated boundary and identity.
+
+The profile is proved by two distinct sample places through the installed instrument, with captured projections, unchanged replay, and named missing-input/history refusals. Both places are on one declared macOS machine; cross-machine evidence remains pending under Bound L6.

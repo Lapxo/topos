@@ -48,7 +48,7 @@ export function answer(module: Answering, request: Request, self: string): Respo
       const reads = request.reads ?? [];
       const regions = Object.fromEntries(Object.entries(request.regions ?? {}).filter(([name]) => reads.some((read) => matches(read, `region/${name}`)))
         .map(([name, held]) => [name, { lines: handed(['**'], held.lines), receipts: handed(['**'], held.receipts) }]));
-      return { ...(request.provider===undefined?{}:{provider:providerFields(request.provider)}), region: request.region ?? '', at: request.at ?? 3, shape: request.shape ?? '', name: request.name ?? '', reads, lines: handed(reads, request.lines ?? []), regions };
+      return { ...(request.place===undefined?{}:{place:request.place}), ...(request.provider===undefined?{}:{provider:providerFields(request.provider)}), region: request.region ?? '', at: request.at ?? 3, shape: request.shape ?? '', name: request.name ?? '', reads, lines: handed(reads, request.lines ?? []), regions };
     };
     if (request.verb === 'render' && module.render) return { protocol: PROTOCOL, kind: 'fact', lines: module.render(asked()) };
     if (request.verb === 'read' && module.receipt && request.reads !== undefined) return { protocol: PROTOCOL, kind: 'fact', claims: module.receipt(asked()) };

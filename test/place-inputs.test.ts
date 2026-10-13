@@ -40,3 +40,14 @@ test('optional request/asked place projection survives framing and shell without
  assert.deepEqual(receiptShell({reading:{reads:[],region:q=>[{scope:'kept',value:q.place!.digest}]}})(asked),[{scope:'kept',value:place.digest}]);
  const absent={...asked};delete (absent as {place?:unknown}).place;assert.equal(shell({reading:{reads:[],region:q=>[String(q.place)]}})(absent)[0],'undefined');
 });
+
+test('actual answer/respond hand the opt-in place channel to render and receipt; absent stays absent',async()=>{
+ const {answer,respond}=await import('../src/contract/index.ts');
+ const place=placeInputs(world(),offer,'reading',[reference],hash)!;
+ const request={protocol:'bound-lock/1' as const,verb:'render' as const,rootScope:'',files:[],region:'reading',reads:['**'],lines:[other],place};
+ const rendered=answer({render:asked=>{assert.deepEqual(asked.place,place);assert.equal(asked.lines.length,1);assert.equal(asked.lines[0]?.scope,'unrelated/value');return asked.place!.lines;}},request,'reader');
+ assert.equal(rendered.kind,'fact');assert.deepEqual(rendered.lines,place.lines);
+ const framed=JSON.parse(respond({render:asked=>asked.place!.lines},JSON.stringify([request]),'reader'));assert.deepEqual(framed[0].lines,place.lines);
+ const receipt=JSON.parse(respond({receipt:asked=>[{scope:'kept',value:asked.place!.digest}]},JSON.stringify([{...request,verb:'read'}]),'reader'));assert.equal(receipt[0].claims[0].value,place.digest);
+ const missing={...request};delete (missing as {place?:unknown}).place;assert.deepEqual(JSON.parse(respond({render:asked=>[String(asked.place)]},JSON.stringify([missing]),'reader'))[0].lines,['undefined']);
+});

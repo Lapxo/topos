@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {resolve,dirname} from 'node:path';
+import {createRequire,builtinModules} from 'node:module';
 import ts from 'typescript';
 import * as core from '../src/core.ts';
 
@@ -19,12 +20,12 @@ function closure(entry:string,load:(path:string)=>string):string[] {
       if((ts.isImportDeclaration(node)||ts.isExportDeclaration(node))&&node.moduleSpecifier){
         assert.ok(ts.isStringLiteral(node.moduleSpecifier));
         const name=node.moduleSpecifier.text;
-        if(name.startsWith('node:'))throw Error(`host import in pure core: ${name}`);
+        if(name.startsWith('node:')||builtinModules.includes(name))throw Error(`host import in pure core: ${name}`);
         // A type-only dependency contributes no runtime edge.
         const typeOnly=ts.isImportDeclaration(node)?node.importClause?.isTypeOnly:node.isTypeOnly;
         if(!typeOnly){
-          if(!name.startsWith('.'))throw Error(`unresolved runtime dependency in pure core: ${name}`);
-          visit(resolve(dirname(path),name));
+          const resolved=name.startsWith('.')?resolve(dirname(path),name):createRequire(path).resolve(name);
+          visit(resolved);
         }
       }
       ts.forEachChild(node,walk);

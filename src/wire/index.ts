@@ -34,3 +34,7 @@ export {transportSelection,contentRequest} from './transport-port.ts';
 export type {TransportSelection,ContentRequest} from './transport-port.ts';
 export {actBytes,actIdentity,actResultOf,actResultProfile} from './act-result.ts';
 export type {ActResult,ActResultContract,ActPlacement} from './act-result.ts';
+
+/** Opt-in clock context; local-act@1 and authority eligibility retain legacy meaning. */
+export {PLACE_ACT_CONTEXT,placeActContextBytes,readPlaceActContext,originContextBytes,verifyOriginalAtAuthorityContext,verifyPlaceActContext,placeReceiptBytes,placeActReceiptsOf} from './place-act-context.ts';
+export type {ClockBudget,RootContext,OriginProof,PlaceContext,PlaceAct,PlaceReceipt,TrustedClockContract} from './place-act-context.ts';

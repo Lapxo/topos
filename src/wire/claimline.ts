@@ -410,22 +410,32 @@ export function authorityOf(
   const signer = signers.find((s) => s.id === by);
   if (!signer) return { kind: 'grey', why: `signer ${by || '∅'} is not admitted` };
   if (!verify(fields, signer.publicKey)) return { kind: 'grey', why: `the signature does not hold for ${by}` };
-  const epoch = epochOf(fields);
+  return authorityAtEpoch(fields, signer, epochOf(fields));
+}
+
+/** Pure eligibility of an already authenticated record/signer at the supplied
+ * authority ledger epoch. Authentication and context admission remain caller
+ * work. authorityOf uses the ORIGINAL record epoch, retaining its exact legacy
+ * verdicts; an explicit new context may use a distinct root authority epoch. */
+export function authorityAtEpoch(fields:Readonly<Record<string,string>>,signer:Signer,epoch:number,coverageScope:string=fields['scope']??'',clockKind:'record'|'authority'='record'):SignerVerdict {
+  const by=fields['by']??'';
+  if(clockKind==='authority'&&(!Number.isSafeInteger(epoch)||epoch<0))return {kind:'refuse',why:`REFUSE·authority ${by||'∅'} has unknown or invalid authority epoch`,named:by};
+  const clockDescription=clockKind==='authority'?'authority evaluated at epoch':'signed at epoch';
   const window = windowAt(signer, epoch);
   if (window.close !== null && epoch > window.close) {
-    return { kind: 'refuse', why: `REFUSE·authority ${by} signed at epoch ${epoch}, after its epoch closed at ${window.close}`, named: by };
+    return { kind: 'refuse', why: `REFUSE·authority ${by} ${clockDescription} ${epoch}, after its epoch closed at ${window.close}`, named: by };
   }
-  if (epoch < window.start) return { kind: 'grey', why: `signed at epoch ${epoch}, before ${by} was admitted at ${window.start}` };
-  const scope = fields['scope'] ?? '';
+  if (epoch < window.start) return { kind: 'grey', why: `${clockDescription} ${epoch}, before ${by} was admitted at ${window.start}` };
+  const scope = coverageScope;
   const covering = signer.spans === undefined ? signer.coverage : signer.spans.filter((span) => epoch >= span.from && (span.to === null || epoch < span.to)).flatMap((span) => span.globs);
   if (!covering.some((prefix) => prefix === '*' || under(prefix, scope))) {
     return { kind: 'refuse', why: `REFUSE·authority ${by} does not cover ${scope}`, named: by };
   }
-  const depth = resolution(region(scope));
+  const depth = resolution(region(fields['scope']??''));
   if (depth < signer.depth.lo || depth > signer.depth.hi) {
     return { kind: 'refuse', why: `REFUSE·authority ${by} may not sign at depth ${depth}`, named: by };
   }
-  if (within(region(scope), region(KEYS)) && signer.keyClass !== 'authorize') {
+  if (within(region(fields['scope']??''), region(KEYS)) && signer.keyClass !== 'authorize') {
     return { kind: 'refuse', why: `REFUSE·authority ${by} is attest and cannot admit signers`, named: by };
   }
   return { kind: 'admitted', signer: by };

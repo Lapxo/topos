@@ -1,0 +1,151 @@
+{
+  "state": "native pure SDK CONTENT evidence only; no host clock/profile activation or L3 payment",
+  "instrument": "installed published Bound0.1.8",
+  "platform": "same Mac, not two machines",
+  "captures": [
+    {
+      "name": "catalog",
+      "kind": "yes",
+      "case": "valid explicit context",
+      "sampleDigest": "sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594",
+      "readerDigest": "sha256:9203d53a7d54d40f9a25f6d255044a64e826168e5496406b8e8e7c8a7a8c6874",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "[disposable fixture key]"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 341 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=observed role=writes scope=inputs/sample.json value=9fa971945e6631ee\nbound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=result role=reads scope=conformance/place-act-context/result value=\"{\\\"identity\\\":\\\"sha256:a9a56e9d369093695cbdc1b2c2e68187f6a134178bea8e5aaafddcc1d71922c2\\\",\\\"places\\\":[{\\\"place\\\":\\\"catalog/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"},{\\\"place\\\":\\\"inventory/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"}]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "READER   reader.js · 1 run · 558 ms\nSPENT    observe reader.js 5+562 ms\nOBSERVE  1 run · 0 read by key · 570 ms\nOWN      imports 36 ms · bodies 0 ms · removed 0 ms · readers 2 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 1 ms · zoom 1 ms · nos 0 ms · zoomed 0 ms · applied 2 ms · laid 5 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 9 ms · own 53 ms · regions 17 ms · ceilings 3 ms · paid 0 ms · docs 1 ms · ceilings 1 ms\nBEAT     fold d8b16bc5 folded 1.0 s\nKEPT     fold d8b16bc5 miss · no fold was kept before this one\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=observed role=writes scope=inputs/sample.json value=9fa971945e6631ee\nbound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=result role=reads scope=conformance/place-act-context/result value=\"{\\\"identity\\\":\\\"sha256:a9a56e9d369093695cbdc1b2c2e68187f6a134178bea8e5aaafddcc1d71922c2\\\",\\\"places\\\":[{\\\"place\\\":\\\"catalog/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"},{\\\"place\\\":\\\"inventory/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"}]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 4 ms\nOWN      imports 26 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 1 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 4 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 8 ms · own 40 ms · regions 15 ms · ceilings 2 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold d8b16bc5 folded 0.2 s · 1.0 s folded\nKEPT     fold d8b16bc5 miss · no fold was kept before this one\n"
+        }
+      ]
+    },
+    {
+      "name": "inventory",
+      "kind": "yes",
+      "case": "valid explicit context",
+      "sampleDigest": "sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594",
+      "readerDigest": "sha256:9203d53a7d54d40f9a25f6d255044a64e826168e5496406b8e8e7c8a7a8c6874",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "[disposable fixture key]"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 179 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=observed role=writes scope=inputs/sample.json value=9fa971945e6631ee\nbound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=result role=reads scope=conformance/place-act-context/result value=\"{\\\"identity\\\":\\\"sha256:a9a56e9d369093695cbdc1b2c2e68187f6a134178bea8e5aaafddcc1d71922c2\\\",\\\"places\\\":[{\\\"place\\\":\\\"catalog/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"},{\\\"place\\\":\\\"inventory/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"}]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "READER   reader.js · 1 run · 678 ms\nSPENT    observe reader.js 5+684 ms\nOBSERVE  1 run · 0 read by key · 693 ms\nOWN      imports 80 ms · bodies 1 ms · removed 0 ms · readers 3 ms · alphabets 0 ms · capsules 0 ms · regions 6 ms · vectors 3 ms · zoom 1 ms · nos 1 ms · zoomed 1 ms · applied 5 ms · laid 14 ms · resets 2 ms · store 1 ms · ship 1 ms\nSPENT    fold capsules 24 ms · own 133 ms · regions 36 ms · ceilings 6 ms · paid 1 ms · docs 1 ms · ceilings 3 ms\nBEAT     fold a70d280e folded 1.6 s\nKEPT     fold a70d280e miss · no fold was kept before this one\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=observed role=writes scope=inputs/sample.json value=9fa971945e6631ee\nbound-lock/1 at=place:sha256:9fa971945e6631eea2a624f21b500e81d46b0dfc33cf86ca867e4763d9be2594 by=reader:fd508235e07e form=alphabet measure=result role=reads scope=conformance/place-act-context/result value=\"{\\\"identity\\\":\\\"sha256:a9a56e9d369093695cbdc1b2c2e68187f6a134178bea8e5aaafddcc1d71922c2\\\",\\\"places\\\":[{\\\"place\\\":\\\"catalog/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"},{\\\"place\\\":\\\"inventory/TARGET.bound\\\",\\\"epoch\\\":\\\"2\\\"}]}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 10 ms\nOWN      imports 351 ms · bodies 0 ms · removed 2 ms · readers 4 ms · alphabets 1 ms · capsules 0 ms · regions 20 ms · vectors 7 ms · zoom 2 ms · nos 26 ms · zoomed 0 ms · applied 13 ms · laid 34 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 28 ms · own 484 ms · regions 42 ms · ceilings 4 ms · paid 0 ms · docs 1 ms · ceilings 19 ms\nBEAT     fold a70d280e folded 0.9 s · 1.6 s folded\nKEPT     fold a70d280e miss · no fold was kept before this one\n"
+        }
+      ]
+    },
+    {
+      "name": "catalog-no",
+      "kind": "no",
+      "case": "signed receiver scope substitution",
+      "sampleDigest": "sha256:3815d10b54dd651a6e2f7d436d43c8ce44110807042ce8ab8bca161553c30691",
+      "readerDigest": "sha256:9203d53a7d54d40f9a25f6d255044a64e826168e5496406b8e8e7c8a7a8c6874",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "[disposable fixture key]"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 473 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/catalog-no/reader.js · Error: REFUSE·place-act receiver receipt signature\nOBSERVE  0 run · 0 read by key · 561 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/catalog-no/reader.js · Error: REFUSE·place-act receiver receipt signature\n"
+        }
+      ]
+    },
+    {
+      "name": "inventory-no",
+      "kind": "no",
+      "case": "sibling receiver signature swap",
+      "sampleDigest": "sha256:15998f4eb1ed31545b43661b263bf4972497c6f107baafa84e9e526f12003e16",
+      "readerDigest": "sha256:9203d53a7d54d40f9a25f6d255044a64e826168e5496406b8e8e7c8a7a8c6874",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "[disposable fixture key]"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 261 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/inventory-no/reader.js · Error: REFUSE·place-act receiver receipt signature\nOBSERVE  0 run · 0 read by key · 257 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/inventory-no/reader.js · Error: REFUSE·place-act receiver receipt signature\n"
+        }
+      ]
+    }
+  ]
+}

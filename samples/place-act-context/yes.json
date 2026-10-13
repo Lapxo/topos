@@ -1,0 +1,75 @@
+{
+  "profile": "place-act-context@1",
+  "scopeSubstitutionReceipts": [
+    {
+      "by": "owner",
+      "place": "catalog/TARGET.bound",
+      "signature": "ed25519:sample:2IHIxM75sWJao4ZKZbFc/D1yyu1vpGk/X7o1V0nNOIZp4RKvtgF2u4A6AXqn9HGqf3gc81Ka9Mnkl+DHDHxyAQ=="
+    },
+    {
+      "by": "owner",
+      "place": "inventory/TARGET.bound",
+      "signature": "ed25519:sample:3PJ69kJtAu6ANgeLfkRwKXDA4QhIlnoeXuy0rfqmDv9epz/oLVy0OrvUO4lViRCUYVIgmHOtUUBLRJRXGGo8Bw=="
+    }
+  ],
+  "rootPrefix": [
+    "bound-lock/1 at=controlled:authority by=owner epoch=1 form=alphabet measure=id role=writes scope=wire/signature-algorithms sig=\"ed25519:sample:krQxGle547OT38wIO7aFAIbRTPeFp3r/SS8knNNFNP9Sv+DCN9BuXbbOG88KIKcwm17LeMt66I/QN0/y8XwCDQ==\" value=ed25519:sample",
+    "bound-lock/1 at=controlled:authority by=owner epoch=1 form=alphabet measure=id role=writes scope=wire/families sig=\"ed25519:sample:QK4eiXVJYQ8wnp8JP31chz7I8tOKu++N5BhUJcFVOmHvgfAIveJzSDpJQIjIl/NqHf+o7dLs/G0KJSn4VZssBQ==\" value=region|view",
+    "bound-lock/1 at=controlled:authority by=owner epoch=1 form=alphabet measure=coordinates role=writes scope=region/catalog sig=\"ed25519:sample:3jDn00+Sb7mSApIx3szG8ARRY2J/xVHGZvPuCXNdDrO435EF5vugNa6BteyI4fR8o/08xzhrSjnBlKEYpRovAw==\" value=catalog/**",
+    "bound-lock/1 at=controlled:authority by=owner epoch=1 form=alphabet measure=coordinates role=writes scope=region/inventory sig=\"ed25519:sample:B828oQvR+yMYWYt2Y7Q6pRKRRFz06NR8f9ty8KBlC89yNCKu/naspgPv507grTM1jS5qMA7e0XrOaZ0EBGxOBA==\" value=inventory/**",
+    "bound-lock/1 at=controlled:authority by=owner epoch=5 form=alphabet measure=class role=writes scope=keys/lane sig=\"ed25519:sample:svXqHPXrjoq5bsbqJq3PEoH6/vYCJH0YExFJ4JB4C4H9Dx+hmZlG0iV72Zsxw1nkT8vqopAPmMPNRKDitK6IAw==\" value=attest",
+    "bound-lock/1 at=controlled:authority by=owner epoch=5 form=alphabet measure=public-key role=writes scope=keys/lane sig=\"ed25519:sample:J/8dSCOJa89SgKf6k1+FcZ/i+nf8EQ7tw+R/DlvGRrHAo4tWa+xL0yfLsw9uYqcynnEWMqrJCq6KGrDV6nV+BQ==\" value=\"MCowBQYDK2VwAyEANMG7qjQg94E5GpIrMGm0KZwsd0Fr607GnH9MXBAaokQ=\"",
+    "bound-lock/1 at=controlled:authority by=owner epoch=5 form=alphabet measure=coverage role=writes scope=keys/lane sig=\"ed25519:sample:7RkfWGV418lrYWFkyko0WrXYggYpdbbrU/UwXGuyabXIISlDPbZBgJWy3XGpOtVDV8g6RTQhtV6SPP7U81U6Dw==\" value=region/catalog/items|region/inventory/items",
+    "bound-lock/1 at=controlled:authority by=owner epoch=5 form=alphabet measure=resolution role=writes scope=keys/lane sig=\"ed25519:sample:ekiGb0yepCMlzavc5BVxytklZRt5jayIs0tTluu6nBzK6RM7ZOAWHnJbsmQB9F2rg7GxVlPljGE45FOQGSvhBg==\" value=1..16",
+    "bound-lock/1 at=controlled:authority by=owner epoch=6 form=alphabet measure=digest role=writes scope=receipts sig=\"ed25519:sample:woR3zrYGAtbxPLlPHS+uw+wVYixfRtvKY/v8sQd52WNVs8PX6QnhU5rtzSTlYne25+sFah/vtFdxQslkrKYTDA==\" value=sha256:5f6b7dda9aa1c85f62d9ccbfce8da592bfd95c78e5c6a821ee3e5e568e75abd6"
+  ],
+  "rootProof": "ed25519:sample:e0Q3jNj0hQTiXRGbxvqSpiZldXHWvYhzPF0YjWj3hW1wQp0ip5TT1f8iRAY+OpovjEQJmAETR14YderQXdLsBA==",
+  "rootAnchor": {
+    "id": "owner",
+    "publicKey": "MCowBQYDK2VwAyEAafzF/Ch8FOs30s6ktPN6gGfJQiLJ4Z1sQU5s27ggrmc=",
+    "keyClass": "authorize",
+    "coverage": [
+      "*"
+    ],
+    "depth": {
+      "lo": 1,
+      "hi": 16
+    },
+    "admittedBy": []
+  },
+  "original": "bound-lock/1 at=controlled:authority by=lane epoch=2 form=alphabet measure=id role=writes scope=items/value sig=\"ed25519:sample:IbjF2E9uJDYAtDKA4liZdG7b8vyrMA9d1Kjqy/Tfr3k3ylkhGOTTkOeNY+t+9wz4rB7PI4Ppf7Q4CKcea2CnAw==\" value=retained",
+  "context": "[\"place-act-context@1\",\"transaction\",[\"root-origin\",\"sha256:c9e952673f9615f9491f24f4175313716600cb80610203b617e8ad479f32f020\",\"6\",\"sha256:a9240665d1b42c49b7eb6a132d6fcab2e39dd907ea6ebcf0d65b0e373d693e3f\",\"sha256:a9240665d1b42c49b7eb6a132d6fcab2e39dd907ea6ebcf0d65b0e373d693e3f\",[\"sha256:10d4975742719573e02faabacf1e3f269b1fbf6207fd10f8215b7a874f993be8\"]],[[\"catalog/TARGET.bound\",\"sha256:d774b02f6d8f252949b48510207aca2994515093148f9cd6e49f5ec8d7a51ce7\",\"2\",\"sha256:c3bcdf46bf6137f3c4faa4b59a50ca861f3868ed51eb309bb478472b68dd6ff8\",[\"bound-lock/1 at=controlled:authority by=lane epoch=2 form=alphabet measure=id role=writes scope=items/value sig=\\\"ed25519:sample:IbjF2E9uJDYAtDKA4liZdG7b8vyrMA9d1Kjqy/Tfr3k3ylkhGOTTkOeNY+t+9wz4rB7PI4Ppf7Q4CKcea2CnAw==\\\" value=retained\"],[[\"lane\",\"ed25519:sample:aYUupG5cmLkVvm/5P3AI/q0XdyFFQkS8nbfr7N2gw8PcsMIV2kqymvBX+xNd08boy0mh0mn5ymkRmTa/YzkDAg==\"]]],[\"inventory/TARGET.bound\",\"sha256:e89fbec4d678a2be992512cd25ab70429f3abd3233af147fae1ae5bd83a30ff9\",\"2\",\"sha256:a55e03eb9200d6024ec3b347bd5df4b075079bf05739811cde36682f5995f00a\",[\"bound-lock/1 at=controlled:authority by=lane epoch=2 form=alphabet measure=id role=writes scope=items/value sig=\\\"ed25519:sample:IbjF2E9uJDYAtDKA4liZdG7b8vyrMA9d1Kjqy/Tfr3k3ylkhGOTTkOeNY+t+9wz4rB7PI4Ppf7Q4CKcea2CnAw==\\\" value=retained\"],[[\"lane\",\"ed25519:sample:XsQ6vbQvm+MjlCFi05Qd942SCK6nq3W+/8L4t6L/RTwTuN1Y2FJNn1nAP5O3xNvdgXQVTW7+gKQUpyAWns5yCg==\"]]]]]\n",
+  "receipts": [
+    {
+      "by": "owner",
+      "place": "catalog/TARGET.bound",
+      "signature": "ed25519:sample:lk7BEz9vTOprr2ll+Pa+LMeXNpdzNpP/pYACcogOF5KL+Z9r27gD1A2/X+aRftum0oinf1UQ2UZG2JLydFw2Dg=="
+    },
+    {
+      "by": "owner",
+      "place": "inventory/TARGET.bound",
+      "signature": "ed25519:sample:0MXXasBoGl9g7YhB3e7SiIhtmYUwvFGXzo7ECp32G/Ac2CFK/BQIEnbo4bE3WUlY1Y5RisKmtwR0IIfUD/JHCw=="
+    }
+  ],
+  "budget": {
+    "bytes": 65536,
+    "records": 16,
+    "placements": 2,
+    "policies": 4,
+    "proofs": 8,
+    "signers": 4
+  },
+  "expected": {
+    "identity": "sha256:a9a56e9d369093695cbdc1b2c2e68187f6a134178bea8e5aaafddcc1d71922c2",
+    "places": [
+      {
+        "place": "catalog/TARGET.bound",
+        "epoch": "2"
+      },
+      {
+        "place": "inventory/TARGET.bound",
+        "epoch": "2"
+      }
+    ]
+  }
+}

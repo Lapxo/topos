@@ -223,3 +223,20 @@ Identity is canonical UTF-8 JSON [profile, ordered semantic selectors, ordered s
 Request and Asked carry optional place: PlaceInputs, distinct from provider, lines and regional receipts. JSON framing and render/receipt shells preserve this field. An absent field preserves legacy delivery. This profile conveys evidence, never grants authority or proves independence. SDK framing does not itself activate a host handoff; the consuming host must establish its authenticated boundary and identity.
 
 The profile is proved by two distinct sample places through the installed instrument, with captured projections, unchanged replay, and named missing-input/history refusals. Both places are on one declared macOS machine; cross-machine evidence remains pending under Bound L6.
+
+
+## Prospective place-act context
+
+This isolated prototype proposes place-act-context@1; it is not activated by the published package. local-act@1 retains its exact format and meaning. Original signed records keep their signer, scope, bytes and origin epoch. Each root-admitted logical place (` . ` or `<place>/TARGET.bound`) has its own receipt clock; origin namespace is authenticated separately from placement.
+
+Original signature verification precedes existing key eligibility. The shared authority-at-epoch primitive uses the explicitly authenticated root authority epoch and qualified coverage coordinate; it never replaces a signed epoch. A grant starting at root epoch 5 can validate an unchanged local epoch 2 record at root authority epoch 6. Every original signer authenticates the complete origin frame. Missing or borrowed proofs, namespace swaps, unknown clocks and partial receiver signatures refuse. Neither a snapshot, name nor retained signature grants fresh coverage or independence.
+
+Canonical profile tuples use UTF-8 JSON arrays, exact strings and decimal-text safe-integer clocks. Byte, record, place, policy, proof and signer resources are mandatory. Bytes are bounded before parse, counts before signature/hash work; all public signing constructors and standalone verification enforce the same boundary. No wire field is added.
+
+Historical inspection and replay use the authenticated committed prefix; they do not revive revoked grants. Pure verification returns dependency references. The host must hold authority/policy protection through atomic publication, compare the selected previous heads and next epochs, and retain per-place signed receipts. The pure SDK does not prove storage freshness, crash recovery or power-loss durability.
+
+Legacy globally-clocked histories retain their root namespace, signatures, epochs and withdrawals. A host must not compare legacy epoch 22 with child epoch 2 using raw maximum or apply a child withdrawal across origins. The new profile requires its own admitted compatibility and host projection boundary.
+
+The exact proposed transaction tuple is `["place-act-context@1","transaction",["authorityNamespace","rootSnapshotReference","rootAuthorityEpoch","rootPrefixReference","effectiveAuthorityHead",["effective policy references sorted by UTF-8 bytes"]],[["receivingNamespace","previousHead","nextEpoch","originPrefixReference",["ordered original signed lines"],[["originProofSigner","signatureValue"]]]]]`. The origin and receipt tuples are `["place-act-context@1","origin","originProofSigner","receivingNamespace","originEpoch","originPrefixReference","rootSnapshotReference",["original canonical signed lines in effective order"]]` and `["place-act-context@1","receipt","receiptSigner","receiverStatementScope","transactionIdentity","receivingNamespace","previousHead","nextEpoch","rootSnapshotReference"]`. Instrument-selected verification and namespace admission derive from the same authenticated root snapshot; packet-selected verifiers are not accepted.
+
+These native samples measure the pure candidate API through installed Bound 0.1.8 on two places of one Mac. They do not enable Bound place-local transactions or pay L3. Other-machine evidence remains pending L6.

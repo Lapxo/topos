@@ -16,3 +16,7 @@ export {checkCommandPort,commandRequest,commandResponse} from './contract/comman
 export {releaseSuccessors,inspectionSelection,weightOf,vacuityOf} from './contract/inspection.ts';
 export {readReleaseDelivery,placeRequirements} from './contract/adoption.ts';
 export type {ReleaseDelivery,PlaceRequirement} from './contract/adoption.ts';
+
+/** Opt-in clock context; local-act@1 and authority eligibility retain legacy meaning. */
+export {PLACE_ACT_CONTEXT,placeActContextBytes,readPlaceActContext,originContextBytes,verifyOriginalAtAuthorityContext,verifyPlaceActContext,placeReceiptBytes,placeActReceiptsOf} from './wire/place-act-context.ts';
+export type {ClockBudget,RootContext,OriginProof,PlaceContext,PlaceAct,PlaceReceipt,TrustedClockContract} from './wire/place-act-context.ts';

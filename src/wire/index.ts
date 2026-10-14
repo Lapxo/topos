@@ -4,7 +4,7 @@ export type { Claim, Method } from './types.ts';
 export { byBytes, canonical, parse, parseForSigning, signedBytes } from './line.ts';
 export { alphabet, atResolution, fields, requirement, steps } from './grammar.ts';
 export type { Alphabet, Field, Requirement, Resolution } from './grammar.ts';
-export { fromLine, signersOf, authorityOf, windowAt, roleClaimsOf, roleAt, namesAt, isKeyClaim, isWireClaim, wireAt, ENVELOPE } from './claimline.ts';
+export { fromLine, signersOf, authorityOf, authorityAtEpoch, windowAt, roleClaimsOf, roleAt, namesAt, isKeyClaim, isWireClaim, wireAt, ENVELOPE } from './claimline.ts';
 export type { Published, Signer, SignerVerdict, CoordinateRole, RoleClaim } from './claimline.ts';
 export { matches } from './classes.ts';
 export { CAPSULE, EXTENSION, LOCK, RECEIPTS } from './names.ts';

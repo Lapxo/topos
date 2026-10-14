@@ -1,0 +1,79 @@
+{
+  "cases": [
+    {
+      "name": "catalog",
+      "fields": {
+        "scope": "port/catalog",
+        "role": "writes",
+        "form": "alphabet",
+        "measure": "id",
+        "value": "retained-original",
+        "at": "witness:original",
+        "by": "device",
+        "epoch": "2",
+        "sig": "ed25519:sample:HAQq5VWjIh4AZ/AetaVwPFDNNqQWC0ZdKNveBmAtdz52zG40RUCBN0i7+lL9AhI2G1sVWTXDqGfyXvVEx2aeDw=="
+      },
+      "signer": {
+        "id": "device",
+        "keyClass": "authorize",
+        "publicKey": "MCowBQYDK2VwAyEAvvZP0bDWq89XuVrQGY6cujdBQKyGTDk3gvLe+REGX+A=",
+        "coverage": [
+          "port/**"
+        ],
+        "depth": {
+          "lo": 1,
+          "hi": 16
+        },
+        "admittedBy": [],
+        "epoch": {
+          "start": 1,
+          "close": 6
+        }
+      },
+      "currentEpoch": 7,
+      "coverageScope": "port/catalog"
+    },
+    {
+      "name": "route-notes",
+      "fields": {
+        "scope": "requests/routes",
+        "role": "writes",
+        "form": "alphabet",
+        "measure": "id",
+        "value": "retained-original",
+        "at": "witness:original",
+        "by": "device",
+        "epoch": "3",
+        "sig": "ed25519:sample:qYPCAGPNIoMOYeF2pAEZXJ/9gasvHZYSFaSGlPS+/CkLo/yIVXjvdHOn1bwoNWNZNcjkOfX24cgxau28SwBiCA=="
+      },
+      "signer": {
+        "id": "device",
+        "keyClass": "authorize",
+        "publicKey": "MCowBQYDK2VwAyEA5KuvqeqPDswZNjFEuYfuQ2IItZ5j3TiLV0PTuexPCb8=",
+        "coverage": [
+          "requests/**"
+        ],
+        "depth": {
+          "lo": 1,
+          "hi": 16
+        },
+        "admittedBy": [],
+        "epoch": {
+          "start": 1,
+          "close": null
+        },
+        "spans": [
+          {
+            "globs": [
+              "requests/**"
+            ],
+            "from": 1,
+            "to": 8
+          }
+        ]
+      },
+      "currentEpoch": 8,
+      "coverageScope": "requests/routes"
+    }
+  ]
+}

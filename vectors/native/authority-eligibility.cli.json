@@ -1,0 +1,288 @@
+{
+  "instrument": "published Bound0.1.8",
+  "state": "disposable fixture content/eligibility only; no owner, API authenticates no record, same Mac",
+  "captures": [
+    {
+      "name": "catalog",
+      "negative": false,
+      "sample": {
+        "name": "catalog",
+        "fields": {
+          "scope": "port/catalog",
+          "role": "writes",
+          "form": "alphabet",
+          "measure": "id",
+          "value": "retained-original",
+          "at": "witness:original",
+          "by": "device",
+          "epoch": "2",
+          "sig": "ed25519:sample:HAQq5VWjIh4AZ/AetaVwPFDNNqQWC0ZdKNveBmAtdz52zG40RUCBN0i7+lL9AhI2G1sVWTXDqGfyXvVEx2aeDw=="
+        },
+        "signer": {
+          "id": "device",
+          "keyClass": "authorize",
+          "publicKey": "MCowBQYDK2VwAyEAvvZP0bDWq89XuVrQGY6cujdBQKyGTDk3gvLe+REGX+A=",
+          "coverage": [
+            "port/**"
+          ],
+          "depth": {
+            "lo": 1,
+            "hi": 16
+          },
+          "admittedBy": [],
+          "epoch": {
+            "start": 1,
+            "close": 6
+          }
+        },
+        "currentEpoch": 5,
+        "coverageScope": "port/catalog"
+      },
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 132 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:75875f6b28de6ef6550aee2cf6aa24a82f335d19f21123fdd1aa425b2009247d by=reader:007a717df7f9 form=alphabet measure=observed role=writes scope=inputs/sample.json value=75875f6b28de6ef6\nbound-lock/1 at=place:sha256:75875f6b28de6ef6550aee2cf6aa24a82f335d19f21123fdd1aa425b2009247d by=reader:007a717df7f9 form=alphabet measure=result role=writes scope=conformance/authority-eligibility/catalog value=\"{\\\"original\\\":\\\"admitted\\\",\\\"current\\\":\\\"admitted\\\",\\\"originalEpoch\\\":\\\"2\\\",\\\"signatureUnchanged\\\":true}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "READER   reader.js · 1 run · 170 ms\nOBSERVE  1 run · 0 read by key · 174 ms\nOWN      imports 19 ms · bodies 0 ms · removed 0 ms · readers 1 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 1 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 0 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 28 ms · regions 10 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 6270c247 folded 0.4 s\nKEPT     fold 6270c247 miss · no fold was kept before this one\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:75875f6b28de6ef6550aee2cf6aa24a82f335d19f21123fdd1aa425b2009247d by=reader:007a717df7f9 form=alphabet measure=observed role=writes scope=inputs/sample.json value=75875f6b28de6ef6\nbound-lock/1 at=place:sha256:75875f6b28de6ef6550aee2cf6aa24a82f335d19f21123fdd1aa425b2009247d by=reader:007a717df7f9 form=alphabet measure=result role=writes scope=conformance/authority-eligibility/catalog value=\"{\\\"original\\\":\\\"admitted\\\",\\\"current\\\":\\\"admitted\\\",\\\"originalEpoch\\\":\\\"2\\\",\\\"signatureUnchanged\\\":true}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 17 ms · bodies 0 ms · removed 1 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 2 ms · vectors 0 ms · zoom 0 ms · nos 0 ms · zoomed 0 ms · applied 1 ms · laid 3 ms · resets 1 ms · store 0 ms · ship 1 ms\nSPENT    fold capsules 5 ms · own 27 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold 6270c247 folded 0.1 s · 0.4 s folded\nKEPT     fold 6270c247 miss · no fold was kept before this one\n"
+        }
+      ]
+    },
+    {
+      "name": "catalog",
+      "negative": true,
+      "sample": {
+        "name": "catalog",
+        "fields": {
+          "scope": "port/catalog",
+          "role": "writes",
+          "form": "alphabet",
+          "measure": "id",
+          "value": "retained-original",
+          "at": "witness:original",
+          "by": "device",
+          "epoch": "2",
+          "sig": "ed25519:sample:HAQq5VWjIh4AZ/AetaVwPFDNNqQWC0ZdKNveBmAtdz52zG40RUCBN0i7+lL9AhI2G1sVWTXDqGfyXvVEx2aeDw=="
+        },
+        "signer": {
+          "id": "device",
+          "keyClass": "authorize",
+          "publicKey": "MCowBQYDK2VwAyEAvvZP0bDWq89XuVrQGY6cujdBQKyGTDk3gvLe+REGX+A=",
+          "coverage": [
+            "port/**"
+          ],
+          "depth": {
+            "lo": 1,
+            "hi": 16
+          },
+          "admittedBy": [],
+          "epoch": {
+            "start": 1,
+            "close": 6
+          }
+        },
+        "currentEpoch": 7,
+        "coverageScope": "port/catalog"
+      },
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 133 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/catalog-no/reader.js · Error: REFUSE·authority device authority evaluated at epoch 7, after its epoch closed at 6\nOBSERVE  0 run · 0 read by key · 186 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/catalog-no/reader.js · Error: REFUSE·authority device authority evaluated at epoch 7, after its epoch closed at 6\n"
+        }
+      ]
+    },
+    {
+      "name": "route-notes",
+      "negative": false,
+      "sample": {
+        "name": "route-notes",
+        "fields": {
+          "scope": "requests/routes",
+          "role": "writes",
+          "form": "alphabet",
+          "measure": "id",
+          "value": "retained-original",
+          "at": "witness:original",
+          "by": "device",
+          "epoch": "3",
+          "sig": "ed25519:sample:qYPCAGPNIoMOYeF2pAEZXJ/9gasvHZYSFaSGlPS+/CkLo/yIVXjvdHOn1bwoNWNZNcjkOfX24cgxau28SwBiCA=="
+        },
+        "signer": {
+          "id": "device",
+          "keyClass": "authorize",
+          "publicKey": "MCowBQYDK2VwAyEA5KuvqeqPDswZNjFEuYfuQ2IItZ5j3TiLV0PTuexPCb8=",
+          "coverage": [
+            "requests/**"
+          ],
+          "depth": {
+            "lo": 1,
+            "hi": 16
+          },
+          "admittedBy": [],
+          "epoch": {
+            "start": 1,
+            "close": null
+          },
+          "spans": [
+            {
+              "globs": [
+                "requests/**"
+              ],
+              "from": 1,
+              "to": 8
+            }
+          ]
+        },
+        "currentEpoch": 7,
+        "coverageScope": "requests/routes"
+      },
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 133 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:392bd627a4e404003a99dbda8bded5ba81e45ef16e629b8ec9ff78260c0d3dba by=reader:007a717df7f9 form=alphabet measure=observed role=writes scope=inputs/sample.json value=392bd627a4e40400\nbound-lock/1 at=place:sha256:392bd627a4e404003a99dbda8bded5ba81e45ef16e629b8ec9ff78260c0d3dba by=reader:007a717df7f9 form=alphabet measure=result role=writes scope=conformance/authority-eligibility/route-notes value=\"{\\\"original\\\":\\\"admitted\\\",\\\"current\\\":\\\"admitted\\\",\\\"originalEpoch\\\":\\\"3\\\",\\\"signatureUnchanged\\\":true}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "READER   reader.js · 1 run · 179 ms\nOBSERVE  1 run · 0 read by key · 184 ms\nOWN      imports 20 ms · bodies 1 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 0 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 2 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 4 ms · own 29 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 0 ms\nBEAT     fold 66bcb729 folded 0.4 s\nKEPT     fold 66bcb729 miss · no fold was kept before this one\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "bound-lock/1 at=place:sha256:392bd627a4e404003a99dbda8bded5ba81e45ef16e629b8ec9ff78260c0d3dba by=reader:007a717df7f9 form=alphabet measure=observed role=writes scope=inputs/sample.json value=392bd627a4e40400\nbound-lock/1 at=place:sha256:392bd627a4e404003a99dbda8bded5ba81e45ef16e629b8ec9ff78260c0d3dba by=reader:007a717df7f9 form=alphabet measure=result role=writes scope=conformance/authority-eligibility/route-notes value=\"{\\\"original\\\":\\\"admitted\\\",\\\"current\\\":\\\"admitted\\\",\\\"originalEpoch\\\":\\\"3\\\",\\\"signatureUnchanged\\\":true}\"\nbound-lock/1 at=place:sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:7216b46885c91cae64058e1a51f5741242500f55103faa1667a25a18aacf1817\n",
+          "stderr": "OBSERVE  0 run · 1 read by key · 1 readers kept whole · 3 ms\nOWN      imports 18 ms · bodies 0 ms · removed 0 ms · readers 0 ms · alphabets 0 ms · capsules 1 ms · regions 1 ms · vectors 0 ms · zoom 0 ms · nos 1 ms · zoomed 0 ms · applied 1 ms · laid 2 ms · resets 1 ms · store 0 ms · ship 0 ms\nSPENT    fold capsules 5 ms · own 27 ms · regions 9 ms · ceilings 1 ms · paid 0 ms · docs 0 ms · ceilings 1 ms\nBEAT     fold 66bcb729 folded 0.1 s · 0.4 s folded\nKEPT     fold 66bcb729 miss · no fold was kept before this one\n"
+        }
+      ]
+    },
+    {
+      "name": "route-notes",
+      "negative": true,
+      "sample": {
+        "name": "route-notes",
+        "fields": {
+          "scope": "requests/routes",
+          "role": "writes",
+          "form": "alphabet",
+          "measure": "id",
+          "value": "retained-original",
+          "at": "witness:original",
+          "by": "device",
+          "epoch": "3",
+          "sig": "ed25519:sample:qYPCAGPNIoMOYeF2pAEZXJ/9gasvHZYSFaSGlPS+/CkLo/yIVXjvdHOn1bwoNWNZNcjkOfX24cgxau28SwBiCA=="
+        },
+        "signer": {
+          "id": "device",
+          "keyClass": "authorize",
+          "publicKey": "MCowBQYDK2VwAyEA5KuvqeqPDswZNjFEuYfuQ2IItZ5j3TiLV0PTuexPCb8=",
+          "coverage": [
+            "requests/**"
+          ],
+          "depth": {
+            "lo": 1,
+            "hi": 16
+          },
+          "admittedBy": [],
+          "epoch": {
+            "start": 1,
+            "close": null
+          },
+          "spans": [
+            {
+              "globs": [
+                "requests/**"
+              ],
+              "from": 1,
+              "to": 8
+            }
+          ]
+        },
+        "currentEpoch": 8,
+        "coverageScope": "requests/routes"
+      },
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "device",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET · 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims · 0 superseded · 126 ms\nFACT     vouched · 0 sources under 0 locations · 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/route-notes-no/reader.js · Error: REFUSE·authority device does not cover requests/routes\nOBSERVE  0 run · 0 read by key · 181 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/route-notes-no/reader.js · Error: REFUSE·authority device does not cover requests/routes\n"
+        }
+      ]
+    }
+  ]
+}

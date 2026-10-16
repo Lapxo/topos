@@ -1,0 +1,68 @@
+{
+  "profile": "consumed-algebra-upgrade@1",
+  "captureKind": "native CLI actual candidate form execution; private fixture path not part of source-of-truth",
+  "selectedToposVersion": "0.2.1 candidate; exact compiled forms identical to captured0.2.0-metadata candidate",
+  "obligations": "0.4.3",
+  "vectors": [
+    {
+      "name": "reservoir",
+      "kind": "yes",
+      "input": "samples/consumed-algebra/yes/reservoir.json",
+      "inputDigest": "sha256:9775ee796c7cdb922a903770cf586c236292ae1ecf225de59ba2949618d0bd4d",
+      "instrument": "@lapxo/bound@0.2.1",
+      "command": [
+        "fold",
+        "--as",
+        "evidence"
+      ],
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:46b97c16b27ea4acec9bfd7e1fa00a2576071b750597cfe1f504dbc874e8a0b2 by=reader:acca41f349a2 form=alphabet measure=observed role=writes scope=inputs/sample.json value=46b97c16b27ea4ac\nbound-lock/1 at=place:sha256:46b97c16b27ea4acec9bfd7e1fa00a2576071b750597cfe1f504dbc874e8a0b2 by=reader:acca41f349a2 form=interval measure=count role=writes scope=compatibility/captures value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n",
+      "cause": null
+    },
+    {
+      "name": "reservoir",
+      "kind": "no",
+      "input": "samples/consumed-algebra/no/reservoir.json",
+      "inputDigest": "sha256:77523c0e84b067f827e4a5788b431d2d127260088eca23ba88984fc54dc7d597",
+      "instrument": "@lapxo/bound@0.2.1",
+      "command": [
+        "fold",
+        "--as",
+        "evidence"
+      ],
+      "status": 1,
+      "stdout": "",
+      "cause": "REFUSE·K-U differing expected projection"
+    },
+    {
+      "name": "shipping",
+      "kind": "yes",
+      "input": "samples/consumed-algebra/yes/shipping.json",
+      "inputDigest": "sha256:d37e2fb80d815879edd9cbace3e1631fcc062b4d6c1e705b96644f4401853241",
+      "instrument": "@lapxo/bound@0.2.1",
+      "command": [
+        "fold",
+        "--as",
+        "evidence"
+      ],
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:36aafd6dae9c479a977471360673dfd062158d14aa33505964efd05283988c28 by=reader:acca41f349a2 form=alphabet measure=observed role=writes scope=inputs/sample.json value=36aafd6dae9c479a\nbound-lock/1 at=place:sha256:36aafd6dae9c479a977471360673dfd062158d14aa33505964efd05283988c28 by=reader:acca41f349a2 form=interval measure=count role=writes scope=compatibility/captures value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n",
+      "cause": null
+    },
+    {
+      "name": "shipping",
+      "kind": "no",
+      "input": "samples/consumed-algebra/no/shipping.json",
+      "inputDigest": "sha256:1a23a53e5d0cb4e8100c8c606312e131e2419a43dcc3826256fd566d8dfd4948",
+      "instrument": "@lapxo/bound@0.2.1",
+      "command": [
+        "fold",
+        "--as",
+        "evidence"
+      ],
+      "status": 1,
+      "stdout": "",
+      "cause": "REFUSE·K-U differing expected projection"
+    }
+  ]
+}

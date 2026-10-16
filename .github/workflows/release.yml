@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: npm install --prefix .instrument --no-save --ignore-scripts @lapxo/bound@0.1.8
+      - run: npm install --prefix .instrument --no-save --ignore-scripts @lapxo/bound@0.1.9
       - run: npm install --global npm@'12.1.0' --ignore-scripts
       - name: Prepare release
         env:

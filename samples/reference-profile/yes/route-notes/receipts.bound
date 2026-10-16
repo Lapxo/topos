@@ -1,0 +1,12 @@
+bound-lock/1 at=place:sha256:97a3ae747190ac03386af5f7783c2ef1170ea562835f19b47eea323bdb62e32a by=reader:001b0cc99c70 form=alphabet measure=observed role=writes scope=inputs/sample.json value=97a3ae747190ac03
+bound-lock/1 at=place:sha256:97a3ae747190ac03386af5f7783c2ef1170ea562835f19b47eea323bdb62e32a by=reader:001b0cc99c70 form=alphabet measure=result role=writes scope=conformance/reference/route-notes value="{\"namedRefusals\":7,\"class\":\"standing\",\"digest\":\"3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576\",\"lines\":1,\"authentication\":\"not demonstrated; inspect only\",\"transport\":\"declared handed input; no network invocation\"}"
+bound-lock/1 at=place:sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305
+
+bound-lock/1 at=place:sha256:48c9ffb6c04b48f8c6696cb41cded7cba5ec71aaa1706b310b27fd36abceb1eb by=bound form=alphabet measure=digest role=writes scope=receipts value=sha256:fc724edf93b052fc371beef13b531dac259a47c2626f314efe8ab654639372cc
+
+bound-lock/1 at=place:sha256:f5abdc030f0368ffc94a7a2b605631d0d42b1b6bb3940bdd9314c3577f56d9fd by=bound form=interval measure=count role=writes scope=receipts/conformance value=1..1
+bound-lock/1 at=place:sha256:3b1738264a6c2df96c9169c5788f587f333d7b06053349cc54548c5adb9f2ac1 by=bound form=alphabet measure=bytes role=writes scope=receipts/conformance value=sha256:3b1738264a6c2df96c9169c5788f587f333d7b06053349cc54548c5adb9f2ac1
+bound-lock/1 at=place:sha256:5e8642755464a3a3fc4088f3155bfacd2ea5a5e99fccd2428ad78e06e336fd2a by=bound form=interval measure=count role=writes scope=receipts/inputs value=1..1
+bound-lock/1 at=place:sha256:cf0a173a712392760f7903b9e9f2e82a0989d6cbd5034a8743693ae9602110cb by=bound form=alphabet measure=bytes role=writes scope=receipts/inputs value=sha256:cf0a173a712392760f7903b9e9f2e82a0989d6cbd5034a8743693ae9602110cb
+bound-lock/1 at=place:sha256:a4b9bf646da26519c0769a6011d4aaa054d8221f30b5d803496bd6b07dc25297 by=bound form=interval measure=count role=writes scope=receipts/instrument value=1..1
+bound-lock/1 at=place:sha256:3b1738264a6c2df96c9169c5788f587f333d7b06053349cc54548c5adb9f2ac1 by=bound form=alphabet measure=bytes role=writes scope=receipts/instrument value=sha256:3b1738264a6c2df96c9169c5788f587f333d7b06053349cc54548c5adb9f2ac1

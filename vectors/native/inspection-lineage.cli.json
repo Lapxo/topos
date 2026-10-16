@@ -70,7 +70,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-survey-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\nOBSERVE  0 run · 0 read by key · 304 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-survey-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·lineage unauthenticated release\nOBSERVE  0 run · 0 read by key · 304 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·lineage unauthenticated release\n",
           "runtimeMs": 612
         }
       ]
@@ -143,10 +143,18 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-stock-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\nOBSERVE  0 run · 0 read by key · 323 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/inspection-lineage-stock-no/reader.mjs · Error: REFUSE·lineage unauthenticated release\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·lineage unauthenticated release\nOBSERVE  0 run · 0 read by key · 323 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·lineage unauthenticated release\n",
           "runtimeMs": 623
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:30e76ebb37e82e1193244a1c806d436aed0e3aa64044c01620bde5d7d8d42b9a",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

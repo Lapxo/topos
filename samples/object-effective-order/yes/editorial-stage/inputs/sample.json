@@ -1,0 +1,40 @@
+{
+  "name": "editorial-stage",
+  "pin": "sha256:67e2177a6d16f1616b954513fe2af1439e98c95f75e6b3bbccec687ce4dac1eb",
+  "form": "ladder",
+  "params": {
+    "levels": [
+      "low",
+      "middle",
+      "high"
+    ]
+  },
+  "records": [
+    {
+      "record": "cell",
+      "fields": {
+        "scope": "A",
+        "id": "cell-A",
+        "epoch": "1",
+        "topos": "sha256:67e2177a6d16f1616b954513fe2af1439e98c95f75e6b3bbccec687ce4dac1eb",
+        "form": "ladder",
+        "params": "{\"levels\":[\"low\",\"middle\",\"high\"]}",
+        "measure": "count",
+        "restsOn": "none",
+        "by": "sample"
+      }
+    },
+    {
+      "record": "claim",
+      "fields": {
+        "scope": "A",
+        "id": "claim-A",
+        "epoch": "1",
+        "sign": "+1",
+        "origin": "one",
+        "value": "middle",
+        "by": "sample"
+      }
+    }
+  ]
+}

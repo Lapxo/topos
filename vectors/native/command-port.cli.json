@@ -70,7 +70,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/command-port-survey-no/reader.mjs · Error: REFUSE·port port/survey status 1\nOBSERVE  0 run · 0 read by key · 326 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/command-port-survey-no/reader.mjs · Error: REFUSE·port port/survey status 1\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·port port/survey status 1\nOBSERVE  0 run · 0 read by key · 326 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·port port/survey status 1\n",
           "runtimeMs": 623
         }
       ]
@@ -143,10 +143,18 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/command-port-stock-no/reader.mjs · Error: REFUSE·port port/stock status 1\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/command-port-stock-no/reader.mjs · Error: REFUSE·port port/stock status 1\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·port port/stock status 1\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·port port/stock status 1\n",
           "runtimeMs": 655
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:db465f7a4c4435fc6f7eaa5eefd80a553c801c767ef09e3c036147177ad4a090",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

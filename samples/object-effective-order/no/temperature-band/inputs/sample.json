@@ -1,0 +1,37 @@
+{
+  "name": "temperature-band",
+  "pin": "sha256:0f79ab1088b7317c41a17e2fe578195110ca8c41d62dfb0a9c6b7a0a2d6a4926",
+  "form": "interval",
+  "params": {
+    "lo": 0,
+    "hi": 10
+  },
+  "records": [
+    {
+      "record": "claim",
+      "fields": {
+        "scope": "A",
+        "id": "claim-A",
+        "epoch": "1",
+        "sign": "+1",
+        "origin": "one",
+        "value": "2..3",
+        "by": "sample"
+      }
+    },
+    {
+      "record": "cell",
+      "fields": {
+        "scope": "A",
+        "id": "cell-A",
+        "epoch": "1",
+        "topos": "sha256:0f79ab1088b7317c41a17e2fe578195110ca8c41d62dfb0a9c6b7a0a2d6a4926",
+        "form": "interval",
+        "params": "{\"lo\":0,\"hi\":10}",
+        "measure": "count",
+        "restsOn": "none",
+        "by": "sample"
+      }
+    }
+  ]
+}

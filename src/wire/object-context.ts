@@ -30,6 +30,7 @@ export function validateObjectContext(records: readonly ObjectRecord[], context:
     if (!prior) ids.set(record.fields.id!,record);
   }
   const unique = [...ids.values()];
+  const position = new Map(unique.map((record, index) => [record.fields.id!, index]));
   const cells = new Map<string,ObjectRecord>();
   for (const record of unique.filter(r=>r.record==='cell')) {
     if (cells.has(record.fields.scope!)) return fail(`cell definition is not unique at ${record.fields.scope}`);
@@ -72,7 +73,8 @@ export function validateObjectContext(records: readonly ObjectRecord[], context:
   }
   for (const record of unique.filter(r=>r.record!=='cell')) {
     const f=record.fields;const own=cells.get(f.scope!);
-    if (!own || Number(own.fields.epoch)>Number(f.epoch)) return fail(`cell not declared before ${f.id}`);
+    if (!own || Number(own.fields.epoch)>Number(f.epoch) ||
+      (Number(own.fields.epoch)===Number(f.epoch) && position.get(own.fields.id!)!>position.get(f.id!)!)) return fail(`cell not declared before ${f.id}`);
     if (f.sign==='-1') {
       const target=ids.get(f.takes!);
       if (!target || target.record!==record.record || target.fields.scope!==f.scope || target.fields.sign!=='+1' || target.fields.by!==f.by || Number(target.fields.epoch)>=Number(f.epoch)) return fail(`unauthorized or incompatible withdrawal target ${f.takes}`);

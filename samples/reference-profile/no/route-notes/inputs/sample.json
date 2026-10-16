@@ -1,0 +1,12 @@
+{
+  "name": "route-notes",
+  "reference": {
+    "class": "standing",
+    "algorithm": "sha256",
+    "digest": "3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576",
+    "blob": "sha256:ff12cf2db2d236e17490ca63b71c0d77964064220986e8366ac47fc1f8f7d18e",
+    "source": "https://example.invalid/route-notes.json"
+  },
+  "fragment": "#bound:1?class=standing&algorithm=sha256&digest=3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576&blob=sha256%3Aff12cf2db2d236e17490ca63b71c0d77964064220986e8366ac47fc1f8f7d18e&source=https%3A%2F%2Fexample.invalid%2Froute-notes.json",
+  "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"ignored\",\"standing\":\"bound-lock/1 measure=count scope=route/notes value=7..9\\n\"}"
+}

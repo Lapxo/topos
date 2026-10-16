@@ -1,0 +1,12 @@
+bound-lock/1 at=place:sha256:2ae4255ab7ae2d113d6f9b60ca25b3d2c7d71daa179ad250add06e0971eb8d2e by=reader:30d0fc405ef1 form=alphabet measure=observed role=writes scope=inputs/sample.json value=2ae4255ab7ae2d11
+bound-lock/1 at=place:sha256:2ae4255ab7ae2d113d6f9b60ca25b3d2c7d71daa179ad250add06e0971eb8d2e by=reader:30d0fc405ef1 form=alphabet measure=result role=writes scope=conformance/effective-order/temperature-band value="{\"kind\":\"fact\",\"ids\":[\"cell-A\",\"claim-A\"]}"
+bound-lock/1 at=place:sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305
+
+bound-lock/1 at=place:sha256:925bd9615cb68a70ce7c6a2bec4adf558c20685dc43e40fb7f2d1b5508315599 by=bound form=alphabet measure=digest role=writes scope=receipts value=sha256:fca49f438f43bbb80d441cf4758ba5e57b2107cc85851b41a13052a2f0654b35
+
+bound-lock/1 at=place:sha256:945b157c29609f8a658a55448fc90793cdcd6a18fe2ee5b2b73b11be914a8f53 by=bound form=interval measure=count role=writes scope=receipts/conformance value=1..1
+bound-lock/1 at=place:sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012 by=bound form=alphabet measure=bytes role=writes scope=receipts/conformance value=sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012
+bound-lock/1 at=place:sha256:a2e6947eaa1dfa28b982b5fee1b0a1ee01542a0dcaed323c38f5b55f6e362533 by=bound form=interval measure=count role=writes scope=receipts/inputs value=1..1
+bound-lock/1 at=place:sha256:75055cae576fbee5f28a2e7a5706c4261f9573b749ed7408e3905a38a417741f by=bound form=alphabet measure=bytes role=writes scope=receipts/inputs value=sha256:75055cae576fbee5f28a2e7a5706c4261f9573b749ed7408e3905a38a417741f
+bound-lock/1 at=place:sha256:a4b9bf646da26519c0769a6011d4aaa054d8221f30b5d803496bd6b07dc25297 by=bound form=interval measure=count role=writes scope=receipts/instrument value=1..1
+bound-lock/1 at=place:sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012 by=bound form=alphabet measure=bytes role=writes scope=receipts/instrument value=sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012

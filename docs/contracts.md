@@ -248,3 +248,21 @@ These native samples measure the pure candidate API through installed Bound 0.1.
 `clockKind="authority"` requires a known nonnegative integral epoch. Current windows, temporal coverage, depth and key class are checked at that explicit authority epoch; `coverageScope` is the declared authorization coordinate. The original signed scope, epoch and signature remain unchanged. `authorityOf` continues to use the original record epoch. A retired or uncovered key can therefore leave an authenticated historical record admitted while refusing a new action now. Unknown clocks refuse by name; the method does not invent independence or alter cell algebra.
 
 The two native fixture datasets exercise a finite closed window and temporal coverage revocation, with actual disposable signatures and unchanged original bytes. Native no-samples preserve the public refusal; the installed public export, not an internal implementation path, is called. These are content/eligibility proofs on one Mac, not an execution sandbox or L6 portability payment.
+
+# Object preparation: effective cell-before-use order
+
+Scope: object-context validation after historical grammar and authentication supplied by the caller. This contract does not authenticate transport order or authorize an object signature.
+
+The proposed history has already passed historical wire grammar. Epoch is the numeric declared epoch. Effective order is ascending epoch, preserving the authenticated supplied sequence within an equal epoch. This function does not reconstruct transport history or sort equal-epoch records by ID, record family, digest, or scope.
+
+Context validation authenticates each received record before deduplication, and keeps the first occurrence of each identical signed ID. Nonidentical signed content for one ID refuses. These existing rules remain unchanged.
+
+A claim or mark requires its own scope's cell to precede it in effective order. A lower-epoch cell precedes even when its record arrived later. At the same epoch the cell must precede the act in the supplied effective sequence. Otherwise validation returns REFUSE with `object context: cell not declared before <act-id>` before projection. This applies to positive and withdrawing acts. Existing exact-target withdrawal, codec, origin, witness, coverage, cycle, and noncommuting-ceiling checks remain intact.
+
+An arrival permutation is acceptable only when preparation reconstructs the same authenticated effective sequence. Swapping equal-epoch records in the sequence passed to validation changes effective order and carries no equivalence promise. A transport implementation must establish that sequence or refuse; this candidate makes no new transport claim.
+
+Yes cases: interval and ladder cells preceding a same-epoch claim project REQUIRED. A later-epoch claim preceding the older cell in input still projects REQUIRED through the existing epoch ordering. Exact duplicate records retain first-occurrence order and deduplicate.
+
+No cases: a same-epoch claim or ceiling mark preceding its cell refuses with the act ID. Nonidentical duplicate IDs retain the collision refusal. The historical sign/join noncommutativity vector remains unchanged.
+
+No algebra, wire field, pin, coverage or ceiling change. SDK publication precedes final Bound consumption. This contract is exercised by interval and ladder sample places. The named no-sample is `object context: cell not declared before claim-A`. Contract publication and activation remain explicit SDK admission acts.

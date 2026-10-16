@@ -70,7 +70,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/origins-snapshots-survey-no/reader.mjs · Error: REFUSE·region region/survey conflicting origin projection\nOBSERVE  0 run · 0 read by key · 326 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/origins-snapshots-survey-no/reader.mjs · Error: REFUSE·region region/survey conflicting origin projection\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region region/survey conflicting origin projection\nOBSERVE  0 run · 0 read by key · 326 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region region/survey conflicting origin projection\n",
           "runtimeMs": 626
         }
       ]
@@ -143,10 +143,18 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/origins-snapshots-stock-no/reader.mjs · Error: REFUSE·region region/stock conflicting origin projection\nOBSERVE  0 run · 0 read by key · 304 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/origins-snapshots-stock-no/reader.mjs · Error: REFUSE·region region/stock conflicting origin projection\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region region/stock conflicting origin projection\nOBSERVE  0 run · 0 read by key · 304 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region region/stock conflicting origin projection\n",
           "runtimeMs": 595
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:8b6afc490112f7614c933037fd14134cd2aa5eb2a181047fdba9dc2efad912de",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

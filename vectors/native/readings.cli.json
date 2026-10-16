@@ -70,7 +70,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-survey-no/reader.mjs · Error: REFUSE·render survey.txt needs one writer\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-survey-no/reader.mjs · Error: REFUSE·render survey.txt needs one writer\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·render survey.txt needs one writer\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·render survey.txt needs one writer\n",
           "runtimeMs": 673
         }
       ]
@@ -143,7 +143,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-stock-no/reader.mjs · Error: REFUSE·render stock.txt needs one writer\nOBSERVE  0 run · 0 read by key · 315 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/readings-stock-no/reader.mjs · Error: REFUSE·render stock.txt needs one writer\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·render stock.txt needs one writer\nOBSERVE  0 run · 0 read by key · 315 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·render stock.txt needs one writer\n",
           "runtimeMs": 626
         }
       ]
@@ -222,7 +222,7 @@
               ],
               "status": 1,
               "stdout": "",
-              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-survey-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\nOBSERVE  0 run · 0 read by key · 171 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-survey-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\n",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\nOBSERVE  0 run · 0 read by key · 171 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\n",
               "runtimeMs": 325
             }
           ]
@@ -295,7 +295,7 @@
               ],
               "status": 1,
               "stdout": "",
-              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-stock-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\nOBSERVE  0 run · 0 read by key · 176 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/wire-fields-stock-no/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\n",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\nOBSERVE  0 run · 0 read by key · 176 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·wire-vector every field named, at a wire class, needs a region, sig by digest: read: expected fact, read refuse\n",
               "runtimeMs": 331
             }
           ]
@@ -374,7 +374,7 @@
               ],
               "status": 1,
               "stdout": "",
-              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-survey-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\nOBSERVE  0 run · 0 read by key · 176 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-survey-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\n",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\nOBSERVE  0 run · 0 read by key · 176 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\n",
               "runtimeMs": 340
             }
           ]
@@ -447,7 +447,7 @@
               ],
               "status": 1,
               "stdout": "",
-              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-stock-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\nOBSERVE  0 run · 0 read by key · 174 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/form-axioms-stock-no/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\n",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\nOBSERVE  0 run · 0 read by key · 174 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·form-vector interval unit.top: 0..1|top.greatest: 0..1|unit.top: 6..7|top.greatest: 6..7|unit.top: 2..4|top.greatest: 2..4|unit.top: 3..5|top.greatest: 3..5|unit.top: 3..10|top.greatest: 3..10|unit.top: 2..9|top.greatest: 2..9\n",
               "runtimeMs": 331
             }
           ]
@@ -526,7 +526,7 @@
               ],
               "status": 1,
               "stdout": "",
-              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-survey-no/reader.mjs · Error: REFUSE·region survey: handed less than it declares, without input/**\nOBSERVE  0 run · 0 read by key · 178 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-survey-no/reader.mjs · Error: REFUSE·region survey: handed less than it declares, without input/**\n",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region survey: handed less than it declares, without input/**\nOBSERVE  0 run · 0 read by key · 178 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region survey: handed less than it declares, without input/**\n",
               "runtimeMs": 337
             }
           ]
@@ -599,12 +599,26 @@
               ],
               "status": 1,
               "stdout": "",
-              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-stock-no/reader.mjs · Error: REFUSE·region stock: handed less than it declares, without input/**\nOBSERVE  0 run · 0 read by key · 178 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-audits/places-v2/capsule-admission-stock-no/reader.mjs · Error: REFUSE·region stock: handed less than it declares, without input/**\n",
+              "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region stock: handed less than it declares, without input/**\nOBSERVE  0 run · 0 read by key · 178 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·region stock: handed less than it declares, without input/**\n",
               "runtimeMs": 341
             }
           ]
         }
       ]
     }
+  },
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:b6fc5f7ba82d179767cbfcaf3f553a89530af7cd70d8de3d5b2a7b11a3b3001b",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr",
+      "/audits/wire-fields/captures/1/events/1/stderr",
+      "/audits/wire-fields/captures/3/events/1/stderr",
+      "/audits/form-axioms/captures/1/events/1/stderr",
+      "/audits/form-axioms/captures/3/events/1/stderr",
+      "/audits/capsule-admission/captures/1/events/1/stderr",
+      "/audits/capsule-admission/captures/3/events/1/stderr"
+    ]
   }
 }

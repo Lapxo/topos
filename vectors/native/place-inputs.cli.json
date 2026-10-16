@@ -316,7 +316,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/survey-no/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\nOBSERVE  0 run · 0 read by key · 307 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/survey-no/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\nOBSERVE  0 run · 0 read by key · 307 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·place inputs required member absent offers/test/place-inputs/reading\n"
         }
       ]
     },
@@ -634,9 +634,17 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/catalog-no/reader.js · Error: REFUSE·projection history is not standing\nOBSERVE  0 run · 0 read by key · 218 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/places-respond-repair-v2/catalog-no/reader.js · Error: REFUSE·projection history is not standing\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·projection history is not standing\nOBSERVE  0 run · 0 read by key · 218 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·projection history is not standing\n"
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:16e615f00d4434664278b9ef8fef951a8f976452d19c07b45d9a3fe3672cbfb0",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

@@ -1,6 +1,6 @@
 # @lapxo/topos
 
-![version 0.1.17](https://img.shields.io/badge/version-0.1.17-2255aa) ![license MIT](https://img.shields.io/badge/license-MIT-2255aa)
+![version 0.2.0](https://img.shields.io/badge/version-0.2.0-2255aa) ![license MIT](https://img.shields.io/badge/license-MIT-2255aa)
 
 Wire, forms and views for interpreting declared information
 
@@ -18,6 +18,8 @@ Wire validates a declaration. Forms interpret values. Views project results. A s
 
 An illustrative wire line: wire/line/fields
 
+https://github.com/Lapxo/topos
+
 <p><img src="docs/img/refuses.svg" alt="Refused input: bound-lock/1 at=witness:explicit-sdk-render-inputs by=target form=ghost measure=count role=reads scope=reading/unknown-form value=1..2. Reason: `form=ghost` is a form this reader does not know" width="480"></p>
 
 
@@ -27,4 +29,5 @@ An illustrative wire line: wire/line/fields
 
 - [contracts](docs/contracts.md)
 - [reference](docs/reference.md)
+- [reference-profile](docs/contracts/reference-profile.md)
 - [wire](docs/wire.md)

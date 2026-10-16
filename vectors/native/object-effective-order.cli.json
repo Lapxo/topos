@@ -1,0 +1,147 @@
+{
+  "state": "proposed native capture with rendered portable receipts; absolute fixture paths replaced by <sample-place>; raw capture retained privately",
+  "instrument": "Bound0.1.9",
+  "readerDigest": "sha256:56c6e8c97d23f4df48ecdb650a37774666c8cffd881324da4ca350fddb8dae6a",
+  "captures": [
+    {
+      "name": "temperature-band",
+      "negative": false,
+      "readerDigest": "sha256:56c6e8c97d23f4df48ecdb650a37774666c8cffd881324da4ca350fddb8dae6a",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "owner",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET \u00b7 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims \u00b7 0 superseded \u00b7 157 ms\nFACT     vouched \u00b7 0 sources under 0 locations \u00b7 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "RENDERED receipts.bound \u00b7 view/receipts \u00b7 12 lines\n",
+          "stderr": "READER   reader.js \u00b7 1 run \u00b7 176 ms\nOBSERVE  1 run \u00b7 0 read by key \u00b7 179 ms\nOWN      imports 17 ms \u00b7 bodies 0 ms \u00b7 removed 0 ms \u00b7 readers 1 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 0 ms \u00b7 zoom 0 ms \u00b7 nos 1 ms \u00b7 zoomed 0 ms \u00b7 applied 0 ms \u00b7 laid 14 ms \u00b7 resets 1 ms \u00b7 store 0 ms \u00b7 ship 0 ms\nSPENT    fold capsules 3 ms \u00b7 own 37 ms \u00b7 regions 6 ms \u00b7 ceilings 1 ms \u00b7 paid 0 ms \u00b7 docs 0 ms \u00b7 ceilings 1 ms\nBEAT     fold 4d98a631 folded 0.3 s\nKEPT     fold 4d98a631 miss \u00b7 no fold was kept before this one\n",
+          "receipts": "bound-lock/1 at=place:sha256:2ae4255ab7ae2d113d6f9b60ca25b3d2c7d71daa179ad250add06e0971eb8d2e by=reader:30d0fc405ef1 form=alphabet measure=observed role=writes scope=inputs/sample.json value=2ae4255ab7ae2d11\nbound-lock/1 at=place:sha256:2ae4255ab7ae2d113d6f9b60ca25b3d2c7d71daa179ad250add06e0971eb8d2e by=reader:30d0fc405ef1 form=alphabet measure=result role=writes scope=conformance/effective-order/temperature-band value=\"{\\\"kind\\\":\\\"fact\\\",\\\"ids\\\":[\\\"cell-A\\\",\\\"claim-A\\\"]}\"\nbound-lock/1 at=place:sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305\n\nbound-lock/1 at=place:sha256:925bd9615cb68a70ce7c6a2bec4adf558c20685dc43e40fb7f2d1b5508315599 by=bound form=alphabet measure=digest role=writes scope=receipts value=sha256:fca49f438f43bbb80d441cf4758ba5e57b2107cc85851b41a13052a2f0654b35\n\nbound-lock/1 at=place:sha256:945b157c29609f8a658a55448fc90793cdcd6a18fe2ee5b2b73b11be914a8f53 by=bound form=interval measure=count role=writes scope=receipts/conformance value=1..1\nbound-lock/1 at=place:sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012 by=bound form=alphabet measure=bytes role=writes scope=receipts/conformance value=sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012\nbound-lock/1 at=place:sha256:a2e6947eaa1dfa28b982b5fee1b0a1ee01542a0dcaed323c38f5b55f6e362533 by=bound form=interval measure=count role=writes scope=receipts/inputs value=1..1\nbound-lock/1 at=place:sha256:75055cae576fbee5f28a2e7a5706c4261f9573b749ed7408e3905a38a417741f by=bound form=alphabet measure=bytes role=writes scope=receipts/inputs value=sha256:75055cae576fbee5f28a2e7a5706c4261f9573b749ed7408e3905a38a417741f\nbound-lock/1 at=place:sha256:a4b9bf646da26519c0769a6011d4aaa054d8221f30b5d803496bd6b07dc25297 by=bound form=interval measure=count role=writes scope=receipts/instrument value=1..1\nbound-lock/1 at=place:sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012 by=bound form=alphabet measure=bytes role=writes scope=receipts/instrument value=sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "RENDERED receipts.bound \u00b7 view/receipts \u00b7 12 lines\n",
+          "stderr": "OBSERVE  0 run \u00b7 1 read by key \u00b7 1 readers kept whole \u00b7 2 ms\nOWN      imports 17 ms \u00b7 bodies 0 ms \u00b7 removed 0 ms \u00b7 readers 1 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 0 ms \u00b7 zoom 0 ms \u00b7 nos 0 ms \u00b7 zoomed 1 ms \u00b7 applied 0 ms \u00b7 laid 14 ms \u00b7 resets 0 ms \u00b7 store 0 ms \u00b7 ship 1 ms\nSPENT    fold capsules 2 ms \u00b7 own 35 ms \u00b7 regions 7 ms \u00b7 ceilings 1 ms \u00b7 paid 0 ms \u00b7 docs 43 ms \u00b7 ceilings 0 ms \u00b7 keep 2 ms\nBEAT     fold ab4ccd32 folded 0.2 s \u00b7 0.3 s folded\nKEPT     fold ab4ccd32 miss \u00b7 no fold was kept before this one\n",
+          "receipts": "bound-lock/1 at=place:sha256:2ae4255ab7ae2d113d6f9b60ca25b3d2c7d71daa179ad250add06e0971eb8d2e by=reader:30d0fc405ef1 form=alphabet measure=observed role=writes scope=inputs/sample.json value=2ae4255ab7ae2d11\nbound-lock/1 at=place:sha256:2ae4255ab7ae2d113d6f9b60ca25b3d2c7d71daa179ad250add06e0971eb8d2e by=reader:30d0fc405ef1 form=alphabet measure=result role=writes scope=conformance/effective-order/temperature-band value=\"{\\\"kind\\\":\\\"fact\\\",\\\"ids\\\":[\\\"cell-A\\\",\\\"claim-A\\\"]}\"\nbound-lock/1 at=place:sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305\n\nbound-lock/1 at=place:sha256:925bd9615cb68a70ce7c6a2bec4adf558c20685dc43e40fb7f2d1b5508315599 by=bound form=alphabet measure=digest role=writes scope=receipts value=sha256:fca49f438f43bbb80d441cf4758ba5e57b2107cc85851b41a13052a2f0654b35\n\nbound-lock/1 at=place:sha256:945b157c29609f8a658a55448fc90793cdcd6a18fe2ee5b2b73b11be914a8f53 by=bound form=interval measure=count role=writes scope=receipts/conformance value=1..1\nbound-lock/1 at=place:sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012 by=bound form=alphabet measure=bytes role=writes scope=receipts/conformance value=sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012\nbound-lock/1 at=place:sha256:a2e6947eaa1dfa28b982b5fee1b0a1ee01542a0dcaed323c38f5b55f6e362533 by=bound form=interval measure=count role=writes scope=receipts/inputs value=1..1\nbound-lock/1 at=place:sha256:75055cae576fbee5f28a2e7a5706c4261f9573b749ed7408e3905a38a417741f by=bound form=alphabet measure=bytes role=writes scope=receipts/inputs value=sha256:75055cae576fbee5f28a2e7a5706c4261f9573b749ed7408e3905a38a417741f\nbound-lock/1 at=place:sha256:a4b9bf646da26519c0769a6011d4aaa054d8221f30b5d803496bd6b07dc25297 by=bound form=interval measure=count role=writes scope=receipts/instrument value=1..1\nbound-lock/1 at=place:sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012 by=bound form=alphabet measure=bytes role=writes scope=receipts/instrument value=sha256:4219dd897429cf276ee1dbdf49ef7434a9c5af907b25175627f433f9d62fd012\n"
+        }
+      ]
+    },
+    {
+      "name": "temperature-band",
+      "negative": true,
+      "readerDigest": "sha256:56c6e8c97d23f4df48ecdb650a37774666c8cffd881324da4ca350fddb8dae6a",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "owner",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET \u00b7 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims \u00b7 0 superseded \u00b7 144 ms\nFACT     vouched \u00b7 0 sources under 0 locations \u00b7 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <sample-place>/reader.js \u00b7 Error: REFUSE\u00b7object context: cell not declared before claim-A\nOBSERVE  0 run \u00b7 0 read by key \u00b7 173 ms\nrepository: REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <sample-place>/reader.js \u00b7 Error: REFUSE\u00b7object context: cell not declared before claim-A\n"
+        }
+      ]
+    },
+    {
+      "name": "editorial-stage",
+      "negative": false,
+      "readerDigest": "sha256:56c6e8c97d23f4df48ecdb650a37774666c8cffd881324da4ca350fddb8dae6a",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "owner",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET \u00b7 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims \u00b7 0 superseded \u00b7 141 ms\nFACT     vouched \u00b7 0 sources under 0 locations \u00b7 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "RENDERED receipts.bound \u00b7 view/receipts \u00b7 12 lines\n",
+          "stderr": "READER   reader.js \u00b7 1 run \u00b7 167 ms\nOBSERVE  1 run \u00b7 0 read by key \u00b7 171 ms\nOWN      imports 18 ms \u00b7 bodies 0 ms \u00b7 removed 0 ms \u00b7 readers 1 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 0 ms \u00b7 zoom 0 ms \u00b7 nos 1 ms \u00b7 zoomed 0 ms \u00b7 applied 0 ms \u00b7 laid 14 ms \u00b7 resets 0 ms \u00b7 store 1 ms \u00b7 ship 0 ms\nSPENT    fold capsules 2 ms \u00b7 own 37 ms \u00b7 regions 7 ms \u00b7 ceilings 1 ms \u00b7 paid 0 ms \u00b7 docs 0 ms \u00b7 ceilings 0 ms\nBEAT     fold 393e4c45 folded 0.3 s\nKEPT     fold 393e4c45 miss \u00b7 no fold was kept before this one\n",
+          "receipts": "bound-lock/1 at=place:sha256:b103417371b9a0a02b30f3dc8a2194310e6055cb3d8b73e0ef3395d8c0bb740d by=reader:30d0fc405ef1 form=alphabet measure=observed role=writes scope=inputs/sample.json value=b103417371b9a0a0\nbound-lock/1 at=place:sha256:b103417371b9a0a02b30f3dc8a2194310e6055cb3d8b73e0ef3395d8c0bb740d by=reader:30d0fc405ef1 form=alphabet measure=result role=writes scope=conformance/effective-order/editorial-stage value=\"{\\\"kind\\\":\\\"fact\\\",\\\"ids\\\":[\\\"cell-A\\\",\\\"claim-A\\\"]}\"\nbound-lock/1 at=place:sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305\n\nbound-lock/1 at=place:sha256:9845c717d2c80f6e09d2f561392b156e7a0498433e0768a6b11e2d817c211979 by=bound form=alphabet measure=digest role=writes scope=receipts value=sha256:a7d707b84267b3087397811335d910821b0ea02ba5717b7f3bd262cdecd774c6\n\nbound-lock/1 at=place:sha256:b80e7025a312745bfaa5c4d97d60b8cd3cc753b57e27b52f4c56d2230aece737 by=bound form=interval measure=count role=writes scope=receipts/conformance value=1..1\nbound-lock/1 at=place:sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121 by=bound form=alphabet measure=bytes role=writes scope=receipts/conformance value=sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121\nbound-lock/1 at=place:sha256:0db3925bfdb9328db729192078c0b3c6fda601756c3102fa4ae32110c8fbe7d9 by=bound form=interval measure=count role=writes scope=receipts/inputs value=1..1\nbound-lock/1 at=place:sha256:3a0c90899e078a0200730a501490682a5278080aec6da6521a31a298b4a9a87e by=bound form=alphabet measure=bytes role=writes scope=receipts/inputs value=sha256:3a0c90899e078a0200730a501490682a5278080aec6da6521a31a298b4a9a87e\nbound-lock/1 at=place:sha256:a4b9bf646da26519c0769a6011d4aaa054d8221f30b5d803496bd6b07dc25297 by=bound form=interval measure=count role=writes scope=receipts/instrument value=1..1\nbound-lock/1 at=place:sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121 by=bound form=alphabet measure=bytes role=writes scope=receipts/instrument value=sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121\n"
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 0,
+          "stdout": "RENDERED receipts.bound \u00b7 view/receipts \u00b7 12 lines\n",
+          "stderr": "OBSERVE  0 run \u00b7 1 read by key \u00b7 1 readers kept whole \u00b7 2 ms\nOWN      imports 17 ms \u00b7 bodies 0 ms \u00b7 removed 0 ms \u00b7 readers 1 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 0 ms \u00b7 zoom 0 ms \u00b7 nos 1 ms \u00b7 zoomed 0 ms \u00b7 applied 0 ms \u00b7 laid 14 ms \u00b7 resets 0 ms \u00b7 store 0 ms \u00b7 ship 0 ms\nSPENT    fold capsules 3 ms \u00b7 own 36 ms \u00b7 regions 8 ms \u00b7 ceilings 1 ms \u00b7 paid 0 ms \u00b7 docs 55 ms \u00b7 ceilings 0 ms \u00b7 keep 1 ms\nBEAT     fold 6cd49edc folded 0.2 s \u00b7 0.3 s folded\nKEPT     fold 6cd49edc miss \u00b7 no fold was kept before this one\n",
+          "receipts": "bound-lock/1 at=place:sha256:b103417371b9a0a02b30f3dc8a2194310e6055cb3d8b73e0ef3395d8c0bb740d by=reader:30d0fc405ef1 form=alphabet measure=observed role=writes scope=inputs/sample.json value=b103417371b9a0a0\nbound-lock/1 at=place:sha256:b103417371b9a0a02b30f3dc8a2194310e6055cb3d8b73e0ef3395d8c0bb740d by=reader:30d0fc405ef1 form=alphabet measure=result role=writes scope=conformance/effective-order/editorial-stage value=\"{\\\"kind\\\":\\\"fact\\\",\\\"ids\\\":[\\\"cell-A\\\",\\\"claim-A\\\"]}\"\nbound-lock/1 at=place:sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305 by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:148154ff89c7e4809279ec2d56bd31488119c2c09bddab8ba1098d43e5f14305\n\nbound-lock/1 at=place:sha256:9845c717d2c80f6e09d2f561392b156e7a0498433e0768a6b11e2d817c211979 by=bound form=alphabet measure=digest role=writes scope=receipts value=sha256:a7d707b84267b3087397811335d910821b0ea02ba5717b7f3bd262cdecd774c6\n\nbound-lock/1 at=place:sha256:b80e7025a312745bfaa5c4d97d60b8cd3cc753b57e27b52f4c56d2230aece737 by=bound form=interval measure=count role=writes scope=receipts/conformance value=1..1\nbound-lock/1 at=place:sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121 by=bound form=alphabet measure=bytes role=writes scope=receipts/conformance value=sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121\nbound-lock/1 at=place:sha256:0db3925bfdb9328db729192078c0b3c6fda601756c3102fa4ae32110c8fbe7d9 by=bound form=interval measure=count role=writes scope=receipts/inputs value=1..1\nbound-lock/1 at=place:sha256:3a0c90899e078a0200730a501490682a5278080aec6da6521a31a298b4a9a87e by=bound form=alphabet measure=bytes role=writes scope=receipts/inputs value=sha256:3a0c90899e078a0200730a501490682a5278080aec6da6521a31a298b4a9a87e\nbound-lock/1 at=place:sha256:a4b9bf646da26519c0769a6011d4aaa054d8221f30b5d803496bd6b07dc25297 by=bound form=interval measure=count role=writes scope=receipts/instrument value=1..1\nbound-lock/1 at=place:sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121 by=bound form=alphabet measure=bytes role=writes scope=receipts/instrument value=sha256:86ba1a91884be7950e6f77759394a3d006d5f6907cdf5f561247d58e52c77121\n"
+        }
+      ]
+    },
+    {
+      "name": "editorial-stage",
+      "negative": true,
+      "readerDigest": "sha256:56c6e8c97d23f4df48ecdb650a37774666c8cffd881324da4ca350fddb8dae6a",
+      "events": [
+        {
+          "args": [
+            "land",
+            "--key",
+            "owner",
+            "--key-file",
+            "<fixture-key>"
+          ],
+          "status": 0,
+          "stdout": "FACT     landed 29 unique lines from 29 in TARGET \u00b7 0 of 29 signed lines fail admission by declared authority\nTARGET   29 claims \u00b7 0 superseded \u00b7 140 ms\nFACT     vouched \u00b7 0 sources under 0 locations \u00b7 0 needs refused as globs\n",
+          "stderr": ""
+        },
+        {
+          "args": [
+            "fold",
+            "--as",
+            "receipts"
+          ],
+          "status": 1,
+          "stdout": "",
+          "stderr": "REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <sample-place>/reader.js \u00b7 Error: REFUSE\u00b7object context: cell not declared before claim-A\nOBSERVE  0 run \u00b7 0 read by key \u00b7 172 ms\nrepository: REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <sample-place>/reader.js \u00b7 Error: REFUSE\u00b7object context: cell not declared before claim-A\n"
+        }
+      ]
+    }
+  ]
+}

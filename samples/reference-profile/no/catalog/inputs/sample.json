@@ -1,0 +1,12 @@
+{
+  "name": "catalog",
+  "reference": {
+    "class": "standing",
+    "algorithm": "sha256",
+    "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+    "blob": "sha256:f30189e35da7b65f73072419188575a4db218b37bc1de8809472d399c1c829d6",
+    "source": "https://example.invalid/catalog.json"
+  },
+  "fragment": "#bound:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3Af30189e35da7b65f73072419188575a4db218b37bc1de8809472d399c1c829d6&source=https%3A%2F%2Fexample.invalid%2Fcatalog.json",
+  "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"ignored\",\"standing\":\"bound-lock/1 measure=count scope=catalog/items value=2..4\\n\"}"
+}

@@ -100,7 +100,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/survey-no/reader.js · Error: REFUSE·reading identity missing policy\nOBSERVE  0 run · 0 read by key · 172 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/survey-no/reader.js · Error: REFUSE·reading identity missing policy\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·reading identity missing policy\nOBSERVE  0 run · 0 read by key · 172 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·reading identity missing policy\n"
         }
       ]
     },
@@ -202,9 +202,17 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/catalog-no/reader.js · Error: REFUSE·reading identity undeclared context field principal\nOBSERVE  0 run · 0 read by key · 173 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.14/native/places/catalog-no/reader.js · Error: REFUSE·reading identity undeclared context field principal\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·reading identity undeclared context field principal\nOBSERVE  0 run · 0 read by key · 173 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·reading identity undeclared context field principal\n"
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:e58e0be4a055d41d314c6eda095f44ffc9f0f42d5f4271988b8e937c068d7ca8",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

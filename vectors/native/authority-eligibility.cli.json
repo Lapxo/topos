@@ -130,7 +130,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/catalog-no/reader.js · Error: REFUSE·authority device authority evaluated at epoch 7, after its epoch closed at 6\nOBSERVE  0 run · 0 read by key · 186 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/catalog-no/reader.js · Error: REFUSE·authority device authority evaluated at epoch 7, after its epoch closed at 6\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·authority device authority evaluated at epoch 7, after its epoch closed at 6\nOBSERVE  0 run · 0 read by key · 186 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·authority device authority evaluated at epoch 7, after its epoch closed at 6\n"
         }
       ]
     },
@@ -280,9 +280,17 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/route-notes-no/reader.js · Error: REFUSE·authority device does not cover requests/routes\nOBSERVE  0 run · 0 read by key · 181 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.17/native-content/places-v3/route-notes-no/reader.js · Error: REFUSE·authority device does not cover requests/routes\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·authority device does not cover requests/routes\nOBSERVE  0 run · 0 read by key · 181 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·authority device does not cover requests/routes\n"
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:b9e5aedc7a867e8fcd51eae42d3b4cacd076f5fb1cdeffb74d34b4ef492a784b",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

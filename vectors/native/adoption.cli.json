@@ -70,7 +70,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-survey-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-survey-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\nOBSERVE  0 run · 0 read by key · 324 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\n",
           "runtimeMs": 638
         }
       ]
@@ -143,10 +143,18 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-stock-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\nOBSERVE  0 run · 0 read by key · 306 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/bound-0.1.7/sdk-013-premerge-audit/native-quartets/places-v2/adoption-stock-no/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\n",
+          "stderr": "REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\nOBSERVE  0 run · 0 read by key · 306 ms\nbound: REFUSE·reader reader.mjs · REFUSE·reader <place>/reader.mjs · Error: REFUSE·adoption requirements have no declared profile\n",
           "runtimeMs": 631
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:67cf6d54b23d78a5c4447902fde9bd773485eff7e078f1d2d2667656d92fd7f4",
+    "changedFields": [
+      "/captures/1/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

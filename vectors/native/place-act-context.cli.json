@@ -112,7 +112,7 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/catalog-no/reader.js · Error: REFUSE·place-act receiver receipt signature\nOBSERVE  0 run · 0 read by key · 561 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/catalog-no/reader.js · Error: REFUSE·place-act receiver receipt signature\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·place-act receiver receipt signature\nOBSERVE  0 run · 0 read by key · 561 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·place-act receiver receipt signature\n"
         }
       ]
     },
@@ -143,9 +143,17 @@
           ],
           "status": 1,
           "stdout": "",
-          "stderr": "REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/inventory-no/reader.js · Error: REFUSE·place-act receiver receipt signature\nOBSERVE  0 run · 0 read by key · 257 ms\nbound: REFUSE·reader reader.js · REFUSE·reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/topos-0.1.16/native-content/places/inventory-no/reader.js · Error: REFUSE·place-act receiver receipt signature\n"
+          "stderr": "REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·place-act receiver receipt signature\nOBSERVE  0 run · 0 read by key · 257 ms\nbound: REFUSE·reader reader.js · REFUSE·reader <place>/reader.js · Error: REFUSE·place-act receiver receipt signature\n"
         }
       ]
     }
-  ]
+  ],
+  "diagnosticProjection": {
+    "contract": "Captured diagnostics are a declared projection, not a raw transcript: only the absolute reader location within stderr is replaced by <place>/<reader basename>. Every status, stdout, refusal cause, case, module commitment and remaining diagnostic character stays unchanged. Originals remain private and are identified by digest. This projection never changes receipt payload identity or claims to rerun a case.",
+    "sourceDigest": "sha256:db5579f811cf52863d6da01b2601d11f30f41927f376b40ba88e3b50e1bbab91",
+    "changedFields": [
+      "/captures/2/events/1/stderr",
+      "/captures/3/events/1/stderr"
+    ]
+  }
 }

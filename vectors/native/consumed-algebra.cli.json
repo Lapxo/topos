@@ -1,15 +1,16 @@
 {
   "profile": "consumed-algebra-upgrade@1",
-  "captureKind": "actual native CLI executions on two existing places; no signatures or admission",
-  "selectedToposVersion": "0.2.1 implementation; unsigned dependency-only candidate for 0.2.2",
+  "captureKind": "native CLI execution on two existing places; location-projected diagnostics; original transcripts retained privately",
+  "selectedToposVersion": "0.2.2",
   "obligations": "0.4.5",
   "obligationsArchive": "sha256:db4d1ed06ecd8e5413feb2f79b846d4cec98ad12ac44ae3c3d96a35fe261b2bb",
   "reader": {
-    "sha256": "sha256:b596c35fc09d0b659ce4605bf7f2ec698bc177d3f20c020a0ba75e26709a640d",
-    "source": "import{intervalForm}from\"/Users/nahumochoa/Documents/Codex/2026-10-14/nec/work/release-series-2026-10/topos-022-ku045/dist/forms/index.js\";export function observe(bytes){const x=JSON.parse(new TextDecoder().decode(bytes));const form=intervalForm;const result=form.emit(x.params,form.lattice(x.params).meet(form.parse(x.params,x.left),form.parse(x.params,x.right)));if(result!==x.expected)throw Error('REFUSE\u00b7K-U differing expected projection');return[{scope:'compatibility/captures',measure:'count',role:'writes',bound:{kind:'interval',lo:1,hi:1}}];}",
+    "sha256": "sha256:b602abcf9ae357741112e0caf474c7556ba66492ed9c9c59575d638796a36cd9",
+    "source": "import{intervalForm}from\"./selected/forms/index.js\";export function observe(bytes){const x=JSON.parse(new TextDecoder().decode(bytes));const form=intervalForm;const result=form.emit(x.params,form.lattice(x.params).meet(form.parse(x.params,x.left),form.parse(x.params,x.right)));if(result!==x.expected)throw Error(\"REFUSE\u00b7consumed-algebra differing expected projection\");return[{scope:\"compatibility/captures\",measure:\"count\",role:\"writes\",bound:{kind:\"interval\",lo:1,hi:1}}];}\n",
     "selectedFormsEntrySha256": "sha256:ab5ae549791c03be6e4746f7a7ef1a176e13a57de3aaf6830c3b30fa25f32f04",
     "instrument": "@lapxo/bound@0.2.1",
-    "hostTopos": "0.2.0"
+    "hostTopos": "0.2.0",
+    "moduleRoot": "selected/"
   },
   "vectors": [
     {
@@ -17,7 +18,7 @@
       "kind": "yes",
       "input": "samples/consumed-algebra/yes/reservoir.json",
       "inputDigest": "sha256:9775ee796c7cdb922a903770cf586c236292ae1ecf225de59ba2949618d0bd4d",
-      "readerDigest": "sha256:b596c35fc09d0b659ce4605bf7f2ec698bc177d3f20c020a0ba75e26709a640d",
+      "readerDigest": "sha256:b602abcf9ae357741112e0caf474c7556ba66492ed9c9c59575d638796a36cd9",
       "instrument": "@lapxo/bound@0.2.1",
       "command": [
         "fold",
@@ -25,17 +26,22 @@
         "evidence"
       ],
       "status": 0,
-      "stdout": "bound-lock/1 at=place:sha256:9775ee796c7cdb922a903770cf586c236292ae1ecf225de59ba2949618d0bd4d by=reader:d508b0f0434a form=alphabet measure=observed role=writes scope=inputs/sample.json value=9775ee796c7cdb92\nbound-lock/1 at=place:sha256:9775ee796c7cdb922a903770cf586c236292ae1ecf225de59ba2949618d0bd4d by=reader:d508b0f0434a form=interval measure=count role=writes scope=compatibility/captures value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n",
-      "stderr": "READER   reader.js \u00b7 1 run \u00b7 1436 ms\nSPENT    observe reader.js 3+4783 ms\nOBSERVE  1 run \u00b7 0 read by key \u00b7 4788 ms\nOWN      imports 18 ms \u00b7 bodies 0 ms \u00b7 removed 0 ms \u00b7 readers 1 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 1 ms \u00b7 zoom 0 ms \u00b7 nos 0 ms \u00b7 zoomed 0 ms \u00b7 applied 1 ms \u00b7 laid 1 ms \u00b7 resets 0 ms \u00b7 store 1 ms \u00b7 ship 0 ms\nSPENT    fold capsules 2 ms \u00b7 own 24 ms \u00b7 regions 8 ms \u00b7 ceilings 2 ms \u00b7 paid 0 ms \u00b7 docs 0 ms \u00b7 ceilings 1 ms\nBEAT     fold 8488edb6 folded 23.9 s \u00b7 0.4 s folded\nKEPT     fold 8488edb6 miss \u00b7 no fold was kept before this one\n",
-      "elapsedMs": 27838.237374962773,
-      "cause": null
+      "stdout": "bound-lock/1 at=place:sha256:9775ee796c7cdb922a903770cf586c236292ae1ecf225de59ba2949618d0bd4d by=reader:166adbd132d8 form=alphabet measure=observed role=writes scope=inputs/sample.json value=9775ee796c7cdb92\nbound-lock/1 at=place:sha256:9775ee796c7cdb922a903770cf586c236292ae1ecf225de59ba2949618d0bd4d by=reader:166adbd132d8 form=interval measure=count role=writes scope=compatibility/captures value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n",
+      "stderr": "READER   reader.js \u00b7 1 run \u00b7 178 ms\nOBSERVE  1 run \u00b7 0 read by key \u00b7 183 ms\nOWN      imports 16 ms \u00b7 bodies 0 ms \u00b7 removed 0 ms \u00b7 readers 1 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 1 ms \u00b7 zoom 0 ms \u00b7 nos 0 ms \u00b7 zoomed 0 ms \u00b7 applied 1 ms \u00b7 laid 1 ms \u00b7 resets 2 ms \u00b7 store 0 ms \u00b7 ship 0 ms\nSPENT    fold capsules 2 ms \u00b7 own 25 ms \u00b7 regions 7 ms \u00b7 ceilings 2 ms \u00b7 paid 0 ms \u00b7 docs 0 ms \u00b7 ceilings 1 ms\nBEAT     fold d0d0e7df folded 0.3 s \u00b7 10.8 s folded\nKEPT     fold d0d0e7df miss \u00b7 no fold was kept before this one\n",
+      "elapsedMs": 484.81404199264944,
+      "cause": null,
+      "diagnosticProjection": {
+        "policy": "replace fixture and workspace absolute locations with declared placeholders; statuses, refusal causes and measurements unchanged",
+        "originalSha256": "sha256:169254ba4ae2630521585d691164ef13e0ba1ab8cb59aa55fe1885160f1cd540",
+        "projectedSha256": "sha256:169254ba4ae2630521585d691164ef13e0ba1ab8cb59aa55fe1885160f1cd540"
+      }
     },
     {
       "name": "reservoir",
       "kind": "no",
       "input": "samples/consumed-algebra/no/reservoir.json",
       "inputDigest": "sha256:77523c0e84b067f827e4a5788b431d2d127260088eca23ba88984fc54dc7d597",
-      "readerDigest": "sha256:b596c35fc09d0b659ce4605bf7f2ec698bc177d3f20c020a0ba75e26709a640d",
+      "readerDigest": "sha256:b602abcf9ae357741112e0caf474c7556ba66492ed9c9c59575d638796a36cd9",
       "instrument": "@lapxo/bound@0.2.1",
       "command": [
         "fold",
@@ -44,16 +50,21 @@
       ],
       "status": 1,
       "stdout": "",
-      "stderr": "REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/kernel-upgrade-043/sdk-closure/native-live/reservoir/reader.js \u00b7 Error: REFUSE\u00b7K-U differing expected projection\nOBSERVE  0 run \u00b7 0 read by key \u00b7 235 ms\nbound: REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/kernel-upgrade-043/sdk-closure/native-live/reservoir/reader.js \u00b7 Error: REFUSE\u00b7K-U differing expected projection\n{\"profile\":\"bound-refusal@1\",\"code\":\"operation/failed\",\"category\":\"host\",\"meaning\":\"An operation failed without a more specific public code; details are diagnostic only.\",\"next\":\"inspect-diagnostic\",\"catalog\":\"sha256:4b2a1768a0454a34c031855cdde75c1da07cc7e00933ee7fd52c2fc6b917a701\"}\n",
-      "elapsedMs": 453.83233297616243,
-      "cause": "REFUSE\u00b7K-U differing expected projection"
+      "stderr": "REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <place>/reader.js \u00b7 Error: REFUSE\u00b7consumed-algebra differing expected projection\nOBSERVE  0 run \u00b7 0 read by key \u00b7 179 ms\nbound: REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <place>/reader.js \u00b7 Error: REFUSE\u00b7consumed-algebra differing expected projection\n{\"profile\":\"bound-refusal@1\",\"code\":\"operation/failed\",\"category\":\"host\",\"meaning\":\"An operation failed without a more specific public code; details are diagnostic only.\",\"next\":\"inspect-diagnostic\",\"catalog\":\"sha256:4b2a1768a0454a34c031855cdde75c1da07cc7e00933ee7fd52c2fc6b917a701\"}\n",
+      "elapsedMs": 345.89862497523427,
+      "cause": "REFUSE\u00b7consumed-algebra differing expected projection",
+      "diagnosticProjection": {
+        "policy": "replace fixture and workspace absolute locations with declared placeholders; statuses, refusal causes and measurements unchanged",
+        "originalSha256": "sha256:581fe7a1bfd0228625c09438934ced3d897713f7e355be867def02a932753b92",
+        "projectedSha256": "sha256:a31cc44f013f867c2e4710675ae1a94b4578e8d59c138bf580a5c084b6798bb9"
+      }
     },
     {
       "name": "shipping",
       "kind": "yes",
       "input": "samples/consumed-algebra/yes/shipping.json",
       "inputDigest": "sha256:d37e2fb80d815879edd9cbace3e1631fcc062b4d6c1e705b96644f4401853241",
-      "readerDigest": "sha256:b596c35fc09d0b659ce4605bf7f2ec698bc177d3f20c020a0ba75e26709a640d",
+      "readerDigest": "sha256:b602abcf9ae357741112e0caf474c7556ba66492ed9c9c59575d638796a36cd9",
       "instrument": "@lapxo/bound@0.2.1",
       "command": [
         "fold",
@@ -61,17 +72,22 @@
         "evidence"
       ],
       "status": 0,
-      "stdout": "bound-lock/1 at=place:sha256:d37e2fb80d815879edd9cbace3e1631fcc062b4d6c1e705b96644f4401853241 by=reader:d508b0f0434a form=alphabet measure=observed role=writes scope=inputs/sample.json value=d37e2fb80d815879\nbound-lock/1 at=place:sha256:d37e2fb80d815879edd9cbace3e1631fcc062b4d6c1e705b96644f4401853241 by=reader:d508b0f0434a form=interval measure=count role=writes scope=compatibility/captures value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n",
-      "stderr": "READER   reader.js \u00b7 1 run \u00b7 1187 ms\nSPENT    observe reader.js 2+4644 ms\nOBSERVE  1 run \u00b7 0 read by key \u00b7 4648 ms\nOWN      imports 16 ms \u00b7 bodies 0 ms \u00b7 removed 1 ms \u00b7 readers 0 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 1 ms \u00b7 zoom 0 ms \u00b7 nos 0 ms \u00b7 zoomed 0 ms \u00b7 applied 1 ms \u00b7 laid 1 ms \u00b7 resets 0 ms \u00b7 store 0 ms \u00b7 ship 1 ms\nSPENT    fold capsules 2 ms \u00b7 own 23 ms \u00b7 regions 7 ms \u00b7 ceilings 2 ms \u00b7 paid 1 ms \u00b7 docs 0 ms \u00b7 ceilings 1 ms\nBEAT     fold 3491d577 folded 9.3 s \u00b7 0.4 s folded\nKEPT     fold 3491d577 miss \u00b7 no fold was kept before this one\n",
-      "elapsedMs": 14466.626457986422,
-      "cause": null
+      "stdout": "bound-lock/1 at=place:sha256:d37e2fb80d815879edd9cbace3e1631fcc062b4d6c1e705b96644f4401853241 by=reader:166adbd132d8 form=alphabet measure=observed role=writes scope=inputs/sample.json value=d37e2fb80d815879\nbound-lock/1 at=place:sha256:d37e2fb80d815879edd9cbace3e1631fcc062b4d6c1e705b96644f4401853241 by=reader:166adbd132d8 form=interval measure=count role=writes scope=compatibility/captures value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n",
+      "stderr": "READER   reader.js \u00b7 1 run \u00b7 184 ms\nOBSERVE  1 run \u00b7 0 read by key \u00b7 189 ms\nOWN      imports 17 ms \u00b7 bodies 0 ms \u00b7 removed 1 ms \u00b7 readers 0 ms \u00b7 alphabets 0 ms \u00b7 capsules 0 ms \u00b7 regions 1 ms \u00b7 vectors 0 ms \u00b7 zoom 0 ms \u00b7 nos 1 ms \u00b7 zoomed 0 ms \u00b7 applied 0 ms \u00b7 laid 2 ms \u00b7 resets 1 ms \u00b7 store 0 ms \u00b7 ship 0 ms\nSPENT    fold capsules 1 ms \u00b7 own 26 ms \u00b7 regions 7 ms \u00b7 ceilings 2 ms \u00b7 paid 0 ms \u00b7 docs 0 ms \u00b7 ceilings 1 ms\nBEAT     fold cd9f0acb folded 0.3 s \u00b7 7.8 s folded\nKEPT     fold cd9f0acb miss \u00b7 no fold was kept before this one\n",
+      "elapsedMs": 448.5395000083372,
+      "cause": null,
+      "diagnosticProjection": {
+        "policy": "replace fixture and workspace absolute locations with declared placeholders; statuses, refusal causes and measurements unchanged",
+        "originalSha256": "sha256:12937ca8abc48dd337b674dbec867b46f416a79f9a466445535319f3ffa13496",
+        "projectedSha256": "sha256:12937ca8abc48dd337b674dbec867b46f416a79f9a466445535319f3ffa13496"
+      }
     },
     {
       "name": "shipping",
       "kind": "no",
       "input": "samples/consumed-algebra/no/shipping.json",
       "inputDigest": "sha256:1a23a53e5d0cb4e8100c8c606312e131e2419a43dcc3826256fd566d8dfd4948",
-      "readerDigest": "sha256:b596c35fc09d0b659ce4605bf7f2ec698bc177d3f20c020a0ba75e26709a640d",
+      "readerDigest": "sha256:b602abcf9ae357741112e0caf474c7556ba66492ed9c9c59575d638796a36cd9",
       "instrument": "@lapxo/bound@0.2.1",
       "command": [
         "fold",
@@ -80,9 +96,14 @@
       ],
       "status": 1,
       "stdout": "",
-      "stderr": "REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/kernel-upgrade-043/sdk-closure/native-live/shipping/reader.js \u00b7 Error: REFUSE\u00b7K-U differing expected projection\nOBSERVE  0 run \u00b7 0 read by key \u00b7 204 ms\nbound: REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader /Users/nahumochoa/Documents/Codex/2026-10-03/analiza-el-plan-y-ve-que/work/kernel-upgrade-043/sdk-closure/native-live/shipping/reader.js \u00b7 Error: REFUSE\u00b7K-U differing expected projection\n{\"profile\":\"bound-refusal@1\",\"code\":\"operation/failed\",\"category\":\"host\",\"meaning\":\"An operation failed without a more specific public code; details are diagnostic only.\",\"next\":\"inspect-diagnostic\",\"catalog\":\"sha256:4b2a1768a0454a34c031855cdde75c1da07cc7e00933ee7fd52c2fc6b917a701\"}\n",
-      "elapsedMs": 399.8234159662388,
-      "cause": "REFUSE\u00b7K-U differing expected projection"
+      "stderr": "REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <place>/reader.js \u00b7 Error: REFUSE\u00b7consumed-algebra differing expected projection\nOBSERVE  0 run \u00b7 0 read by key \u00b7 180 ms\nbound: REFUSE\u00b7reader reader.js \u00b7 REFUSE\u00b7reader <place>/reader.js \u00b7 Error: REFUSE\u00b7consumed-algebra differing expected projection\n{\"profile\":\"bound-refusal@1\",\"code\":\"operation/failed\",\"category\":\"host\",\"meaning\":\"An operation failed without a more specific public code; details are diagnostic only.\",\"next\":\"inspect-diagnostic\",\"catalog\":\"sha256:4b2a1768a0454a34c031855cdde75c1da07cc7e00933ee7fd52c2fc6b917a701\"}\n",
+      "elapsedMs": 349.6013749972917,
+      "cause": "REFUSE\u00b7consumed-algebra differing expected projection",
+      "diagnosticProjection": {
+        "policy": "replace fixture and workspace absolute locations with declared placeholders; statuses, refusal causes and measurements unchanged",
+        "originalSha256": "sha256:cbed5717504ec39e3ea00749671559d3526786ed8f68e79d79563ecd6b6e5cec",
+        "projectedSha256": "sha256:54939c5dcf92365c61d16e7fb5b8ca7dfbbbc585ae88f9a15c7d6dc60c71630f"
+      }
     }
   ],
   "baseline": {

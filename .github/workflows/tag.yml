@@ -1,17 +1,32 @@
 name: tag
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: [test]
+    types: [completed]
 jobs:
   tag:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'main'
+    concurrency: release-tag
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.workflow_run.head_sha }}
           fetch-depth: 0
-      - run: |
+      - name: Tag the verified commit and start delivery
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
           version="v$(node -p "require('./package.json').version")"
-          git tag --list "$version" | grep -q . && exit 0
-          git tag "$version" && git push origin "$version"
+          commit="$(git rev-parse HEAD)"
+          if git rev-parse --verify "refs/tags/$version" >/dev/null 2>&1; then
+            test "$(git rev-parse "$version^{commit}")" = "$commit"
+          else
+            git tag "$version" "$commit"
+            git push origin "$version"
+          fi
+          gh workflow run release.yml --repo "$GITHUB_REPOSITORY" --ref "$version"

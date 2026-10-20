@@ -1,6 +1,6 @@
 # @lapxo/topos
 
-![version 0.2.1](https://img.shields.io/badge/version-0.2.1-2255aa) ![license MIT](https://img.shields.io/badge/license-MIT-2255aa)
+![version 0.2.2](https://img.shields.io/badge/version-0.2.2-2255aa) ![license MIT](https://img.shields.io/badge/license-MIT-2255aa)
 
 Wire, forms and views for interpreting declared information
 

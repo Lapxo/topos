@@ -1,12 +1,8 @@
 name: release
 on:
-  workflow_run:
-    workflows: [tag]
-    types: [completed]
   workflow_dispatch:
 jobs:
   stage:
-    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main')
     concurrency: release-delivery
     environment: release
     runs-on: ubuntu-latest
@@ -16,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          ref: ${{ github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: 24

@@ -1,0 +1,54 @@
+{
+  "profile": "topos-algebra-consumption/1",
+  "scope": "Focused consumed-surface comparison, not equivalence of all theorems or native admission",
+  "archives": {
+    "0.4.6": "sha256:077524d0fb48d4b9ba4fcb308e27b29784dc2591f25f601c8afd1f173ec48b04",
+    "0.4.7": "sha256:28cba430228db1c04f446c93f81b09a2705d6bf3e222d35adbe5a4cee4061884"
+  },
+  "captures": [
+    {
+      "command": [
+        "node",
+        "--conditions=source",
+        "--import",
+        "./test/setup.ts",
+        "--test",
+        "test/algebra-alignment.test.ts",
+        "test/projection-chain.test.ts",
+        "test/order-counterexample.test.ts",
+        "test/standing.test.ts",
+        "test/reading-identity.test.ts",
+        "test/walk-refinement.test.ts",
+        "test/wire-conformance.test.ts",
+        "test/core-boundary.test.ts"
+      ],
+      "exitCode": 0,
+      "snapshotSha256": "67bee949bca5179c218952cccea925973644256d3a7b1a57a413ccf74b2839c5",
+      "logSha256": "b7b281175e8764292664a63af17be5a106c888310f3ab0a7139b683a8fe76293",
+      "version": "0.4.6",
+      "testsPassed": 28
+    },
+    {
+      "command": [
+        "node",
+        "--conditions=source",
+        "--import",
+        "./test/setup.ts",
+        "--test",
+        "test/algebra-alignment.test.ts",
+        "test/projection-chain.test.ts",
+        "test/order-counterexample.test.ts",
+        "test/standing.test.ts",
+        "test/reading-identity.test.ts",
+        "test/walk-refinement.test.ts",
+        "test/wire-conformance.test.ts",
+        "test/core-boundary.test.ts"
+      ],
+      "exitCode": 0,
+      "snapshotSha256": "67bee949bca5179c218952cccea925973644256d3a7b1a57a413ccf74b2839c5",
+      "logSha256": "ba23562a3f6bd3354e1aa1800fd9bfd5248ab9a7714b8e6870815a2f456cd6cb",
+      "version": "0.4.7",
+      "testsPassed": 28
+    }
+  ]
+}

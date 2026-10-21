@@ -1,0 +1,37 @@
+{
+  "place": "catalog/items",
+  "card": {
+    "place": "catalog/items",
+    "key": "writer",
+    "snapshot": "sha256:2444f549fd45dae4032bfcd409d43612ad93ee0972f1ed6bf111b8409175c0e2",
+    "authority": "sha256:34d35779f977535b3b6d352a10ba29588aa327f70a74223a213275e2d01c8a1b",
+    "coverage": "sha256:96079f04ac5b476a4dd111eb164c42232f5fac2696620e96cd9aed5e2588f8f5",
+    "policy": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+    "budget": "sha256:0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+    "catalog": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+    "standingContract": "sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c",
+    "grants": [
+      "sha256:3492ad65d05a973fef8c825521eeb41ae64625a672a8aeeeabc696e16d62a020"
+    ],
+    "retirements": [],
+    "demands": [],
+    "horizon": {
+      "clock": "declared-clock",
+      "unit": "ticks",
+      "from": 10,
+      "through": 20
+    },
+    "issuedAt": 10,
+    "actions": [
+      {
+        "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047",
+        "decision": "allow"
+      }
+    ],
+    "evidence": "sha256:1bfcd78dfe18ca63ee53d99a1cbfa5499cd13193c62b17853c219a8f292745f9"
+  },
+  "proof": {
+    "signature": "V/JMYHOvTRVDcfdt6i0+RNsh3cWqgflAB1AcvFi3KMVu6B2VsbAIhkh5XV5qyyP+LdoMSYg9OQfqZKVJm01CDg=="
+  },
+  "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047"
+}

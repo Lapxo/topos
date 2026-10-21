@@ -1,0 +1,11 @@
+{
+  "place": "catalog/items",
+  "pack": {
+    "origin": "sha256:73e1a8584863972cb06b13b9147d29bba3f94021257c1388da4ad301b1f2812f",
+    "declarations": [
+      "bound-lock/1 form=alphabet measure=text role=writes scope=catalog/items/name value=public-birth",
+      "bound-lock/1 form=alphabet measure=text role=writes scope=catalog/items/name value=public-birth"
+    ]
+  },
+  "occupied": []
+}

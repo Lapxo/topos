@@ -12,6 +12,9 @@ const hash=(x:unknown):x is string=>typeof x==='string'&&/^sha256:[0-9a-f]{64}$/
 const obj=(x:unknown):x is Record<string,unknown>=>x!==null&&typeof x==='object'&&!Array.isArray(x);
 function keys(x:object,names:readonly string[],cause:string){if(Object.keys(x).some(k=>!names.includes(k)))return fail(cause);}
 function list(x:readonly string[],cause:string):readonly string[]{if(!Array.isArray(x)||x.some(v=>!text(v)))return fail(cause);return [...new Set(x)].sort(byBytes);}
+/** Shared normalization of a declaration; neither function evaluates eligibility or time. */
+export function normalizeRegistryHorizon(input:RegistryHorizon):RegistryHorizon{const h=input;if(!obj(h))return fail('horizon');keys(h,['clock','unit','from','through'],'horizon fields');if(!text(h.clock)||!text(h.unit)||!Number.isSafeInteger(h.from)||!Number.isSafeInteger(h.through)||h.from<0||h.from>h.through)return fail('horizon');return {clock:h.clock,unit:h.unit,from:h.from,through:h.through};}
+export function normalizeRegistryQuorum(input:RegistryQuorum):RegistryQuorum{const q=input;if(!obj(q))return fail('quorum');keys(q,['kind','eligible','required'],'quorum fields');if(q.kind!=='named-threshold@1')return fail('quorum kind');const eligible=list(q.eligible,'quorum eligible');if(!eligible.length||eligible.length!==q.eligible.length||!Number.isSafeInteger(q.required)||q.required<1||q.required>eligible.length)return fail('quorum threshold');return {kind:q.kind,eligible,required:q.required};}
 function normalized(e:RegistryEntry):Record<string,string>{
  if(!obj(e))return fail('entry');keys(e,['kind','place','holder','lineage','shares','card','horizon','quorum','target'],'fields');
  for(const n of ['place','holder','lineage']as const)if(!text(e[n]))return fail('identity '+n);
@@ -22,8 +25,8 @@ function normalized(e:RegistryEntry):Record<string,string>{
   if(e.shares!==undefined)f.shares=JSON.stringify(list(e.shares,'shares'));
   if(e.card!==undefined){if(!hash(e.card))return fail('card digest');f.card=e.card;}
  }else {if(!hash(e.target))return fail('exact target digest');if(e.shares!==undefined||e.card!==undefined)return fail('withdrawal payload');f.target=e.target;}
- if(e.horizon!==undefined){const h=e.horizon;if(!obj(h))return fail('horizon');keys(h,['clock','unit','from','through'],'horizon fields');if(!text(h.clock)||!text(h.unit)||!Number.isSafeInteger(h.from)||!Number.isSafeInteger(h.through)||h.from<0||h.from>h.through)return fail('horizon');f.horizon=JSON.stringify({clock:h.clock,unit:h.unit,from:h.from,through:h.through});}
- if(e.quorum!==undefined){const q=e.quorum;if(!obj(q))return fail('quorum');keys(q,['kind','eligible','required'],'quorum fields');if(q.kind!=='named-threshold@1')return fail('quorum kind');const eligible=list(q.eligible,'quorum eligible');if(!eligible.length||eligible.length!==q.eligible.length||!Number.isSafeInteger(q.required)||q.required<1||q.required>eligible.length)return fail('quorum threshold');f.quorum=JSON.stringify({kind:q.kind,eligible,required:q.required});}
+ if(e.horizon!==undefined)f.horizon=JSON.stringify(normalizeRegistryHorizon(e.horizon));
+ if(e.quorum!==undefined)f.quorum=JSON.stringify(normalizeRegistryQuorum(e.quorum));
  return f;
 }
 export function encodeRegistryEntry(entry:RegistryEntry):string{return REGISTRY_PLACE_PROFILE+canonical(normalized(entry)).slice('bound-lock/1'.length);}

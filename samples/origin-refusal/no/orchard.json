@@ -1,0 +1,21 @@
+{
+  "place": "orchard/harvest",
+  "origin": {
+    "origin": "sha256:937c3b8f2af422231f7abc4c69c5e602a9a0df40b9efc63e9d0facfacac36700",
+    "key": "other",
+    "scope": "orchard/harvest",
+    "context": "sha256:00e537f3ae3dd29209cb5bb237d68ea667e987241db76149b6bb5002c6bab4da",
+    "evidence": "sha256:3cec1f73495785e9b14f2b386268575fee3a2d00d1bde1517ccde04ae7575fdf"
+  },
+  "proof": {
+    "signature": "OljcUMD1zM2aYhd/9z46ZBqmXmGa2dRDyxlxgNg6WXfitpj6lUj/cKoM7bfCXSQ8QGWclLMFtYzF37SyHBdyAg=="
+  },
+  "refusal": {
+    "producer": "fixture-consumer",
+    "code": "origin/key-material-request",
+    "request": "sha256:8c232b9fab7ac42a1b64728ca3a0a06bd731ba227503c46ed3e5717ed7131ee8",
+    "scope": "orchard/harvest",
+    "context": "sha256:00e537f3ae3dd29209cb5bb237d68ea667e987241db76149b6bb5002c6bab4da",
+    "next": "use-injected-signer"
+  }
+}

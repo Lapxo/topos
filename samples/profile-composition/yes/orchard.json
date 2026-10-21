@@ -1,0 +1,24 @@
+{
+  "place": "orchard/harvest",
+  "profile": {
+    "name": "orchard/harvest/profile",
+    "parents": [
+      "sha256:f69ef5a4cfff15b0a62fac1616da8919d53644901357a9901e0598bffcda5fdf"
+    ],
+    "fields": [
+      {
+        "coordinate": "orchard/harvest/calls",
+        "contract": "sha256:f880c37020de7ff66c5b8a0a6c636252a443992186472cdbf69a0b278ee84c33",
+        "value": "0..5"
+      }
+    ],
+    "pins": [],
+    "witnesses": []
+  },
+  "profiles": [
+    [
+      "sha256:f69ef5a4cfff15b0a62fac1616da8919d53644901357a9901e0598bffcda5fdf",
+      "topos-profile-composition/1 fields=\"[{\\\"coordinate\\\":\\\"orchard/harvest/calls\\\",\\\"contract\\\":\\\"sha256:f880c37020de7ff66c5b8a0a6c636252a443992186472cdbf69a0b278ee84c33\\\",\\\"value\\\":\\\"0..10\\\"}]\" name=orchard/harvest/profile parents=[] pins=\"[{\\\"category\\\":\\\"forms/budget\\\",\\\"class\\\":\\\"form\\\",\\\"algorithm\\\":\\\"sha256\\\",\\\"digest\\\":\\\"sha256:80e9d79df86394f2c1f3339b1f9ec4130ffd6af3785fcb8d63979cb18f226550\\\"}]\" witnesses=[]"
+    ]
+  ]
+}

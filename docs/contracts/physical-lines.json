@@ -1,0 +1,67 @@
+{
+  "id": "topos-physical-lines/1",
+  "domain": "Complete named-file snapshot and declared region selectors supplied by consumer; no implicit filesystem access",
+  "producer": "Topos readPhysicalLines with host-supplied digest primitive",
+  "model": {
+    "name": "finite-nonnegative-atomic-valuation@1",
+    "package": "@lapxo/obligations@0.4.7",
+    "contract": "sha256:636ace16eeaa46eafb7b07c28d1d57916bc9108b188e96b5a8bf7bed6dc15707",
+    "implementation": "sha256:ef7e39d0ac44b0dd3d4b68220d3c381f737eb2729d0017ed3271ce119d408b13"
+  },
+  "text": {
+    "encoding": "UTF-8, fatal decoding; BOM permitted and counts as content",
+    "separator": "LF; CRLF is one LF separator; isolated CR refuses",
+    "count": "Number of LF bytes plus one if nonempty content has no final LF",
+    "blankAndCommentLines": "included",
+    "otherUnicodeSeparators": "content, not LF"
+  },
+  "selection": {
+    "matcher": "existing wire/classes.matches; * stays within segment, ** whole segment crosses segments",
+    "empty": "Valid selector matching no file yields named unmeasured selector-no-match, never payable zero",
+    "fileIdentity": "named file of supplied snapshot; same bytes at two names remain two inputs",
+    "malformed": "empty/absolute/traversing paths, backslashes, controls and non-segment ** refuse",
+    "partialUnion": "Each selector has its own named selection status; a matched region union does not hide unmatched selectors or satisfy their demands"
+  },
+  "support": {
+    "atom": "named file, integer physical-line weight",
+    "composition": "Delegated to finiteRegionMeasure; overlap, disjointness and unassigned retained",
+    "noMatchRegions": "excluded from numeric valuation; remain explicitly unmeasured in region outputs"
+  },
+  "policy": {
+    "byteBudget": "Declared input-byte limit checked before digest/UTF8 scan",
+    "rowBudget": "Declared selector-code-units-times-candidates limit and delegated finiteRegionMeasure declared-input-rows limit; separate work sections"
+  },
+  "authentication": "Digest callback checks file bytes only; snapshot authority, completeness, selector origin and evidence coverage remain consuming-host obligations",
+  "consumer": "Bound compares ceilings, judges witness and widening, and produces BLOCK; Topos does not",
+  "quartet": {
+    "yes": [
+      "samples/physical-lines/yes/catalog.json",
+      "samples/physical-lines/yes/orchard.json"
+    ],
+    "no": [
+      "samples/physical-lines/no/catalog.json",
+      "samples/physical-lines/no/orchard.json"
+    ],
+    "unitVector": "test/physical-lines.test.ts",
+    "native": "Requires declared reader, consumer binding and native receipt; source tests alone do not close it"
+  },
+  "refusals": [
+    "physical-lines/profile",
+    "physical-lines/policy",
+    "physical-lines/file",
+    "physical-lines/duplicate-file",
+    "physical-lines/selector",
+    "physical-lines/duplicate-region",
+    "physical-lines/integrity",
+    "physical-lines/utf8",
+    "physical-lines/isolated-cr",
+    "physical-lines/digest-port"
+  ],
+  "unmeasured": [
+    "physical-lines/byte-budget",
+    "physical-lines/selection-budget",
+    "region-measure/budget",
+    "selector-no-match"
+  ],
+  "lifecycle": "This contract specifies interpretation, not admission or publication status. Consult selected standing, admission receipts and release approval."
+}

@@ -117,3 +117,32 @@ export type { RegistryHorizon, RegistryQuorum, RegistryEntry, RegistryContext } 
 
 export { CI_FORM_PROFILE, encodeCiDeclaration, decodeCiDeclaration, inspectCiDeclaration } from './ci-form.ts';
 export type { CiDeclaration, CiContext } from './ci-form.ts';
+
+export {PROJECTION_CHAIN_PROFILE, PROJECTION_CHAIN_MODEL, measureProjectionChain} from './projection-chain.ts';
+export type {ProjectionChain} from './projection-chain.ts';
+
+export {READING_WITNESS_PROFILE, encodeReadingWitness, decodeReadingWitness, inspectReadingWitness, readingWitnessStatementBytes} from './reading-witness.ts';
+export type {ReadingWitness} from './reading-witness.ts';
+export {PHYSICAL_LINES_PROFILE, PHYSICAL_LINES_MODEL, readPhysicalLines} from './physical-lines.ts';
+export type {PhysicalLinesInput} from './physical-lines.ts';
+
+export type {RecordBudget} from './record.ts';
+export {AUTHORITY_CARD_PROFILE,encodeAuthorityCard,decodeAuthorityCard,authorityCardStatement,inspectAuthorityCard,authorityCardAnswer} from './authority-card.ts';
+export type {AuthorityCard,AuthorityCardContext} from './authority-card.ts';
+export {ATTRIBUTED_ORIGIN_PROFILE,WRITTEN_REFUSAL_PROFILE,encodeAttributedOrigin,decodeAttributedOrigin,originStatement,inspectAttributedOrigin,authenticateOrigin,encodeWrittenRefusal,decodeWrittenRefusal} from './origin-refusal.ts';
+export type {AttributedOrigin,WrittenRefusal} from './origin-refusal.ts';
+export {ACTION_RECEIPT_PROFILE,AUTHENTICATED_LINK_PROFILE,actionStatementBytes,encodeActionReceipt,decodeActionReceipt,inspectActionReceipt,verifyActionReceipt,encodeActionLink,decodeActionLink,verifyActionLink} from './action-link.ts';
+export type {ActionStatement,ActionReceipt,ActionReceiptContext,ActionLink} from './action-link.ts';
+export {GOVERNANCE_RECORD_PROFILE,encodeGovernanceRecord,decodeGovernanceRecord,inspectGovernanceRecord,inspectGroupChange} from './group-decision.ts';
+export type {GovernanceGroup,GovernanceMember,GovernanceDecision,GovernanceRecord} from './group-decision.ts';
+export {PORTABLE_BIRTH_PROFILE,encodePortableBirth,decodePortableBirth,inspectPortableBirth} from './portable-birth.ts';
+export type {PortableBirth} from './portable-birth.ts';
+export {SOURCE_EXHAUSTION_PROFILE,encodeSourceExhaustion,decodeSourceExhaustion,inspectSourceExhaustion} from './source-exhaustion.ts';
+export type {SourceExhaustion} from './source-exhaustion.ts';
+export {PROFILE_COMPOSITION_PROFILE,encodeProfileComposition,decodeProfileComposition,inspectProfileComposition} from './profile-composition.ts';
+export type {ProfileComposition,CategoryPin} from './profile-composition.ts';
+export {REFERENCE_PROJECTION_PROFILE,encodeReferenceProjection,decodeReferenceProjection,inspectReferenceProjection} from './reference-projection.ts';
+export type {ReferenceProjection} from './reference-projection.ts';
+export {REFUSAL_CATALOG_PROFILE,encodeRefusalCatalog,decodeRefusalCatalog,lookupRefusal} from './refusal-catalog.ts';
+export type {RefusalCatalog,RefusalEntry} from './refusal-catalog.ts';
+export {refusalCatalogIdentity} from './refusal-catalog.ts';

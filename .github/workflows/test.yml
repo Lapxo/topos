@@ -20,7 +20,7 @@ jobs:
       - run: npm run build
       - run: npm test
       - name: Install the declared verification instrument
-        run: npm install --prefix "$RUNNER_TEMP/instrument" --no-save --ignore-scripts @lapxo/bound@0.2.1 @lapxo/topos@0.2.0
+        run: npm install --prefix "$RUNNER_TEMP/instrument" --no-save --ignore-scripts @lapxo/bound@0.2.5
       - name: Resolve the declared public inputs
         env:
           GH_TOKEN: ${{ github.token }}
@@ -30,21 +30,13 @@ jobs:
           while read -r digest source; do
             asset="${source##*/}"
             case "$source" in
-              https://github.com/Lapxo/topos/releases/download/v0.2.2/*)
-                gh release download v0.2.2 --repo "$GITHUB_REPOSITORY" --pattern "$asset" --dir "$RUNNER_TEMP/readers" ;;
-              https://github.com/Lapxo/topos/releases/download/v0.2.3/*)
-                gh release download v0.2.3 --repo "$GITHUB_REPOSITORY" --pattern "$asset" --dir "$RUNNER_TEMP/readers" ;;
+              https://github.com/Lapxo/topos/releases/download/v0.2.4/*)
+                gh release download v0.2.4 --repo "$GITHUB_REPOSITORY" --pattern "$asset" --dir "$RUNNER_TEMP/readers" ;;
               *) curl --fail --location --retry 3 "$source" --output "$RUNNER_TEMP/readers/$asset" ;;
             esac
             printf '%s  %s\n' "$digest" "$RUNNER_TEMP/readers/$asset" | sha256sum -c -
             cp "$RUNNER_TEMP/readers/$asset" ".bound/cas/blobs/$digest"
           done <<'ASSETS'
-          e18f06b61312e405b8e2cfdaa4d93419bbe3faeac4a11e31e9681106ffdd5e6f https://github.com/Lapxo/topos/releases/download/v0.2.2/e18f06b61312e405b8e2cfdaa4d93419bbe3faeac4a11e31e9681106ffdd5e6f.tgz
-          df0a98c67eb711e44d10aa042a20d61df231c567a7ad3312db9198e9b73db314 https://github.com/Lapxo/topos/releases/download/v0.2.2/df0a98c67eb711e44d10aa042a20d61df231c567a7ad3312db9198e9b73db314.bound
-          f23ef5a6617cf8d9107d414b140ec3501dec33991897aa9a32786b447002d9a7 https://github.com/Lapxo/topos/releases/download/v0.2.2/f23ef5a6617cf8d9107d414b140ec3501dec33991897aa9a32786b447002d9a7.tgz
-          ddbac69790f00d165b5ac81e121ba92b5203971a14823bd4eed0a4ad63a25faa https://github.com/Lapxo/topos/releases/download/v0.2.2/ddbac69790f00d165b5ac81e121ba92b5203971a14823bd4eed0a4ad63a25faa.bound
-          fb9ad3e3f8f42d3399473c608e5f3529d60ede4b6503df68772d55b6ac4d6b6f https://github.com/Lapxo/topos/releases/download/v0.2.2/fb9ad3e3f8f42d3399473c608e5f3529d60ede4b6503df68772d55b6ac4d6b6f.tgz
-          5db22239caf90fcee333d933614f99c89ec38d322da947a0b70b2a1dbb425f2f https://github.com/Lapxo/topos/releases/download/v0.2.2/5db22239caf90fcee333d933614f99c89ec38d322da947a0b70b2a1dbb425f2f.bound
           907115916d64425dd23305fc74d91ea937f933de4949fb0c4dc94fb1106bd33e https://github.com/Lapxo/topos/releases/download/v0.1.13/907115916d64425dd23305fc74d91ea937f933de4949fb0c4dc94fb1106bd33e
           67c56505dc51e1f7c0e9926df43d0e05d19a158edd4b1be1db95666d0bac8951 https://github.com/Lapxo/topos/releases/download/v0.1.13/67c56505dc51e1f7c0e9926df43d0e05d19a158edd4b1be1db95666d0bac8951
           36e1f6822242625e745e5fb1611d8c74c2b769e39b902d1eff56e384bb3ae29e https://github.com/Lapxo/topos-github/releases/download/v0.1.4/36e1f6822242625e745e5fb1611d8c74c2b769e39b902d1eff56e384bb3ae29e
@@ -53,12 +45,25 @@ jobs:
           76aba07865464ef09c7695cff3eb755935877d2fe07c0d325d49166268cb19da https://github.com/Lapxo/topos-node/releases/download/v0.1.4/76aba07865464ef09c7695cff3eb755935877d2fe07c0d325d49166268cb19da
           79f67c38e9533f08bea37944cbf9eeef272b415fa798de89f82f4fccfcc4ca54 https://github.com/Lapxo/topos-doc/releases/download/v0.1.4/79f67c38e9533f08bea37944cbf9eeef272b415fa798de89f82f4fccfcc4ca54
           47434ee39db8454c60d7e814b237e9dbf327a01b7d740f64b21c2c4aa81eed2b https://github.com/Lapxo/topos-node/releases/download/v0.1.4/47434ee39db8454c60d7e814b237e9dbf327a01b7d740f64b21c2c4aa81eed2b
-          db4d1ed06ecd8e5413feb2f79b846d4cec98ad12ac44ae3c3d96a35fe261b2bb https://registry.npmjs.org/@lapxo/obligations/-/obligations-0.4.5.tgz
-          9a8663faf88359f59829dfdc23debd39717f547f0d7d4b93881ffb6a71127460 https://github.com/Lapxo/topos/releases/download/v0.2.3/9a8663faf88359f59829dfdc23debd39717f547f0d7d4b93881ffb6a71127460.bound
-          08ebb23b3e31f89d8aa8fd90ad8bfc44722f54d977196f1aaba4f578bc49419f https://github.com/Lapxo/topos/releases/download/v0.2.3/08ebb23b3e31f89d8aa8fd90ad8bfc44722f54d977196f1aaba4f578bc49419f.tgz
+          28cba430228db1c04f446c93f81b09a2705d6bf3e222d35adbe5a4cee4061884 https://registry.npmjs.org/@lapxo/obligations/-/obligations-0.4.7.tgz
+          f7121f72949214b8221ecd4fe793aba2b233fd958002123e5e1d8551691fbca2 https://github.com/Lapxo/topos/releases/download/v0.2.4/f7121f72949214b8221ecd4fe793aba2b233fd958002123e5e1d8551691fbca2.bound
+          91aaca373ae5cf188b1c67c55d4f815052f5de76d810e96ea4cf2540500e0964 https://github.com/Lapxo/topos/releases/download/v0.2.4/91aaca373ae5cf188b1c67c55d4f815052f5de76d810e96ea4cf2540500e0964.tgz
+          5981f8b2702054c18317fae1a89dd40fc707cf83b9a17680f8ef0cb5040dbec3 https://github.com/Lapxo/topos/releases/download/v0.2.4/5981f8b2702054c18317fae1a89dd40fc707cf83b9a17680f8ef0cb5040dbec3.bound
+          856711c8a7f8ea6843e894f71f4d8d158b6c7e4672b21ca950be2fc7dca76cd7 https://github.com/Lapxo/topos/releases/download/v0.2.4/856711c8a7f8ea6843e894f71f4d8d158b6c7e4672b21ca950be2fc7dca76cd7.tgz
+          1ee1b3a8529252f18efd453dc5c779d7d18f0c10e60980bf12fd122ced39c818 https://github.com/Lapxo/topos/releases/download/v0.2.4/1ee1b3a8529252f18efd453dc5c779d7d18f0c10e60980bf12fd122ced39c818.bound
+          ad1c280fe52369cc9db9600afe802f3b41abec7f7c3e396edfe6ba251b3d8b45 https://github.com/Lapxo/topos/releases/download/v0.2.4/ad1c280fe52369cc9db9600afe802f3b41abec7f7c3e396edfe6ba251b3d8b45.tgz
+          3bcbf78829d769f81cf88163cc7a00c126d2fb195dbbaa45dc1edac953cbae32 https://github.com/Lapxo/topos/releases/download/v0.2.4/3bcbf78829d769f81cf88163cc7a00c126d2fb195dbbaa45dc1edac953cbae32.bound
+          67ace1b34e96cec41831a1fba409d18a1f333b17e57f15941168a0738f6abe0f https://github.com/Lapxo/topos/releases/download/v0.2.4/67ace1b34e96cec41831a1fba409d18a1f333b17e57f15941168a0738f6abe0f.tgz
+          5c92babf8ba67c077fbd324681c4f1122b1bf3f7b62c20a37b46ad33a825136d https://github.com/Lapxo/topos/releases/download/v0.2.4/5c92babf8ba67c077fbd324681c4f1122b1bf3f7b62c20a37b46ad33a825136d.bound
+          970329e0f95d38fefd6589d207c84d363ef5f5f02ae203dfa95c68b266129c00 https://github.com/Lapxo/topos/releases/download/v0.2.4/970329e0f95d38fefd6589d207c84d363ef5f5f02ae203dfa95c68b266129c00.tgz
+          92ffa39ee4def8f12fb54a73816b665aca532f0d5682180492373d4f78a7bdc9 https://github.com/Lapxo/topos/releases/download/v0.2.4/92ffa39ee4def8f12fb54a73816b665aca532f0d5682180492373d4f78a7bdc9.bound
+          705622ba3ab39c76f26f3adfc7de6fcbcaf69dc7d97c2fb105fcc8c9f5016f61 https://github.com/Lapxo/topos/releases/download/v0.2.4/705622ba3ab39c76f26f3adfc7de6fcbcaf69dc7d97c2fb105fcc8c9f5016f61.tgz
+          741de039e88ab1e3e02278c1de9a9b7cfe93407e71454023422e2b697cb64865 https://github.com/Lapxo/topos/releases/download/v0.2.4/741de039e88ab1e3e02278c1de9a9b7cfe93407e71454023422e2b697cb64865.bound
+          c1b4f9cd36f17bce5a5e21b3176378996302a318f3e08f7abe054b72a8fca90c https://github.com/Lapxo/topos/releases/download/v0.2.4/c1b4f9cd36f17bce5a5e21b3176378996302a318f3e08f7abe054b72a8fca90c.tgz
           ASSETS
       - name: Check native closure and file seals
         run: |
           set -euo pipefail
           node "$RUNNER_TEMP/instrument/node_modules/@lapxo/bound/dist/cli/verb.js" fold --check
-      - run: npm pack --silent
+      - name: Inspect the declared package members
+        run: npm pack --dry-run --ignore-scripts --json

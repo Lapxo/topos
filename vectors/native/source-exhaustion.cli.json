@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "Represent source exhaustion, attributed events and known/unknown recovery without implementing budgets or scheduling. No production admission or effects.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:41a95e1ac13e74bb0d76f8698abd21fc8249c9a8283d6f2a8f8b7347dddb5cfc",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:41a95e1ac13e74bb0d76f8698abd21fc8249c9a8283d6f2a8f8b7347dddb5cfc by=reader:8fef634dfd69 form=alphabet measure=observed role=writes scope=inputs/sample.json value=41a95e1ac13e74bb\nbound-lock/1 at=place:sha256:41a95e1ac13e74bb0d76f8698abd21fc8249c9a8283d6f2a8f8b7347dddb5cfc by=reader:8fef634dfd69 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"status\\\":\\\"declared\\\",\\\"record\\\":{\\\"card\\\":\\\"sha256:701358a7dbe4d9f0a395bd4420abf71ccb022cc28224874735807da7372ea105\\\",\\\"source\\\":\\\"catalog/items\\\",\\\"unit\\\":\\\"calls\\\",\\\"frame\\\":{\\\"clock\\\":\\\"fixture-clock\\\",\\\"unit\\\":\\\"ticks\\\",\\\"from\\\":0,\\\"through\\\":100},\\\"exhaustedAt\\\":10,\\\"knownSince\\\":11,\\\"evidence\\\":\\\"sha256:6f1c173e2f78915d29bc3a87f042a0140ce4430ce71da05bdddb40453635404a\\\",\\\"events\\\":[{\\\"id\\\":\\\"call-1\\\",\\\"evidence\\\":\\\"sha256:ee77e7170643330c9cc8e9fb7d5a89acbc328e846255fc633ceeba2be66cf653\\\"}],\\\"recovery\\\":{\\\"kind\\\":\\\"declared\\\",\\\"at\\\":20,\\\"evidence\\\":\\\"sha256:d27c635cf4bdfcb15d0b90ffc07826adbc3da545d9d7bd7cfd8c90a736a4207b\\\"}},\\\"needs\\\":[\\\"source-exhaustion/verify-observation\\\",\\\"source-exhaustion/verify-recovery\\\"],\\\"budgetDecision\\\":\\\"not evaluated\\\",\\\"retry\\\":\\\"not scheduled\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/source-exhaustion/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:4159d577bbe358163b9230bf228a7949b5b668fa19a857455c4987f8994e1eb6",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/source-exhaustion/no/catalog.json",
+      "cause": "source-exhaustion/duplicate-event"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:4b5b41028b685465a5c95691d072c3db17202e0eac0be2b678eb8bdf4921a48d",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:4b5b41028b685465a5c95691d072c3db17202e0eac0be2b678eb8bdf4921a48d by=reader:8fef634dfd69 form=alphabet measure=observed role=writes scope=inputs/sample.json value=4b5b41028b685465\nbound-lock/1 at=place:sha256:4b5b41028b685465a5c95691d072c3db17202e0eac0be2b678eb8bdf4921a48d by=reader:8fef634dfd69 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"status\\\":\\\"declared\\\",\\\"record\\\":{\\\"card\\\":\\\"sha256:05b997566175493681df15be9d6c2dcee5462de45521acdaf4d2a03a5e69f43a\\\",\\\"source\\\":\\\"orchard/harvest\\\",\\\"unit\\\":\\\"calls\\\",\\\"frame\\\":{\\\"clock\\\":\\\"fixture-clock\\\",\\\"unit\\\":\\\"ticks\\\",\\\"from\\\":0,\\\"through\\\":100},\\\"exhaustedAt\\\":10,\\\"knownSince\\\":11,\\\"evidence\\\":\\\"sha256:f947b1a7fe60ae6c1864f8256bacfb78ea9dc79aec5f6bf9639244f76cb5a330\\\",\\\"events\\\":[{\\\"id\\\":\\\"call-1\\\",\\\"evidence\\\":\\\"sha256:f66eafd00e458dcb2cf6d6462270c11e111f2fdd10e7310ade59167ca98ad0bc\\\"}],\\\"recovery\\\":{\\\"kind\\\":\\\"declared\\\",\\\"at\\\":20,\\\"evidence\\\":\\\"sha256:1732894d725b31ad8ad036e94256ed5d4e1b75ba6ea21eabdcc48791ae9f1cfb\\\"}},\\\"needs\\\":[\\\"source-exhaustion/verify-observation\\\",\\\"source-exhaustion/verify-recovery\\\"],\\\"budgetDecision\\\":\\\"not evaluated\\\",\\\"retry\\\":\\\"not scheduled\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/source-exhaustion/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:e86768c1c12b34553a1a54030d467ab38294c1b9105b71dade4546efd3c0fb59",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/source-exhaustion/no/orchard.json",
+      "cause": "source-exhaustion/duplicate-event"
+    }
+  ]
+}

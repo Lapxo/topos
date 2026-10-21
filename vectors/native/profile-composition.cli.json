@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "Describe finite parent-by-digest profiles, declared field contracts and unambiguous category pins. No production admission or effects.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:d66bb1b03a7efd46e7b77c9fac611fc2b4ba55e62c3539f95ca3d0f5940fbde3",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:d66bb1b03a7efd46e7b77c9fac611fc2b4ba55e62c3539f95ca3d0f5940fbde3 by=reader:8fef634dfd69 form=alphabet measure=observed role=writes scope=inputs/sample.json value=d66bb1b03a7efd46\nbound-lock/1 at=place:sha256:d66bb1b03a7efd46e7b77c9fac611fc2b4ba55e62c3539f95ca3d0f5940fbde3 by=reader:8fef634dfd69 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"status\\\":\\\"declared\\\",\\\"fields\\\":[{\\\"coordinate\\\":\\\"catalog/items/calls\\\",\\\"composition\\\":\\\"compatible\\\",\\\"transition\\\":\\\"narrowing\\\",\\\"witness\\\":false}],\\\"pins\\\":[{\\\"category\\\":\\\"forms/budget\\\",\\\"class\\\":\\\"form\\\",\\\"algorithm\\\":\\\"sha256\\\",\\\"digest\\\":\\\"sha256:80e9d79df86394f2c1f3339b1f9ec4130ffd6af3785fcb8d63979cb18f226550\\\"}],\\\"needs\\\":[],\\\"authority\\\":\\\"not established\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/profile-composition/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:e384f1ccabe3f34578147266b98d0f8a73592c89b427ab4a1aca1a2c0312e92b",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/profile-composition/no/catalog.json",
+      "cause": "profile/integrity"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:fece3e395f043a37db5376e7c48406e304aa3cc0912208692ecc0aaa45372676",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:fece3e395f043a37db5376e7c48406e304aa3cc0912208692ecc0aaa45372676 by=reader:8fef634dfd69 form=alphabet measure=observed role=writes scope=inputs/sample.json value=fece3e395f043a37\nbound-lock/1 at=place:sha256:fece3e395f043a37db5376e7c48406e304aa3cc0912208692ecc0aaa45372676 by=reader:8fef634dfd69 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"status\\\":\\\"declared\\\",\\\"fields\\\":[{\\\"coordinate\\\":\\\"orchard/harvest/calls\\\",\\\"composition\\\":\\\"compatible\\\",\\\"transition\\\":\\\"narrowing\\\",\\\"witness\\\":false}],\\\"pins\\\":[{\\\"category\\\":\\\"forms/budget\\\",\\\"class\\\":\\\"form\\\",\\\"algorithm\\\":\\\"sha256\\\",\\\"digest\\\":\\\"sha256:80e9d79df86394f2c1f3339b1f9ec4130ffd6af3785fcb8d63979cb18f226550\\\"}],\\\"needs\\\":[],\\\"authority\\\":\\\"not established\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/profile-composition/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:d8672d78f92f5b9da737e48d0b968406c659976bd0bdc6260b297c1208fac2e0",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/profile-composition/no/orchard.json",
+      "cause": "profile/integrity"
+    }
+  ]
+}

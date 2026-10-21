@@ -1,0 +1,34 @@
+{
+  "id": "topos-profile-composition/1",
+  "purpose": "Describe finite parent-by-digest profiles, declared field contracts and unambiguous category pins.",
+  "lifecycle": "Contract meaning is independent of a particular selection/admission/publication.",
+  "pure": true,
+  "reuse": [
+    "composePolicy",
+    "policyTransition",
+    "selected Obligations lattice through receiver PolicyField",
+    "reading-witness codec",
+    "bounded record codec"
+  ],
+  "contract": [
+    "Parent bytes are supplied by caller, checked by digest, decoded canonically and traversed under an explicit item/closure budget; no I/O or universal region list.",
+    "Missing parents remain needs/bytes; corrupted bytes refuse integrity; cycles refuse.",
+    "Each field names its semantic contract digest; receiver selects the PolicyField with matching coordinate. Uncatalogued semantics refuse.",
+    "Existing meet/order classifies narrowing or widening. Widening and non-meet replacement leave authorize-transition needs; adding a field is addition, never called narrowing.",
+    "A witness remains a reading declaration requiring verify-witness; attest never grants authority. A witness does not erase authorize-transition needs.",
+    "Category pins name category, class, algorithm and digest. Ambiguous inherited/own pins refuse instead of last-wins.",
+    "All ancestor constraints remain visible; inherited incompatible non-meet declarations are not silently overridden. No inverse of a reduced aggregate is reconstructed."
+  ],
+  "externalObligations": [
+    "Witness signature/CI provenance and consuming policy acceptance",
+    "Authorization and native admission of widening or added permissions",
+    "Resolving incompatible inherited profiles or replacing category pins"
+  ],
+  "quartet": {
+    "contract": "docs/contracts/profile-composition.json",
+    "positive": "samples/profile-composition/yes/*.json",
+    "vector": "vectors/native/profile-composition.cli.json",
+    "negative": "samples/profile-composition/no/*.json"
+  },
+  "readerBudgetMs": 5000
+}

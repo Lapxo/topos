@@ -1,0 +1,53 @@
+{
+  "profile": "topos-projection-chain/1",
+  "atoms": [
+    "shipping/0",
+    "shipping/1",
+    "shipping/2"
+  ],
+  "f": [
+    [
+      "shipping/0",
+      "shipping/y0"
+    ],
+    [
+      "shipping/1",
+      "shipping/y0"
+    ],
+    [
+      "shipping/2",
+      "shipping/y1"
+    ]
+  ],
+  "g": [
+    [
+      "shipping/y0",
+      "shipping/z"
+    ],
+    [
+      "shipping/y1",
+      "shipping/z"
+    ]
+  ],
+  "prior": {
+    "kind": "uniform"
+  },
+  "policy": {
+    "logarithm": "binary64-log2",
+    "budget": "8"
+  },
+  "direct": [
+    [
+      "shipping/0",
+      "shipping/z0"
+    ],
+    [
+      "shipping/1",
+      "shipping/z1"
+    ],
+    [
+      "shipping/2",
+      "shipping/z0"
+    ]
+  ]
+}

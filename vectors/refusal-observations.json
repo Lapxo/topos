@@ -1,0 +1,786 @@
+{
+  "profile": "topos-producer-observations/1",
+  "scope": "Exact causes in the declared0.2.4 new-form surface; no exhaustive claim for legacy or external producers",
+  "observations": [
+    {
+      "code": "record/object",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Expected an object record rather than null, array or scalar."
+    },
+    {
+      "code": "record/fields",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A required field is missing or an undeclared field was provided."
+    },
+    {
+      "code": "record/name",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Expected a nonempty name without whitespace or control characters."
+    },
+    {
+      "code": "record/coordinate",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A logical coordinate contains an absolute path, traversal or empty segment."
+    },
+    {
+      "code": "record/digest",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Expected a lowercase SHA-256 identifier with 64 hexadecimal digits."
+    },
+    {
+      "code": "record/budget",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Caller byte/item budgets are missing or invalid."
+    },
+    {
+      "code": "record/items",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Expected an array within the declared item budget."
+    },
+    {
+      "code": "record/duplicate",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A named collection member is repeated."
+    },
+    {
+      "code": "record/bytes",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Encoded bytes exceed the caller byte budget."
+    },
+    {
+      "code": "record/profile",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The record prefix differs from the selected profile."
+    },
+    {
+      "code": "record/line",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The underlying wire record cannot be parsed."
+    },
+    {
+      "code": "record/json",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A structured field is not valid JSON."
+    },
+    {
+      "code": "record/canonical",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Supplied bytes differ from the selected canonical bytes."
+    },
+    {
+      "code": "authority-card/clock",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Issue time is outside the declared horizon or is invalid."
+    },
+    {
+      "code": "authority-card/consumer-context",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Receiver time or judgment-verification context is absent."
+    },
+    {
+      "code": "authority-card/decision",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Decision is not allow, ask or deny."
+    },
+    {
+      "code": "authority-card/duplicate-action",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "One exact request occurs more than once."
+    },
+    {
+      "code": "card-stale",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The selected context or explicit clock does not match the card."
+    },
+    {
+      "code": "not-in-card",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The exact request digest is absent from the card."
+    },
+    {
+      "code": "origin/consumer-context",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The receiver did not supply a coverage-verification port."
+    },
+    {
+      "code": "origin/context",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Attributed key or context differs from the receiver-selected context."
+    },
+    {
+      "code": "action/records",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Native evidence contains a non-string record."
+    },
+    {
+      "code": "action/bytes",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Native evidence exceeds its caller byte budget."
+    },
+    {
+      "code": "action/consumer-context",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The receiver did not supply the native act-verification ports."
+    },
+    {
+      "code": "action/context",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Action statement differs from the receiver-expected statement."
+    },
+    {
+      "code": "action/receipt-binding",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Act identity or receipt digest differs from verified native evidence."
+    },
+    {
+      "code": "action/statement-binding",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The verified act does not contain the required signed statement commitment."
+    },
+    {
+      "code": "action/link-binding",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Emitter, region or reference identity differs from the committed statement."
+    },
+    {
+      "code": "governance/kind",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The record is not a declared group, member or decision."
+    },
+    {
+      "code": "governance/duplicate-proof-key",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Two proof references name the same signer key."
+    },
+    {
+      "code": "governance/change-kind",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The predecessor, successor and decision record kinds do not match."
+    },
+    {
+      "code": "governance/prior-group-binding",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Successor and proposal do not bind the prior group under the same place/name."
+    },
+    {
+      "code": "pack/declaration",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A birth declaration is not a single valid wire line."
+    },
+    {
+      "code": "pack/envelope",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The birth declaration has an unapproved field, role, form or authority envelope."
+    },
+    {
+      "code": "pack/authority-material",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Birth payload attempts to include authority material or a withdrawal."
+    },
+    {
+      "code": "pack/canonical-declaration",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Birth declaration bytes are not their canonical wire encoding."
+    },
+    {
+      "code": "pack/empty",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A birth payload must contain at least one declaration."
+    },
+    {
+      "code": "pack/duplicate",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "An identical birth declaration is repeated."
+    },
+    {
+      "code": "source-exhaustion/time",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "An exhaustion timestamp is not a nonnegative safe integer."
+    },
+    {
+      "code": "source-exhaustion/frame",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Exhaustion or known-since time is outside the declared frame."
+    },
+    {
+      "code": "source-exhaustion/duplicate-event",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "One event ID is repeated in the exhaustion declaration."
+    },
+    {
+      "code": "source-exhaustion/recovery",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Recovery is neither unknown nor declared."
+    },
+    {
+      "code": "source-exhaustion/recovery-before-exhaustion",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Declared recovery precedes exhaustion."
+    },
+    {
+      "code": "source-exhaustion/context",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Card identity, source, cost unit or receiver clock/unit differs."
+    },
+    {
+      "code": "profile/duplicate-parent",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A parent digest is repeated."
+    },
+    {
+      "code": "profile/value",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A field value is not a string."
+    },
+    {
+      "code": "profile/pin-algorithm",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A category pin uses an unsupported digest algorithm."
+    },
+    {
+      "code": "profile/duplicate-coordinate",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A field, category or witness coordinate is repeated."
+    },
+    {
+      "code": "profile/closure-budget",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Finite parent traversal exceeds its declared closure-item budget."
+    },
+    {
+      "code": "profile/cycle",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Parent traversal contains a cycle, including with an untrusted digest provider."
+    },
+    {
+      "code": "profile/integrity",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Supplied parent bytes do not match the named digest."
+    },
+    {
+      "code": "profile/field-contract",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Inherited declarations of a field name different semantic contracts."
+    },
+    {
+      "code": "profile/undeclared-field",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Receiver has no selected semantic field contract for this coordinate."
+    },
+    {
+      "code": "profile/ambiguous-pin",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Inherited and local pins conflict within one category."
+    },
+    {
+      "code": "reference-projection/budget",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "The receiver inline byte limit is not a nonnegative safe integer."
+    },
+    {
+      "code": "reference-projection/duplicates-policy",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Duplicate handling is neither preserve nor refuse."
+    },
+    {
+      "code": "reference-projection/duplicate-relation",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "An exact relation repeats under the refuse policy."
+    },
+    {
+      "code": "reference-projection/text",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Inline projection is not text."
+    },
+    {
+      "code": "reference-projection/inline-budget",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "UTF-8 projection bytes exceed the receiver limit; nothing is truncated."
+    },
+    {
+      "code": "reference-projection/inline-integrity",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "Inline projection bytes do not match their declared digest."
+    },
+    {
+      "code": "catalog/prose",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A meaning is empty or contains control characters."
+    },
+    {
+      "code": "catalog/duplicate-action",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A next-action name occurs twice."
+    },
+    {
+      "code": "catalog/unresolved-next",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "An entry names a next action absent from the catalog."
+    },
+    {
+      "code": "catalog/duplicate-code",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "A producer/code pair is duplicated."
+    },
+    {
+      "code": "catalog/duplicate-demand",
+      "result": "observed",
+      "place": "catalog/items",
+      "meaning": "An external producer/demand pair is duplicated."
+    },
+    {
+      "code": "record/object",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Expected an object record rather than null, array or scalar."
+    },
+    {
+      "code": "record/fields",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A required field is missing or an undeclared field was provided."
+    },
+    {
+      "code": "record/name",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Expected a nonempty name without whitespace or control characters."
+    },
+    {
+      "code": "record/coordinate",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A logical coordinate contains an absolute path, traversal or empty segment."
+    },
+    {
+      "code": "record/digest",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Expected a lowercase SHA-256 identifier with 64 hexadecimal digits."
+    },
+    {
+      "code": "record/budget",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Caller byte/item budgets are missing or invalid."
+    },
+    {
+      "code": "record/items",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Expected an array within the declared item budget."
+    },
+    {
+      "code": "record/duplicate",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A named collection member is repeated."
+    },
+    {
+      "code": "record/bytes",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Encoded bytes exceed the caller byte budget."
+    },
+    {
+      "code": "record/profile",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The record prefix differs from the selected profile."
+    },
+    {
+      "code": "record/line",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The underlying wire record cannot be parsed."
+    },
+    {
+      "code": "record/json",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A structured field is not valid JSON."
+    },
+    {
+      "code": "record/canonical",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Supplied bytes differ from the selected canonical bytes."
+    },
+    {
+      "code": "authority-card/clock",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Issue time is outside the declared horizon or is invalid."
+    },
+    {
+      "code": "authority-card/consumer-context",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Receiver time or judgment-verification context is absent."
+    },
+    {
+      "code": "authority-card/decision",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Decision is not allow, ask or deny."
+    },
+    {
+      "code": "authority-card/duplicate-action",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "One exact request occurs more than once."
+    },
+    {
+      "code": "card-stale",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The selected context or explicit clock does not match the card."
+    },
+    {
+      "code": "not-in-card",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The exact request digest is absent from the card."
+    },
+    {
+      "code": "origin/consumer-context",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The receiver did not supply a coverage-verification port."
+    },
+    {
+      "code": "origin/context",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Attributed key or context differs from the receiver-selected context."
+    },
+    {
+      "code": "action/records",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Native evidence contains a non-string record."
+    },
+    {
+      "code": "action/bytes",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Native evidence exceeds its caller byte budget."
+    },
+    {
+      "code": "action/consumer-context",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The receiver did not supply the native act-verification ports."
+    },
+    {
+      "code": "action/context",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Action statement differs from the receiver-expected statement."
+    },
+    {
+      "code": "action/receipt-binding",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Act identity or receipt digest differs from verified native evidence."
+    },
+    {
+      "code": "action/statement-binding",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The verified act does not contain the required signed statement commitment."
+    },
+    {
+      "code": "action/link-binding",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Emitter, region or reference identity differs from the committed statement."
+    },
+    {
+      "code": "governance/kind",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The record is not a declared group, member or decision."
+    },
+    {
+      "code": "governance/duplicate-proof-key",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Two proof references name the same signer key."
+    },
+    {
+      "code": "governance/change-kind",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The predecessor, successor and decision record kinds do not match."
+    },
+    {
+      "code": "governance/prior-group-binding",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Successor and proposal do not bind the prior group under the same place/name."
+    },
+    {
+      "code": "pack/declaration",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A birth declaration is not a single valid wire line."
+    },
+    {
+      "code": "pack/envelope",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The birth declaration has an unapproved field, role, form or authority envelope."
+    },
+    {
+      "code": "pack/authority-material",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Birth payload attempts to include authority material or a withdrawal."
+    },
+    {
+      "code": "pack/canonical-declaration",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Birth declaration bytes are not their canonical wire encoding."
+    },
+    {
+      "code": "pack/empty",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A birth payload must contain at least one declaration."
+    },
+    {
+      "code": "pack/duplicate",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "An identical birth declaration is repeated."
+    },
+    {
+      "code": "source-exhaustion/time",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "An exhaustion timestamp is not a nonnegative safe integer."
+    },
+    {
+      "code": "source-exhaustion/frame",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Exhaustion or known-since time is outside the declared frame."
+    },
+    {
+      "code": "source-exhaustion/duplicate-event",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "One event ID is repeated in the exhaustion declaration."
+    },
+    {
+      "code": "source-exhaustion/recovery",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Recovery is neither unknown nor declared."
+    },
+    {
+      "code": "source-exhaustion/recovery-before-exhaustion",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Declared recovery precedes exhaustion."
+    },
+    {
+      "code": "source-exhaustion/context",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Card identity, source, cost unit or receiver clock/unit differs."
+    },
+    {
+      "code": "profile/duplicate-parent",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A parent digest is repeated."
+    },
+    {
+      "code": "profile/value",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A field value is not a string."
+    },
+    {
+      "code": "profile/pin-algorithm",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A category pin uses an unsupported digest algorithm."
+    },
+    {
+      "code": "profile/duplicate-coordinate",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A field, category or witness coordinate is repeated."
+    },
+    {
+      "code": "profile/closure-budget",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Finite parent traversal exceeds its declared closure-item budget."
+    },
+    {
+      "code": "profile/cycle",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Parent traversal contains a cycle, including with an untrusted digest provider."
+    },
+    {
+      "code": "profile/integrity",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Supplied parent bytes do not match the named digest."
+    },
+    {
+      "code": "profile/field-contract",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Inherited declarations of a field name different semantic contracts."
+    },
+    {
+      "code": "profile/undeclared-field",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Receiver has no selected semantic field contract for this coordinate."
+    },
+    {
+      "code": "profile/ambiguous-pin",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Inherited and local pins conflict within one category."
+    },
+    {
+      "code": "reference-projection/budget",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "The receiver inline byte limit is not a nonnegative safe integer."
+    },
+    {
+      "code": "reference-projection/duplicates-policy",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Duplicate handling is neither preserve nor refuse."
+    },
+    {
+      "code": "reference-projection/duplicate-relation",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "An exact relation repeats under the refuse policy."
+    },
+    {
+      "code": "reference-projection/text",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Inline projection is not text."
+    },
+    {
+      "code": "reference-projection/inline-budget",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "UTF-8 projection bytes exceed the receiver limit; nothing is truncated."
+    },
+    {
+      "code": "reference-projection/inline-integrity",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "Inline projection bytes do not match their declared digest."
+    },
+    {
+      "code": "catalog/prose",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A meaning is empty or contains control characters."
+    },
+    {
+      "code": "catalog/duplicate-action",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A next-action name occurs twice."
+    },
+    {
+      "code": "catalog/unresolved-next",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "An entry names a next action absent from the catalog."
+    },
+    {
+      "code": "catalog/duplicate-code",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "A producer/code pair is duplicated."
+    },
+    {
+      "code": "catalog/duplicate-demand",
+      "result": "observed",
+      "place": "orchard/harvest",
+      "meaning": "An external producer/demand pair is duplicated."
+    }
+  ]
+}

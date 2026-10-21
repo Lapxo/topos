@@ -1,0 +1,51 @@
+{
+  "profile": "topos-physical-lines/1",
+  "snapshot": "sha256:68566dc699f6bb9ea6330371b5dd1c402ae6f717dd30ef15a88d1a7a6afaf8c7",
+  "files": [
+    {
+      "name": "orchard/notes.txt",
+      "text": "altered bytes",
+      "digest": "sha256:6c7eb952015bc69be335ad867485f2e6b869cd796cb78abc2ab7e9d73f10cdb3"
+    },
+    {
+      "name": "orchard/empty.txt",
+      "text": "",
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "orchard/other.txt",
+      "text": "unassigned\n",
+      "digest": "sha256:4fc4b270ee49a7b12cd4c3d6c972603e4fd37e768850071cde1e175bd04170f7"
+    }
+  ],
+  "regions": [
+    {
+      "scope": "orchard/source",
+      "selectors": [
+        "orchard/notes.txt"
+      ]
+    },
+    {
+      "scope": "orchard/door",
+      "selectors": [
+        "orchard/notes.txt"
+      ]
+    },
+    {
+      "scope": "orchard/empty",
+      "selectors": [
+        "orchard/empty.txt"
+      ]
+    },
+    {
+      "scope": "orchard/missing",
+      "selectors": [
+        "orchard/absent*"
+      ]
+    }
+  ],
+  "policy": {
+    "byteBudget": "10000",
+    "rowBudget": "10000"
+  }
+}

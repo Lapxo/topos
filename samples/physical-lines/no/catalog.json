@@ -1,0 +1,51 @@
+{
+  "profile": "topos-physical-lines/1",
+  "snapshot": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+  "files": [
+    {
+      "name": "catalog/notes.txt",
+      "text": "altered bytes",
+      "digest": "sha256:6c7eb952015bc69be335ad867485f2e6b869cd796cb78abc2ab7e9d73f10cdb3"
+    },
+    {
+      "name": "catalog/empty.txt",
+      "text": "",
+      "digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "catalog/other.txt",
+      "text": "unassigned\n",
+      "digest": "sha256:4fc4b270ee49a7b12cd4c3d6c972603e4fd37e768850071cde1e175bd04170f7"
+    }
+  ],
+  "regions": [
+    {
+      "scope": "catalog/source",
+      "selectors": [
+        "catalog/notes.txt"
+      ]
+    },
+    {
+      "scope": "catalog/door",
+      "selectors": [
+        "catalog/notes.txt"
+      ]
+    },
+    {
+      "scope": "catalog/empty",
+      "selectors": [
+        "catalog/empty.txt"
+      ]
+    },
+    {
+      "scope": "catalog/missing",
+      "selectors": [
+        "catalog/absent*"
+      ]
+    }
+  ],
+  "policy": {
+    "byteBudget": "10000",
+    "rowBudget": "10000"
+  }
+}

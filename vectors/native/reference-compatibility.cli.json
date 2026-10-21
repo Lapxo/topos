@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "A separate bounded inline preview and declared relation profile; historical references retain their exact meaning.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:8f008dd09630cd95a4a033b618def4cd510c61d3c8e3c22c21339e65d6dae95d",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:8f008dd09630cd95a4a033b618def4cd510c61d3c8e3c22c21339e65d6dae95d by=reader:458b713b4aa6 form=alphabet measure=observed role=writes scope=inputs/sample.json value=8f008dd09630cd95\nbound-lock/1 at=place:sha256:8f008dd09630cd95a4a033b618def4cd510c61d3c8e3c22c21339e65d6dae95d by=reader:458b713b4aa6 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"legacy\\\":[\\\"{\\\\\\\"namedRefusals\\\\\\\":7,\\\\\\\"class\\\\\\\":\\\\\\\"standing\\\\\\\",\\\\\\\"digest\\\\\\\":\\\\\\\"6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc\\\\\\\",\\\\\\\"lines\\\\\\\":1,\\\\\\\"authentication\\\\\\\":\\\\\\\"not demonstrated; inspect only\\\\\\\",\\\\\\\"transport\\\\\\\":\\\\\\\"declared handed input; no network invocation\\\\\\\"}\\\"],\\\"projection\\\":{\\\"status\\\":\\\"declared\\\",\\\"referenceIdentity\\\":\\\"#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a\\\",\\\"projection\\\":{\\\"profile\\\":\\\"text/plain\\\",\\\"text\\\":\\\"none \u2014 preview\\\",\\\"digest\\\":\\\"sha256:39c225be25623a974e1f32f070611b79ad3dfa2421465514561b8cc5c438ad91\\\"},\\\"relations\\\":[{\\\"relation\\\":\\\"related\\\",\\\"target\\\":\\\"sha256:73e1a8584863972cb06b13b9147d29bba3f94021257c1388da4ad301b1f2812f\\\"},{\\\"relation\\\":\\\"related\\\",\\\"target\\\":\\\"sha256:73e1a8584863972cb06b13b9147d29bba3f94021257c1388da4ad301b1f2812f\\\"}],\\\"needs\\\":[\\\"needs/bytes/sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a\\\"],\\\"projectionCompleteness\\\":\\\"not demonstrated\\\",\\\"authentication\\\":\\\"not verified\\\",\\\"fragmentPrivacy\\\":\\\"not promised\\\"}}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/reference-compatibility/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:5bc888e003b0c607dcd2e3b1e436a091279aad2e8146c2a6a96fc57e227fbffa",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/reference-compatibility/no/catalog.json",
+      "cause": "reference-projection/inline-integrity"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:62cc078b30dd71c82fd18b008ce9db9543f124cc9e167e2bd81db650301a4a2d",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:62cc078b30dd71c82fd18b008ce9db9543f124cc9e167e2bd81db650301a4a2d by=reader:458b713b4aa6 form=alphabet measure=observed role=writes scope=inputs/sample.json value=62cc078b30dd71c8\nbound-lock/1 at=place:sha256:62cc078b30dd71c82fd18b008ce9db9543f124cc9e167e2bd81db650301a4a2d by=reader:458b713b4aa6 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"legacy\\\":[\\\"{\\\\\\\"namedRefusals\\\\\\\":7,\\\\\\\"class\\\\\\\":\\\\\\\"standing\\\\\\\",\\\\\\\"digest\\\\\\\":\\\\\\\"3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576\\\\\\\",\\\\\\\"lines\\\\\\\":1,\\\\\\\"authentication\\\\\\\":\\\\\\\"not demonstrated; inspect only\\\\\\\",\\\\\\\"transport\\\\\\\":\\\\\\\"declared handed input; no network invocation\\\\\\\"}\\\"],\\\"projection\\\":{\\\"status\\\":\\\"declared\\\",\\\"referenceIdentity\\\":\\\"#topos-reference:1?class=standing&algorithm=sha256&digest=3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576&blob=sha256%3Ac214126fde40b5af953369932cdcd74661a3e290d7ccf8d26564b52f9dc5a6d5\\\",\\\"projection\\\":{\\\"profile\\\":\\\"text/plain\\\",\\\"text\\\":\\\"none \u2014 preview\\\",\\\"digest\\\":\\\"sha256:39c225be25623a974e1f32f070611b79ad3dfa2421465514561b8cc5c438ad91\\\"},\\\"relations\\\":[{\\\"relation\\\":\\\"related\\\",\\\"target\\\":\\\"sha256:3cf29b2151ada181ac5ad692bed34c6b487b4aa674684c955e462c9d62f63f7f\\\"},{\\\"relation\\\":\\\"related\\\",\\\"target\\\":\\\"sha256:3cf29b2151ada181ac5ad692bed34c6b487b4aa674684c955e462c9d62f63f7f\\\"}],\\\"needs\\\":[\\\"needs/bytes/sha256:c214126fde40b5af953369932cdcd74661a3e290d7ccf8d26564b52f9dc5a6d5\\\"],\\\"projectionCompleteness\\\":\\\"not demonstrated\\\",\\\"authentication\\\":\\\"not verified\\\",\\\"fragmentPrivacy\\\":\\\"not promised\\\"}}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/reference-compatibility/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:3de753d59ac500ccb6b90857047985c7c72ccd04472174ec2bfde910f345866c",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/reference-compatibility/no/orchard.json",
+      "cause": "reference-projection/inline-integrity"
+    }
+  ]
+}

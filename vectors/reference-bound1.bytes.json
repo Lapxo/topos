@@ -1,0 +1,39 @@
+{
+  "profile": "#bound:1",
+  "requiredFields": [
+    "class",
+    "algorithm",
+    "digest",
+    "blob",
+    "source"
+  ],
+  "fieldOrder": "class,algorithm,digest,blob,source",
+  "encoding": "encodeURIComponent; decode then exact re-encode equality",
+  "profileUnchanged": true,
+  "cases": [
+    {
+      "name": "catalog",
+      "sample": "samples/reference-profile/yes/catalog/inputs/sample.json",
+      "sampleSHA256": "b2af38cde1af39ad608fc3cc638721b8c1e7299365e7a496b7239c069f43c587",
+      "reader": "samples/reference-profile/yes/catalog/reader.js",
+      "readerSHA256": "408e1bfdba9cb4eaf6b0ee493bdea13a2eb3d01e6845c454b40d95929020ffcb",
+      "fragment": "#bound:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a&source=https%3A%2F%2Fexample.invalid%2Fcatalog.json",
+      "fragmentHex": "23626f756e643a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3666643861643235373761396533356163393734633963313230353433313566383630393666356465323639613435333338326133636635663637343437626326626c6f623d7368613235362533413234613336636539633937303365363833633365633933653130323831333564333330313061373164326565666637623265663835623035633738336138376126736f757263653d68747470732533412532462532466578616d706c652e696e76616c6964253246636174616c6f672e6a736f6e",
+      "negativeMissingSource": "REFUSE·reference fields",
+      "negativeMissingFragmentSource": "REFUSE·reference duplicate or missing field",
+      "negativeNewField": "REFUSE·reference fields"
+    },
+    {
+      "name": "route-notes",
+      "sample": "samples/reference-profile/yes/route-notes/inputs/sample.json",
+      "sampleSHA256": "97a3ae747190ac03386af5f7783c2ef1170ea562835f19b47eea323bdb62e32a",
+      "reader": "samples/reference-profile/yes/route-notes/reader.js",
+      "readerSHA256": "408e1bfdba9cb4eaf6b0ee493bdea13a2eb3d01e6845c454b40d95929020ffcb",
+      "fragment": "#bound:1?class=standing&algorithm=sha256&digest=3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576&blob=sha256%3Ac214126fde40b5af953369932cdcd74661a3e290d7ccf8d26564b52f9dc5a6d5&source=https%3A%2F%2Fexample.invalid%2Froute-notes.json",
+      "fragmentHex": "23626f756e643a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3365303463313130313035303361613136353465303131393332653732343336613438666162623431326639616631343065663038303261333266626335373626626c6f623d7368613235362533416332313431323666646534306235616639353333363939333263646364373436363161336532393064376363663864323635363462353266396463356136643526736f757263653d68747470732533412532462532466578616d706c652e696e76616c6964253246726f7574652d6e6f7465732e6a736f6e",
+      "negativeMissingSource": "REFUSE·reference fields",
+      "negativeMissingFragmentSource": "REFUSE·reference duplicate or missing field",
+      "negativeNewField": "REFUSE·reference fields"
+    }
+  ]
+}

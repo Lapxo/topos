@@ -96,3 +96,24 @@ export function responsesOf(printed: string, asked: number): readonly Response[]
   const held = last.startsWith('[') ? (JSON.parse(last) as readonly Response[]) : [];
   return Array.from({ length: asked }, (_, i) => held[i] ?? { protocol: PROTOCOL, kind: 'refuse', why: 'no answer' });
 }
+
+export { LOCATION_REFERENCE_PROFILE, checkLocatedReference, encodeLocatedReference, decodeLocatedReference, locatedReferenceIdentity, inspectLocatedReference } from './reference-location.ts';
+export type { LocatedReference, ReferenceInspection, LocatedInspection } from './reference-location.ts';
+
+export { MODULE_INVENTORY_PROFILE, encodeInventoryRow, decodeInventoryRow, moduleInventory, inventoryBytes, inventoryDiff } from './module-inventory.ts';
+export type { InventoryObservation, InventoryEvidence, InventoryRow } from './module-inventory.ts';
+
+export { SOURCE_CARD_PROFILE, encodeSourceCard, decodeSourceCard, inspectSourceCard, sourceCardRefines } from './source-card.ts';
+export type { SourceCard, SourceCardCatalog } from './source-card.ts';
+
+export { M0_MEASURE_PROFILE, inspectM0Measure, encodeM0Measure, decodeM0Measure, m0MeasureRefines } from './measure-m0.ts';
+export type { RecordValue, M0Measure } from './measure-m0.ts';
+
+export { REGION_READING_PROFILE, readRegions, encodeRegionReading } from './region-reading.ts';
+export type { RegionReadingRequest } from './region-reading.ts';
+
+export { REGISTRY_PLACE_PROFILE, encodeRegistryEntry, decodeRegistryEntry, registryEntryBytes, inspectRegistryEntry, registryLines } from './registry-place.ts';
+export type { RegistryHorizon, RegistryQuorum, RegistryEntry, RegistryContext } from './registry-place.ts';
+
+export { CI_FORM_PROFILE, encodeCiDeclaration, decodeCiDeclaration, inspectCiDeclaration } from './ci-form.ts';
+export type { CiDeclaration, CiContext } from './ci-form.ts';

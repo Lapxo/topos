@@ -1,0 +1,11 @@
+{
+  "kind": "no",
+  "place": "shipping",
+  "vectorDigest": "sha256:ee7dea87fb0b5296ac7371c52d08aadfc9ee89e098f1a8136c9cff755f89fb0b",
+  "compatibility": "complete",
+  "openDemands": [
+    "bound026-ci-witness-profile-selection",
+    "bound026-response-envelope-validation"
+  ],
+  "empirical1a": "unmeasured"
+}

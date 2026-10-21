@@ -1,0 +1,725 @@
+{
+  "profile": "topos-measure-m0/1",
+  "status": "candidate; not admitted",
+  "positive": [
+    {
+      "name": "unmeasured",
+      "record": {
+        "status": "unmeasured",
+        "reason": "external-calibration-not-supplied"
+      },
+      "bytes": "topos-measure-m0/1 record=\"{\\\"reason\\\":\\\"external-calibration-not-supplied\\\",\\\"status\\\":\\\"unmeasured\\\"}\"",
+      "utf8Hex": "746f706f732d6d6561737572652d6d302f31207265636f72643d227b5c22726561736f6e5c223a5c2265787465726e616c2d63616c6962726174696f6e2d6e6f742d737570706c6965645c222c5c227374617475735c223a5c22756e6d656173757265645c227d22",
+      "certification": "not established"
+    },
+    {
+      "name": "population",
+      "record": {
+        "status": "declared",
+        "kind": "population-moments",
+        "model": {
+          "id": "binary-M0-population-agreement@1",
+          "p": 0.75,
+          "c": 0.5,
+          "weights": {
+            "family": "uniform",
+            "K": 1
+          },
+          "jointIndependence": {
+            "kind": "joint-independence",
+            "scope": "latent-lineages-and-fresh-draws",
+            "provenance": "synthetic M0 hypothesis; not inferred from sources"
+          },
+          "parameterProvenance": "declared parameters, not inferred from agreement"
+        },
+        "observation": {
+          "design": "conditional-population-iid-with-replacement",
+          "moments": [
+            "R2",
+            "R4"
+          ],
+          "provenance": "synthetic exact two-atom fixture"
+        },
+        "units": "probability",
+        "numerical": {
+          "arithmetic": "binary64-declared",
+          "tolerance": 1e-12
+        },
+        "result": {
+          "R2": 0.71875,
+          "R4": 0.48291015625
+        }
+      },
+      "bytes": "topos-measure-m0/1 record=\"{\\\"kind\\\":\\\"population-moments\\\",\\\"model\\\":{\\\"c\\\":0.5,\\\"id\\\":\\\"binary-M0-population-agreement@1\\\",\\\"jointIndependence\\\":{\\\"kind\\\":\\\"joint-independence\\\",\\\"provenance\\\":\\\"synthetic M0 hypothesis; not inferred from sources\\\",\\\"scope\\\":\\\"latent-lineages-and-fresh-draws\\\"},\\\"p\\\":0.75,\\\"parameterProvenance\\\":\\\"declared parameters, not inferred from agreement\\\",\\\"weights\\\":{\\\"K\\\":1,\\\"family\\\":\\\"uniform\\\"}},\\\"numerical\\\":{\\\"arithmetic\\\":\\\"binary64-declared\\\",\\\"tolerance\\\":1e-12},\\\"observation\\\":{\\\"design\\\":\\\"conditional-population-iid-with-replacement\\\",\\\"moments\\\":[\\\"R2\\\",\\\"R4\\\"],\\\"provenance\\\":\\\"synthetic exact two-atom fixture\\\"},\\\"result\\\":{\\\"R2\\\":0.71875,\\\"R4\\\":0.48291015625},\\\"status\\\":\\\"declared\\\",\\\"units\\\":\\\"probability\\\"}\"",
+      "utf8Hex": "746f706f732d6d6561737572652d6d302f31207265636f72643d227b5c226b696e645c223a5c22706f70756c6174696f6e2d6d6f6d656e74735c222c5c226d6f64656c5c223a7b5c22635c223a302e352c5c2269645c223a5c2262696e6172792d4d302d706f70756c6174696f6e2d61677265656d656e7440315c222c5c226a6f696e74496e646570656e64656e63655c223a7b5c226b696e645c223a5c226a6f696e742d696e646570656e64656e63655c222c5c2270726f76656e616e63655c223a5c2273796e746865746963204d30206879706f7468657369733b206e6f7420696e6665727265642066726f6d20736f75726365735c222c5c2273636f70655c223a5c226c6174656e742d6c696e65616765732d616e642d66726573682d64726177735c227d2c5c22705c223a302e37352c5c22706172616d6574657250726f76656e616e63655c223a5c226465636c6172656420706172616d65746572732c206e6f7420696e6665727265642066726f6d2061677265656d656e745c222c5c22776569676874735c223a7b5c224b5c223a312c5c2266616d696c795c223a5c22756e69666f726d5c227d7d2c5c226e756d65726963616c5c223a7b5c2261726974686d657469635c223a5c2262696e61727936342d6465636c617265645c222c5c22746f6c6572616e63655c223a31652d31327d2c5c226f62736572766174696f6e5c223a7b5c2264657369676e5c223a5c22636f6e646974696f6e616c2d706f70756c6174696f6e2d6969642d776974682d7265706c6163656d656e745c222c5c226d6f6d656e74735c223a5b5c2252325c222c5c2252345c225d2c5c2270726f76656e616e63655c223a5c2273796e7468657469632065786163742074776f2d61746f6d20666978747572655c227d2c5c22726573756c745c223a7b5c2252325c223a302e37313837352c5c2252345c223a302e34383239313031353632357d2c5c227374617475735c223a5c226465636c617265645c222c5c22756e6974735c223a5c2270726f626162696c6974795c227d22",
+      "certification": "not established"
+    },
+    {
+      "name": "uniform-identification",
+      "record": {
+        "status": "declared",
+        "kind": "identification",
+        "model": {
+          "id": "binary-M0-uniform-population@1",
+          "p": 0.75,
+          "c": "unknown-in-(0,1]",
+          "weights": {
+            "family": "uniform",
+            "K": "unknown"
+          },
+          "jointIndependence": {
+            "kind": "joint-independence",
+            "scope": "latent-lineages-and-fresh-draws",
+            "provenance": "synthetic M0 hypothesis; not inferred from sources"
+          },
+          "parameterProvenance": "declared parameters, not inferred from agreement"
+        },
+        "observation": {
+          "design": "population-expectation",
+          "moments": {
+            "R2": 1,
+            "R4": 1
+          },
+          "provenance": "synthetic K=1,c=1 two-atom fixture"
+        },
+        "units": "dimensionless",
+        "numerical": {
+          "arithmetic": "binary64-declared",
+          "tolerance": 1e-12
+        },
+        "result": {
+          "kind": "unique-within-uniform-family",
+          "c": 1,
+          "K": 1
+        }
+      },
+      "bytes": "topos-measure-m0/1 record=\"{\\\"kind\\\":\\\"identification\\\",\\\"model\\\":{\\\"c\\\":\\\"unknown-in-(0,1]\\\",\\\"id\\\":\\\"binary-M0-uniform-population@1\\\",\\\"jointIndependence\\\":{\\\"kind\\\":\\\"joint-independence\\\",\\\"provenance\\\":\\\"synthetic M0 hypothesis; not inferred from sources\\\",\\\"scope\\\":\\\"latent-lineages-and-fresh-draws\\\"},\\\"p\\\":0.75,\\\"parameterProvenance\\\":\\\"declared parameters, not inferred from agreement\\\",\\\"weights\\\":{\\\"K\\\":\\\"unknown\\\",\\\"family\\\":\\\"uniform\\\"}},\\\"numerical\\\":{\\\"arithmetic\\\":\\\"binary64-declared\\\",\\\"tolerance\\\":1e-12},\\\"observation\\\":{\\\"design\\\":\\\"population-expectation\\\",\\\"moments\\\":{\\\"R2\\\":1,\\\"R4\\\":1},\\\"provenance\\\":\\\"synthetic K=1,c=1 two-atom fixture\\\"},\\\"result\\\":{\\\"K\\\":1,\\\"c\\\":1,\\\"kind\\\":\\\"unique-within-uniform-family\\\"},\\\"status\\\":\\\"declared\\\",\\\"units\\\":\\\"dimensionless\\\"}\"",
+      "utf8Hex": "746f706f732d6d6561737572652d6d302f31207265636f72643d227b5c226b696e645c223a5c226964656e74696669636174696f6e5c222c5c226d6f64656c5c223a7b5c22635c223a5c22756e6b6e6f776e2d696e2d28302c315d5c222c5c2269645c223a5c2262696e6172792d4d302d756e69666f726d2d706f70756c6174696f6e40315c222c5c226a6f696e74496e646570656e64656e63655c223a7b5c226b696e645c223a5c226a6f696e742d696e646570656e64656e63655c222c5c2270726f76656e616e63655c223a5c2273796e746865746963204d30206879706f7468657369733b206e6f7420696e6665727265642066726f6d20736f75726365735c222c5c2273636f70655c223a5c226c6174656e742d6c696e65616765732d616e642d66726573682d64726177735c227d2c5c22705c223a302e37352c5c22706172616d6574657250726f76656e616e63655c223a5c226465636c6172656420706172616d65746572732c206e6f7420696e6665727265642066726f6d2061677265656d656e745c222c5c22776569676874735c223a7b5c224b5c223a5c22756e6b6e6f776e5c222c5c2266616d696c795c223a5c22756e69666f726d5c227d7d2c5c226e756d65726963616c5c223a7b5c2261726974686d657469635c223a5c2262696e61727936342d6465636c617265645c222c5c22746f6c6572616e63655c223a31652d31327d2c5c226f62736572766174696f6e5c223a7b5c2264657369676e5c223a5c22706f70756c6174696f6e2d6578706563746174696f6e5c222c5c226d6f6d656e74735c223a7b5c2252325c223a312c5c2252345c223a317d2c5c2270726f76656e616e63655c223a5c2273796e746865746963204b3d312c633d312074776f2d61746f6d20666978747572655c227d2c5c22726573756c745c223a7b5c224b5c223a312c5c22635c223a312c5c226b696e645c223a5c22756e697175652d77697468696e2d756e69666f726d2d66616d696c795c227d2c5c227374617475735c223a5c226465636c617265645c222c5c22756e6974735c223a5c2264696d656e73696f6e6c6573735c227d22",
+      "certification": "not established"
+    },
+    {
+      "name": "nonuniform-set",
+      "record": {
+        "status": "declared",
+        "kind": "identification",
+        "model": {
+          "id": "binary-M0-population-agreement@1",
+          "p": 0.75,
+          "c": "unknown-in-(0,1]",
+          "weights": {
+            "family": "declared",
+            "values": [
+              0.75,
+              0.25
+            ]
+          },
+          "jointIndependence": {
+            "kind": "joint-independence",
+            "scope": "latent-lineages-and-fresh-draws",
+            "provenance": "synthetic M0 hypothesis; not inferred from sources"
+          },
+          "parameterProvenance": "declared parameters, not inferred from agreement"
+        },
+        "observation": {
+          "design": "population-expectation",
+          "moments": {
+            "R2": 1,
+            "R4": 1
+          },
+          "provenance": "synthetic K=1,c=1 two-atom fixture"
+        },
+        "units": "dimensionless",
+        "numerical": {
+          "arithmetic": "binary64-declared",
+          "tolerance": 1e-12
+        },
+        "result": {
+          "kind": "compatible-set",
+          "constraints": [
+            "R2",
+            "R4"
+          ]
+        }
+      },
+      "bytes": "topos-measure-m0/1 record=\"{\\\"kind\\\":\\\"identification\\\",\\\"model\\\":{\\\"c\\\":\\\"unknown-in-(0,1]\\\",\\\"id\\\":\\\"binary-M0-population-agreement@1\\\",\\\"jointIndependence\\\":{\\\"kind\\\":\\\"joint-independence\\\",\\\"provenance\\\":\\\"synthetic M0 hypothesis; not inferred from sources\\\",\\\"scope\\\":\\\"latent-lineages-and-fresh-draws\\\"},\\\"p\\\":0.75,\\\"parameterProvenance\\\":\\\"declared parameters, not inferred from agreement\\\",\\\"weights\\\":{\\\"family\\\":\\\"declared\\\",\\\"values\\\":[0.75,0.25]}},\\\"numerical\\\":{\\\"arithmetic\\\":\\\"binary64-declared\\\",\\\"tolerance\\\":1e-12},\\\"observation\\\":{\\\"design\\\":\\\"population-expectation\\\",\\\"moments\\\":{\\\"R2\\\":1,\\\"R4\\\":1},\\\"provenance\\\":\\\"synthetic K=1,c=1 two-atom fixture\\\"},\\\"result\\\":{\\\"constraints\\\":[\\\"R2\\\",\\\"R4\\\"],\\\"kind\\\":\\\"compatible-set\\\"},\\\"status\\\":\\\"declared\\\",\\\"units\\\":\\\"dimensionless\\\"}\"",
+      "utf8Hex": "746f706f732d6d6561737572652d6d302f31207265636f72643d227b5c226b696e645c223a5c226964656e74696669636174696f6e5c222c5c226d6f64656c5c223a7b5c22635c223a5c22756e6b6e6f776e2d696e2d28302c315d5c222c5c2269645c223a5c2262696e6172792d4d302d706f70756c6174696f6e2d61677265656d656e7440315c222c5c226a6f696e74496e646570656e64656e63655c223a7b5c226b696e645c223a5c226a6f696e742d696e646570656e64656e63655c222c5c2270726f76656e616e63655c223a5c2273796e746865746963204d30206879706f7468657369733b206e6f7420696e6665727265642066726f6d20736f75726365735c222c5c2273636f70655c223a5c226c6174656e742d6c696e65616765732d616e642d66726573682d64726177735c227d2c5c22705c223a302e37352c5c22706172616d6574657250726f76656e616e63655c223a5c226465636c6172656420706172616d65746572732c206e6f7420696e6665727265642066726f6d2061677265656d656e745c222c5c22776569676874735c223a7b5c2266616d696c795c223a5c226465636c617265645c222c5c2276616c7565735c223a5b302e37352c302e32355d7d7d2c5c226e756d65726963616c5c223a7b5c2261726974686d657469635c223a5c2262696e61727936342d6465636c617265645c222c5c22746f6c6572616e63655c223a31652d31327d2c5c226f62736572766174696f6e5c223a7b5c2264657369676e5c223a5c22706f70756c6174696f6e2d6578706563746174696f6e5c222c5c226d6f6d656e74735c223a7b5c2252325c223a312c5c2252345c223a317d2c5c2270726f76656e616e63655c223a5c2273796e746865746963204b3d312c633d312074776f2d61746f6d20666978747572655c227d2c5c22726573756c745c223a7b5c22636f6e73747261696e74735c223a5b5c2252325c222c5c2252345c225d2c5c226b696e645c223a5c22636f6d70617469626c652d7365745c227d2c5c227374617475735c223a5c226465636c617265645c222c5c22756e6974735c223a5c2264696d656e73696f6e6c6573735c227d22",
+      "certification": "not established"
+    },
+    {
+      "name": "participation",
+      "record": {
+        "status": "declared",
+        "kind": "weight-participation",
+        "model": {
+          "id": "binary-M0-population-agreement@1",
+          "p": 0.75,
+          "c": 0.5,
+          "weights": {
+            "family": "declared",
+            "values": [
+              0.75,
+              0.25,
+              0
+            ]
+          },
+          "jointIndependence": {
+            "kind": "joint-independence",
+            "scope": "latent-lineages-and-fresh-draws",
+            "provenance": "synthetic M0 hypothesis; not inferred from sources"
+          },
+          "parameterProvenance": "declared parameters, not inferred from agreement"
+        },
+        "observation": {
+          "design": "declared-normalized-weights",
+          "provenance": "declared normalized masses; zero excluded from support"
+        },
+        "units": "dimensionless",
+        "numerical": {
+          "arithmetic": "binary64-declared",
+          "tolerance": 1e-12
+        },
+        "result": {
+          "kind": "declared-weight-participation",
+          "lower": 1.6,
+          "upper": 1.6
+        }
+      },
+      "bytes": "topos-measure-m0/1 record=\"{\\\"kind\\\":\\\"weight-participation\\\",\\\"model\\\":{\\\"c\\\":0.5,\\\"id\\\":\\\"binary-M0-population-agreement@1\\\",\\\"jointIndependence\\\":{\\\"kind\\\":\\\"joint-independence\\\",\\\"provenance\\\":\\\"synthetic M0 hypothesis; not inferred from sources\\\",\\\"scope\\\":\\\"latent-lineages-and-fresh-draws\\\"},\\\"p\\\":0.75,\\\"parameterProvenance\\\":\\\"declared parameters, not inferred from agreement\\\",\\\"weights\\\":{\\\"family\\\":\\\"declared\\\",\\\"values\\\":[0.75,0.25,0]}},\\\"numerical\\\":{\\\"arithmetic\\\":\\\"binary64-declared\\\",\\\"tolerance\\\":1e-12},\\\"observation\\\":{\\\"design\\\":\\\"declared-normalized-weights\\\",\\\"provenance\\\":\\\"declared normalized masses; zero excluded from support\\\"},\\\"result\\\":{\\\"kind\\\":\\\"declared-weight-participation\\\",\\\"lower\\\":1.6,\\\"upper\\\":1.6},\\\"status\\\":\\\"declared\\\",\\\"units\\\":\\\"dimensionless\\\"}\"",
+      "utf8Hex": "746f706f732d6d6561737572652d6d302f31207265636f72643d227b5c226b696e645c223a5c227765696768742d70617274696369706174696f6e5c222c5c226d6f64656c5c223a7b5c22635c223a302e352c5c2269645c223a5c2262696e6172792d4d302d706f70756c6174696f6e2d61677265656d656e7440315c222c5c226a6f696e74496e646570656e64656e63655c223a7b5c226b696e645c223a5c226a6f696e742d696e646570656e64656e63655c222c5c2270726f76656e616e63655c223a5c2273796e746865746963204d30206879706f7468657369733b206e6f7420696e6665727265642066726f6d20736f75726365735c222c5c2273636f70655c223a5c226c6174656e742d6c696e65616765732d616e642d66726573682d64726177735c227d2c5c22705c223a302e37352c5c22706172616d6574657250726f76656e616e63655c223a5c226465636c6172656420706172616d65746572732c206e6f7420696e6665727265642066726f6d2061677265656d656e745c222c5c22776569676874735c223a7b5c2266616d696c795c223a5c226465636c617265645c222c5c2276616c7565735c223a5b302e37352c302e32352c305d7d7d2c5c226e756d65726963616c5c223a7b5c2261726974686d657469635c223a5c2262696e61727936342d6465636c617265645c222c5c22746f6c6572616e63655c223a31652d31327d2c5c226f62736572766174696f6e5c223a7b5c2264657369676e5c223a5c226465636c617265642d6e6f726d616c697a65642d776569676874735c222c5c2270726f76656e616e63655c223a5c226465636c61726564206e6f726d616c697a6564206d61737365733b207a65726f206578636c756465642066726f6d20737570706f72745c227d2c5c22726573756c745c223a7b5c226b696e645c223a5c226465636c617265642d7765696768742d70617274696369706174696f6e5c222c5c226c6f7765725c223a312e362c5c2275707065725c223a312e367d2c5c227374617475735c223a5c226465636c617265645c222c5c22756e6974735c223a5c2264696d656e73696f6e6c6573735c227d22",
+      "certification": "not established"
+    },
+    {
+      "name": "synthetic-conditional-enclosure",
+      "record": {
+        "status": "declared",
+        "kind": "keff-outer-enclosure",
+        "model": {
+          "id": "binary-M0-whole-cell-iid@1",
+          "p": "external-box",
+          "c": "external-box",
+          "weights": {
+            "family": "uniform",
+            "K": 2
+          },
+          "jointIndependence": {
+            "kind": "joint-independence",
+            "scope": "latent-lineages-and-fresh-draws",
+            "provenance": "synthetic M0 hypothesis; not inferred from sources"
+          },
+          "parameterProvenance": "declared parameters, not inferred from agreement"
+        },
+        "observation": {
+          "design": "conditional-population-iid-with-replacement",
+          "cellUnit": "whole-complete-cell",
+          "T": 100,
+          "N": 4,
+          "Dhat": 0.06,
+          "independence": "joint-iid-complete-cells",
+          "provenance": "synthetic whole-cell premise only",
+          "epsilon": 0.1,
+          "calibration": {
+            "p": {
+              "box": [
+                0.74,
+                0.76
+              ],
+              "failureUpper": 0.01,
+              "source": "external",
+              "coveragePremise": "synthetic premise only, not an admitted calibrator receipt",
+              "provenance": "synthetic handed coverage premise; not an admitted calibrator receipt"
+            },
+            "c": {
+              "box": [
+                0.9,
+                0.95
+              ],
+              "failureUpper": 0.01,
+              "source": "external",
+              "coveragePremise": "synthetic premise only, not an admitted calibrator receipt",
+              "provenance": "synthetic handed coverage premise; not inferred from cofailurePairs"
+            }
+          },
+          "uncertaintyUnit": "whole-cells"
+        },
+        "units": "dimensionless",
+        "numerical": {
+          "arithmetic": "binary64-declared",
+          "tolerance": 1e-12
+        },
+        "result": {
+          "kind": "conditional-outer-enclosure",
+          "lower": 1,
+          "upper": 1.607578125,
+          "denominator": "strictly-positive-premise",
+          "cap": null,
+          "errorBudgets": {
+            "data": 0.25,
+            "p": 0.01,
+            "c": 0.01,
+            "method": "union-bound"
+          }
+        }
+      },
+      "bytes": "topos-measure-m0/1 record=\"{\\\"kind\\\":\\\"keff-outer-enclosure\\\",\\\"model\\\":{\\\"c\\\":\\\"external-box\\\",\\\"id\\\":\\\"binary-M0-whole-cell-iid@1\\\",\\\"jointIndependence\\\":{\\\"kind\\\":\\\"joint-independence\\\",\\\"provenance\\\":\\\"synthetic M0 hypothesis; not inferred from sources\\\",\\\"scope\\\":\\\"latent-lineages-and-fresh-draws\\\"},\\\"p\\\":\\\"external-box\\\",\\\"parameterProvenance\\\":\\\"declared parameters, not inferred from agreement\\\",\\\"weights\\\":{\\\"K\\\":2,\\\"family\\\":\\\"uniform\\\"}},\\\"numerical\\\":{\\\"arithmetic\\\":\\\"binary64-declared\\\",\\\"tolerance\\\":1e-12},\\\"observation\\\":{\\\"Dhat\\\":0.06,\\\"N\\\":4,\\\"T\\\":100,\\\"calibration\\\":{\\\"c\\\":{\\\"box\\\":[0.9,0.95],\\\"coveragePremise\\\":\\\"synthetic premise only, not an admitted calibrator receipt\\\",\\\"failureUpper\\\":0.01,\\\"provenance\\\":\\\"synthetic handed coverage premise; not inferred from cofailurePairs\\\",\\\"source\\\":\\\"external\\\"},\\\"p\\\":{\\\"box\\\":[0.74,0.76],\\\"coveragePremise\\\":\\\"synthetic premise only, not an admitted calibrator receipt\\\",\\\"failureUpper\\\":0.01,\\\"provenance\\\":\\\"synthetic handed coverage premise; not an admitted calibrator receipt\\\",\\\"source\\\":\\\"external\\\"}},\\\"cellUnit\\\":\\\"whole-complete-cell\\\",\\\"design\\\":\\\"conditional-population-iid-with-replacement\\\",\\\"epsilon\\\":0.1,\\\"independence\\\":\\\"joint-iid-complete-cells\\\",\\\"provenance\\\":\\\"synthetic whole-cell premise only\\\",\\\"uncertaintyUnit\\\":\\\"whole-cells\\\"},\\\"result\\\":{\\\"cap\\\":null,\\\"denominator\\\":\\\"strictly-positive-premise\\\",\\\"errorBudgets\\\":{\\\"c\\\":0.01,\\\"data\\\":0.25,\\\"method\\\":\\\"union-bound\\\",\\\"p\\\":0.01},\\\"kind\\\":\\\"conditional-outer-enclosure\\\",\\\"lower\\\":1,\\\"upper\\\":1.607578125},\\\"status\\\":\\\"declared\\\",\\\"units\\\":\\\"dimensionless\\\"}\"",
+      "utf8Hex": "746f706f732d6d6561737572652d6d302f31207265636f72643d227b5c226b696e645c223a5c226b6566662d6f757465722d656e636c6f737572655c222c5c226d6f64656c5c223a7b5c22635c223a5c2265787465726e616c2d626f785c222c5c2269645c223a5c2262696e6172792d4d302d77686f6c652d63656c6c2d69696440315c222c5c226a6f696e74496e646570656e64656e63655c223a7b5c226b696e645c223a5c226a6f696e742d696e646570656e64656e63655c222c5c2270726f76656e616e63655c223a5c2273796e746865746963204d30206879706f7468657369733b206e6f7420696e6665727265642066726f6d20736f75726365735c222c5c2273636f70655c223a5c226c6174656e742d6c696e65616765732d616e642d66726573682d64726177735c227d2c5c22705c223a5c2265787465726e616c2d626f785c222c5c22706172616d6574657250726f76656e616e63655c223a5c226465636c6172656420706172616d65746572732c206e6f7420696e6665727265642066726f6d2061677265656d656e745c222c5c22776569676874735c223a7b5c224b5c223a322c5c2266616d696c795c223a5c22756e69666f726d5c227d7d2c5c226e756d65726963616c5c223a7b5c2261726974686d657469635c223a5c2262696e61727936342d6465636c617265645c222c5c22746f6c6572616e63655c223a31652d31327d2c5c226f62736572766174696f6e5c223a7b5c22446861745c223a302e30362c5c224e5c223a342c5c22545c223a3130302c5c2263616c6962726174696f6e5c223a7b5c22635c223a7b5c22626f785c223a5b302e392c302e39355d2c5c22636f7665726167655072656d6973655c223a5c2273796e746865746963207072656d697365206f6e6c792c206e6f7420616e2061646d69747465642063616c69627261746f7220726563656970745c222c5c226661696c75726555707065725c223a302e30312c5c2270726f76656e616e63655c223a5c2273796e7468657469632068616e64656420636f766572616765207072656d6973653b206e6f7420696e6665727265642066726f6d20636f6661696c75726550616972735c222c5c22736f757263655c223a5c2265787465726e616c5c227d2c5c22705c223a7b5c22626f785c223a5b302e37342c302e37365d2c5c22636f7665726167655072656d6973655c223a5c2273796e746865746963207072656d697365206f6e6c792c206e6f7420616e2061646d69747465642063616c69627261746f7220726563656970745c222c5c226661696c75726555707065725c223a302e30312c5c2270726f76656e616e63655c223a5c2273796e7468657469632068616e64656420636f766572616765207072656d6973653b206e6f7420616e2061646d69747465642063616c69627261746f7220726563656970745c222c5c22736f757263655c223a5c2265787465726e616c5c227d7d2c5c2263656c6c556e69745c223a5c2277686f6c652d636f6d706c6574652d63656c6c5c222c5c2264657369676e5c223a5c22636f6e646974696f6e616c2d706f70756c6174696f6e2d6969642d776974682d7265706c6163656d656e745c222c5c22657073696c6f6e5c223a302e312c5c22696e646570656e64656e63655c223a5c226a6f696e742d6969642d636f6d706c6574652d63656c6c735c222c5c2270726f76656e616e63655c223a5c2273796e7468657469632077686f6c652d63656c6c207072656d697365206f6e6c795c222c5c22756e6365727461696e7479556e69745c223a5c2277686f6c652d63656c6c735c227d2c5c22726573756c745c223a7b5c226361705c223a6e756c6c2c5c2264656e6f6d696e61746f725c223a5c227374726963746c792d706f7369746976652d7072656d6973655c222c5c226572726f72427564676574735c223a7b5c22635c223a302e30312c5c22646174615c223a302e32352c5c226d6574686f645c223a5c22756e696f6e2d626f756e645c222c5c22705c223a302e30317d2c5c226b696e645c223a5c22636f6e646974696f6e616c2d6f757465722d656e636c6f737572655c222c5c226c6f7765725c223a312c5c2275707065725c223a312e3630373537383132357d2c5c227374617475735c223a5c226465636c617265645c222c5c22756e6974735c223a5c2264696d656e73696f6e6c6573735c227d22",
+      "certification": "not established"
+    },
+    {
+      "name": "no-finite-upper",
+      "record": {
+        "status": "declared",
+        "kind": "keff-outer-enclosure",
+        "model": {
+          "id": "binary-M0-whole-cell-iid@1",
+          "p": "external-box",
+          "c": "external-box",
+          "weights": {
+            "family": "uniform",
+            "K": 2
+          },
+          "jointIndependence": {
+            "kind": "joint-independence",
+            "scope": "latent-lineages-and-fresh-draws",
+            "provenance": "synthetic M0 hypothesis; not inferred from sources"
+          },
+          "parameterProvenance": "declared parameters, not inferred from agreement"
+        },
+        "observation": {
+          "design": "conditional-population-iid-with-replacement",
+          "cellUnit": "whole-complete-cell",
+          "T": 100,
+          "N": 4,
+          "Dhat": 0.06,
+          "independence": "joint-iid-complete-cells",
+          "provenance": "synthetic whole-cell premise only",
+          "epsilon": 0.1,
+          "calibration": {
+            "p": {
+              "box": [
+                0.74,
+                0.76
+              ],
+              "failureUpper": 0.01,
+              "source": "external",
+              "coveragePremise": "synthetic premise only, not an admitted calibrator receipt",
+              "provenance": "synthetic handed coverage premise; not an admitted calibrator receipt"
+            },
+            "c": {
+              "box": [
+                0.9,
+                0.95
+              ],
+              "failureUpper": 0.01,
+              "source": "external",
+              "coveragePremise": "synthetic premise only, not an admitted calibrator receipt",
+              "provenance": "synthetic handed coverage premise; not inferred from cofailurePairs"
+            }
+          },
+          "uncertaintyUnit": "whole-cells"
+        },
+        "units": "dimensionless",
+        "numerical": {
+          "arithmetic": "binary64-declared",
+          "tolerance": 1e-12
+        },
+        "result": {
+          "kind": "conditional-outer-enclosure",
+          "lower": 1,
+          "upper": null,
+          "denominator": "may-approach-zero",
+          "cap": null,
+          "errorBudgets": {
+            "data": 0.25,
+            "p": 0.01,
+            "c": 0.01,
+            "method": "union-bound"
+          }
+        }
+      },
+      "bytes": "topos-measure-m0/1 record=\"{\\\"kind\\\":\\\"keff-outer-enclosure\\\",\\\"model\\\":{\\\"c\\\":\\\"external-box\\\",\\\"id\\\":\\\"binary-M0-whole-cell-iid@1\\\",\\\"jointIndependence\\\":{\\\"kind\\\":\\\"joint-independence\\\",\\\"provenance\\\":\\\"synthetic M0 hypothesis; not inferred from sources\\\",\\\"scope\\\":\\\"latent-lineages-and-fresh-draws\\\"},\\\"p\\\":\\\"external-box\\\",\\\"parameterProvenance\\\":\\\"declared parameters, not inferred from agreement\\\",\\\"weights\\\":{\\\"K\\\":2,\\\"family\\\":\\\"uniform\\\"}},\\\"numerical\\\":{\\\"arithmetic\\\":\\\"binary64-declared\\\",\\\"tolerance\\\":1e-12},\\\"observation\\\":{\\\"Dhat\\\":0.06,\\\"N\\\":4,\\\"T\\\":100,\\\"calibration\\\":{\\\"c\\\":{\\\"box\\\":[0.9,0.95],\\\"coveragePremise\\\":\\\"synthetic premise only, not an admitted calibrator receipt\\\",\\\"failureUpper\\\":0.01,\\\"provenance\\\":\\\"synthetic handed coverage premise; not inferred from cofailurePairs\\\",\\\"source\\\":\\\"external\\\"},\\\"p\\\":{\\\"box\\\":[0.74,0.76],\\\"coveragePremise\\\":\\\"synthetic premise only, not an admitted calibrator receipt\\\",\\\"failureUpper\\\":0.01,\\\"provenance\\\":\\\"synthetic handed coverage premise; not an admitted calibrator receipt\\\",\\\"source\\\":\\\"external\\\"}},\\\"cellUnit\\\":\\\"whole-complete-cell\\\",\\\"design\\\":\\\"conditional-population-iid-with-replacement\\\",\\\"epsilon\\\":0.1,\\\"independence\\\":\\\"joint-iid-complete-cells\\\",\\\"provenance\\\":\\\"synthetic whole-cell premise only\\\",\\\"uncertaintyUnit\\\":\\\"whole-cells\\\"},\\\"result\\\":{\\\"cap\\\":null,\\\"denominator\\\":\\\"may-approach-zero\\\",\\\"errorBudgets\\\":{\\\"c\\\":0.01,\\\"data\\\":0.25,\\\"method\\\":\\\"union-bound\\\",\\\"p\\\":0.01},\\\"kind\\\":\\\"conditional-outer-enclosure\\\",\\\"lower\\\":1,\\\"upper\\\":null},\\\"status\\\":\\\"declared\\\",\\\"units\\\":\\\"dimensionless\\\"}\"",
+      "utf8Hex": "746f706f732d6d6561737572652d6d302f31207265636f72643d227b5c226b696e645c223a5c226b6566662d6f757465722d656e636c6f737572655c222c5c226d6f64656c5c223a7b5c22635c223a5c2265787465726e616c2d626f785c222c5c2269645c223a5c2262696e6172792d4d302d77686f6c652d63656c6c2d69696440315c222c5c226a6f696e74496e646570656e64656e63655c223a7b5c226b696e645c223a5c226a6f696e742d696e646570656e64656e63655c222c5c2270726f76656e616e63655c223a5c2273796e746865746963204d30206879706f7468657369733b206e6f7420696e6665727265642066726f6d20736f75726365735c222c5c2273636f70655c223a5c226c6174656e742d6c696e65616765732d616e642d66726573682d64726177735c227d2c5c22705c223a5c2265787465726e616c2d626f785c222c5c22706172616d6574657250726f76656e616e63655c223a5c226465636c6172656420706172616d65746572732c206e6f7420696e6665727265642066726f6d2061677265656d656e745c222c5c22776569676874735c223a7b5c224b5c223a322c5c2266616d696c795c223a5c22756e69666f726d5c227d7d2c5c226e756d65726963616c5c223a7b5c2261726974686d657469635c223a5c2262696e61727936342d6465636c617265645c222c5c22746f6c6572616e63655c223a31652d31327d2c5c226f62736572766174696f6e5c223a7b5c22446861745c223a302e30362c5c224e5c223a342c5c22545c223a3130302c5c2263616c6962726174696f6e5c223a7b5c22635c223a7b5c22626f785c223a5b302e392c302e39355d2c5c22636f7665726167655072656d6973655c223a5c2273796e746865746963207072656d697365206f6e6c792c206e6f7420616e2061646d69747465642063616c69627261746f7220726563656970745c222c5c226661696c75726555707065725c223a302e30312c5c2270726f76656e616e63655c223a5c2273796e7468657469632068616e64656420636f766572616765207072656d6973653b206e6f7420696e6665727265642066726f6d20636f6661696c75726550616972735c222c5c22736f757263655c223a5c2265787465726e616c5c227d2c5c22705c223a7b5c22626f785c223a5b302e37342c302e37365d2c5c22636f7665726167655072656d6973655c223a5c2273796e746865746963207072656d697365206f6e6c792c206e6f7420616e2061646d69747465642063616c69627261746f7220726563656970745c222c5c226661696c75726555707065725c223a302e30312c5c2270726f76656e616e63655c223a5c2273796e7468657469632068616e64656420636f766572616765207072656d6973653b206e6f7420616e2061646d69747465642063616c69627261746f7220726563656970745c222c5c22736f757263655c223a5c2265787465726e616c5c227d7d2c5c2263656c6c556e69745c223a5c2277686f6c652d636f6d706c6574652d63656c6c5c222c5c2264657369676e5c223a5c22636f6e646974696f6e616c2d706f70756c6174696f6e2d6969642d776974682d7265706c6163656d656e745c222c5c22657073696c6f6e5c223a302e312c5c22696e646570656e64656e63655c223a5c226a6f696e742d6969642d636f6d706c6574652d63656c6c735c222c5c2270726f76656e616e63655c223a5c2273796e7468657469632077686f6c652d63656c6c207072656d697365206f6e6c795c222c5c22756e6365727461696e7479556e69745c223a5c2277686f6c652d63656c6c735c227d2c5c22726573756c745c223a7b5c226361705c223a6e756c6c2c5c2264656e6f6d696e61746f725c223a5c226d61792d617070726f6163682d7a65726f5c222c5c226572726f72427564676574735c223a7b5c22635c223a302e30312c5c22646174615c223a302e32352c5c226d6574686f645c223a5c22756e696f6e2d626f756e645c222c5c22705c223a302e30317d2c5c226b696e645c223a5c22636f6e646974696f6e616c2d6f757465722d656e636c6f737572655c222c5c226c6f7765725c223a312c5c2275707065725c223a6e756c6c7d2c5c227374617475735c223a5c226465636c617265645c222c5c22756e6974735c223a5c2264696d656e73696f6e6c6573735c227d22",
+      "certification": "not established"
+    }
+  ],
+  "negative": [
+    {
+      "name": "bare-number",
+      "base": "population",
+      "remove": [
+        "model"
+      ],
+      "cause": "complete numerical declaration"
+    },
+    {
+      "name": "network-model",
+      "base": "population",
+      "path": [
+        "model",
+        "id"
+      ],
+      "value": "2e-DG@1",
+      "cause": "published M0 model"
+    },
+    {
+      "name": "pairwise-not-joint",
+      "base": "population",
+      "path": [
+        "model",
+        "jointIndependence",
+        "kind"
+      ],
+      "value": "pairwise-zero-correlation",
+      "cause": "joint independence declaration"
+    },
+    {
+      "name": "missing-provenance",
+      "base": "population",
+      "remove": [
+        "model",
+        "parameterProvenance"
+      ],
+      "cause": "parameter provenance"
+    },
+    {
+      "name": "weights-not-normalized",
+      "base": "participation",
+      "path": [
+        "model",
+        "weights",
+        "values"
+      ],
+      "value": [
+        0.5,
+        0.2
+      ],
+      "cause": "normalized weights"
+    },
+    {
+      "name": "causal-count",
+      "base": "participation",
+      "path": [
+        "units"
+      ],
+      "value": "independent-sources",
+      "cause": "participation domain"
+    },
+    {
+      "name": "above-active-support",
+      "base": "participation",
+      "path": [
+        "result",
+        "upper"
+      ],
+      "value": 3,
+      "cause": "participation bound"
+    },
+    {
+      "name": "nonuniform-singleton",
+      "base": "nonuniform-set",
+      "path": [
+        "result"
+      ],
+      "value": {
+        "kind": "unique-within-uniform-family",
+        "c": 1,
+        "K": 1
+      },
+      "cause": "nonuniform compatible set"
+    },
+    {
+      "name": "unknown-p",
+      "base": "uniform-identification",
+      "path": [
+        "model",
+        "p"
+      ],
+      "value": "unknown",
+      "cause": "identification domain"
+    },
+    {
+      "name": "finite-as-population",
+      "base": "uniform-identification",
+      "path": [
+        "observation",
+        "design"
+      ],
+      "value": "finite-distinct-members",
+      "cause": "population inverse"
+    },
+    {
+      "name": "missing-calibration",
+      "base": "synthetic-conditional-enclosure",
+      "remove": [
+        "observation",
+        "calibration"
+      ],
+      "cause": "external calibration required"
+    },
+    {
+      "name": "pairs-as-independent-samples",
+      "base": "synthetic-conditional-enclosure",
+      "path": [
+        "observation",
+        "uncertaintyUnit"
+      ],
+      "value": "independent-pairs",
+      "cause": "whole-cell sampling"
+    },
+    {
+      "name": "fixed-quotas",
+      "base": "synthetic-conditional-enclosure",
+      "path": [
+        "observation",
+        "design"
+      ],
+      "value": "fixed-quota-distinct-members",
+      "cause": "whole-cell sampling"
+    },
+    {
+      "name": "finite-upper-with-zero-denominator",
+      "base": "no-finite-upper",
+      "path": [
+        "result",
+        "upper"
+      ],
+      "value": 10,
+      "cause": "no finite upper bound"
+    },
+    {
+      "name": "budget-omits-calibration",
+      "base": "synthetic-conditional-enclosure",
+      "path": [
+        "result",
+        "errorBudgets",
+        "c"
+      ],
+      "value": 0,
+      "cause": "calibration budgets"
+    },
+    {
+      "name": "unmeasured-number",
+      "base": "unmeasured",
+      "path": [
+        "result"
+      ],
+      "value": {
+        "lower": 1
+      },
+      "cause": "unmeasured reason only"
+    },
+    {
+      "name": "nonfinite",
+      "base": "population",
+      "path": [
+        "result",
+        "R2"
+      ],
+      "value": null,
+      "cause": "moment range"
+    },
+    {
+      "name": "wrong-moment",
+      "base": "population",
+      "path": [
+        "observation",
+        "moments"
+      ],
+      "value": [
+        "R2",
+        "R3"
+      ],
+      "cause": "population moments"
+    },
+    {
+      "name": "missing-unit",
+      "base": "population",
+      "remove": [
+        "units"
+      ],
+      "cause": "population domain"
+    },
+    {
+      "name": "model-not-statistical-budget",
+      "base": "population",
+      "path": [
+        "kind"
+      ],
+      "value": "runtime-budget",
+      "cause": "measure kind"
+    }
+  ],
+  "publishedAntecedents": "vectors/measure-m0-antecedents.json",
+  "refinement": {
+    "wide": {
+      "status": "declared",
+      "kind": "weight-participation",
+      "model": {
+        "id": "binary-M0-population-agreement@1",
+        "p": 0.75,
+        "c": 0.5,
+        "weights": {
+          "family": "declared",
+          "values": [
+            0.75,
+            0.25,
+            0
+          ]
+        },
+        "jointIndependence": {
+          "kind": "joint-independence",
+          "scope": "latent-lineages-and-fresh-draws",
+          "provenance": "synthetic M0 hypothesis; not inferred from sources"
+        },
+        "parameterProvenance": "declared parameters, not inferred from agreement"
+      },
+      "observation": {
+        "design": "declared-normalized-weights",
+        "provenance": "declared normalized masses; zero excluded from support"
+      },
+      "units": "dimensionless",
+      "numerical": {
+        "arithmetic": "binary64-declared",
+        "tolerance": 1e-12
+      },
+      "result": {
+        "kind": "declared-weight-participation",
+        "lower": 1,
+        "upper": 2
+      }
+    },
+    "narrow": {
+      "status": "declared",
+      "kind": "weight-participation",
+      "model": {
+        "id": "binary-M0-population-agreement@1",
+        "p": 0.75,
+        "c": 0.5,
+        "weights": {
+          "family": "declared",
+          "values": [
+            0.75,
+            0.25,
+            0
+          ]
+        },
+        "jointIndependence": {
+          "kind": "joint-independence",
+          "scope": "latent-lineages-and-fresh-draws",
+          "provenance": "synthetic M0 hypothesis; not inferred from sources"
+        },
+        "parameterProvenance": "declared parameters, not inferred from agreement"
+      },
+      "observation": {
+        "design": "declared-normalized-weights",
+        "provenance": "declared normalized masses; zero excluded from support"
+      },
+      "units": "dimensionless",
+      "numerical": {
+        "arithmetic": "binary64-declared",
+        "tolerance": 1e-12
+      },
+      "result": {
+        "kind": "declared-weight-participation",
+        "lower": 1.6,
+        "upper": 1.6
+      }
+    },
+    "changedModel": {
+      "status": "declared",
+      "kind": "weight-participation",
+      "model": {
+        "id": "binary-M0-population-agreement@1",
+        "p": 0.75,
+        "c": 0.6,
+        "weights": {
+          "family": "declared",
+          "values": [
+            0.75,
+            0.25,
+            0
+          ]
+        },
+        "jointIndependence": {
+          "kind": "joint-independence",
+          "scope": "latent-lineages-and-fresh-draws",
+          "provenance": "synthetic M0 hypothesis; not inferred from sources"
+        },
+        "parameterProvenance": "declared parameters, not inferred from agreement"
+      },
+      "observation": {
+        "design": "declared-normalized-weights",
+        "provenance": "declared normalized masses; zero excluded from support"
+      },
+      "units": "dimensionless",
+      "numerical": {
+        "arithmetic": "binary64-declared",
+        "tolerance": 1e-12
+      },
+      "result": {
+        "kind": "declared-weight-participation",
+        "lower": 1.6,
+        "upper": 1.6
+      }
+    }
+  },
+  "publishedFiniteCase": {
+    "actualCalculation": {
+      "Dbox": [
+        "0",
+        "4/25"
+      ],
+      "K_eff": [
+        "1",
+        "20577/12800"
+      ],
+      "cap": null,
+      "classification": "conditional outer confidence enclosure, not a certified calibration or measured causal count",
+      "confidence": {
+        "cFailureUpper": "1/100",
+        "coverageLower": "73/100",
+        "dataFailureUpper": "1/4",
+        "dependenceOfCalibrationErrors": "allowed; only marginal coverage premises used",
+        "pFailureUpper": "1/100",
+        "trivial": false,
+        "unionFailureUpper": "27/100"
+      },
+      "denominatorBox": [
+        "32/57",
+        "1"
+      ],
+      "noiseBox": [
+        "228/625",
+        "481/1250"
+      ],
+      "notIdentifiedSetEquality": true,
+      "status": "bounded-outer-enclosure"
+    },
+    "input": {
+      "Dhat": "3/50",
+      "N": 4,
+      "T": 100,
+      "c": {
+        "failureUpper": "1/100",
+        "interval": [
+          "9/10",
+          "19/20"
+        ],
+        "provenance": "synthetic handed coverage premise; not inferred from cofailurePairs"
+      },
+      "cellUnit": "whole-complete-cell",
+      "epsilon": "1/10",
+      "memberSampling": "conditional-population-iid-with-replacement",
+      "model": "binary-M0-population-agreement@1",
+      "p": {
+        "failureUpper": "1/100",
+        "interval": [
+          "37/50",
+          "19/25"
+        ],
+        "provenance": "synthetic handed coverage premise; not an admitted calibrator receipt"
+      },
+      "sampling": "iid-cells@1"
+    }
+  },
+  "scope": "Contract interpretation and declaration refinement only; no new public M0 estimator, inverse, interval engine or statistical certificate"
+}

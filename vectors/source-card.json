@@ -1,0 +1,279 @@
+{
+  "profile": "topos-source-card/1",
+  "catalog": {
+    "identity": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+    "bytes": "{\"archive\":\"sha256:57c474e783a98efd0ca0e8debc3ec6cfce0252f3b68cbaecfb53177fc267e708\",\"selectedForms\":{\"budget\":{\"path\":\"dist/forms/budget.js\",\"sha256\":\"sha256:8ee938a539fdab1d0d490c9713245b6b40a5d601987286e26654ad59661bb8a0\"},\"interval\":{\"path\":\"dist/forms/interval.js\",\"sha256\":\"sha256:16a7ba6019199fcebbc0555ae8ac9af83fcbba7be2bac167d488d8dc6bcf7364\"}},\"source\":\"@lapxo/topos\",\"version\":\"0.2.2\"}\n",
+    "selected": {
+      "source": "@lapxo/topos",
+      "version": "0.2.2",
+      "archive": "sha256:57c474e783a98efd0ca0e8debc3ec6cfce0252f3b68cbaecfb53177fc267e708",
+      "selectedForms": {
+        "interval": {
+          "path": "dist/forms/interval.js",
+          "sha256": "sha256:16a7ba6019199fcebbc0555ae8ac9af83fcbba7be2bac167d488d8dc6bcf7364"
+        },
+        "budget": {
+          "path": "dist/forms/budget.js",
+          "sha256": "sha256:8ee938a539fdab1d0d490c9713245b6b40a5d601987286e26654ad59661bb8a0"
+        }
+      }
+    }
+  },
+  "positive": [
+    {
+      "name": "api",
+      "card": {
+        "source": "source:api",
+        "publisher": "publisher:fixture",
+        "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+        "form": "interval",
+        "params": "{\"hi\":10,\"lo\":0}",
+        "resolution": "2..8",
+        "authority": "authority:publisher/fixture",
+        "cost": "0..8",
+        "cost-unit": "request",
+        "cost-limit": "10",
+        "needs": "none",
+        "source-kind": "api"
+      },
+      "bytes": "topos-source-card/1 authority=authority:publisher/fixture catalog=sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd cost=0..8 cost-limit=10 cost-unit=request form=interval needs=none params=\"{\\\"hi\\\":10,\\\"lo\\\":0}\" publisher=publisher:fixture resolution=2..8 source=source:api source-kind=api",
+      "utf8Hex": "746f706f732d736f757263652d636172642f3120617574686f726974793d617574686f726974793a7075626c69736865722f6669787475726520636174616c6f673d7368613235363a3939303531353433626234336363636631343533343836623335356136393464376564323239313035626166613533613936653333393263383130656138636420636f73743d302e2e3820636f73742d6c696d69743d313020636f73742d756e69743d7265717565737420666f726d3d696e74657276616c206e656564733d6e6f6e6520706172616d733d227b5c2268695c223a31302c5c226c6f5c223a307d22207075626c69736865723d7075626c69736865723a66697874757265207265736f6c7574696f6e3d322e2e3820736f757263653d736f757263653a61706920736f757263652d6b696e643d617069",
+      "independence": "not established",
+      "sharedCause": "unknown"
+    },
+    {
+      "name": "sensor",
+      "card": {
+        "source": "source:sensor",
+        "publisher": "publisher:fixture",
+        "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+        "form": "interval",
+        "params": "{\"hi\":10,\"lo\":0}",
+        "resolution": "2..8",
+        "authority": "authority:publisher/fixture",
+        "cost": "0..8",
+        "cost-unit": "request",
+        "cost-limit": "10",
+        "needs": "none",
+        "source-kind": "sensor",
+        "shares": "cause:shared"
+      },
+      "bytes": "topos-source-card/1 authority=authority:publisher/fixture catalog=sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd cost=0..8 cost-limit=10 cost-unit=request form=interval needs=none params=\"{\\\"hi\\\":10,\\\"lo\\\":0}\" publisher=publisher:fixture resolution=2..8 shares=cause:shared source=source:sensor source-kind=sensor",
+      "utf8Hex": "746f706f732d736f757263652d636172642f3120617574686f726974793d617574686f726974793a7075626c69736865722f6669787475726520636174616c6f673d7368613235363a3939303531353433626234336363636631343533343836623335356136393464376564323239313035626166613533613936653333393263383130656138636420636f73743d302e2e3820636f73742d6c696d69743d313020636f73742d756e69743d7265717565737420666f726d3d696e74657276616c206e656564733d6e6f6e6520706172616d733d227b5c2268695c223a31302c5c226c6f5c223a307d22207075626c69736865723d7075626c69736865723a66697874757265207265736f6c7574696f6e3d322e2e38207368617265733d63617573653a73686172656420736f757263653d736f757263653a73656e736f7220736f757263652d6b696e643d73656e736f72",
+      "independence": "not established",
+      "sharedCause": "declared"
+    },
+    {
+      "name": "csv",
+      "card": {
+        "source": "source:csv",
+        "publisher": "publisher:fixture",
+        "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+        "form": "interval",
+        "params": "{\"hi\":10,\"lo\":0}",
+        "resolution": "2..8",
+        "authority": "authority:publisher/fixture",
+        "cost": "0..8",
+        "cost-unit": "request",
+        "cost-limit": "10",
+        "needs": "none",
+        "source-kind": "csv"
+      },
+      "bytes": "topos-source-card/1 authority=authority:publisher/fixture catalog=sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd cost=0..8 cost-limit=10 cost-unit=request form=interval needs=none params=\"{\\\"hi\\\":10,\\\"lo\\\":0}\" publisher=publisher:fixture resolution=2..8 source=source:csv source-kind=csv",
+      "utf8Hex": "746f706f732d736f757263652d636172642f3120617574686f726974793d617574686f726974793a7075626c69736865722f6669787475726520636174616c6f673d7368613235363a3939303531353433626234336363636631343533343836623335356136393464376564323239313035626166613533613936653333393263383130656138636420636f73743d302e2e3820636f73742d6c696d69743d313020636f73742d756e69743d7265717565737420666f726d3d696e74657276616c206e656564733d6e6f6e6520706172616d733d227b5c2268695c223a31302c5c226c6f5c223a307d22207075626c69736865723d7075626c69736865723a66697874757265207265736f6c7574696f6e3d322e2e3820736f757263653d736f757263653a63737620736f757263652d6b696e643d637376",
+      "independence": "not established",
+      "sharedCause": "unknown"
+    },
+    {
+      "name": "model",
+      "card": {
+        "source": "source:model",
+        "publisher": "publisher:fixture",
+        "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+        "form": "interval",
+        "params": "{\"hi\":10,\"lo\":0}",
+        "resolution": "2..8",
+        "authority": "authority:publisher/fixture",
+        "cost": "0..8",
+        "cost-unit": "request",
+        "cost-limit": "10",
+        "needs": "none",
+        "source-kind": "model",
+        "shares": "cause:shared"
+      },
+      "bytes": "topos-source-card/1 authority=authority:publisher/fixture catalog=sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd cost=0..8 cost-limit=10 cost-unit=request form=interval needs=none params=\"{\\\"hi\\\":10,\\\"lo\\\":0}\" publisher=publisher:fixture resolution=2..8 shares=cause:shared source=source:model source-kind=model",
+      "utf8Hex": "746f706f732d736f757263652d636172642f3120617574686f726974793d617574686f726974793a7075626c69736865722f6669787475726520636174616c6f673d7368613235363a3939303531353433626234336363636631343533343836623335356136393464376564323239313035626166613533613936653333393263383130656138636420636f73743d302e2e3820636f73742d6c696d69743d313020636f73742d756e69743d7265717565737420666f726d3d696e74657276616c206e656564733d6e6f6e6520706172616d733d227b5c2268695c223a31302c5c226c6f5c223a307d22207075626c69736865723d7075626c69736865723a66697874757265207265736f6c7574696f6e3d322e2e38207368617265733d63617573653a73686172656420736f757263653d736f757263653a6d6f64656c20736f757263652d6b696e643d6d6f64656c",
+      "independence": "not established",
+      "sharedCause": "declared"
+    },
+    {
+      "name": "person",
+      "card": {
+        "source": "source:person",
+        "publisher": "publisher:fixture",
+        "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+        "form": "interval",
+        "params": "{\"hi\":10,\"lo\":0}",
+        "resolution": "2..8",
+        "authority": "authority:publisher/fixture",
+        "cost": "0..8",
+        "cost-unit": "request",
+        "cost-limit": "10",
+        "needs": "none",
+        "source-kind": "person"
+      },
+      "bytes": "topos-source-card/1 authority=authority:publisher/fixture catalog=sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd cost=0..8 cost-limit=10 cost-unit=request form=interval needs=none params=\"{\\\"hi\\\":10,\\\"lo\\\":0}\" publisher=publisher:fixture resolution=2..8 source=source:person source-kind=person",
+      "utf8Hex": "746f706f732d736f757263652d636172642f3120617574686f726974793d617574686f726974793a7075626c69736865722f6669787475726520636174616c6f673d7368613235363a3939303531353433626234336363636631343533343836623335356136393464376564323239313035626166613533613936653333393263383130656138636420636f73743d302e2e3820636f73742d6c696d69743d313020636f73742d756e69743d7265717565737420666f726d3d696e74657276616c206e656564733d6e6f6e6520706172616d733d227b5c2268695c223a31302c5c226c6f5c223a307d22207075626c69736865723d7075626c69736865723a66697874757265207265736f6c7574696f6e3d322e2e3820736f757263653d736f757263653a706572736f6e20736f757263652d6b696e643d706572736f6e",
+      "independence": "not established",
+      "sharedCause": "unknown"
+    }
+  ],
+  "negative": [
+    {
+      "name": "missing-authority",
+      "remove": "authority",
+      "cause": "authority"
+    },
+    {
+      "name": "unknown-form",
+      "patch": {
+        "form": "invented"
+      },
+      "cause": "uncatalogued form"
+    },
+    {
+      "name": "wrong-catalog",
+      "patch": {
+        "catalog": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "cause": "catalog identity"
+    },
+    {
+      "name": "negative-cost",
+      "patch": {
+        "cost": "-1..2"
+      },
+      "cause": "cost domain"
+    },
+    {
+      "name": "cost-exceeds-limit",
+      "patch": {
+        "cost": "0..11"
+      },
+      "cause": "cost domain"
+    },
+    {
+      "name": "missing-cost-unit",
+      "remove": "cost-unit",
+      "cause": "cost declaration"
+    },
+    {
+      "name": "noncanonical-cost",
+      "patch": {
+        "cost": "2"
+      },
+      "cause": "cost syntax"
+    },
+    {
+      "name": "empty-resolution",
+      "patch": {
+        "resolution": "empty"
+      },
+      "cause": "empty resolution"
+    },
+    {
+      "name": "missing-publisher",
+      "remove": "publisher",
+      "cause": "publisher"
+    },
+    {
+      "name": "empty-shares",
+      "patch": {
+        "shares": ""
+      },
+      "cause": "shares"
+    },
+    {
+      "name": "signature-in-shape",
+      "patch": {
+        "sig": "not-a-signature"
+      },
+      "cause": "protocol envelope"
+    },
+    {
+      "name": "invalid-params",
+      "patch": {
+        "params": "[]"
+      },
+      "cause": "parameters"
+    },
+    {
+      "name": "unknown-token-cost-unit",
+      "patch": {
+        "cost-unit": "a b"
+      },
+      "cause": "cost declaration"
+    }
+  ],
+  "refinement": {
+    "wide": {
+      "source": "source:fixture",
+      "publisher": "publisher:fixture",
+      "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+      "form": "interval",
+      "params": "{\"hi\":10,\"lo\":0}",
+      "resolution": "2..8",
+      "authority": "authority:publisher/fixture",
+      "cost": "0..8",
+      "cost-unit": "request",
+      "cost-limit": "10",
+      "needs": "none"
+    },
+    "narrow": {
+      "source": "source:fixture",
+      "publisher": "publisher:fixture",
+      "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+      "form": "interval",
+      "params": "{\"hi\":10,\"lo\":0}",
+      "resolution": "3..6",
+      "authority": "authority:publisher/fixture",
+      "cost": "1..4",
+      "cost-unit": "request",
+      "cost-limit": "10",
+      "needs": "none"
+    },
+    "disjoint": {
+      "source": "source:fixture",
+      "publisher": "publisher:fixture",
+      "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+      "form": "interval",
+      "params": "{\"hi\":10,\"lo\":0}",
+      "resolution": "9..10",
+      "authority": "authority:publisher/fixture",
+      "cost": "0..8",
+      "cost-unit": "request",
+      "cost-limit": "10",
+      "needs": "none"
+    },
+    "otherAuthority": {
+      "source": "source:fixture",
+      "publisher": "publisher:fixture",
+      "catalog": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+      "form": "interval",
+      "params": "{\"hi\":10,\"lo\":0}",
+      "resolution": "2..8",
+      "authority": "authority:other",
+      "cost": "0..8",
+      "cost-unit": "request",
+      "cost-limit": "10",
+      "needs": "none"
+    },
+    "expected": {
+      "narrowWide": true,
+      "wideNarrow": false,
+      "self": true,
+      "otherAuthority": false
+    }
+  },
+  "status": "candidate vectors; native reader capture and admission pending"
+}

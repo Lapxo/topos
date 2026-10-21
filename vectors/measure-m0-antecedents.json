@@ -1,0 +1,144 @@
+{
+  "archive": "sha256:077524d0fb48d4b9ba4fcb308e27b29784dc2591f25f601c8afd1f173ec48b04",
+  "source": "@lapxo/obligations@0.4.6",
+  "contracts": [
+    {
+      "path": "contracts/m0-moment-identification.json",
+      "sha256": "sha256:d8fcf6214714a6d5a6d47291aa1bbd874ea3b4f778bcceef0e9982335caa359b",
+      "publishedText": {
+        "scope": "m0-moment-identification",
+        "form": "statement",
+        "status": "unsigned-preparation",
+        "classification": "conditional Lean theorem plus exact counterexample",
+        "model": {
+          "id": "binary-M0-uniform-population@1",
+          "latent": "A_l independent Bernoulli(p); joint independence is a declared model hypothesis",
+          "observation": "Conditional on A, independent population draws have correctness probability q=(1-c)*p+c*sum(w_l*A_l); R_j=E[q^j+(1-q)^j]. No truth is needed to count agreement; p is externally declared/calibrated, not inferred from agreement.",
+          "known": [
+            "p in (0,1)",
+            "uniform named shares w_l=1/K",
+            "population expectation semantics"
+          ],
+          "unknown": [
+            "c in (0,1]",
+            "K positive integer"
+          ],
+          "target": "unique(c,K), hence K_eff=K only within this declared uniform family",
+          "units": {
+            "p,c,R_j": "probabilities",
+            "K,K_eff": "dimensionless counts/effective counts"
+          },
+          "samplingBoundary": "Population moments/with-replacement conditional draws. Finite distinct-member observations need their finite population correction; observed moments also need dependent-pair uncertainty. No finite-sample inverse guarantee here."
+        },
+        "value": "Binary M0 with jointly independent Bernoulli(p) latent lineages, known p in(0,1), uniform shares1/K with K>=1 and0<c<=1: the exact population pair and fourth agreement moments identify(c,K). A general quartic expectation bridge and strict monotonicity prove this beyond the old finite grid. For arbitrary normalized weights, p declared is insufficient for this moment map: c=7/10,K_eff=147/4 and c=4/5,K_eff=48 have equal R2,R4 at p=3/4. This collision concerns these moments only, not the entire observable law. R3 remains redundant. No sample uncertainty, causal recovery or contextual activity identification is claimed.",
+        "nullWithoutKnownP": "unmeasured:known-p-required",
+        "nullWithoutUniformity": "identified-set:{normalized positive weights,c satisfying the declared R2/R4 equations}; no singleton inferred",
+        "nullFiniteDataWithoutUncertainty": "unmeasured:population-moment-uncertainty-required",
+        "doesNotClose": [
+          "conditional-lineage-identification",
+          "causal-subgroup-recovery",
+          "oracle-free-reference",
+          "general heterogeneous M0 CLT"
+        ],
+        "priorWorkInPackage": [
+          "Obligations045.M0Coincidence.expect_quadratic",
+          "pair_coincidence",
+          "triple_redundant"
+        ],
+        "newContribution": "Exact quartic model bridge; uniform-family continuous parameter injectivity; explicit nonuniform moment collision."
+      }
+    },
+    {
+      "path": "contracts/m0-keff-interval.json",
+      "sha256": "sha256:365ece59f8d09a10b5e85b9e07b23687675917b0fe50c008284aa23efbd1fd49",
+      "publishedText": {
+        "casesNotCovered": [
+          "missing/latent activity identification",
+          "causal subgroup recovery",
+          "general oracle-free calibration",
+          "fixed quotas without finite correction"
+        ],
+        "classification": "conditional finite-model coverage and algebra; external calibration still required",
+        "currentCalibration": "No real calibration data or admitted c,p calibration receipts were supplied. Example boxes are synthetic coverage premises only.",
+        "implementationBoundary": "Published cofailurePairs supplies raw observed pair rates. A new public K_eff interval API is not implemented or claimed by this mathematical preparation.",
+        "model": {
+          "attribution": "Observation-position names only under this population-sampling profile: lineage membership is resampled per cell/draw as in the O4 conditional population observation. Fixed source-to-lineage membership is outside this profile without its gamma_N conversion.",
+          "coverage": "P(|Dhat-D|>=epsilon)<=min(1,1/(4T epsilon^2)); joint miss<=min(1,alphaD+betaP+betaC), without requiring calibration/data independence.",
+          "externalCalibration": "Coverage-certified boxes forp,c with allocated marginal error budgets and provenance; neither inferred from agreement nor supplied by these synthetic fixtures.",
+          "frame": "T independent identically distributed complete cells; N>=2 observations per cell, fixed or handed complete frame. No inference of iid from these bytes.",
+          "id": "binary-M0-whole-cell-iid@1",
+          "latent": "Per cell, jointly independent Bernoulli(p) named lineages with declared normalized shares, shared copy probabilityc, fresh member draws. Latent/fresh randomness independent across cells.",
+          "mean": "E U_t=2p(1-p)*(1-c^2*sum(w_l^2)) exactly for finiteN under this observation design.",
+          "members": "Conditional population draws with replacement, independent given the cell latent lineages. Fixed lineage quotas/distinct finite-population member samples require their gamma_N correction and are not this profile.",
+          "optionalCap": "A known deterministic cap is an explicit additional premise. A merely probabilistic cap would require another failure budget and is outside this profile.",
+          "output": "Conditional outer enclosure for K_eff, not exact identified-set equality, latent causal groups, probability of truth or a physical count of independent sources.",
+          "statistic": "U_t=(sum of discordant unordered member pairs)/choose(N,2)=2X_t(N-X_t)/(N(N-1)); Dhat=mean over whole cells. Shared-member pairs need not be independent."
+        },
+        "scope": "m0-keff-interval",
+        "status": "unsigned-preparation",
+        "value": "Under the declared binary M0 conditional-population-iid member design, finite-cell pair discord has the published population disagreement mean. ForT jointly independent complete cells, the all-pairs average is a bounded whole-cell statistic: its tail is at most min(1,1/(4T epsilon^2)), not a bound withT multiplied by the number of pairs. External coverage-calibrated p,c boxes and their union error budgets propagate through the positive M0 denominator to a conditional outer K_eff enclosure. A denominator that may approach zero has no certified finite upper bound unless a valid external cap is declared. Missing calibration is unmeasured; an incompatible confidence box is not an unconditional rejection of the model. No finite interval establishes causal independence."
+      }
+    },
+    {
+      "path": "contracts/extension-lineage-participation.json",
+      "sha256": "sha256:527fffd66d35b9a2b856ffb0e7af3c4a2937d204d3dd27f10a29b162788c8a6f",
+      "publishedText": {
+        "boundary": "Definitions settle meanings only. Different hypotheses or missing proofs are not a fork. No algebra, actor identity rule, M/3-M/4, protocol or wire changes.",
+        "classification": "definitions and conditional interpretation; no new law",
+        "definitions": {
+          "effectiveParticipation": "For finite nonnegative masses a_i with positive total, w_i=a_i/sum(a), K_eff=1/sum(w_i^2). Dimensionless; zeros do not count as active support. It measures weight concentration, not causally independent extensions.",
+          "extension": "A5 supplied set of coordinate/interval pairs ext(o), compared at fixed coordinate interpretation, resolution and context. Equality is extensional equivalence under that convention; it does not identify historical actors, causal processes or independent random variables.",
+          "jointIndependence": "For declared variables and one probability law, every joint event factors into the product of its marginal probabilities. For a conditional claim, declare the conditioning variable and require factorization in each positive-mass stratum. Pairwise zero covariance, distinct names and disjoint extensions do not imply this.",
+          "namedLineage": "A supplied model label grouping sources by a declared common generation/ancestry mechanism, with membership and any active weighting supplied. Labels and extension distances do not certify that mechanism. Observational identification remains conditional.",
+          "spectralParticipation": "For nonnegative eigenvalues lambda_i of a declared symmetric PSD covariance with positive trace, normalize w_i=lambda_i/trace: K_eff=trace(C)^2/tr(C^2). This spectral measure and a declared lineage-weight measure are distinct objects unless a model connects them."
+        },
+        "id": "extension-lineage-participation@1",
+        "open": [
+          "conditional-lineage-identification",
+          "causal-subgroup-recovery",
+          "oracle-free-reference"
+        ],
+        "reusedEvidence": {
+          "A7/T90": "vectors/laws/a7-t90.json",
+          "A9/T99": "vectors/laws/a9-t99.json",
+          "participation": "dist/measures/error-events.js",
+          "uniformIdentification": "admitted O4 uniform_population_identification, known p and uniform weights only"
+        },
+        "scopeConditions": {
+          "A7": "Fixed coordinates, resolution, context and ceilings; adding live narrowing constraints cannot increase summed finite log-cardinal freedoms. Withdrawal and witnessed local widening can increase freedom on an existing coordinate. A sum over coordinates is not automatically joint Shannon entropy.",
+          "A9": "Representation convention for the object relation; supplies no iteration theorem or independence premise.",
+          "C1": "Historical independence-is-distance wording is not probabilistic factorization; any probabilistic reading needs a separately supplied joint law and independence proof.",
+          "T90": "Nonempty finite admissible states, uniform distribution at fixed resolution: entropy=log2(cardinality). Arbitrary priors, phase interpretations and exclusive lists of freedom-changing acts do not follow. Empty regions need their separately declared algebraic state, not an invented entropy convention.",
+          "T99": "Finite world and records, acyclic reachable dependency graph, total supplied lattice operations. Finite dependency evaluation is not repeated application of an arbitrary monotone map. Reachable ancestral cycles reject; unreachable cycles do not affect the query. General iterative convergence needs a carrier, operator, seed and progress/height hypotheses."
+        }
+      }
+    },
+    {
+      "path": "contracts/m0-pair-coincidence.json",
+      "sha256": "sha256:47857119d04f3a55ac81e75a862f52985e732314923355c31358d68648b3f7ab",
+      "publishedText": {
+        "scope": "m0-pair-coincidence",
+        "form": "statement",
+        "status": "unsigned-preparation",
+        "value": "Exact M0 independent-Bernoulli expectation gives R2=p^2+(1-p)^2+2c^2 p(1-p) sum w^2 for normalized declared shares; this identity is checked generally in Lean by expect_quadratic and pair_coincidence. Triple agreement satisfies R3=(3R2-1)/2 and adds no independent equation. Population agreement is not majority error or causal identification. Finite distinct-member sampling needs gamma_N, and observed data still need calibration, justified reference and uncertainty."
+      }
+    }
+  ],
+  "publicAPI": "No M0 inverse/interval API is exported by0.4.6; profile interpretation is not result calculation/certification",
+  "nonuniformCounterexample": {
+    "p": "3/4",
+    "first": {
+      "c": "7/10",
+      "K_eff": "147/4"
+    },
+    "second": {
+      "c": "4/5",
+      "K_eff": "48"
+    },
+    "same": [
+      "R2",
+      "R4"
+    ],
+    "notSameClaim": "Not equality of the entire observable law; R6 separates this pair only"
+  }
+}

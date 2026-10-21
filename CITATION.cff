@@ -2,8 +2,20 @@ cff-version: 1.2.0
 message: "Cite it as @lapxo/topos."
 type: software
 title: "@lapxo/topos"
-version: "0.2.2"
+version: "0.2.3"
 authors:
   - name: "Lapxo"
 repository-code: "https://github.com/Lapxo/topos"
 license: "MIT"
+references:
+  - type: generic
+    title: "Two-Sided Constraints on a Valued Lattice"
+    doi: "10.5281/zenodo.21858428"
+  - type: software
+    title: "@lapxo/obligations"
+    version: "0.4.6"
+    url: "https://registry.npmjs.org/@lapxo/obligations/-/obligations-0.4.6.tgz"
+    identifiers:
+      - type: other
+        value: "sha256:077524d0fb48d4b9ba4fcb308e27b29784dc2591f25f601c8afd1f173ec48b04"
+        description: "Exact published npm archive"

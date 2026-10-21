@@ -1,0 +1,424 @@
+{
+  "profile": "topos-registry-place/1",
+  "classification": "Requirements and attributed inscriptions, not live standing or authorization",
+  "catalog": {
+    "identity": "sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd",
+    "bytes": "{\"archive\":\"sha256:57c474e783a98efd0ca0e8debc3ec6cfce0252f3b68cbaecfb53177fc267e708\",\"selectedForms\":{\"budget\":{\"path\":\"dist/forms/budget.js\",\"sha256\":\"sha256:8ee938a539fdab1d0d490c9713245b6b40a5d601987286e26654ad59661bb8a0\"},\"interval\":{\"path\":\"dist/forms/interval.js\",\"sha256\":\"sha256:16a7ba6019199fcebbc0555ae8ac9af83fcbba7be2bac167d488d8dc6bcf7364\"}},\"source\":\"@lapxo/topos\",\"version\":\"0.2.2\"}\n",
+    "selected": {
+      "source": "@lapxo/topos",
+      "version": "0.2.2",
+      "archive": "sha256:57c474e783a98efd0ca0e8debc3ec6cfce0252f3b68cbaecfb53177fc267e708",
+      "selectedForms": {
+        "interval": {
+          "path": "dist/forms/interval.js",
+          "sha256": "sha256:16a7ba6019199fcebbc0555ae8ac9af83fcbba7be2bac167d488d8dc6bcf7364"
+        },
+        "budget": {
+          "path": "dist/forms/budget.js",
+          "sha256": "sha256:8ee938a539fdab1d0d490c9713245b6b40a5d601987286e26654ad59661bb8a0"
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636": "topos-source-card/1 authority=authority:publisher/fixture catalog=sha256:99051543bb43cccf1453486b355a694d7ed229105bafa53a96e3392c810ea8cd cost=0..8 cost-limit=10 cost-unit=request form=interval needs=none params=\"{\\\"hi\\\":10,\\\"lo\\\":0}\" publisher=publisher:fixture resolution=2..8 source=source:api source-kind=api\n",
+    "sha256:6d2d86844255fa5c830bb936ba898591db1542fb15b7f8999669f315256e226e": "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"\n"
+  },
+  "positive": [
+    {
+      "name": "alice",
+      "entry": {
+        "kind": "admit-lineage",
+        "place": "place:fixture-registry",
+        "holder": "holder:alice",
+        "lineage": "lineage:shared",
+        "shares": [
+          "cause:declared"
+        ],
+        "card": "sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636",
+        "horizon": {
+          "clock": "clock:fixture-revisions",
+          "unit": "revision",
+          "from": 1,
+          "through": 10
+        },
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 2
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"",
+      "utf8Hex": "746f706f732d72656769737472792d706c6163652f3120636172643d7368613235363a6263376634356639666531393637363163626664663763383161356566626333653262343036646237613732336363393230303432656362363163613336333620686f6c6465723d686f6c6465723a616c69636520686f72697a6f6e3d227b5c22636c6f636b5c223a5c22636c6f636b3a666978747572652d7265766973696f6e735c222c5c22756e69745c223a5c227265766973696f6e5c222c5c2266726f6d5c223a312c5c227468726f7567685c223a31307d22206b696e643d61646d69742d6c696e65616765206c696e656167653d6c696e656167653a73686172656420706c6163653d706c6163653a666978747572652d72656769737472792071756f72756d3d227b5c226b696e645c223a5c226e616d65642d7468726573686f6c6440315c222c5c22656c696769626c655c223a5b5c22686f6c6465723a616c6963655c222c5c22686f6c6465723a626f625c225d2c5c2272657175697265645c223a327d22207368617265733d225b5c2263617573653a6465636c617265645c225d22",
+      "identity": "sha256:6d2d86844255fa5c830bb936ba898591db1542fb15b7f8999669f315256e226e"
+    },
+    {
+      "name": "bob",
+      "entry": {
+        "kind": "admit-lineage",
+        "place": "place:fixture-registry",
+        "holder": "holder:bob",
+        "lineage": "lineage:shared",
+        "shares": [
+          "cause:declared"
+        ],
+        "card": "sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636",
+        "horizon": {
+          "clock": "clock:fixture-revisions",
+          "unit": "revision",
+          "from": 1,
+          "through": 10
+        },
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 2
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:bob horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"",
+      "utf8Hex": "746f706f732d72656769737472792d706c6163652f3120636172643d7368613235363a6263376634356639666531393637363163626664663763383161356566626333653262343036646237613732336363393230303432656362363163613336333620686f6c6465723d686f6c6465723a626f6220686f72697a6f6e3d227b5c22636c6f636b5c223a5c22636c6f636b3a666978747572652d7265766973696f6e735c222c5c22756e69745c223a5c227265766973696f6e5c222c5c2266726f6d5c223a312c5c227468726f7567685c223a31307d22206b696e643d61646d69742d6c696e65616765206c696e656167653d6c696e656167653a73686172656420706c6163653d706c6163653a666978747572652d72656769737472792071756f72756d3d227b5c226b696e645c223a5c226e616d65642d7468726573686f6c6440315c222c5c22656c696769626c655c223a5b5c22686f6c6465723a616c6963655c222c5c22686f6c6465723a626f625c225d2c5c2272657175697265645c223a327d22207368617265733d225b5c2263617573653a6465636c617265645c225d22",
+      "identity": "sha256:bf7a0f340c5db4246346d9820e06db6c90d37ca732b833303cd9d6c679f6e852"
+    },
+    {
+      "name": "withdraw-alice",
+      "entry": {
+        "kind": "withdraw-exact",
+        "place": "place:fixture-registry",
+        "holder": "holder:alice",
+        "lineage": "lineage:shared",
+        "target": "sha256:6d2d86844255fa5c830bb936ba898591db1542fb15b7f8999669f315256e226e",
+        "horizon": {
+          "clock": "clock:fixture-revisions",
+          "unit": "revision",
+          "from": 1,
+          "through": 10
+        },
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 2
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-registry-place/1 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=withdraw-exact lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" target=sha256:6d2d86844255fa5c830bb936ba898591db1542fb15b7f8999669f315256e226e",
+      "utf8Hex": "746f706f732d72656769737472792d706c6163652f3120686f6c6465723d686f6c6465723a616c69636520686f72697a6f6e3d227b5c22636c6f636b5c223a5c22636c6f636b3a666978747572652d7265766973696f6e735c222c5c22756e69745c223a5c227265766973696f6e5c222c5c2266726f6d5c223a312c5c227468726f7567685c223a31307d22206b696e643d77697468647261772d6578616374206c696e656167653d6c696e656167653a73686172656420706c6163653d706c6163653a666978747572652d72656769737472792071756f72756d3d227b5c226b696e645c223a5c226e616d65642d7468726573686f6c6440315c222c5c22656c696769626c655c223a5b5c22686f6c6465723a616c6963655c222c5c22686f6c6465723a626f625c225d2c5c2272657175697265645c223a327d22207461726765743d7368613235363a36643264383638343432353566613563383330626239333662613839383539316462313534326662313562376638393939363639663331353235366532323665",
+      "identity": "sha256:bef1c70c9ad0dd23ed2aa2912b1094d1f0925fc169baaaef1cb561e5bcac5ffc"
+    },
+    {
+      "name": "explicit-no-sharing",
+      "entry": {
+        "kind": "admit-lineage",
+        "place": "place:fixture-registry",
+        "holder": "holder:alice",
+        "lineage": "lineage:shared",
+        "shares": [],
+        "card": "sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636",
+        "horizon": {
+          "clock": "clock:fixture-revisions",
+          "unit": "revision",
+          "from": 1,
+          "through": 10
+        },
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 2
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=[]",
+      "utf8Hex": "746f706f732d72656769737472792d706c6163652f3120636172643d7368613235363a6263376634356639666531393637363163626664663763383161356566626333653262343036646237613732336363393230303432656362363163613336333620686f6c6465723d686f6c6465723a616c69636520686f72697a6f6e3d227b5c22636c6f636b5c223a5c22636c6f636b3a666978747572652d7265766973696f6e735c222c5c22756e69745c223a5c227265766973696f6e5c222c5c2266726f6d5c223a312c5c227468726f7567685c223a31307d22206b696e643d61646d69742d6c696e65616765206c696e656167653d6c696e656167653a73686172656420706c6163653d706c6163653a666978747572652d72656769737472792071756f72756d3d227b5c226b696e645c223a5c226e616d65642d7468726573686f6c6440315c222c5c22656c696769626c655c223a5b5c22686f6c6465723a616c6963655c222c5c22686f6c6465723a626f625c225d2c5c2272657175697265645c223a327d22207368617265733d5b5d",
+      "identity": "sha256:f89523eca0dcfb6d9c63240903d33a97f31056559df25e963a404bf7c19822b9"
+    },
+    {
+      "name": "missing-governance",
+      "entry": {
+        "kind": "admit-lineage",
+        "place": "place:fixture-registry",
+        "holder": "holder:alice",
+        "lineage": "lineage:shared"
+      },
+      "status": "open",
+      "needs": [
+        "card",
+        "horizon",
+        "quorum",
+        "shares"
+      ],
+      "bytes": "topos-registry-place/1 holder=holder:alice kind=admit-lineage lineage=lineage:shared place=place:fixture-registry",
+      "utf8Hex": "746f706f732d72656769737472792d706c6163652f3120686f6c6465723d686f6c6465723a616c696365206b696e643d61646d69742d6c696e65616765206c696e656167653d6c696e656167653a73686172656420706c6163653d706c6163653a666978747572652d7265676973747279",
+      "identity": "sha256:aaaf3d00c92a04f82db54794549d1f77946aafc1c30066b6c0adcdaf4ae4742e"
+    },
+    {
+      "name": "missing-card-bytes",
+      "entry": {
+        "kind": "admit-lineage",
+        "place": "place:fixture-registry",
+        "holder": "holder:alice",
+        "lineage": "lineage:shared",
+        "shares": [
+          "cause:declared"
+        ],
+        "card": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+        "horizon": {
+          "clock": "clock:fixture-revisions",
+          "unit": "revision",
+          "from": 1,
+          "through": 10
+        },
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 2
+        }
+      },
+      "status": "open",
+      "needs": [
+        "bytes/card:sha256:1111111111111111111111111111111111111111111111111111111111111111"
+      ],
+      "bytes": "topos-registry-place/1 card=sha256:1111111111111111111111111111111111111111111111111111111111111111 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"",
+      "utf8Hex": "746f706f732d72656769737472792d706c6163652f3120636172643d7368613235363a3131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313131313120686f6c6465723d686f6c6465723a616c69636520686f72697a6f6e3d227b5c22636c6f636b5c223a5c22636c6f636b3a666978747572652d7265766973696f6e735c222c5c22756e69745c223a5c227265766973696f6e5c222c5c2266726f6d5c223a312c5c227468726f7567685c223a31307d22206b696e643d61646d69742d6c696e65616765206c696e656167653d6c696e656167653a73686172656420706c6163653d706c6163653a666978747572652d72656769737472792071756f72756d3d227b5c226b696e645c223a5c226e616d65642d7468726573686f6c6440315c222c5c22656c696769626c655c223a5b5c22686f6c6465723a616c6963655c222c5c22686f6c6465723a626f625c225d2c5c2272657175697265645c223a327d22207368617265733d225b5c2263617573653a6465636c617265645c225d22",
+      "identity": "sha256:fbc3040ea9768cafe077c381c23c5e1ea3eefb74cf10b94c3108173b5478c91a"
+    },
+    {
+      "name": "missing-target-bytes",
+      "entry": {
+        "kind": "withdraw-exact",
+        "place": "place:fixture-registry",
+        "holder": "holder:alice",
+        "lineage": "lineage:shared",
+        "target": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+        "horizon": {
+          "clock": "clock:fixture-revisions",
+          "unit": "revision",
+          "from": 1,
+          "through": 10
+        },
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 2
+        }
+      },
+      "status": "open",
+      "needs": [
+        "bytes/target:sha256:2222222222222222222222222222222222222222222222222222222222222222"
+      ],
+      "bytes": "topos-registry-place/1 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=withdraw-exact lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" target=sha256:2222222222222222222222222222222222222222222222222222222222222222",
+      "utf8Hex": "746f706f732d72656769737472792d706c6163652f3120686f6c6465723d686f6c6465723a616c69636520686f72697a6f6e3d227b5c22636c6f636b5c223a5c22636c6f636b3a666978747572652d7265766973696f6e735c222c5c22756e69745c223a5c227265766973696f6e5c222c5c2266726f6d5c223a312c5c227468726f7567685c223a31307d22206b696e643d77697468647261772d6578616374206c696e656167653d6c696e656167653a73686172656420706c6163653d706c6163653a666978747572652d72656769737472792071756f72756d3d227b5c226b696e645c223a5c226e616d65642d7468726573686f6c6440315c222c5c22656c696769626c655c223a5b5c22686f6c6465723a616c6963655c222c5c22686f6c6465723a626f625c225d2c5c2272657175697265645c223a327d22207461726765743d7368613235363a32323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232",
+      "identity": "sha256:9430389e7fdfc14519534ff830abd45fa5a36e58e2751d64b52991f007d3b024"
+    }
+  ],
+  "negative": [
+    {
+      "name": "missing-holder",
+      "base": "alice",
+      "remove": "holder",
+      "cause": "REFUSE·registry-place identity holder"
+    },
+    {
+      "name": "missing-place",
+      "base": "alice",
+      "remove": "place",
+      "cause": "REFUSE·registry-place identity place"
+    },
+    {
+      "name": "missing-lineage",
+      "base": "alice",
+      "remove": "lineage",
+      "cause": "REFUSE·registry-place identity lineage"
+    },
+    {
+      "name": "quorum-zero",
+      "base": "alice",
+      "patch": {
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 0
+        }
+      },
+      "cause": "REFUSE·registry-place quorum threshold"
+    },
+    {
+      "name": "quorum-too-large",
+      "base": "alice",
+      "patch": {
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 3
+        }
+      },
+      "cause": "REFUSE·registry-place quorum threshold"
+    },
+    {
+      "name": "duplicate-quorum-members",
+      "base": "alice",
+      "patch": {
+        "quorum": {
+          "kind": "named-threshold@1",
+          "eligible": [
+            "holder:alice",
+            "holder:alice"
+          ],
+          "required": 2
+        }
+      },
+      "cause": "REFUSE·registry-place quorum threshold"
+    },
+    {
+      "name": "reversed-horizon",
+      "base": "alice",
+      "patch": {
+        "horizon": {
+          "clock": "clock:fixture-revisions",
+          "unit": "revision",
+          "from": 11,
+          "through": 10
+        }
+      },
+      "cause": "REFUSE·registry-place horizon"
+    },
+    {
+      "name": "missing-clock",
+      "base": "alice",
+      "patch": {
+        "horizon": {
+          "clock": "",
+          "unit": "revision",
+          "from": 1,
+          "through": 10
+        }
+      },
+      "cause": "REFUSE·registry-place horizon"
+    },
+    {
+      "name": "unknown-quorum-rule",
+      "base": "alice",
+      "patch": {
+        "quorum": {
+          "kind": "automatic-majority",
+          "eligible": [
+            "holder:alice",
+            "holder:bob"
+          ],
+          "required": 2
+        }
+      },
+      "cause": "REFUSE·registry-place quorum kind"
+    },
+    {
+      "name": "other-holder-withdrawal",
+      "base": "withdraw-alice",
+      "patch": {
+        "holder": "holder:bob"
+      },
+      "cause": "REFUSE·registry-place target attribution"
+    },
+    {
+      "name": "other-place-withdrawal",
+      "base": "withdraw-alice",
+      "patch": {
+        "place": "place:other"
+      },
+      "cause": "REFUSE·registry-place target attribution"
+    },
+    {
+      "name": "other-lineage-withdrawal",
+      "base": "withdraw-alice",
+      "patch": {
+        "lineage": "lineage:other"
+      },
+      "cause": "REFUSE·registry-place target attribution"
+    },
+    {
+      "name": "inexact-target",
+      "base": "withdraw-alice",
+      "patch": {
+        "target": "alice"
+      },
+      "cause": "REFUSE·registry-place exact target digest"
+    },
+    {
+      "name": "withdrawal-edits-card",
+      "base": "withdraw-alice",
+      "patch": {
+        "card": "sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636"
+      },
+      "cause": "REFUSE·registry-place withdrawal payload"
+    },
+    {
+      "name": "approvals-are-not-requirements",
+      "base": "alice",
+      "patch": {
+        "approvals": [
+          "holder:alice",
+          "holder:bob"
+        ]
+      },
+      "cause": "REFUSE·registry-place fields"
+    },
+    {
+      "name": "protocol-signature-in-shape",
+      "base": "alice",
+      "patch": {
+        "sig": "fake"
+      },
+      "cause": "REFUSE·registry-place fields"
+    },
+    {
+      "name": "missing-card-authority",
+      "base": "alice",
+      "cardMutation": "missing-authority",
+      "cause": "REFUSE·source-card authority"
+    },
+    {
+      "name": "corrupt-handed-target",
+      "base": "withdraw-alice",
+      "targetMutation": "corrupt",
+      "cause": "REFUSE·registry-place artifact digest"
+    }
+  ],
+  "collection": {
+    "twoHolders": [
+      "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"",
+      "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:bob horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\""
+    ],
+    "twoHolderBytes": "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"\ntopos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:bob horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"\n",
+    "admitAndWithdrawalBytes": "topos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"\ntopos-registry-place/1 card=sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636 holder=holder:bob horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=admit-lineage lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" shares=\"[\\\"cause:declared\\\"]\"\ntopos-registry-place/1 holder=holder:alice horizon=\"{\\\"clock\\\":\\\"clock:fixture-revisions\\\",\\\"unit\\\":\\\"revision\\\",\\\"from\\\":1,\\\"through\\\":10}\" kind=withdraw-exact lineage=lineage:shared place=place:fixture-registry quorum=\"{\\\"kind\\\":\\\"named-threshold@1\\\",\\\"eligible\\\":[\\\"holder:alice\\\",\\\"holder:bob\\\"],\\\"required\\\":2}\" target=sha256:6d2d86844255fa5c830bb936ba898591db1542fb15b7f8999669f315256e226e\n"
+  },
+  "withdrawalTarget": "sha256:6d2d86844255fa5c830bb936ba898591db1542fb15b7f8999669f315256e226e",
+  "sourceCard": "sha256:bc7f45f9fe196761cbfdf7c81a5efbc3e2b406db7a723cc920042ecb61ca3636",
+  "identityRule": "SHA256 of canonical UTF8 line plus LF; all holder/context fields retained; no semantic signature projection"
+}

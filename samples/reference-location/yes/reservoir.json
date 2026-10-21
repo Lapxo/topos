@@ -1,0 +1,159 @@
+{
+  "name": "reservoir",
+  "vector": {
+    "profile": "#topos-reference:1",
+    "status": "candidate; not admitted",
+    "positive": [
+      {
+        "name": "without-location",
+        "reference": {
+          "class": "standing",
+          "algorithm": "sha256",
+          "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+          "blob": "sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a"
+        },
+        "fragment": "#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+        "fragmentHex": "23746f706f732d7265666572656e63653a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3666643861643235373761396533356163393734633963313230353433313566383630393666356465323639613435333338326133636635663637343437626326626c6f623d73686132353625334132346133366365396339373033653638336333656339336531303238313335643333303130613731643265656666376232656638356230356337383361383761",
+        "identity": "#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+        "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 measure=count scope=catalog/items value=2..4\\n\"}",
+        "missingBytes": {
+          "kind": "needs",
+          "needs": "bytes"
+        }
+      },
+      {
+        "name": "holder",
+        "reference": {
+          "class": "standing",
+          "algorithm": "sha256",
+          "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+          "blob": "sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+          "location": "https://example.invalid/catalog.json",
+          "location-class": "holder"
+        },
+        "fragment": "#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a&location=https%3A%2F%2Fexample.invalid%2Fcatalog.json&location-class=holder",
+        "fragmentHex": "23746f706f732d7265666572656e63653a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3666643861643235373761396533356163393734633963313230353433313566383630393666356465323639613435333338326133636635663637343437626326626c6f623d73686132353625334132346133366365396339373033653638336333656339336531303238313335643333303130613731643265656666376232656638356230356337383361383761266c6f636174696f6e3d68747470732533412532462532466578616d706c652e696e76616c6964253246636174616c6f672e6a736f6e266c6f636174696f6e2d636c6173733d686f6c646572",
+        "identity": "#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+        "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 measure=count scope=catalog/items value=2..4\\n\"}",
+        "missingBytes": {
+          "kind": "needs",
+          "needs": "bytes"
+        }
+      },
+      {
+        "name": "viewer",
+        "reference": {
+          "class": "standing",
+          "algorithm": "sha256",
+          "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+          "blob": "sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+          "location": "https://example.invalid/view#catalog",
+          "location-class": "viewer"
+        },
+        "fragment": "#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a&location=https%3A%2F%2Fexample.invalid%2Fview%23catalog&location-class=viewer",
+        "fragmentHex": "23746f706f732d7265666572656e63653a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3666643861643235373761396533356163393734633963313230353433313566383630393666356465323639613435333338326133636635663637343437626326626c6f623d73686132353625334132346133366365396339373033653638336333656339336531303238313335643333303130613731643265656666376232656638356230356337383361383761266c6f636174696f6e3d68747470732533412532462532466578616d706c652e696e76616c696425324676696577253233636174616c6f67266c6f636174696f6e2d636c6173733d766965776572",
+        "identity": "#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+        "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 measure=count scope=catalog/items value=2..4\\n\"}",
+        "missingBytes": {
+          "kind": "needs",
+          "needs": "bytes"
+        }
+      }
+    ],
+    "negative": [
+      {
+        "name": "missing-location-class",
+        "patch": {
+          "location": "https://example.invalid/catalog.json"
+        },
+        "cause": "location pair"
+      },
+      {
+        "name": "missing-location",
+        "patch": {
+          "location-class": "holder"
+        },
+        "cause": "location pair"
+      },
+      {
+        "name": "bad-class",
+        "patch": {
+          "location": "https://example.invalid/catalog.json",
+          "location-class": "transport"
+        },
+        "cause": "location class"
+      },
+      {
+        "name": "bad-url",
+        "patch": {
+          "location": "not-a-url",
+          "location-class": "holder"
+        },
+        "cause": "location URL"
+      },
+      {
+        "name": "credentials",
+        "patch": {
+          "location": "https://name:secret@example.invalid/catalog",
+          "location-class": "holder"
+        },
+        "cause": "location URL"
+      },
+      {
+        "name": "holder-fragment",
+        "patch": {
+          "location": "https://example.invalid/catalog#x",
+          "location-class": "holder"
+        },
+        "cause": "location URL"
+      },
+      {
+        "name": "noncanonical-url",
+        "patch": {
+          "location": "https://EXAMPLE.invalid/catalog",
+          "location-class": "holder"
+        },
+        "cause": "noncanonical location"
+      },
+      {
+        "name": "unknown-field",
+        "patch": {
+          "source": "https://example.invalid/catalog.json"
+        },
+        "cause": "fields"
+      },
+      {
+        "name": "unknown-algorithm",
+        "patch": {
+          "algorithm": "sha512"
+        },
+        "cause": "algorithm"
+      }
+    ],
+    "legacy": {
+      "fragment": "#bound:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a&source=https%3A%2F%2Fexample.invalid%2Fcatalog.json",
+      "fragmentHex": "23626f756e643a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3666643861643235373761396533356163393734633963313230353433313566383630393666356465323639613435333338326133636635663637343437626326626c6f623d7368613235362533413234613336636539633937303365363833633365633933653130323831333564333330313061373164326565666637623265663835623035633738336138376126736f757263653d68747470732533412532462532466578616d706c652e696e76616c6964253246636174616c6f672e6a736f6e",
+      "reference": {
+        "class": "standing",
+        "algorithm": "sha256",
+        "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+        "blob": "sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+        "source": "https://example.invalid/catalog.json"
+      },
+      "sample": {
+        "name": "catalog",
+        "reference": {
+          "class": "standing",
+          "algorithm": "sha256",
+          "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+          "blob": "sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+          "source": "https://example.invalid/catalog.json"
+        },
+        "fragment": "#bound:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a&source=https%3A%2F%2Fexample.invalid%2Fcatalog.json",
+        "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 measure=count scope=catalog/items value=2..4\\n\"}"
+      },
+      "sourceRequired": true
+    },
+    "scope": "Address declaration is not availability, transport permission, signature, authority or independence; no network invocation"
+  }
+}

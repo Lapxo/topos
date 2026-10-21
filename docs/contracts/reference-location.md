@@ -1,6 +1,6 @@
 # Reference with optional location
 
-Candidate profile: #topos-reference:1. This is separate from #bound:1, whose required source and historical bytes remain unchanged.
+Profile: #topos-reference:1. This is separate from #bound:1, whose required source and historical bytes remain unchanged.
 
 Identity fields are class=standing, algorithm=sha256, digest (semantic standing) and blob (exact canonical document bytes). Optional location and location-class must appear together. location-class is viewer or holder. Addresses are canonical absolute HTTP(S) URLs without credentials; holder addresses have no fragment; viewer fragments are preserved. Field order is class, algorithm, digest, blob, location, location-class; values use encodeURIComponent. Duplicate, unknown or malformed fields and unsupported profile versions refuse by name.
 

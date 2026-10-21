@@ -1,6 +1,6 @@
 # Module inventory
 
-Candidate profile: topos-inventory/1. This is a separate data profile, not a change to bound-lock/1. It reuses the existing lexical canonicalizer and UTF-8 byte order, without Unicode normalization.
+Profile: topos-inventory/1. This is a separate data profile, not a change to bound-lock/1. It reuses the existing lexical canonicalizer and UTF-8 byte order, without Unicode normalization.
 
 Each reached-unit record declares source, version, holder, unit-kind=module, unit and reached-from. The current concrete reach producer selects an explicit exports path from exact package.json bytes: the manifest digest and canonical encoded selector identify reached-from; source/version must match the manifest and the selected value must equal the module path. Unselected/unreached modules emit no line. This proves the selected export edge, not execution, actual use, an import graph or symbol-level reachability.
 

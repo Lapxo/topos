@@ -32,6 +32,8 @@ jobs:
             case "$source" in
               https://github.com/Lapxo/topos/releases/download/v0.2.2/*)
                 gh release download v0.2.2 --repo "$GITHUB_REPOSITORY" --pattern "$asset" --dir "$RUNNER_TEMP/readers" ;;
+              https://github.com/Lapxo/topos/releases/download/v0.2.3/*)
+                gh release download v0.2.3 --repo "$GITHUB_REPOSITORY" --pattern "$asset" --dir "$RUNNER_TEMP/readers" ;;
               *) curl --fail --location --retry 3 "$source" --output "$RUNNER_TEMP/readers/$asset" ;;
             esac
             printf '%s  %s\n' "$digest" "$RUNNER_TEMP/readers/$asset" | sha256sum -c -
@@ -52,6 +54,8 @@ jobs:
           79f67c38e9533f08bea37944cbf9eeef272b415fa798de89f82f4fccfcc4ca54 https://github.com/Lapxo/topos-doc/releases/download/v0.1.4/79f67c38e9533f08bea37944cbf9eeef272b415fa798de89f82f4fccfcc4ca54
           47434ee39db8454c60d7e814b237e9dbf327a01b7d740f64b21c2c4aa81eed2b https://github.com/Lapxo/topos-node/releases/download/v0.1.4/47434ee39db8454c60d7e814b237e9dbf327a01b7d740f64b21c2c4aa81eed2b
           db4d1ed06ecd8e5413feb2f79b846d4cec98ad12ac44ae3c3d96a35fe261b2bb https://registry.npmjs.org/@lapxo/obligations/-/obligations-0.4.5.tgz
+          9a8663faf88359f59829dfdc23debd39717f547f0d7d4b93881ffb6a71127460 https://github.com/Lapxo/topos/releases/download/v0.2.3/9a8663faf88359f59829dfdc23debd39717f547f0d7d4b93881ffb6a71127460.bound
+          08ebb23b3e31f89d8aa8fd90ad8bfc44722f54d977196f1aaba4f578bc49419f https://github.com/Lapxo/topos/releases/download/v0.2.3/08ebb23b3e31f89d8aa8fd90ad8bfc44722f54d977196f1aaba4f578bc49419f.tgz
           ASSETS
       - name: Check native closure and file seals
         run: |

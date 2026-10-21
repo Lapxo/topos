@@ -1,6 +1,6 @@
 # Region reading of a walk
 
-Candidate profile: topos-region-reading/1. This structural form reuses Topos0.2.2 walkInventory, walkAt, walkHeaders, walkProjection, lexical canonicalization, scope matching and count interpretation. It changes no existing wire or protocol. The concrete producer is the existing pure inventory walk on a synthetic three-region fixture; no consumer application is implemented.
+Profile: topos-region-reading/1. This structural form reuses Topos0.2.2 walkInventory, walkAt, walkHeaders, walkProjection, lexical canonicalization, scope matching and count interpretation. It changes no existing wire or protocol. The concrete producer is the existing pure inventory walk on a synthetic three-region fixture; no consumer application is implemented.
 
 The exact handed UTF-8 walk-header document is bound by SHA-256. Its lines are canonical, unique, byte-sorted and LF-terminated. Exactly one root and unambiguous scope/measure coordinates are required; each region row refers to that root. The frame is declared canonical-walk-headers@1 with an explicit inventory resolution profile. No projection is inferred from a numeric resolution label.
 

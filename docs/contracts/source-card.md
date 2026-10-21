@@ -1,6 +1,6 @@
 # Source card
 
-Candidate profile: topos-source-card/1. This standalone shape uses the existing lexical canonicalizer and selected Topos forms; it changes neither bound-lock/1 nor #bound:1.
+Profile: topos-source-card/1. This standalone shape uses the existing lexical canonicalizer and selected Topos forms; it changes neither bound-lock/1 nor #bound:1.
 
 A card declares source, publisher, catalog identity, form, canonical JSON parameters, resolution, authority reference, cost, cost-unit, cost-limit, needs and optional shares. API, sensor, CSV, model and person use the same interpretation. Authority is a declaration, not authentication or a permission grant. The canonical UTF-8 line is the signable content; key selection, signing, verification and transport remain protocol operations.
 

@@ -1,6 +1,6 @@
 # Registry as a governed place
 
-Candidate profile: topos-registry-place/1. A pure declaration of lineage admission or exact withdrawal within a named place, reusing canonical text, attributed content identity and the existing source-card interpreter. It changes no wire or protocol, and does not compute live standing.
+Profile: topos-registry-place/1. A pure declaration of lineage admission or exact withdrawal within a named place, reusing canonical text, attributed content identity and the existing source-card interpreter. It changes no wire or protocol, and does not compute live standing.
 
 Each inscription names place, holder and lineage. An admission can declare shares, a source-card content digest, a horizon and a quorum requirement. Two holders naming the same lineage are two distinct inscriptions, with distinct identities. Only the same exact canonical line deduplicates. Lapxo is an ordinary holder; there is no privileged name.
 

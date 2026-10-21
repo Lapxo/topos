@@ -1,0 +1,15 @@
+{
+  "id": "topos-algebra-consumption/1",
+  "scope": "Focused consumed-surface comparison, not equivalence of all theorems or native admission",
+  "input": "Selected public Obligations package, prepared manifest/lock, actual consumed source and captured cross-version outputs",
+  "witness": "Equal snapshot digests and successful focused runs; not a statement that distinct implementations inherit receipts",
+  "implementationBoundary": "Reuse existing Topos/Obligations operations; the reader checks the sealed evidence and selected dependency identity, without another algebra or authority judge",
+  "publishedMetadataDebt": "Obligations0.4.7 region-measure/key-lineage contracts retain contradictory lifecycle labels; no correction or upgrade is implied",
+  "refusal": [
+    "missing or altered declared input",
+    "changed selected dependency",
+    "different compared snapshot",
+    "failed captured run"
+  ],
+  "lifecycle": "Selected standing, admission receipts and release approval establish lifecycle separately"
+}

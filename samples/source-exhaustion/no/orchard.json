@@ -1,0 +1,50 @@
+{
+  "place": "orchard/harvest",
+  "exhaustion": {
+    "card": "sha256:05b997566175493681df15be9d6c2dcee5462de45521acdaf4d2a03a5e69f43a",
+    "source": "orchard/harvest",
+    "unit": "calls",
+    "frame": {
+      "clock": "fixture-clock",
+      "unit": "ticks",
+      "from": 0,
+      "through": 100
+    },
+    "exhaustedAt": 10,
+    "knownSince": 11,
+    "evidence": "sha256:f947b1a7fe60ae6c1864f8256bacfb78ea9dc79aec5f6bf9639244f76cb5a330",
+    "events": [
+      {
+        "id": "call-1",
+        "evidence": "sha256:f66eafd00e458dcb2cf6d6462270c11e111f2fdd10e7310ade59167ca98ad0bc"
+      },
+      {
+        "id": "call-1",
+        "evidence": "sha256:f66eafd00e458dcb2cf6d6462270c11e111f2fdd10e7310ade59167ca98ad0bc"
+      }
+    ],
+    "recovery": {
+      "kind": "declared",
+      "at": 20,
+      "evidence": "sha256:1732894d725b31ad8ad036e94256ed5d4e1b75ba6ea21eabdcc48791ae9f1cfb"
+    }
+  },
+  "card": {
+    "source": "orchard/harvest",
+    "publisher": "publisher",
+    "catalog": "sha256:8bec8757f662f0f3cab90d3c7cfbf69ce66e4e120b0f8fb911aa1022798b3edf",
+    "form": "budget",
+    "params": "{\"hi\":10,\"lo\":0}",
+    "resolution": "0..10",
+    "authority": "consumer",
+    "cost": "0..10",
+    "cost-unit": "calls",
+    "cost-limit": "10",
+    "needs": "none"
+  },
+  "expected": {
+    "source": "orchard/harvest",
+    "clock": "fixture-clock",
+    "unit": "ticks"
+  }
+}

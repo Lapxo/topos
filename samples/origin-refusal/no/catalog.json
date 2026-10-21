@@ -1,0 +1,21 @@
+{
+  "place": "catalog/items",
+  "origin": {
+    "origin": "sha256:60bc139b9de245722ef27ff7b5280f8c69dd5bf1005b23ee76718335d2c639b6",
+    "key": "other",
+    "scope": "catalog/items",
+    "context": "sha256:d452bbca0f6b28c75fe476e0af7f4c6744cc51aea85e0c6c0db49643d7794e73",
+    "evidence": "sha256:f10bf3b5ca747831be8b81cd85393038982475ce198cbca123322696b456b83d"
+  },
+  "proof": {
+    "signature": "SWR59iIKnl8S1HrM8eQfvkWsibQztFeWJaXe8OpuuLX7fSxdgLNM9aHrhSspGyd4uZmRiWUAogmX0DZE8AghAg=="
+  },
+  "refusal": {
+    "producer": "fixture-consumer",
+    "code": "origin/key-material-request",
+    "request": "sha256:8c232b9fab7ac42a1b64728ca3a0a06bd731ba227503c46ed3e5717ed7131ee8",
+    "scope": "catalog/items",
+    "context": "sha256:d452bbca0f6b28c75fe476e0af7f4c6744cc51aea85e0c6c0db49643d7794e73",
+    "next": "use-injected-signer"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "topos-authority-card/1",
+  "purpose": "Contextual view of a consumer-produced authority judgment",
+  "reuses": [
+    "normalizeRegistryHorizon",
+    "existing consumer authority evaluation"
+  ],
+  "commits": [
+    "place/snapshot",
+    "key/authority/coverage",
+    "policy/budget/demands",
+    "grants/retirements",
+    "catalog/standingContract",
+    "explicit horizon and issuedAt",
+    "request-digest decisions",
+    "external judgment evidence"
+  ],
+  "interpretation": "Parsing is a declaration, not permission. authorityCardAnswer compares current consumer context and explicit clock before accepting a judgment through a receiver-selected verification port. It never calculates allow/ask/deny from grants.",
+  "refusals": [
+    "card-stale",
+    "not-in-card"
+  ],
+  "externalObligations": [
+    "Verify the actual judge, signature/coverage, every statement/context binding and accepted clock source",
+    "Supply current authority identity after withdrawal, even when content snapshot is unchanged"
+  ],
+  "nativeScope": "Two receiver fixtures verify signature plus a fixed judgment statement. This is not a live production authority fold.",
+  "resourceContract": "Caller supplies byte and per-collection item budgets; no ambient clock, I/O, default verifier or universal region list",
+  "lifecycle": "Contract meaning only. Admission, production consumer verification and public delivery require their separate acta."
+}

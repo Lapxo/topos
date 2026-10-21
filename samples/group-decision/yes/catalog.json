@@ -1,0 +1,55 @@
+{
+  "place": "catalog/items",
+  "previous": {
+    "kind": "group",
+    "place": "catalog/items",
+    "snapshot": "sha256:4f30fa39500befe92e4d549ba9b9a8e48820b6a1a43f926b22f438aa69f41acb",
+    "name": "maintainers",
+    "regions": [
+      "catalog/items"
+    ]
+  },
+  "next": {
+    "kind": "group",
+    "place": "catalog/items",
+    "snapshot": "sha256:4f30fa39500befe92e4d549ba9b9a8e48820b6a1a43f926b22f438aa69f41acb",
+    "name": "maintainers",
+    "regions": [
+      "catalog/items",
+      "catalog/items/extension"
+    ],
+    "previous": "sha256:2094c5305d124e51534890b993aade8a0accb4f99f20b5833d4519fa20fb84f2"
+  },
+  "decision": {
+    "kind": "decision",
+    "place": "catalog/items",
+    "group": "sha256:2094c5305d124e51534890b993aade8a0accb4f99f20b5833d4519fa20fb84f2",
+    "membership": "sha256:1e76ba23aa463df698d7780ff33189fee713ad7f2b0166b1badc073bafbdd6c8",
+    "proposal": "sha256:efe2fa234e3a8a51bca87ab7af91f47a5024a5f348ede6f6547b7418723af839",
+    "context": "sha256:fc797caf720193593f386d6825b743fe4c4b38066390bc2714e8b7d1cd120b92",
+    "horizon": {
+      "clock": "logical",
+      "unit": "ticks",
+      "from": 1,
+      "through": 4
+    },
+    "quorum": {
+      "kind": "named-threshold@1",
+      "eligible": [
+        "first",
+        "second"
+      ],
+      "required": 2
+    },
+    "proofs": [
+      {
+        "key": "first",
+        "evidence": "sha256:35a041679b20f5495e2b47a03092d4b4ad0522fe60703ae343dcfd2bf08d8689"
+      },
+      {
+        "key": "second",
+        "evidence": "sha256:9df3f3c36a02206d8625e61cbecc3af4b919202b8d7ecfd96082e3d594d0ffb2"
+      }
+    ]
+  }
+}

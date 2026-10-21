@@ -1,0 +1,55 @@
+{
+  "place": "orchard/harvest",
+  "previous": {
+    "kind": "group",
+    "place": "orchard/harvest",
+    "snapshot": "sha256:f4e9d67caf8c866ce9694c7ac30810e1895e75ee13a59e7f5ca4054cc6d02302",
+    "name": "maintainers",
+    "regions": [
+      "orchard/harvest"
+    ]
+  },
+  "next": {
+    "kind": "group",
+    "place": "orchard/harvest",
+    "snapshot": "sha256:f4e9d67caf8c866ce9694c7ac30810e1895e75ee13a59e7f5ca4054cc6d02302",
+    "name": "maintainers",
+    "regions": [
+      "orchard/harvest",
+      "orchard/harvest/extension"
+    ],
+    "previous": "sha256:fc3849764bcc0934dd562d16f784551dc4f63db640f585a252cd16e83901cc73"
+  },
+  "decision": {
+    "kind": "decision",
+    "place": "orchard/harvest",
+    "group": "sha256:fc3849764bcc0934dd562d16f784551dc4f63db640f585a252cd16e83901cc73",
+    "membership": "sha256:de2d14c59d3b0920973ff4ab4a990317663df9d244cf13f2e03ef71401732236",
+    "proposal": "sha256:28c974b47a291b097b67a332fed781da61906586a0e17a0aabf3f1f189875de2",
+    "context": "sha256:fc797caf720193593f386d6825b743fe4c4b38066390bc2714e8b7d1cd120b92",
+    "horizon": {
+      "clock": "logical",
+      "unit": "ticks",
+      "from": 1,
+      "through": 4
+    },
+    "quorum": {
+      "kind": "named-threshold@1",
+      "eligible": [
+        "first",
+        "second"
+      ],
+      "required": 2
+    },
+    "proofs": [
+      {
+        "key": "first",
+        "evidence": "sha256:35a041679b20f5495e2b47a03092d4b4ad0522fe60703ae343dcfd2bf08d8689"
+      },
+      {
+        "key": "second",
+        "evidence": "sha256:9df3f3c36a02206d8625e61cbecc3af4b919202b8d7ecfd96082e3d594d0ffb2"
+      }
+    ]
+  }
+}

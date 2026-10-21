@@ -1,0 +1,29 @@
+{
+  "place": "orchard/harvest",
+  "link": {
+    "emitter": "writer",
+    "region": "orchard/harvest/records",
+    "reference": "#topos-reference:1?class=standing&algorithm=sha256&digest=851a5ae6a215d833949c1bdda340521cbd254d28283bcdbc4b9caf1245c539ec&blob=sha256%3Af29752bf14cc0f1917f8d447299a0d3a43444c7532266230c3bed08c77a002af&location=https%3A%2F%2Fexample.org%2Forchard&location-class=holder",
+    "action": {
+      "statement": {
+        "verb": "write",
+        "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047",
+        "result": "sha256:404c6d18581ee298d02abdffdb27063ac1db2185d1b83be42a369332f0cb25ef",
+        "key": "writer",
+        "place": "orchard/harvest",
+        "region": "orchard/harvest/records",
+        "before": "sha256:6db7d803e74f1ffa7d8f5adc0bf95b3e15bf4c8373fffadf546227cc6c6742cb",
+        "policy": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+        "catalog": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+        "standingContract": "sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c"
+      },
+      "act": "sha256:1acbe5dc9cc5995fb09a7180d3a6c7fefa2e6dfa0d648437effdbba05f8cd224",
+      "evidence": "sha256:c19694e6921c647ce3f36d2767bfa72d695c3dbe34af99c698e20d07b5994b9f"
+    }
+  },
+  "records": [
+    "bound-lock/1 at=place:orchard/harvest by=writer epoch=7 form=alphabet measure=digest role=writes scope=orchard/harvest/action-statement sig=\"ed25519:uGpm/nW/f/O1d6bmV8zsIlnAMHiHBM2vuqlCeZsysPPNzNaPYU3koK3tRev7a7ig0uGAM054Dz2UQOPdCyeZBQ==\" value=sha256:7c92690e95d2d5d06aefa00a667515fc827633a565740927042aab8e2f60c10d"
+  ],
+  "receipt": "bound-lock/1 at=receipt:orchard/harvest by=writer epoch=7 form=alphabet measure=digest role=writes scope=orchard/harvest/commit sig=\"ed25519:Ap+kyr2c93K2vxLnf0skrR/UHD+NiXWyohJYDd6tlKrm+g9VX/2s9LqPowthgUnlJGLOObiUe4bCh94g6D2KBg==\" value=sha256:1acbe5dc9cc5995fb09a7180d3a6c7fefa2e6dfa0d648437effdbba05f8cd224",
+  "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 form=alphabet measure=value role=writes scope=orchard/harvest value=public\\n\"}"
+}

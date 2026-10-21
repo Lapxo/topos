@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "Two receiver fixtures verify signature plus a fixed judgment statement. This is not a live production authority fold.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:2f38cf4b7f090482b3fabb737609f34baa35cd33c4e895793da4910a3170ec7e",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:2f38cf4b7f090482b3fabb737609f34baa35cd33c4e895793da4910a3170ec7e by=reader:54b8f540257d form=alphabet measure=observed role=writes scope=inputs/sample.json value=2f38cf4b7f090482\nbound-lock/1 at=place:sha256:2f38cf4b7f090482b3fabb737609f34baa35cd33c4e895793da4910a3170ec7e by=reader:54b8f540257d form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"declared\\\":{\\\"status\\\":\\\"declared\\\",\\\"card\\\":{\\\"actions\\\":[{\\\"request\\\":\\\"sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047\\\",\\\"decision\\\":\\\"allow\\\"}],\\\"authority\\\":\\\"sha256:34d35779f977535b3b6d352a10ba29588aa327f70a74223a213275e2d01c8a1b\\\",\\\"budget\\\":\\\"sha256:0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6\\\",\\\"catalog\\\":\\\"sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57\\\",\\\"coverage\\\":\\\"sha256:96079f04ac5b476a4dd111eb164c42232f5fac2696620e96cd9aed5e2588f8f5\\\",\\\"demands\\\":[],\\\"evidence\\\":\\\"sha256:1bfcd78dfe18ca63ee53d99a1cbfa5499cd13193c62b17853c219a8f292745f9\\\",\\\"grants\\\":[\\\"sha256:3492ad65d05a973fef8c825521eeb41ae64625a672a8aeeeabc696e16d62a020\\\"],\\\"horizon\\\":{\\\"clock\\\":\\\"declared-clock\\\",\\\"unit\\\":\\\"ticks\\\",\\\"from\\\":10,\\\"through\\\":20},\\\"issuedAt\\\":10,\\\"key\\\":\\\"writer\\\",\\\"place\\\":\\\"catalog/items\\\",\\\"policy\\\":\\\"sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812\\\",\\\"retirements\\\":[],\\\"snapshot\\\":\\\"sha256:2444f549fd45dae4032bfcd409d43612ad93ee0972f1ed6bf111b8409175c0e2\\\",\\\"standingContract\\\":\\\"sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c\\\"},\\\"authentication\\\":\\\"not verified\\\",\\\"authorization\\\":\\\"not established\\\"},\\\"answer\\\":{\\\"status\\\":\\\"observed\\\",\\\"decision\\\":\\\"allow\\\",\\\"source\\\":\\\"consumer-verified-judgment\\\"},\\\"revoked\\\":{\\\"status\\\":\\\"refused\\\",\\\"code\\\":\\\"card-stale\\\",\\\"next\\\":\\\"refresh-card\\\"},\\\"trust\\\":\\\"receiver fixture judgment; not a live policy fold\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/authority-card/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:ebb0a46d1714086daee80e3ae64bdf4f362b5ac7894c91b223fa824b807680a0",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/authority-card/no/catalog.json",
+      "cause": "authority-card/decision"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:9c0caba75dca6dd599166fa30f0c44c91eee12b10d93c95ffe9ad85c6e8e79de",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:9c0caba75dca6dd599166fa30f0c44c91eee12b10d93c95ffe9ad85c6e8e79de by=reader:54b8f540257d form=alphabet measure=observed role=writes scope=inputs/sample.json value=9c0caba75dca6dd5\nbound-lock/1 at=place:sha256:9c0caba75dca6dd599166fa30f0c44c91eee12b10d93c95ffe9ad85c6e8e79de by=reader:54b8f540257d form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"declared\\\":{\\\"status\\\":\\\"declared\\\",\\\"card\\\":{\\\"actions\\\":[{\\\"request\\\":\\\"sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047\\\",\\\"decision\\\":\\\"allow\\\"}],\\\"authority\\\":\\\"sha256:f040eb9dfb4873d7a258fc091f06ccd6f85ec15635ff289ea6c6d6c0671784cb\\\",\\\"budget\\\":\\\"sha256:0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6\\\",\\\"catalog\\\":\\\"sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57\\\",\\\"coverage\\\":\\\"sha256:728097893e8648a25cb4a2af484f7b6d65de4852df55f8ce33cb5b63b2b011b4\\\",\\\"demands\\\":[],\\\"evidence\\\":\\\"sha256:9f3e97088eff20698a7362fb4e5b9c531d15ad2ed6a4d097a004beb99f0ed5fe\\\",\\\"grants\\\":[\\\"sha256:3492ad65d05a973fef8c825521eeb41ae64625a672a8aeeeabc696e16d62a020\\\"],\\\"horizon\\\":{\\\"clock\\\":\\\"declared-clock\\\",\\\"unit\\\":\\\"ticks\\\",\\\"from\\\":10,\\\"through\\\":20},\\\"issuedAt\\\":10,\\\"key\\\":\\\"writer\\\",\\\"place\\\":\\\"orchard/harvest\\\",\\\"policy\\\":\\\"sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812\\\",\\\"retirements\\\":[],\\\"snapshot\\\":\\\"sha256:6c71f6d3d7094a8ea7193577e4989f40763b90cb1e6b5667b3eb956f16a9b645\\\",\\\"standingContract\\\":\\\"sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c\\\"},\\\"authentication\\\":\\\"not verified\\\",\\\"authorization\\\":\\\"not established\\\"},\\\"answer\\\":{\\\"status\\\":\\\"observed\\\",\\\"decision\\\":\\\"allow\\\",\\\"source\\\":\\\"consumer-verified-judgment\\\"},\\\"revoked\\\":{\\\"status\\\":\\\"refused\\\",\\\"code\\\":\\\"card-stale\\\",\\\"next\\\":\\\"refresh-card\\\"},\\\"trust\\\":\\\"receiver fixture judgment; not a live policy fold\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/authority-card/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:86b40480fe9464a63dcb844d3f418763833635824d5a0bebee04b3c3f0e70148",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/authority-card/no/orchard.json",
+      "cause": "authority-card/decision"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "Describe a bounded public birth payload without transferring admission or local authority. No production admission or effects.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:f2359f0feb3acde88323643a43dc0e586354dfadf931308e4b782344ba5a3017",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:f2359f0feb3acde88323643a43dc0e586354dfadf931308e4b782344ba5a3017 by=reader:8fef634dfd69 form=alphabet measure=observed role=writes scope=inputs/sample.json value=f2359f0feb3acde8\nbound-lock/1 at=place:sha256:f2359f0feb3acde88323643a43dc0e586354dfadf931308e4b782344ba5a3017 by=reader:8fef634dfd69 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"status\\\":\\\"declared\\\",\\\"pack\\\":{\\\"origin\\\":\\\"sha256:73e1a8584863972cb06b13b9147d29bba3f94021257c1388da4ad301b1f2812f\\\",\\\"declarations\\\":[\\\"bound-lock/1 form=alphabet measure=text role=writes scope=catalog/items/name value=public-birth\\\"]},\\\"collisions\\\":[],\\\"needs\\\":[],\\\"admission\\\":\\\"not performed\\\",\\\"authority\\\":\\\"not transferred\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/portable-birth/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:e6e654f35dfaf0b565c74750cca121dfc8372572fa9076308e9e6688cda882f5",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/portable-birth/no/catalog.json",
+      "cause": "pack/duplicate"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:a182a4a0267d9a83a9d391259097864c59ce56767d8c823d9e7b7e1dbb1d4dd9",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:a182a4a0267d9a83a9d391259097864c59ce56767d8c823d9e7b7e1dbb1d4dd9 by=reader:8fef634dfd69 form=alphabet measure=observed role=writes scope=inputs/sample.json value=a182a4a0267d9a83\nbound-lock/1 at=place:sha256:a182a4a0267d9a83a9d391259097864c59ce56767d8c823d9e7b7e1dbb1d4dd9 by=reader:8fef634dfd69 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"status\\\":\\\"declared\\\",\\\"pack\\\":{\\\"origin\\\":\\\"sha256:3cf29b2151ada181ac5ad692bed34c6b487b4aa674684c955e462c9d62f63f7f\\\",\\\"declarations\\\":[\\\"bound-lock/1 form=alphabet measure=text role=writes scope=orchard/harvest/name value=public-birth\\\"]},\\\"collisions\\\":[],\\\"needs\\\":[],\\\"admission\\\":\\\"not performed\\\",\\\"authority\\\":\\\"not transferred\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/portable-birth/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:76e7847332d8968d952c37d7bb04ffef9656689a39b32058f212233d2e928486",
+      "readerDigest": "sha256:3ce15bb67f750127099025ce823d4f8a08f540aac4fb2fee8954bc4a818d2347",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/portable-birth/no/orchard.json",
+      "cause": "pack/duplicate"
+    }
+  ]
+}

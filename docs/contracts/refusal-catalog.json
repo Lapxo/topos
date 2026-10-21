@@ -1,0 +1,26 @@
+{
+  "id": "topos-refusal-catalog/1",
+  "purpose": "Machine-readable exact producer/code catalog for the declared new-form surface, with observed producer vectors and separately open external demands.",
+  "lifecycle": "Meaning is independent of a particular owner selection or release.",
+  "contract": [
+    "vectors/refusal-catalog.json is the data source. This Markdown table is derived; no consumer parses prose.",
+    "Every local entry names producer, implementation digest, exact code, class, meaning, next, vector and case. All65 local causes were observed in two unrelated contexts.",
+    "Next names resolve to catalog actions; duplicate producer/code pairs, unresolved next and malformed definitions refuse. No executable action or authority is carried by next.",
+    "Catalog identity preimage is encodeRefusalCatalog(data,budget) followed by one LF. Authority/action context commits this identity alongside standingContract; the receiver selects both.",
+    "Lookup returns declared metadata, never producer authenticity or authority. Unknown/external producer codes remain named open needs.",
+    "This scope covers the declared0.2.4 new forms. Legacy wire/reference cause bytes remain in compatibility fixtures, without inventing slash aliases.",
+    "Five Head door codes, github-runs-on and doc-install-region remain seven named producer demands until their actual contract/version/vector arrives.",
+    "The older governance-refusals draft is historical evidence; it is not the newly selected catalog."
+  ],
+  "externalObligations": [
+    "Producer authentication, consumer acceptance and next-action execution",
+    "The seven external producer demands"
+  ],
+  "quartet": {
+    "contract": "docs/contracts/refusal-catalog.json",
+    "positive": "samples/refusal-catalog/yes/*.json",
+    "vector": "vectors/native/refusal-catalog.cli.json",
+    "negative": "samples/refusal-catalog/no/*.json"
+  },
+  "readerBudgetMs": 5000
+}

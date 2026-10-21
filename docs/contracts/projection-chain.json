@@ -1,0 +1,75 @@
+{
+  "id": "topos-projection-chain/1",
+  "consumes": {
+    "package": "@lapxo/obligations",
+    "version": "0.4.7",
+    "contract": "projection-chain-composition@1",
+    "contractDigest": "sha256:34add91f4dfd04d38490f85577fcbb95059a58803c8b82c4a82af2d265a421d9",
+    "function": "mixProjectionLoss",
+    "moduleDigest": "sha256:af9c6a3dbeda91981b394b61e187f916dc0e0304801b7b654ff3e025ebce94cb"
+  },
+  "inputs": [
+    "profile",
+    "atoms",
+    "f",
+    "g",
+    "direct?",
+    "prior?",
+    "policy"
+  ],
+  "domain": "Finite named atoms, total deterministic f:X->Y and g:Y->Z. Y is exactly the image of f. Optional direct:X->Z must equal g composed with f. One prior on X; Y prior is the exact pushforward returned by Obligations.",
+  "output": {
+    "unit": "bits",
+    "approximation": "binary64-log2",
+    "loss": [
+      "H(X|Y)",
+      "H(Y|Z)",
+      "H(X|Z)"
+    ],
+    "residual": "xz-xy-yz; reported, not silently rounded",
+    "certification": "Finite model evaluation; not a general Lean certificate"
+  },
+  "budget": {
+    "unit": "declared-configurations",
+    "required": "2*|X|+|Y|",
+    "exceeded": "unmeasured:mix-loss/work-budget"
+  },
+  "priorAbsent": "unmeasured:mix-loss/prior-required",
+  "refusals": [
+    "projection/profile",
+    "projection/domain",
+    "projection/policy",
+    "projection/non-chain",
+    "projection/randomized-map",
+    "projection/changed-prior",
+    "projection/evaluation"
+  ],
+  "unchanged": [
+    "M0 profile",
+    "wire protocol",
+    "algebra",
+    "existing ceilings"
+  ],
+  "pending": [
+    "consumer public delivery verification before a stable dependency pin"
+  ],
+  "retainedEvidence": {
+    "priorObligationsVersion": "0.4.6",
+    "localAdmissionEpochs": [
+      22,
+      23
+    ],
+    "nativeReadings": 29,
+    "nativeOpened": 0,
+    "scope": "Prior selected bytes and their receipts; not an admission of this updated metadata or dependency identity"
+  },
+  "alignment": {
+    "scope": "Focused consumed-surface comparison, not a universal algebra equivalence proof",
+    "compiledSurface": "164 unchanged files; measures index changed and region-measure added",
+    "focusedTestsPerVersion": 28,
+    "diagnosticSnapshotDigest": "sha256:67bee949bca5179c218952cccea925973644256d3a7b1a57a413ccf74b2839c5",
+    "mathematicalContractAndModule": "byte-identical between 0.4.6 and 0.4.7",
+    "receiptRule": "Complete transitive input identity still decides reuse; version labels or equal model outputs alone do not"
+  },
+  "lifecycle": "This contract specifies interpretation, not admission or publication status. Consult selected standing, admission receipts and release approval."
+}

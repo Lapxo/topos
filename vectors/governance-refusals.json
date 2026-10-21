@@ -1,0 +1,422 @@
+{
+  "profile": "topos-governance-refusals/1",
+  "scope": "Candidate machine-readable producer catalog; external producer gaps stay open",
+  "entries": [
+    {
+      "producer": "Topos",
+      "code": "action/bytes",
+      "class": "context",
+      "meaning": "Native records and receipt exceed the caller evidence byte budget.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/action-link.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "action/consumer-context",
+      "class": "context",
+      "meaning": "The receiver did not supply the native act-verification contract.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/action-link.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "action/context",
+      "class": "context",
+      "meaning": "The action statement differs from the receiver expected statement.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/action-link.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "action/link-binding",
+      "class": "context",
+      "meaning": "Emitter, region or content-reference identity differs from the committed action.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/action-link.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "action/receipt-binding",
+      "class": "context",
+      "meaning": "Declared act identity or receipt evidence digest differs from verified native evidence.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/action-link.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "action/records",
+      "class": "context",
+      "meaning": "Native evidence contains a non-string record.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/action-link.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "action/statement-binding",
+      "class": "context",
+      "meaning": "The native act does not contain exactly the required signed statement commitment.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/action-link.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "authority-card/clock",
+      "class": "context",
+      "meaning": "Card issue time is invalid or outside its declared horizon.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "authority-card/consumer-context",
+      "class": "context",
+      "meaning": "The consumer did not supply explicit time and judgment-verification context.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "authority-card/decision",
+      "class": "context",
+      "meaning": "Card decision is outside the declared allow/ask/deny alphabet.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "authority-card/duplicate-action",
+      "class": "context",
+      "meaning": "The card contains repeated entries for one exact request.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "card-stale",
+      "class": "context",
+      "meaning": "The card does not match the selected authority context or explicit clock",
+      "next": {
+        "kind": "action",
+        "name": "refresh-card"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "executed in focal vectors; admission remains separate"
+    },
+    {
+      "producer": "Topos",
+      "code": "governance/change-kind",
+      "class": "context",
+      "meaning": "The predecessor/successor/decision tuple has incompatible record kinds.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/group-decision.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "governance/duplicate-proof-key",
+      "class": "context",
+      "meaning": "More than one proof reference names the same signer key.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/group-decision.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "governance/kind",
+      "class": "context",
+      "meaning": "The governance inscription is not a declared group, member or decision.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/group-decision.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "governance/prior-group-binding",
+      "class": "context",
+      "meaning": "The successor and proposal do not bind the prior group under one place/name.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/group-decision.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "not-in-card",
+      "class": "coverage",
+      "meaning": "The exact request digest is absent from this card",
+      "next": {
+        "kind": "action",
+        "name": "request-card-entry"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "executed in focal vectors; admission remains separate"
+    },
+    {
+      "producer": "Topos",
+      "code": "origin/consumer-context",
+      "class": "context",
+      "meaning": "The receiver did not supply its coverage-verification port.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/origin-refusal.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "origin/context",
+      "class": "context",
+      "meaning": "Attributed key or context differs from the receiver-selected context.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/origin-refusal.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/budget",
+      "class": "form",
+      "meaning": "Caller byte and collection budgets are missing or invalid.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/bytes",
+      "class": "form",
+      "meaning": "Encoded record exceeds the caller byte budget.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/canonical",
+      "class": "form",
+      "meaning": "The supplied bytes differ from the selected canonical encoding.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/coordinate",
+      "class": "form",
+      "meaning": "Expected a logical coordinate, without absolute paths or traversal segments.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/digest",
+      "class": "form",
+      "meaning": "Expected a lowercase SHA-256 identifier with 64 hexadecimal digits.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/duplicate",
+      "class": "form",
+      "meaning": "A named collection member occurs more than once.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/fields",
+      "class": "form",
+      "meaning": "A required field is missing or an undeclared field was supplied.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/items",
+      "class": "form",
+      "meaning": "Expected an array within the caller collection budget.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/json",
+      "class": "form",
+      "meaning": "A structured record field is not valid JSON.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/line",
+      "class": "form",
+      "meaning": "The underlying canonical wire record cannot be parsed.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/name",
+      "class": "form",
+      "meaning": "Expected a nonempty name without whitespace or control characters.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/object",
+      "class": "form",
+      "meaning": "Expected a record object, not null, a scalar or an array.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    },
+    {
+      "producer": "Topos",
+      "code": "record/profile",
+      "class": "form",
+      "meaning": "The record does not use the selected versioned profile prefix.",
+      "next": {
+        "kind": "action",
+        "name": "supply-valid-declared-context"
+      },
+      "vector": "test/authority-card.test.ts",
+      "verification": "targeted vector required before final catalog admission"
+    }
+  ],
+  "externalDemands": [
+    {
+      "producer": "Head",
+      "code": "door-bind",
+      "needs": "producer contract, meaning, next and executable vector",
+      "status": "open"
+    },
+    {
+      "producer": "Head",
+      "code": "door-host",
+      "needs": "producer contract, meaning, next and executable vector",
+      "status": "open"
+    },
+    {
+      "producer": "Head",
+      "code": "door-origin",
+      "needs": "producer contract, meaning, next and executable vector",
+      "status": "open"
+    },
+    {
+      "producer": "Head",
+      "code": "door-unasked",
+      "needs": "producer contract, meaning, next and executable vector",
+      "status": "open"
+    },
+    {
+      "producer": "Head",
+      "code": "door-founded",
+      "needs": "producer contract, meaning, next and executable vector",
+      "status": "open"
+    }
+  ]
+}

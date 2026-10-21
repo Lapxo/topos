@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "Two fixtures verify origin covering signatures with receiver-pinned public keys; sample refusal codes are attributed fixture declarations, not an admission or hijack verdict.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:08ea9ecb6f3809dfece7df446086ba417b553ddfd9594494132f99b2e3d84846",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:08ea9ecb6f3809dfece7df446086ba417b553ddfd9594494132f99b2e3d84846 by=reader:54b8f540257d form=alphabet measure=observed role=writes scope=inputs/sample.json value=08ea9ecb6f3809df\nbound-lock/1 at=place:sha256:08ea9ecb6f3809dfece7df446086ba417b553ddfd9594494132f99b2e3d84846 by=reader:54b8f540257d form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"origin\\\":{\\\"status\\\":\\\"authenticated-attribution\\\",\\\"origin\\\":{\\\"context\\\":\\\"sha256:d452bbca0f6b28c75fe476e0af7f4c6744cc51aea85e0c6c0db49643d7794e73\\\",\\\"evidence\\\":\\\"sha256:f10bf3b5ca747831be8b81cd85393038982475ce198cbca123322696b456b83d\\\",\\\"key\\\":\\\"writer\\\",\\\"origin\\\":\\\"sha256:60bc139b9de245722ef27ff7b5280f8c69dd5bf1005b23ee76718335d2c639b6\\\",\\\"scope\\\":\\\"catalog/items\\\"},\\\"authorization\\\":\\\"not established\\\"},\\\"refusal\\\":{\\\"code\\\":\\\"origin/key-material-request\\\",\\\"context\\\":\\\"sha256:d452bbca0f6b28c75fe476e0af7f4c6744cc51aea85e0c6c0db49643d7794e73\\\",\\\"next\\\":\\\"use-injected-signer\\\",\\\"producer\\\":\\\"fixture-consumer\\\",\\\"request\\\":\\\"sha256:8c232b9fab7ac42a1b64728ca3a0a06bd731ba227503c46ed3e5717ed7131ee8\\\",\\\"scope\\\":\\\"catalog/items\\\"},\\\"refusalAuthentication\\\":\\\"not verified\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/origin-refusal/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:c6260fd3de428a662cd6e76954a5efae60df3de88425db7279144377dddf201c",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/origin-refusal/no/catalog.json",
+      "cause": "origin/context"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:6208f02f3a7a3ca2b36940749c4e95dc700ceecdc6cf32d0d395251159e22b9e",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:6208f02f3a7a3ca2b36940749c4e95dc700ceecdc6cf32d0d395251159e22b9e by=reader:54b8f540257d form=alphabet measure=observed role=writes scope=inputs/sample.json value=6208f02f3a7a3ca2\nbound-lock/1 at=place:sha256:6208f02f3a7a3ca2b36940749c4e95dc700ceecdc6cf32d0d395251159e22b9e by=reader:54b8f540257d form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"origin\\\":{\\\"status\\\":\\\"authenticated-attribution\\\",\\\"origin\\\":{\\\"context\\\":\\\"sha256:00e537f3ae3dd29209cb5bb237d68ea667e987241db76149b6bb5002c6bab4da\\\",\\\"evidence\\\":\\\"sha256:3cec1f73495785e9b14f2b386268575fee3a2d00d1bde1517ccde04ae7575fdf\\\",\\\"key\\\":\\\"writer\\\",\\\"origin\\\":\\\"sha256:937c3b8f2af422231f7abc4c69c5e602a9a0df40b9efc63e9d0facfacac36700\\\",\\\"scope\\\":\\\"orchard/harvest\\\"},\\\"authorization\\\":\\\"not established\\\"},\\\"refusal\\\":{\\\"code\\\":\\\"origin/key-material-request\\\",\\\"context\\\":\\\"sha256:00e537f3ae3dd29209cb5bb237d68ea667e987241db76149b6bb5002c6bab4da\\\",\\\"next\\\":\\\"use-injected-signer\\\",\\\"producer\\\":\\\"fixture-consumer\\\",\\\"request\\\":\\\"sha256:8c232b9fab7ac42a1b64728ca3a0a06bd731ba227503c46ed3e5717ed7131ee8\\\",\\\"scope\\\":\\\"orchard/harvest\\\"},\\\"refusalAuthentication\\\":\\\"not verified\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/origin-refusal/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:8bd7cd800db27654daebc2f0bf2ffcfd2d82ff65177f622e4ffcc97185de7c5f",
+      "readerDigest": "sha256:f3da69fb336ab3b3099746caed7fd6079867ed204490934262f220a01afe7b46",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/origin-refusal/no/orchard.json",
+      "cause": "origin/context"
+    }
+  ]
+}

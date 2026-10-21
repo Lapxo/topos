@@ -1,0 +1,29 @@
+{
+  "place": "catalog/items",
+  "link": {
+    "emitter": "writer",
+    "region": "catalog/items/records",
+    "reference": "#topos-reference:1?class=standing&algorithm=sha256&digest=636a7a901cd64f957113009feb48a7c49382f680ade124bc6ed2ed8d0f0084d0&blob=sha256%3A666b9d12cbe1f8c98665623f8cdae10e8173a97723592e7192d2a7ce66d6d589&location=https%3A%2F%2Fexample.org%2Fcatalog&location-class=holder",
+    "action": {
+      "statement": {
+        "verb": "write",
+        "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047",
+        "result": "sha256:40183f6a70648ad016e14cb601eceddf3a0125eb9a278c8fc373a674fc50c1f9",
+        "key": "writer",
+        "place": "catalog/items",
+        "region": "catalog/items/records",
+        "before": "sha256:6db7d803e74f1ffa7d8f5adc0bf95b3e15bf4c8373fffadf546227cc6c6742cb",
+        "policy": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+        "catalog": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+        "standingContract": "sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c"
+      },
+      "act": "sha256:e60a20a76c2ac130b70645b38352c8f2b68e30f8ea0c8c9a2073a255caa1b69a",
+      "evidence": "sha256:c813b39553eac2d2a2a99b07db390b20984c1b54f30817418612d4b750843f1f"
+    }
+  },
+  "records": [
+    "bound-lock/1 at=place:catalog/items by=writer epoch=7 form=alphabet measure=digest role=writes scope=catalog/items/action-statement sig=\"ed25519:s5NfQm8S9CUmkXnnJ/Q9mYCH2joMebDBh/XwXeiq8GqA1zTAZlX4mYijFdDgRaT9Ci0xdM1MPO0BZ2INgEPICA==\" value=sha256:9ffabb31cb78427073a7d02feb076274ceab809a7b143c571a144741ed80683c"
+  ],
+  "receipt": "bound-lock/1 at=receipt:catalog/items by=writer epoch=7 form=alphabet measure=digest role=writes scope=catalog/items/commit sig=\"ed25519:zKJVcDmf+MjRcIJmUOQy99ays+Twga8T9w1Q/4povutDXNo0A7ntuCIbUX4X3do+qN7BIl3Zlu7QcAv5ELFKAw==\" value=sha256:e60a20a76c2ac130b70645b38352c8f2b68e30f8ea0c8c9a2073a255caa1b69a",
+  "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 form=alphabet measure=value role=writes scope=catalog/items value=public\\n\"}"
+}

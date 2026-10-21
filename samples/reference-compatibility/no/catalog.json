@@ -1,0 +1,34 @@
+{
+  "place": "catalog/items",
+  "legacy": {
+    "name": "catalog",
+    "reference": {
+      "class": "standing",
+      "algorithm": "sha256",
+      "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+      "blob": "sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+      "source": "https://example.invalid/catalog.json"
+    },
+    "fragment": "#bound:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a&source=https%3A%2F%2Fexample.invalid%2Fcatalog.json",
+    "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 measure=count scope=catalog/items value=2..4\\n\"}"
+  },
+  "projection": {
+    "reference": "#topos-reference:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+    "duplicates": "preserve",
+    "relations": [
+      {
+        "relation": "related",
+        "target": "sha256:73e1a8584863972cb06b13b9147d29bba3f94021257c1388da4ad301b1f2812f"
+      },
+      {
+        "relation": "related",
+        "target": "sha256:73e1a8584863972cb06b13b9147d29bba3f94021257c1388da4ad301b1f2812f"
+      }
+    ],
+    "inline": {
+      "profile": "text/plain",
+      "text": "none \u2014 preview",
+      "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  }
+}

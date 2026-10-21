@@ -1,0 +1,147 @@
+{
+  "place": "catalog/items",
+  "trust": {
+    "publicKey": "MCowBQYDK2VwAyEAcJ5DKD16J7kjx3oiOIrFa0SM1cYZUtqQ5HrYwVly0KQ=",
+    "card": {
+      "place": "catalog/items",
+      "key": "writer",
+      "snapshot": "sha256:2444f549fd45dae4032bfcd409d43612ad93ee0972f1ed6bf111b8409175c0e2",
+      "authority": "sha256:34d35779f977535b3b6d352a10ba29588aa327f70a74223a213275e2d01c8a1b",
+      "coverage": "sha256:96079f04ac5b476a4dd111eb164c42232f5fac2696620e96cd9aed5e2588f8f5",
+      "policy": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+      "budget": "sha256:0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+      "catalog": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+      "standingContract": "sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c",
+      "grants": [
+        "sha256:3492ad65d05a973fef8c825521eeb41ae64625a672a8aeeeabc696e16d62a020"
+      ],
+      "retirements": [],
+      "demands": [],
+      "horizon": {
+        "clock": "declared-clock",
+        "unit": "ticks",
+        "from": 10,
+        "through": 20
+      },
+      "issuedAt": 10,
+      "actions": [
+        {
+          "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047",
+          "decision": "allow"
+        }
+      ],
+      "evidence": "sha256:1bfcd78dfe18ca63ee53d99a1cbfa5499cd13193c62b17853c219a8f292745f9"
+    },
+    "cardStatementHash": "sha256:0a0c7e3ae146ba08b30af4d112ba7fdf7a1c5042ad7863485c7bb0c143a11231",
+    "origin": {
+      "origin": "sha256:60bc139b9de245722ef27ff7b5280f8c69dd5bf1005b23ee76718335d2c639b6",
+      "key": "writer",
+      "scope": "catalog/items",
+      "context": "sha256:d452bbca0f6b28c75fe476e0af7f4c6744cc51aea85e0c6c0db49643d7794e73",
+      "evidence": "sha256:f10bf3b5ca747831be8b81cd85393038982475ce198cbca123322696b456b83d"
+    },
+    "originStatementHash": "sha256:42016273e78b8c4e9215fd92d7dc01b5a122313a7f19d3e7ca92edfdec598067",
+    "action": {
+      "publicKey": "MCowBQYDK2VwAyEAmelZkGldJZdOSttUG7I9jQwj6E+ppS1TVRWl/HnuhZE=",
+      "statement": {
+        "verb": "write",
+        "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047",
+        "result": "sha256:40183f6a70648ad016e14cb601eceddf3a0125eb9a278c8fc373a674fc50c1f9",
+        "key": "writer",
+        "place": "catalog/items",
+        "region": "catalog/items/records",
+        "before": "sha256:6db7d803e74f1ffa7d8f5adc0bf95b3e15bf4c8373fffadf546227cc6c6742cb",
+        "policy": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+        "catalog": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+        "standingContract": "sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c"
+      },
+      "statementScope": "catalog/items/action-statement",
+      "scope": "catalog/items/commit",
+      "context": "receipt:catalog/items"
+    }
+  },
+  "action": {
+    "place": "catalog/items",
+    "link": {
+      "emitter": "writer",
+      "region": "catalog/items/records",
+      "reference": "#topos-reference:1?class=standing&algorithm=sha256&digest=636a7a901cd64f957113009feb48a7c49382f680ade124bc6ed2ed8d0f0084d0&blob=sha256%3A666b9d12cbe1f8c98665623f8cdae10e8173a97723592e7192d2a7ce66d6d589&location=https%3A%2F%2Fexample.org%2Fcatalog&location-class=holder",
+      "action": {
+        "statement": {
+          "verb": "write",
+          "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047",
+          "result": "sha256:40183f6a70648ad016e14cb601eceddf3a0125eb9a278c8fc373a674fc50c1f9",
+          "key": "writer",
+          "place": "catalog/items",
+          "region": "catalog/items/records",
+          "before": "sha256:6db7d803e74f1ffa7d8f5adc0bf95b3e15bf4c8373fffadf546227cc6c6742cb",
+          "policy": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+          "catalog": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+          "standingContract": "sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c"
+        },
+        "act": "sha256:e60a20a76c2ac130b70645b38352c8f2b68e30f8ea0c8c9a2073a255caa1b69a",
+        "evidence": "sha256:c813b39553eac2d2a2a99b07db390b20984c1b54f30817418612d4b750843f1f"
+      }
+    },
+    "records": [
+      "bound-lock/1 at=place:catalog/items by=writer epoch=7 form=alphabet measure=digest role=writes scope=catalog/items/action-statement sig=\"ed25519:s5NfQm8S9CUmkXnnJ/Q9mYCH2joMebDBh/XwXeiq8GqA1zTAZlX4mYijFdDgRaT9Ci0xdM1MPO0BZ2INgEPICA==\" value=sha256:9ffabb31cb78427073a7d02feb076274ceab809a7b143c571a144741ed80683c"
+    ],
+    "receipt": "bound-lock/1 at=receipt:catalog/items by=writer epoch=7 form=alphabet measure=digest role=writes scope=catalog/items/commit sig=\"ed25519:zKJVcDmf+MjRcIJmUOQy99ays+Twga8T9w1Q/4povutDXNo0A7ntuCIbUX4X3do+qN7BIl3Zlu7QcAv5ELFKAw==\" value=sha256:e60a20a76c2ac130b70645b38352c8f2b68e30f8ea0c8c9a2073a255caa1b69a",
+    "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 form=alphabet measure=value role=writes scope=catalog/items value=public\\n\"}"
+  },
+  "group": {
+    "place": "catalog/items",
+    "previous": {
+      "kind": "group",
+      "place": "catalog/items",
+      "snapshot": "sha256:4f30fa39500befe92e4d549ba9b9a8e48820b6a1a43f926b22f438aa69f41acb",
+      "name": "maintainers",
+      "regions": [
+        "catalog/items"
+      ]
+    },
+    "next": {
+      "kind": "group",
+      "place": "catalog/items",
+      "snapshot": "sha256:4f30fa39500befe92e4d549ba9b9a8e48820b6a1a43f926b22f438aa69f41acb",
+      "name": "maintainers",
+      "regions": [
+        "catalog/items",
+        "catalog/items/extension"
+      ],
+      "previous": "sha256:2094c5305d124e51534890b993aade8a0accb4f99f20b5833d4519fa20fb84f2"
+    },
+    "decision": {
+      "kind": "decision",
+      "place": "catalog/items",
+      "group": "sha256:2094c5305d124e51534890b993aade8a0accb4f99f20b5833d4519fa20fb84f2",
+      "membership": "sha256:1e76ba23aa463df698d7780ff33189fee713ad7f2b0166b1badc073bafbdd6c8",
+      "proposal": "sha256:efe2fa234e3a8a51bca87ab7af91f47a5024a5f348ede6f6547b7418723af839",
+      "context": "sha256:fc797caf720193593f386d6825b743fe4c4b38066390bc2714e8b7d1cd120b92",
+      "horizon": {
+        "clock": "logical",
+        "unit": "ticks",
+        "from": 1,
+        "through": 4
+      },
+      "quorum": {
+        "kind": "named-threshold@1",
+        "eligible": [
+          "first",
+          "second"
+        ],
+        "required": 2
+      },
+      "proofs": [
+        {
+          "key": "first",
+          "evidence": "sha256:35a041679b20f5495e2b47a03092d4b4ad0522fe60703ae343dcfd2bf08d8689"
+        },
+        {
+          "key": "second",
+          "evidence": "sha256:9df3f3c36a02206d8625e61cbecc3af4b919202b8d7ecfd96082e3d594d0ffb2"
+        }
+      ]
+    }
+  }
+}

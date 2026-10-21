@@ -1,0 +1,46 @@
+{
+  "profile": "topos-projection-chain-vectors/1",
+  "reader": {
+    "sha256": "sha256:1522a1609c78d56eb7411093f41d3a20f24fe10bdd23fc43dafebb8ef42206e8"
+  },
+  "captures": [
+    {
+      "place": "reservoir",
+      "kind": "yes",
+      "input": "samples/projection-chain/yes/reservoir.json",
+      "inputDigest": "sha256:6973e7d6f6f27e6dc8bc86b5d6c11228021076da92d87b723880af0e88de4091",
+      "readerDigest": "sha256:1522a1609c78d56eb7411093f41d3a20f24fe10bdd23fc43dafebb8ef42206e8",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:6973e7d6f6f27e6dc8bc86b5d6c11228021076da92d87b723880af0e88de4091 by=reader:0a39a0601a5a form=alphabet measure=observed role=writes scope=inputs/sample.json value=6973e7d6f6f27e6d\nbound-lock/1 at=place:sha256:6973e7d6f6f27e6dc8bc86b5d6c11228021076da92d87b723880af0e88de4091 by=reader:0a39a0601a5a form=alphabet measure=result role=writes scope=projection/result value=\"{\\\"status\\\":\\\"measured\\\",\\\"profile\\\":\\\"topos-projection-chain/1\\\",\\\"model\\\":{\\\"name\\\":\\\"finite-deterministic-chain-same-prior@1\\\",\\\"contract\\\":\\\"sha256:34add91f4dfd04d38490f85577fcbb95059a58803c8b82c4a82af2d265a421d9\\\",\\\"implementation\\\":\\\"sha256:af9c6a3dbeda91981b394b61e187f916dc0e0304801b7b654ff3e025ebce94cb\\\"},\\\"unit\\\":\\\"bits\\\",\\\"approximation\\\":\\\"binary64-log2\\\",\\\"work\\\":{\\\"unit\\\":\\\"declared-configurations\\\",\\\"required\\\":\\\"10\\\"},\\\"parameters\\\":{\\\"atoms\\\":[\\\"reservoir/0\\\",\\\"reservoir/1\\\",\\\"reservoir/2\\\",\\\"reservoir/3\\\"],\\\"f\\\":[[\\\"reservoir/0\\\",\\\"reservoir/y0\\\"],[\\\"reservoir/1\\\",\\\"reservoir/y0\\\"],[\\\"reservoir/2\\\",\\\"reservoir/y1\\\"],[\\\"reservoir/3\\\",\\\"reservoir/y1\\\"]],\\\"g\\\":[[\\\"reservoir/y0\\\",\\\"reservoir/z\\\"],[\\\"reservoir/y1\\\",\\\"reservoir/z\\\"]],\\\"prior\\\":{\\\"kind\\\":\\\"uniform\\\",\\\"probabilities\\\":[{\\\"configuration\\\":\\\"reservoir/0\\\",\\\"p\\\":{\\\"numerator\\\":\\\"1\\\",\\\"denominator\\\":\\\"4\\\"}},{\\\"configuration\\\":\\\"reservoir/1\\\",\\\"p\\\":{\\\"numerator\\\":\\\"1\\\",\\\"denominator\\\":\\\"4\\\"}},{\\\"configuration\\\":\\\"reservoir/2\\\",\\\"p\\\":{\\\"numerator\\\":\\\"1\\\",\\\"denominator\\\":\\\"4\\\"}},{\\\"configuration\\\":\\\"reservoir/3\\\",\\\"p\\\":{\\\"numerator\\\":\\\"1\\\",\\\"denominator\\\":\\\"4\\\"}}]},\\\"policy\\\":{\\\"logarithm\\\":\\\"binary64-log2\\\",\\\"budget\\\":\\\"10\\\"}},\\\"loss\\\":{\\\"xy\\\":1,\\\"yz\\\":1,\\\"xz\\\":2},\\\"residualBits\\\":0,\\\"certification\\\":\\\"finite model evaluation; not a general Lean certificate\\\"}\"\nbound-lock/1 at=place:sha256:6973e7d6f6f27e6dc8bc86b5d6c11228021076da92d87b723880af0e88de4091 by=reader:0a39a0601a5a form=interval measure=count role=writes scope=projection/chain value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n"
+    },
+    {
+      "place": "reservoir",
+      "kind": "no",
+      "input": "samples/projection-chain/no/reservoir.json",
+      "inputDigest": "sha256:9d37a2e24f3370a5b1bb540783ad67163381f557befccd61a4e7f417dd1a5717",
+      "readerDigest": "sha256:1522a1609c78d56eb7411093f41d3a20f24fe10bdd23fc43dafebb8ef42206e8",
+      "status": 1,
+      "stdout": "",
+      "cause": "projection/non-chain"
+    },
+    {
+      "place": "shipping",
+      "kind": "yes",
+      "input": "samples/projection-chain/yes/shipping.json",
+      "inputDigest": "sha256:154d6e9d6692b88944b12da2dcc491a504ad666401dce46a48e688e6acd87b7a",
+      "readerDigest": "sha256:1522a1609c78d56eb7411093f41d3a20f24fe10bdd23fc43dafebb8ef42206e8",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:154d6e9d6692b88944b12da2dcc491a504ad666401dce46a48e688e6acd87b7a by=reader:0a39a0601a5a form=alphabet measure=observed role=writes scope=inputs/sample.json value=154d6e9d6692b889\nbound-lock/1 at=place:sha256:154d6e9d6692b88944b12da2dcc491a504ad666401dce46a48e688e6acd87b7a by=reader:0a39a0601a5a form=alphabet measure=result role=writes scope=projection/result value=\"{\\\"status\\\":\\\"measured\\\",\\\"profile\\\":\\\"topos-projection-chain/1\\\",\\\"model\\\":{\\\"name\\\":\\\"finite-deterministic-chain-same-prior@1\\\",\\\"contract\\\":\\\"sha256:34add91f4dfd04d38490f85577fcbb95059a58803c8b82c4a82af2d265a421d9\\\",\\\"implementation\\\":\\\"sha256:af9c6a3dbeda91981b394b61e187f916dc0e0304801b7b654ff3e025ebce94cb\\\"},\\\"unit\\\":\\\"bits\\\",\\\"approximation\\\":\\\"binary64-log2\\\",\\\"work\\\":{\\\"unit\\\":\\\"declared-configurations\\\",\\\"required\\\":\\\"8\\\"},\\\"parameters\\\":{\\\"atoms\\\":[\\\"shipping/0\\\",\\\"shipping/1\\\",\\\"shipping/2\\\"],\\\"f\\\":[[\\\"shipping/0\\\",\\\"shipping/y0\\\"],[\\\"shipping/1\\\",\\\"shipping/y0\\\"],[\\\"shipping/2\\\",\\\"shipping/y1\\\"]],\\\"g\\\":[[\\\"shipping/y0\\\",\\\"shipping/z\\\"],[\\\"shipping/y1\\\",\\\"shipping/z\\\"]],\\\"prior\\\":{\\\"kind\\\":\\\"uniform\\\",\\\"probabilities\\\":[{\\\"configuration\\\":\\\"shipping/0\\\",\\\"p\\\":{\\\"numerator\\\":\\\"1\\\",\\\"denominator\\\":\\\"3\\\"}},{\\\"configuration\\\":\\\"shipping/1\\\",\\\"p\\\":{\\\"numerator\\\":\\\"1\\\",\\\"denominator\\\":\\\"3\\\"}},{\\\"configuration\\\":\\\"shipping/2\\\",\\\"p\\\":{\\\"numerator\\\":\\\"1\\\",\\\"denominator\\\":\\\"3\\\"}}]},\\\"policy\\\":{\\\"logarithm\\\":\\\"binary64-log2\\\",\\\"budget\\\":\\\"8\\\"}},\\\"loss\\\":{\\\"xy\\\":0.6666666666666667,\\\"yz\\\":0.9182958340544896,\\\"xz\\\":1.584962500721156},\\\"residualBits\\\":-2.220446049250313e-16,\\\"certification\\\":\\\"finite model evaluation; not a general Lean certificate\\\"}\"\nbound-lock/1 at=place:sha256:154d6e9d6692b88944b12da2dcc491a504ad666401dce46a48e688e6acd87b7a by=reader:0a39a0601a5a form=interval measure=count role=writes scope=projection/chain value=1..1\nbound-lock/1 at=place:sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:ab038f976b6db0e40f5718a075618e11df5f620cddb7426acb74ad55cd7c836b\n"
+    },
+    {
+      "place": "shipping",
+      "kind": "no",
+      "input": "samples/projection-chain/no/shipping.json",
+      "inputDigest": "sha256:faf34d47536d54ec36b2554daa4e4cd6d3eabc0291d4f4ba3b513485f13cc553",
+      "readerDigest": "sha256:1522a1609c78d56eb7411093f41d3a20f24fe10bdd23fc43dafebb8ef42206e8",
+      "status": 1,
+      "stdout": "",
+      "cause": "projection/non-chain"
+    }
+  ]
+}

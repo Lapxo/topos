@@ -1,0 +1,123 @@
+{
+  "id": "topos-reading-witness/1",
+  "responsibility": "Pure representation and canonical bytes; existing host/consumer verifies provenance and applies policy",
+  "functions": [
+    "encodeReadingWitness",
+    "decodeReadingWitness",
+    "inspectReadingWitness",
+    "readingWitnessStatementBytes"
+  ],
+  "required": [
+    "class",
+    "reading",
+    "contract",
+    "model",
+    "params",
+    "inputs",
+    "selection",
+    "unit",
+    "scale",
+    "resolution",
+    "reader",
+    "implementation",
+    "context",
+    "run",
+    "result",
+    "authentication",
+    "evidence"
+  ],
+  "class": "attest",
+  "digests": {
+    "algorithm": "sha256",
+    "encoding": "sha256:<64 lowercase hex>",
+    "fields": [
+      "reading",
+      "contract",
+      "model",
+      "params",
+      "inputs",
+      "selection",
+      "scale",
+      "resolution",
+      "reader",
+      "implementation",
+      "context",
+      "result",
+      "evidence"
+    ]
+  },
+  "authenticationProfiles": {
+    "key-covered": {
+      "required": [
+        "key",
+        "coverage"
+      ],
+      "meaning": "Declared key/coverage evidence; signature and admission not verified"
+    },
+    "ci-run-unkeyed": {
+      "required": [
+        "repository",
+        "commit",
+        "workflow",
+        "attempt"
+      ],
+      "meaning": "Declared CI-run provenance; no place-key signature implied",
+      "attempt": "positive canonical decimal",
+      "workflow": "sha256 digest"
+    }
+  },
+  "canonical": "Existing bound-lock/1 field codec, separate top-level profile, roundtrip exact bytes; no extra fields",
+  "identity": "Canonical complete witness bytes; host computes digest",
+  "statement": {
+    "profile": "topos-reading-statement/1",
+    "fields": "all canonical witness fields except evidence",
+    "reason": "covering proof cannot include its own digest"
+  },
+  "result": {
+    "status": "declared",
+    "authentication": "not verified",
+    "authorization": "not established"
+  },
+  "needsVerification": [
+    "referenced bytes and full reading/context/result bindings",
+    "model parameters, unit, scale composition law and resolution",
+    "key coverage/signature or CI run/attempt provenance under declared trust path",
+    "consuming operation policy acceptance"
+  ],
+  "refusals": [
+    "reading-witness/record",
+    "reading-witness/authentication-profile",
+    "reading-witness/fields",
+    "reading-witness/field-value",
+    "reading-witness/reading-class",
+    "reading-witness/digest",
+    "reading-witness/coverage",
+    "reading-witness/ci-context",
+    "reading-witness/profile",
+    "reading-witness/canonical-bytes"
+  ],
+  "vectors": {
+    "positive": [
+      "samples/reading-witness/yes/catalog.json",
+      "samples/reading-witness/yes/orchard.json"
+    ],
+    "negative": [
+      "samples/reading-witness/no/catalog.json",
+      "samples/reading-witness/no/orchard.json"
+    ],
+    "test": "test/reading-witness.test.ts",
+    "scope": "Pure schema/canonicality and identity preimages; sample digests are synthetic, not verified evidence"
+  },
+  "pending": [
+    "native consumer verification of actual provenance and policy acceptance"
+  ],
+  "excluded": [
+    "authority decisions",
+    "signature implementation",
+    "network/host IO",
+    "ambient clock",
+    "universal distributivity",
+    "independence inferred from labels"
+  ],
+  "lifecycle": "This contract specifies interpretation, not admission or publication status. Consult selected standing, admission receipts and release approval."
+}

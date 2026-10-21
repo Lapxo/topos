@@ -1,0 +1,46 @@
+{
+  "place": "catalog/items",
+  "exhaustion": {
+    "card": "sha256:701358a7dbe4d9f0a395bd4420abf71ccb022cc28224874735807da7372ea105",
+    "source": "catalog/items",
+    "unit": "calls",
+    "frame": {
+      "clock": "fixture-clock",
+      "unit": "ticks",
+      "from": 0,
+      "through": 100
+    },
+    "exhaustedAt": 10,
+    "knownSince": 11,
+    "evidence": "sha256:6f1c173e2f78915d29bc3a87f042a0140ce4430ce71da05bdddb40453635404a",
+    "events": [
+      {
+        "id": "call-1",
+        "evidence": "sha256:ee77e7170643330c9cc8e9fb7d5a89acbc328e846255fc633ceeba2be66cf653"
+      }
+    ],
+    "recovery": {
+      "kind": "declared",
+      "at": 20,
+      "evidence": "sha256:d27c635cf4bdfcb15d0b90ffc07826adbc3da545d9d7bd7cfd8c90a736a4207b"
+    }
+  },
+  "card": {
+    "source": "catalog/items",
+    "publisher": "publisher",
+    "catalog": "sha256:8bec8757f662f0f3cab90d3c7cfbf69ce66e4e120b0f8fb911aa1022798b3edf",
+    "form": "budget",
+    "params": "{\"hi\":10,\"lo\":0}",
+    "resolution": "0..10",
+    "authority": "consumer",
+    "cost": "0..10",
+    "cost-unit": "calls",
+    "cost-limit": "10",
+    "needs": "none"
+  },
+  "expected": {
+    "source": "catalog/items",
+    "clock": "fixture-clock",
+    "unit": "ticks"
+  }
+}

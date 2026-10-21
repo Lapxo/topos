@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "Machine-readable exact producer/code catalog for the declared new-form surface, with observed producer vectors and separately open external demands.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:3e9c56154e182a26d6010b432080ce348b061db09b5da2e369773cc41b3bf5d5",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:3e9c56154e182a26d6010b432080ce348b061db09b5da2e369773cc41b3bf5d5 by=reader:458b713b4aa6 form=alphabet measure=observed role=writes scope=inputs/sample.json value=3e9c56154e182a26\nbound-lock/1 at=place:sha256:3e9c56154e182a26d6010b432080ce348b061db09b5da2e369773cc41b3bf5d5 by=reader:458b713b4aa6 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"observed\\\":65,\\\"producer\\\":\\\"Topos\\\",\\\"externalDemands\\\":7,\\\"authentication\\\":\\\"not established\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/refusal-catalog/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:54831b634076788088612f6dd23f62c48fe332159c453a5b8a7e59c0a7d9d53b",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/refusal-catalog/no/catalog.json",
+      "cause": "catalog/unresolved-next"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:21775106182d1575a7cf25d6e6aa4945e9a1aea1d04a84253a12ffd65f54a9ff",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:21775106182d1575a7cf25d6e6aa4945e9a1aea1d04a84253a12ffd65f54a9ff by=reader:458b713b4aa6 form=alphabet measure=observed role=writes scope=inputs/sample.json value=21775106182d1575\nbound-lock/1 at=place:sha256:21775106182d1575a7cf25d6e6aa4945e9a1aea1d04a84253a12ffd65f54a9ff by=reader:458b713b4aa6 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"observed\\\":65,\\\"producer\\\":\\\"Topos\\\",\\\"externalDemands\\\":7,\\\"authentication\\\":\\\"not established\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/refusal-catalog/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:6d8d80307eb7e3f3c882c37bfa934c1ee55982bf5fe2be63d0b1b99dad93c67e",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/refusal-catalog/no/orchard.json",
+      "cause": "catalog/unresolved-next"
+    }
+  ]
+}

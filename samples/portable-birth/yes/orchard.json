@@ -1,0 +1,10 @@
+{
+  "place": "orchard/harvest",
+  "pack": {
+    "origin": "sha256:3cf29b2151ada181ac5ad692bed34c6b487b4aa674684c955e462c9d62f63f7f",
+    "declarations": [
+      "bound-lock/1 form=alphabet measure=text role=writes scope=orchard/harvest/name value=public-birth"
+    ]
+  },
+  "occupied": []
+}

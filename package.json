@@ -1,6 +1,6 @@
 {
   "name": "@lapxo/topos",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Wire, forms, authority and views for interpreting information.",
   "type": "module",
   "license": "MIT",
@@ -237,14 +237,33 @@
     "samples/integrated-package/yes/reservoir.json",
     "samples/integrated-package/yes/shipping.json",
     "samples/integrated-package/no/reservoir.json",
-    "samples/integrated-package/no/shipping.json"
+    "samples/integrated-package/no/shipping.json",
+    "samples/projection-chain/**/*.json",
+    "samples/reading-witness/**/*.json",
+    "samples/physical-lines/**/*.json",
+    "samples/authority-card/**/*.json",
+    "samples/origin-refusal/**/*.json",
+    "samples/action-link/**/*.json",
+    "samples/group-decision/**/*.json",
+    "samples/portable-birth/**/*.json",
+    "samples/source-exhaustion/**/*.json",
+    "samples/profile-composition/**/*.json",
+    "samples/reference-compatibility/**/*.json",
+    "samples/wire-compatibility/**/*.json",
+    "samples/refusal-catalog/**/*.json",
+    "vectors/algebra-consumption.json",
+    "vectors/refusal-catalog.json",
+    "vectors/refusal-observations.json",
+    "samples/catalog-context/*.json",
+    "!docs/contracts/governance-refusals.md",
+    "npm-shrinkwrap.json"
   ],
   "scripts": {
     "build": "tsc --build",
     "test": "node --conditions=source --import ./test/setup.ts --test test/*.test.ts"
   },
   "dependencies": {
-    "@lapxo/obligations": "0.4.6"
+    "@lapxo/obligations": "0.4.7"
   },
   "devDependencies": {
     "@types/node": "^22",

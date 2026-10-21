@@ -1,0 +1,46 @@
+{
+  "profile": "topos-native-captures/1",
+  "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+  "instrument": "@lapxo/bound@0.2.5",
+  "scope": "Reuse existing lexical and epoch-sensitive wire expectations; no wire or algebra change.",
+  "captures": [
+    {
+      "place": "catalog",
+      "kind": "yes",
+      "inputDigest": "sha256:e688ab42ccbad87a749ecaf2eecadb748ccbcd5dd2147d8638c76aaa26c49dd4",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:e688ab42ccbad87a749ecaf2eecadb748ccbcd5dd2147d8638c76aaa26c49dd4 by=reader:458b713b4aa6 form=alphabet measure=observed role=writes scope=inputs/sample.json value=e688ab42ccbad87a\nbound-lock/1 at=place:sha256:e688ab42ccbad87a749ecaf2eecadb748ccbcd5dd2147d8638c76aaa26c49dd4 by=reader:458b713b4aa6 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"canonicalCases\\\":13,\\\"fieldCases\\\":24,\\\"wireChanged\\\":false,\\\"none\\\":\\\"existing contextual meaning preserved\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/wire-compatibility/yes/catalog.json"
+    },
+    {
+      "place": "catalog",
+      "kind": "no",
+      "inputDigest": "sha256:58323576c790f5ceb755f2d921c2d3c4eb7654a1bb668c6dc5d32a268c8363a3",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/wire-compatibility/no/catalog.json",
+      "cause": "wire-compatibility/case"
+    },
+    {
+      "place": "orchard",
+      "kind": "yes",
+      "inputDigest": "sha256:ab80a111c763f3990fc5a92c977e8fdc670b18d7a04e8e554154cd3b5ddba5b8",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 0,
+      "stdout": "bound-lock/1 at=place:sha256:ab80a111c763f3990fc5a92c977e8fdc670b18d7a04e8e554154cd3b5ddba5b8 by=reader:458b713b4aa6 form=alphabet measure=observed role=writes scope=inputs/sample.json value=ab80a111c763f399\nbound-lock/1 at=place:sha256:ab80a111c763f3990fc5a92c977e8fdc670b18d7a04e8e554154cd3b5ddba5b8 by=reader:458b713b4aa6 form=alphabet measure=result role=writes scope=contract/result value=\"{\\\"canonicalCases\\\":13,\\\"fieldCases\\\":24,\\\"wireChanged\\\":false,\\\"none\\\":\\\"existing contextual meaning preserved\\\"}\"\nbound-lock/1 at=place:sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d by=bound form=alphabet measure=digest role=writes scope=instrument/implementation value=sha256:559a04c86613332d8f524a354f11c924a58548057984b419026a026406598b4d\n",
+      "input": "samples/wire-compatibility/yes/orchard.json"
+    },
+    {
+      "place": "orchard",
+      "kind": "no",
+      "inputDigest": "sha256:b83fe25dad0f36ba5331431d2c06dae7cae5f78d444c88cff6f2888a737c4235",
+      "readerDigest": "sha256:42a66deb1c6386d6eb4fa80845ec1892dfc662cb3d00a383c4583fa37ec0cbed",
+      "status": 1,
+      "stdout": "",
+      "input": "samples/wire-compatibility/no/orchard.json",
+      "cause": "wire-compatibility/case"
+    }
+  ]
+}

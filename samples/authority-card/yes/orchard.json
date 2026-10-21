@@ -1,0 +1,37 @@
+{
+  "place": "orchard/harvest",
+  "card": {
+    "place": "orchard/harvest",
+    "key": "writer",
+    "snapshot": "sha256:6c71f6d3d7094a8ea7193577e4989f40763b90cb1e6b5667b3eb956f16a9b645",
+    "authority": "sha256:f040eb9dfb4873d7a258fc091f06ccd6f85ec15635ff289ea6c6d6c0671784cb",
+    "coverage": "sha256:728097893e8648a25cb4a2af484f7b6d65de4852df55f8ce33cb5b63b2b011b4",
+    "policy": "sha256:823412d1eacb67956220e532959f0104603057c88704863ca38e7cd188fda812",
+    "budget": "sha256:0af96a8ed622a394e8b2a239284ee46e9a7a7b0ec38191bbd08571b171118dd6",
+    "catalog": "sha256:652f55016243bf1b9f1bbea46d5749ef892dbe394e46de9d66ab1aacf0b4af57",
+    "standingContract": "sha256:8accd64783894c6c0f3f89c649bd92d210eea3d5d339a8e738446388ec20862c",
+    "grants": [
+      "sha256:3492ad65d05a973fef8c825521eeb41ae64625a672a8aeeeabc696e16d62a020"
+    ],
+    "retirements": [],
+    "demands": [],
+    "horizon": {
+      "clock": "declared-clock",
+      "unit": "ticks",
+      "from": 10,
+      "through": 20
+    },
+    "issuedAt": 10,
+    "actions": [
+      {
+        "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047",
+        "decision": "allow"
+      }
+    ],
+    "evidence": "sha256:9f3e97088eff20698a7362fb4e5b9c531d15ad2ed6a4d097a004beb99f0ed5fe"
+  },
+  "proof": {
+    "signature": "QZ7D8XUbblAS+x2y9TjB748QtRDHrnBdyhj8TlMTbDiEYSSG7ikgZp+pLmJ30USH0LARBGN95tS62pJU9KQfAw=="
+  },
+  "request": "sha256:1f58b9145b24d108d7ac38887338b3ea3229833b9c1e418250343f907bfd1047"
+}

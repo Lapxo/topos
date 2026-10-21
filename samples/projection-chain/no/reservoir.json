@@ -1,0 +1,62 @@
+{
+  "profile": "topos-projection-chain/1",
+  "atoms": [
+    "reservoir/0",
+    "reservoir/1",
+    "reservoir/2",
+    "reservoir/3"
+  ],
+  "f": [
+    [
+      "reservoir/0",
+      "reservoir/y0"
+    ],
+    [
+      "reservoir/1",
+      "reservoir/y0"
+    ],
+    [
+      "reservoir/2",
+      "reservoir/y1"
+    ],
+    [
+      "reservoir/3",
+      "reservoir/y1"
+    ]
+  ],
+  "g": [
+    [
+      "reservoir/y0",
+      "reservoir/z"
+    ],
+    [
+      "reservoir/y1",
+      "reservoir/z"
+    ]
+  ],
+  "prior": {
+    "kind": "uniform"
+  },
+  "policy": {
+    "logarithm": "binary64-log2",
+    "budget": "10"
+  },
+  "direct": [
+    [
+      "reservoir/0",
+      "reservoir/z0"
+    ],
+    [
+      "reservoir/1",
+      "reservoir/z1"
+    ],
+    [
+      "reservoir/2",
+      "reservoir/z0"
+    ],
+    [
+      "reservoir/3",
+      "reservoir/z1"
+    ]
+  ]
+}

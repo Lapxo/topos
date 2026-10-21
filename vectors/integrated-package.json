@@ -1,0 +1,203 @@
+{
+  "classification": "Actual provisional archive installation/type transcripts and current prepared source; not a final archive or release verdict",
+  "sourceIdentities": {
+    "package.json": "sha256:323271c3a07b9be88d053039da91be702528fc3deb4f291b8e960cdd9e5e8015",
+    "CITATION.cff": "sha256:40578c8dfb709e42d11d8a4ea1720276e1084e4e075a337b4827319e7b813772",
+    "src/contract/index.ts": "sha256:73ec236d78188526d317f8bed9b7ba40ecf96515800d15a36e11748bcd489963",
+    "dist/contract/index.js": "sha256:484e9965b79e41ba710aafa2de3562d8986e22e590a63d984554ff60fc438ab8",
+    "dist/contract/index.d.ts": "sha256:a6ea2ad32652cb1861f4b1f246c1a2d74a72e80938adaa6790a3bfe7b8e5cb40",
+    "dist/contract/region-reading.d.ts": "sha256:40f8c6ab71fe0dbfa2c620a1a0433b06234be5530b29f417e2d4c99afa1952a4"
+  },
+  "api": [
+    {
+      "module": "reference-location",
+      "values": [
+        "LOCATION_REFERENCE_PROFILE",
+        "checkLocatedReference",
+        "encodeLocatedReference",
+        "decodeLocatedReference",
+        "locatedReferenceIdentity",
+        "inspectLocatedReference"
+      ],
+      "types": [
+        "LocatedReference",
+        "ReferenceInspection",
+        "LocatedInspection"
+      ]
+    },
+    {
+      "module": "module-inventory",
+      "values": [
+        "MODULE_INVENTORY_PROFILE",
+        "encodeInventoryRow",
+        "decodeInventoryRow",
+        "moduleInventory",
+        "inventoryBytes",
+        "inventoryDiff"
+      ],
+      "types": [
+        "InventoryObservation",
+        "InventoryEvidence",
+        "InventoryRow"
+      ]
+    },
+    {
+      "module": "source-card",
+      "values": [
+        "SOURCE_CARD_PROFILE",
+        "encodeSourceCard",
+        "decodeSourceCard",
+        "inspectSourceCard",
+        "sourceCardRefines"
+      ],
+      "types": [
+        "SourceCard",
+        "SourceCardCatalog"
+      ]
+    },
+    {
+      "module": "measure-m0",
+      "values": [
+        "M0_MEASURE_PROFILE",
+        "inspectM0Measure",
+        "encodeM0Measure",
+        "decodeM0Measure",
+        "m0MeasureRefines"
+      ],
+      "types": [
+        "RecordValue",
+        "M0Measure"
+      ]
+    },
+    {
+      "module": "region-reading",
+      "values": [
+        "REGION_READING_PROFILE",
+        "readRegions",
+        "encodeRegionReading"
+      ],
+      "types": [
+        "RegionReadingRequest"
+      ]
+    },
+    {
+      "module": "registry-place",
+      "values": [
+        "REGISTRY_PLACE_PROFILE",
+        "encodeRegistryEntry",
+        "decodeRegistryEntry",
+        "registryEntryBytes",
+        "inspectRegistryEntry",
+        "registryLines"
+      ],
+      "types": [
+        "RegistryHorizon",
+        "RegistryQuorum",
+        "RegistryEntry",
+        "RegistryContext"
+      ]
+    },
+    {
+      "module": "ci-form",
+      "values": [
+        "CI_FORM_PROFILE",
+        "encodeCiDeclaration",
+        "decodeCiDeclaration",
+        "inspectCiDeclaration"
+      ],
+      "types": [
+        "CiDeclaration",
+        "CiContext"
+      ]
+    }
+  ],
+  "installedTypes": [
+    {
+      "consumer": "catalog",
+      "status": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedMs": 493.4322079643607,
+      "newTypes": 17,
+      "newValues": 35
+    },
+    {
+      "consumer": "orchard",
+      "status": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedMs": 305.28208398027346,
+      "newTypes": 17,
+      "newValues": 35
+    }
+  ],
+  "consumers": [
+    {
+      "name": "catalog",
+      "events": [
+        {
+          "step": "install",
+          "status": 0,
+          "stdout": "\nadded 2 packages in 500ms\n",
+          "stderr": "",
+          "elapsedMs": 605.7911670068279
+        },
+        {
+          "step": "api",
+          "status": 0,
+          "stdout": "{\"version\":\"0.2.3\",\"obligations\":\"0.4.6\",\"publicSubpaths\":18,\"profileBindings\":7,\"newValues\":35,\"models\":\"M0 only; unmeasured preserved\",\"openDemandsPreserved\":true,\"status\":\"pass\"}\n",
+          "stderr": "",
+          "elapsedMs": 101.12591698998585
+        },
+        {
+          "step": "native-current-receipts",
+          "status": 1,
+          "stdout": "",
+          "stderr": "bound: REFUSE·check receipts are open; a fold must close them\n{\"profile\":\"bound-refusal@1\",\"code\":\"operation/failed\",\"category\":\"host\",\"meaning\":\"An operation failed without a more specific public code; details are diagnostic only.\",\"next\":\"inspect-diagnostic\",\"catalog\":\"sha256:4b2a1768a0454a34c031855cdde75c1da07cc7e00933ee7fd52c2fc6b917a701\"}\n",
+          "elapsedMs": 385.57845895411447
+        }
+      ]
+    },
+    {
+      "name": "orchard",
+      "events": [
+        {
+          "step": "install",
+          "status": 0,
+          "stdout": "\nadded 2 packages in 534ms\n",
+          "stderr": "",
+          "elapsedMs": 629.5081659918651
+        },
+        {
+          "step": "api",
+          "status": 0,
+          "stdout": "{\"version\":\"0.2.3\",\"obligations\":\"0.4.6\",\"publicSubpaths\":18,\"profileBindings\":7,\"newValues\":35,\"models\":\"M0 only; unmeasured preserved\",\"openDemandsPreserved\":true,\"status\":\"pass\"}\n",
+          "stderr": "",
+          "elapsedMs": 150.9186250041239
+        },
+        {
+          "step": "native-current-receipts",
+          "status": 1,
+          "stdout": "",
+          "stderr": "bound: REFUSE·check receipts are open; a fold must close them\n{\"profile\":\"bound-refusal@1\",\"code\":\"operation/failed\",\"category\":\"host\",\"meaning\":\"An operation failed without a more specific public code; details are diagnostic only.\",\"next\":\"inspect-diagnostic\",\"catalog\":\"sha256:4b2a1768a0454a34c031855cdde75c1da07cc7e00933ee7fd52c2fc6b917a701\"}\n",
+          "elapsedMs": 286.8891670368612
+        }
+      ]
+    }
+  ],
+  "priorArchive": {
+    "sha256": "sha256:48e37300da42a8fdc38aabcc6de3f9cb970153bd8a1a1d2d3072abcc9efcaece",
+    "finalReleaseArchive": false
+  },
+  "openDemands": [
+    {
+      "id": "bound026-ci-witness-profile-selection",
+      "state": "open"
+    },
+    {
+      "id": "bound026-response-envelope-validation",
+      "state": "open"
+    }
+  ],
+  "empirical1a": "unmeasured"
+}

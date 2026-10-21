@@ -1,0 +1,5 @@
+# Integrated package preparation
+
+Topos 0.2.3 exports seven declared profiles through the existing contract route (35 values and 17 types), with Obligations 0.4.6. This region verifies exact prepared metadata, emitted API bindings, preserved wire and actual bounded installation/type-check transcripts. Prior provisional archive 48e37300da42a8fdc38aabcc6de3f9cb970153bd8a1a1d2d3072abcc9efcaece was installed in two clean consumers; this is historical preparation evidence, not certification of the successor archive or public delivery. Final archive members, clean installs, release policy and approval remain separate obligations after admission.
+
+K-U and changed region-reading declarations require fresh reader bindings; unchanged native behavioral captures are reused only with exact input/reader/dependency identity. The response-version boundary and CI slash-profile demands remain open, as do the three research cards. Empirical 1a remains unmeasured. No protocol, transport, signature or authority is inferred from these forms.

@@ -1,0 +1,15 @@
+# Registry as a governed place
+
+Candidate profile: topos-registry-place/1. A pure declaration of lineage admission or exact withdrawal within a named place, reusing canonical text, attributed content identity and the existing source-card interpreter. It changes no wire or protocol, and does not compute live standing.
+
+Each inscription names place, holder and lineage. An admission can declare shares, a source-card content digest, a horizon and a quorum requirement. Two holders naming the same lineage are two distinct inscriptions, with distinct identities. Only the same exact canonical line deduplicates. Lapxo is an ordinary holder; there is no privileged name.
+
+An explicit shares list, including an empty list, remains a holder declaration, never proof of causal independence or M0 weights. Missing shares stays open. A handed source card is checked by content digest and interpreted under the selected source-card catalog. Its authority is still declared, not authenticated. A holder's shares declaration does not rewrite the card publisher's own declaration.
+
+Horizon specifies an inclusive nonnegative integer interval under a named clock and unit. Quorum vocabulary is named-threshold@1 with unique named eligible holders and a positive required threshold no larger than that list. Missing horizon, quorum, card or shares produces explicit open demands; no defaults are invented. Invalid supplied requirements refuse. The form neither reads a clock nor decides expiry or counts approvals. Requirements declared on an entry do not replace an admitted place policy.
+
+A withdrawal names the SHA-256 of one exact admission's canonical UTF-8 line plus LF. When target bytes are handed, the content digest and admission kind are checked; place, holder and lineage must match. A withdrawal cannot structurally target another holder's attribution. Missing target bytes stays open. This identity check proves no actor is authorized; the protocol must authenticate and decide permission under the real governance. There is no fallback to a prefix, coordinate, latest value or another holder.
+
+registryLines is only a byte-sorted set of exact inscriptions. Admission and withdrawal both remain present; no removal, winner selection, quorum enforcement, expiration, signature, transport, charging or ledger fold occurs here. Signing and execution belong to the protocol. Signature/approval fields are not accepted as if they were requirements.
+
+Vectors cover two holders, exact-line idempotence, retained withdrawal history, explicit no-sharing without inferred independence, missing inputs as named open demands, invalid governance, changed attribution and corrupt content. The concrete local producer is the pure canonical inscription encoder with handed public card/target bytes; the independent fixture reader uses the interpreted identities and collections. External protocol/consumer integration, native captures, admission and joint public exports remain pending. The three original statistical cards and empirical unmeasured state remain unchanged.

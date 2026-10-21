@@ -1,0 +1,199 @@
+{
+  "name": "shipping",
+  "vector": {
+    "contract": "bound-lock/1-compatibility",
+    "evidence": "Pinned lexical expectations, exercised against published0.2.2 compiled implementation. Execution captures are library observations, not admitted native receipts.",
+    "cases": [
+      {
+        "name": "key-order",
+        "input": "bound-lock/1 value=sample scope=a",
+        "canonical": "bound-lock/1 scope=a value=sample",
+        "inputHex": "626f756e642d6c6f636b2f312076616c75653d73616d706c652073636f70653d61",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d73616d706c65"
+      },
+      {
+        "name": "spacing",
+        "input": "bound-lock/1  scope=a   value=sample ",
+        "canonical": "bound-lock/1 scope=a value=sample",
+        "inputHex": "626f756e642d6c6f636b2f31202073636f70653d6120202076616c75653d73616d706c6520",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d73616d706c65"
+      },
+      {
+        "name": "large-number-is-text",
+        "input": "bound-lock/1 scope=a value=9007199254740993",
+        "canonical": "bound-lock/1 scope=a value=9007199254740993",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d39303037313939323534373430393933",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d39303037313939323534373430393933"
+      },
+      {
+        "name": "decimal-is-text",
+        "input": "bound-lock/1 scope=a value=0.10000000000000001",
+        "canonical": "bound-lock/1 scope=a value=0.10000000000000001",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d302e3130303030303030303030303030303031",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d302e3130303030303030303030303030303031"
+      },
+      {
+        "name": "exponent-is-text-before-form-interpretation",
+        "input": "bound-lock/1 scope=a value=1e3",
+        "canonical": "bound-lock/1 scope=a value=1e3",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d316533",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d316533"
+      },
+      {
+        "name": "unicode-composed",
+        "input": "bound-lock/1 scope=a value=é",
+        "canonical": "bound-lock/1 scope=a value=é",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653dc3a9",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653dc3a9"
+      },
+      {
+        "name": "unicode-decomposed",
+        "input": "bound-lock/1 scope=a value=é",
+        "canonical": "bound-lock/1 scope=a value=é",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d65cc81",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d65cc81"
+      },
+      {
+        "name": "quoted-none-retains-the-existing-contextual-meaning",
+        "input": "bound-lock/1 scope=a value=\"none\"",
+        "canonical": "bound-lock/1 scope=a value=none",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d226e6f6e6522",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d6e6f6e65"
+      },
+      {
+        "name": "escaped-newline",
+        "input": "bound-lock/1 scope=a value=\"first\\nsecond\"",
+        "canonical": "bound-lock/1 scope=a value=\"first\\nsecond\"",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d2266697273745c6e7365636f6e6422",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d2266697273745c6e7365636f6e6422"
+      },
+      {
+        "name": "empty-text-is-not-absence",
+        "input": "bound-lock/1 scope=a value=\"\"",
+        "canonical": "bound-lock/1 scope=a value=",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d2222",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d"
+      },
+      {
+        "name": "duplicate-field",
+        "input": "bound-lock/1 scope=a scope=b value=sample",
+        "refuse": "appears twice",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612073636f70653d622076616c75653d73616d706c65"
+      },
+      {
+        "name": "raw-newline",
+        "input": "bound-lock/1 scope=a value=first\nsecond",
+        "refuse": "a line is one line",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d66697273740a7365636f6e64"
+      },
+      {
+        "name": "undefined-escape",
+        "input": "bound-lock/1 scope=a value=\"\\t\"",
+        "refuse": "escaping this format does not define",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d225c7422"
+      },
+      {
+        "name": "unknown-fields-preserved",
+        "input": "bound-lock/1 z-future=kept value=x scope=a",
+        "canonical": "bound-lock/1 scope=a value=x z-future=kept",
+        "inputHex": "626f756e642d6c6f636b2f31207a2d6675747572653d6b6570742076616c75653d782073636f70653d61",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d78207a2d6675747572653d6b657074"
+      },
+      {
+        "name": "UTF8-key-order",
+        "input": "bound-lock/1 é=x z=y a=z",
+        "canonical": "bound-lock/1 a=z z=y é=x",
+        "inputHex": "626f756e642d6c6f636b2f3120c3a93d78207a3d7920613d7a",
+        "canonicalHex": "626f756e642d6c6f636b2f3120613d7a207a3d7920c3a93d78"
+      },
+      {
+        "name": "absent-dash-not-empty",
+        "input": "bound-lock/1 scope=a optional=- value=x",
+        "canonical": "bound-lock/1 scope=a value=x",
+        "inputHex": "626f756e642d6c6f636b2f312073636f70653d61206f7074696f6e616c3d2d2076616c75653d78",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d78"
+      },
+      {
+        "name": "future-version-abstains",
+        "input": "bound-lock/2 scope=a value=x",
+        "kind": "abstain",
+        "inputHex": "626f756e642d6c6f636b2f322073636f70653d612076616c75653d78"
+      },
+      {
+        "name": "quoted-backslash",
+        "input": "bound-lock/1 value=\"a\\\\b\" scope=a",
+        "canonical": "bound-lock/1 scope=a value=\"a\\\\b\"",
+        "inputHex": "626f756e642d6c6f636b2f312076616c75653d22615c5c62222073636f70653d61",
+        "canonicalHex": "626f756e642d6c6f636b2f312073636f70653d612076616c75653d22615c5c6222"
+      }
+    ],
+    "bytes": [
+      {
+        "name": "utf8-composed",
+        "text": "é",
+        "hex": "c3a9"
+      },
+      {
+        "name": "utf8-decomposed",
+        "text": "é",
+        "hex": "65cc81"
+      },
+      {
+        "name": "invalid-utf8-does-not-identify-replacement-text",
+        "hex": "ff",
+        "replacementText": "�",
+        "replacementHex": "efbfbd"
+      }
+    ],
+    "signing": {
+      "input": "bound-lock/1 scope=a optional=- value=x",
+      "refuse": "signing cannot discard explicitly absent field optional"
+    },
+    "rules": {
+      "encoding": "UTF-8; no Unicode normalization",
+      "fieldOrder": "lexicographic unsigned UTF-8 bytes",
+      "lineVersion": "explicit envelope per line; unknown version abstains",
+      "unknownFields": "preserved lexically; admission permission remains separate",
+      "escapes": [
+        "backslash",
+        "double quote",
+        "newline"
+      ],
+      "absence": "dash token omitted by parse; forbidden when explicitly present for signing",
+      "framing": "canonical() returns no terminal LF; collection framing is a separate contract",
+      "numbers": "text retained; no numeric conversion by lexical canonicalizer"
+    }
+  },
+  "references": [
+    {
+      "fragmentHex": "23626f756e643a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3666643861643235373761396533356163393734633963313230353433313566383630393666356465323639613435333338326133636635663637343437626326626c6f623d7368613235362533413234613336636539633937303365363833633365633933653130323831333564333330313061373164326565666637623265663835623035633738336138376126736f757263653d68747470732533412532462532466578616d706c652e696e76616c6964253246636174616c6f672e6a736f6e",
+      "sample": {
+        "name": "catalog",
+        "reference": {
+          "class": "standing",
+          "algorithm": "sha256",
+          "digest": "6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc",
+          "blob": "sha256:24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a",
+          "source": "https://example.invalid/catalog.json"
+        },
+        "fragment": "#bound:1?class=standing&algorithm=sha256&digest=6fd8ad2577a9e35ac974c9c12054315f86096f5de269a453382a3cf5f67447bc&blob=sha256%3A24a36ce9c9703e683c3ec93e1028135d33010a71d2eeff7b2ef85b05c783a87a&source=https%3A%2F%2Fexample.invalid%2Fcatalog.json",
+        "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 measure=count scope=catalog/items value=2..4\\n\"}"
+      }
+    },
+    {
+      "fragmentHex": "23626f756e643a313f636c6173733d7374616e64696e6726616c676f726974686d3d736861323536266469676573743d3365303463313130313035303361613136353465303131393332653732343336613438666162623431326639616631343065663038303261333266626335373626626c6f623d7368613235362533416332313431323666646534306235616639353333363939333263646364373436363161336532393064376363663864323635363462353266396463356136643526736f757263653d68747470732533412532462532466578616d706c652e696e76616c6964253246726f7574652d6e6f7465732e6a736f6e",
+      "sample": {
+        "name": "route-notes",
+        "reference": {
+          "class": "standing",
+          "algorithm": "sha256",
+          "digest": "3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576",
+          "blob": "sha256:c214126fde40b5af953369932cdcd74661a3e290d7ccf8d26564b52f9dc5a6d5",
+          "source": "https://example.invalid/route-notes.json"
+        },
+        "fragment": "#bound:1?class=standing&algorithm=sha256&digest=3e04c11010503aa1654e011932e72436a48fabb412f9af140ef0802a32fbc576&blob=sha256%3Ac214126fde40b5af953369932cdcd74661a3e290d7ccf8d26564b52f9dc5a6d5&source=https%3A%2F%2Fexample.invalid%2Froute-notes.json",
+        "document": "{\"profile\":\"semantic-standing@1\",\"standing\":\"bound-lock/1 measure=count scope=route/notes value=7..9\\n\"}"
+      }
+    }
+  ]
+}

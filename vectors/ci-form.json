@@ -1,0 +1,369 @@
+{
+  "profile": "topos-ci/1",
+  "workflow": "vectors/ci-portability.workflow.yml",
+  "projection": "vectors/ci-portability.projection.json",
+  "archive": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+  "reportedReceipt": {
+    "digest": "sha256:92fe9948f68704f97df4fde61f3b958a7ca0e6f76bf3b1759d2aea722ec845c5",
+    "bytes": "fixture only: unverified CI report\n",
+    "classification": "synthetic unverified declaration; not native execution evidence"
+  },
+  "positive": [
+    {
+      "name": "ubuntu-24.04-node-22",
+      "declaration": {
+        "workflow": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+        "projection": "sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0",
+        "job": "portability-ci",
+        "runsOn": "ubuntu-24.04",
+        "node": 22,
+        "artifact": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+        "keyClass": "attest",
+        "coverage": [
+          "pipeline/portability-ci/configuration"
+        ],
+        "witness": "witness:ci.portability-ci.ubuntu-24.04.node-22",
+        "provenance": "exact published workflow selection; not observed Actions execution",
+        "evidence": {
+          "kind": "unobserved"
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-ci/1 artifact=sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b coverage=\"[\\\"pipeline/portability-ci/configuration\\\"]\" evidence=\"{\\\"kind\\\":\\\"unobserved\\\"}\" job=portability-ci key-class=attest node=22 projection=sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0 provenance=\"exact published workflow selection; not observed Actions execution\" runs-on=ubuntu-24.04 witness=witness:ci.portability-ci.ubuntu-24.04.node-22 workflow=sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+      "utf8Hex": "746f706f732d63692f312061727469666163743d7368613235363a6530373635656562353466636665633163396338396136373039343634313935376566656164303632666664386134353930306632613365336435363639366220636f7665726167653d225b5c22706970656c696e652f706f72746162696c6974792d63692f636f6e66696775726174696f6e5c225d222065766964656e63653d227b5c226b696e645c223a5c22756e6f627365727665645c227d22206a6f623d706f72746162696c6974792d6369206b65792d636c6173733d617474657374206e6f64653d32322070726f6a656374696f6e3d7368613235363a336136373934313830626364383538376365626361303939386361386635303530636132323066663662663038666335373234663661653065393135303966302070726f76656e616e63653d226578616374207075626c697368656420776f726b666c6f772073656c656374696f6e3b206e6f74206f6273657276656420416374696f6e7320657865637574696f6e222072756e732d6f6e3d7562756e74752d32342e3034207769746e6573733d7769746e6573733a63692e706f72746162696c6974792d63692e7562756e74752d32342e30342e6e6f64652d323220776f726b666c6f773d7368613235363a37336439396263356536343639353361333036356237363034666235353036316337336535333132366463366439646430393234626261623837373831623666",
+      "native": {
+        "status": "open",
+        "needs": [
+          "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+        ]
+      }
+    },
+    {
+      "name": "ubuntu-24.04-node-24",
+      "declaration": {
+        "workflow": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+        "projection": "sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0",
+        "job": "portability-ci",
+        "runsOn": "ubuntu-24.04",
+        "node": 24,
+        "artifact": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+        "keyClass": "attest",
+        "coverage": [
+          "pipeline/portability-ci/configuration"
+        ],
+        "witness": "witness:ci.portability-ci.ubuntu-24.04.node-24",
+        "provenance": "exact published workflow selection; not observed Actions execution",
+        "evidence": {
+          "kind": "unobserved"
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-ci/1 artifact=sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b coverage=\"[\\\"pipeline/portability-ci/configuration\\\"]\" evidence=\"{\\\"kind\\\":\\\"unobserved\\\"}\" job=portability-ci key-class=attest node=24 projection=sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0 provenance=\"exact published workflow selection; not observed Actions execution\" runs-on=ubuntu-24.04 witness=witness:ci.portability-ci.ubuntu-24.04.node-24 workflow=sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+      "utf8Hex": "746f706f732d63692f312061727469666163743d7368613235363a6530373635656562353466636665633163396338396136373039343634313935376566656164303632666664386134353930306632613365336435363639366220636f7665726167653d225b5c22706970656c696e652f706f72746162696c6974792d63692f636f6e66696775726174696f6e5c225d222065766964656e63653d227b5c226b696e645c223a5c22756e6f627365727665645c227d22206a6f623d706f72746162696c6974792d6369206b65792d636c6173733d617474657374206e6f64653d32342070726f6a656374696f6e3d7368613235363a336136373934313830626364383538376365626361303939386361386635303530636132323066663662663038666335373234663661653065393135303966302070726f76656e616e63653d226578616374207075626c697368656420776f726b666c6f772073656c656374696f6e3b206e6f74206f6273657276656420416374696f6e7320657865637574696f6e222072756e732d6f6e3d7562756e74752d32342e3034207769746e6573733d7769746e6573733a63692e706f72746162696c6974792d63692e7562756e74752d32342e30342e6e6f64652d323420776f726b666c6f773d7368613235363a37336439396263356536343639353361333036356237363034666235353036316337336535333132366463366439646430393234626261623837373831623666",
+      "native": {
+        "status": "open",
+        "needs": [
+          "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+        ]
+      }
+    },
+    {
+      "name": "macos-14-node-22",
+      "declaration": {
+        "workflow": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+        "projection": "sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0",
+        "job": "portability-ci",
+        "runsOn": "macos-14",
+        "node": 22,
+        "artifact": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+        "keyClass": "attest",
+        "coverage": [
+          "pipeline/portability-ci/configuration"
+        ],
+        "witness": "witness:ci.portability-ci.macos-14.node-22",
+        "provenance": "exact published workflow selection; not observed Actions execution",
+        "evidence": {
+          "kind": "unobserved"
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-ci/1 artifact=sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b coverage=\"[\\\"pipeline/portability-ci/configuration\\\"]\" evidence=\"{\\\"kind\\\":\\\"unobserved\\\"}\" job=portability-ci key-class=attest node=22 projection=sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0 provenance=\"exact published workflow selection; not observed Actions execution\" runs-on=macos-14 witness=witness:ci.portability-ci.macos-14.node-22 workflow=sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+      "utf8Hex": "746f706f732d63692f312061727469666163743d7368613235363a6530373635656562353466636665633163396338396136373039343634313935376566656164303632666664386134353930306632613365336435363639366220636f7665726167653d225b5c22706970656c696e652f706f72746162696c6974792d63692f636f6e66696775726174696f6e5c225d222065766964656e63653d227b5c226b696e645c223a5c22756e6f627365727665645c227d22206a6f623d706f72746162696c6974792d6369206b65792d636c6173733d617474657374206e6f64653d32322070726f6a656374696f6e3d7368613235363a336136373934313830626364383538376365626361303939386361386635303530636132323066663662663038666335373234663661653065393135303966302070726f76656e616e63653d226578616374207075626c697368656420776f726b666c6f772073656c656374696f6e3b206e6f74206f6273657276656420416374696f6e7320657865637574696f6e222072756e732d6f6e3d6d61636f732d3134207769746e6573733d7769746e6573733a63692e706f72746162696c6974792d63692e6d61636f732d31342e6e6f64652d323220776f726b666c6f773d7368613235363a37336439396263356536343639353361333036356237363034666235353036316337336535333132366463366439646430393234626261623837373831623666",
+      "native": {
+        "status": "open",
+        "needs": [
+          "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+        ]
+      }
+    },
+    {
+      "name": "macos-14-node-24",
+      "declaration": {
+        "workflow": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+        "projection": "sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0",
+        "job": "portability-ci",
+        "runsOn": "macos-14",
+        "node": 24,
+        "artifact": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+        "keyClass": "attest",
+        "coverage": [
+          "pipeline/portability-ci/configuration"
+        ],
+        "witness": "witness:ci.portability-ci.macos-14.node-24",
+        "provenance": "exact published workflow selection; not observed Actions execution",
+        "evidence": {
+          "kind": "unobserved"
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "bytes": "topos-ci/1 artifact=sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b coverage=\"[\\\"pipeline/portability-ci/configuration\\\"]\" evidence=\"{\\\"kind\\\":\\\"unobserved\\\"}\" job=portability-ci key-class=attest node=24 projection=sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0 provenance=\"exact published workflow selection; not observed Actions execution\" runs-on=macos-14 witness=witness:ci.portability-ci.macos-14.node-24 workflow=sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+      "utf8Hex": "746f706f732d63692f312061727469666163743d7368613235363a6530373635656562353466636665633163396338396136373039343634313935376566656164303632666664386134353930306632613365336435363639366220636f7665726167653d225b5c22706970656c696e652f706f72746162696c6974792d63692f636f6e66696775726174696f6e5c225d222065766964656e63653d227b5c226b696e645c223a5c22756e6f627365727665645c227d22206a6f623d706f72746162696c6974792d6369206b65792d636c6173733d617474657374206e6f64653d32342070726f6a656374696f6e3d7368613235363a336136373934313830626364383538376365626361303939386361386635303530636132323066663662663038666335373234663661653065393135303966302070726f76656e616e63653d226578616374207075626c697368656420776f726b666c6f772073656c656374696f6e3b206e6f74206f6273657276656420416374696f6e7320657865637574696f6e222072756e732d6f6e3d6d61636f732d3134207769746e6573733d7769746e6573733a63692e706f72746162696c6974792d63692e6d61636f732d31342e6e6f64652d323420776f726b666c6f773d7368613235363a37336439396263356536343639353361333036356237363034666235353036316337336535333132366463366439646430393234626261623837373831623666",
+      "native": {
+        "status": "open",
+        "needs": [
+          "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+        ]
+      }
+    },
+    {
+      "name": "archive-unavailable",
+      "declaration": {
+        "workflow": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+        "projection": "sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0",
+        "job": "portability-ci",
+        "runsOn": "ubuntu-24.04",
+        "node": 22,
+        "artifact": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+        "keyClass": "attest",
+        "coverage": [
+          "pipeline/portability-ci/configuration"
+        ],
+        "witness": "witness:ci.portability-ci.ubuntu-24.04.node-22",
+        "provenance": "exact published workflow selection; not observed Actions execution",
+        "evidence": {
+          "kind": "unobserved"
+        }
+      },
+      "status": "open",
+      "needs": [
+        "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+      ],
+      "missing": "archive",
+      "bytes": "topos-ci/1 artifact=sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b coverage=\"[\\\"pipeline/portability-ci/configuration\\\"]\" evidence=\"{\\\"kind\\\":\\\"unobserved\\\"}\" job=portability-ci key-class=attest node=22 projection=sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0 provenance=\"exact published workflow selection; not observed Actions execution\" runs-on=ubuntu-24.04 witness=witness:ci.portability-ci.ubuntu-24.04.node-22 workflow=sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+      "utf8Hex": "746f706f732d63692f312061727469666163743d7368613235363a6530373635656562353466636665633163396338396136373039343634313935376566656164303632666664386134353930306632613365336435363639366220636f7665726167653d225b5c22706970656c696e652f706f72746162696c6974792d63692f636f6e66696775726174696f6e5c225d222065766964656e63653d227b5c226b696e645c223a5c22756e6f627365727665645c227d22206a6f623d706f72746162696c6974792d6369206b65792d636c6173733d617474657374206e6f64653d32322070726f6a656374696f6e3d7368613235363a336136373934313830626364383538376365626361303939386361386635303530636132323066663662663038666335373234663661653065393135303966302070726f76656e616e63653d226578616374207075626c697368656420776f726b666c6f772073656c656374696f6e3b206e6f74206f6273657276656420416374696f6e7320657865637574696f6e222072756e732d6f6e3d7562756e74752d32342e3034207769746e6573733d7769746e6573733a63692e706f72746162696c6974792d63692e7562756e74752d32342e30342e6e6f64652d323220776f726b666c6f773d7368613235363a37336439396263356536343639353361333036356237363034666235353036316337336535333132366463366439646430393234626261623837373831623666",
+      "native": {
+        "status": "open",
+        "needs": [
+          "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+        ]
+      }
+    },
+    {
+      "name": "reported-unverified",
+      "declaration": {
+        "workflow": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+        "projection": "sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0",
+        "job": "portability-ci",
+        "runsOn": "ubuntu-24.04",
+        "node": 22,
+        "artifact": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+        "keyClass": "attest",
+        "coverage": [
+          "pipeline/portability-ci/configuration"
+        ],
+        "witness": "witness:ci.portability-ci.ubuntu-24.04.node-22",
+        "provenance": "exact published workflow selection; not observed Actions execution",
+        "evidence": {
+          "kind": "reported",
+          "run": "fixture:unverified-run/22",
+          "receipt": "sha256:92fe9948f68704f97df4fde61f3b958a7ca0e6f76bf3b1759d2aea722ec845c5"
+        }
+      },
+      "status": "declared",
+      "needs": [],
+      "missing": null,
+      "bytes": "topos-ci/1 artifact=sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b coverage=\"[\\\"pipeline/portability-ci/configuration\\\"]\" evidence=\"{\\\"kind\\\":\\\"reported\\\",\\\"run\\\":\\\"fixture:unverified-run/22\\\",\\\"receipt\\\":\\\"sha256:92fe9948f68704f97df4fde61f3b958a7ca0e6f76bf3b1759d2aea722ec845c5\\\"}\" job=portability-ci key-class=attest node=22 projection=sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0 provenance=\"exact published workflow selection; not observed Actions execution\" runs-on=ubuntu-24.04 witness=witness:ci.portability-ci.ubuntu-24.04.node-22 workflow=sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+      "utf8Hex": "746f706f732d63692f312061727469666163743d7368613235363a6530373635656562353466636665633163396338396136373039343634313935376566656164303632666664386134353930306632613365336435363639366220636f7665726167653d225b5c22706970656c696e652f706f72746162696c6974792d63692f636f6e66696775726174696f6e5c225d222065766964656e63653d227b5c226b696e645c223a5c227265706f727465645c222c5c2272756e5c223a5c22666978747572653a756e76657269666965642d72756e2f32325c222c5c22726563656970745c223a5c227368613235363a393266653939343866363837303466393764663466646536316633623935386137636130653666373662663362313735396432616561373232656338343563355c227d22206a6f623d706f72746162696c6974792d6369206b65792d636c6173733d617474657374206e6f64653d32322070726f6a656374696f6e3d7368613235363a336136373934313830626364383538376365626361303939386361386635303530636132323066663662663038666335373234663661653065393135303966302070726f76656e616e63653d226578616374207075626c697368656420776f726b666c6f772073656c656374696f6e3b206e6f74206f6273657276656420416374696f6e7320657865637574696f6e222072756e732d6f6e3d7562756e74752d32342e3034207769746e6573733d7769746e6573733a63692e706f72746162696c6974792d63692e7562756e74752d32342e30342e6e6f64652d323220776f726b666c6f773d7368613235363a37336439396263356536343639353361333036356237363034666235353036316337336535333132366463366439646430393234626261623837373831623666",
+      "native": {
+        "status": "open",
+        "needs": [
+          "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+        ]
+      }
+    },
+    {
+      "name": "reported-receipt-unavailable",
+      "declaration": {
+        "workflow": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+        "projection": "sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0",
+        "job": "portability-ci",
+        "runsOn": "ubuntu-24.04",
+        "node": 22,
+        "artifact": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+        "keyClass": "attest",
+        "coverage": [
+          "pipeline/portability-ci/configuration"
+        ],
+        "witness": "witness:ci.portability-ci.ubuntu-24.04.node-22",
+        "provenance": "exact published workflow selection; not observed Actions execution",
+        "evidence": {
+          "kind": "reported",
+          "run": "fixture:unverified-run/22",
+          "receipt": "sha256:92fe9948f68704f97df4fde61f3b958a7ca0e6f76bf3b1759d2aea722ec845c5"
+        }
+      },
+      "status": "open",
+      "needs": [
+        "bytes:sha256:92fe9948f68704f97df4fde61f3b958a7ca0e6f76bf3b1759d2aea722ec845c5"
+      ],
+      "missing": "receipt",
+      "bytes": "topos-ci/1 artifact=sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b coverage=\"[\\\"pipeline/portability-ci/configuration\\\"]\" evidence=\"{\\\"kind\\\":\\\"reported\\\",\\\"run\\\":\\\"fixture:unverified-run/22\\\",\\\"receipt\\\":\\\"sha256:92fe9948f68704f97df4fde61f3b958a7ca0e6f76bf3b1759d2aea722ec845c5\\\"}\" job=portability-ci key-class=attest node=22 projection=sha256:3a6794180bcd8587cebca0998ca8f5050ca220ff6bf08fc5724f6ae0e91509f0 provenance=\"exact published workflow selection; not observed Actions execution\" runs-on=ubuntu-24.04 witness=witness:ci.portability-ci.ubuntu-24.04.node-22 workflow=sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+      "utf8Hex": "746f706f732d63692f312061727469666163743d7368613235363a6530373635656562353466636665633163396338396136373039343634313935376566656164303632666664386134353930306632613365336435363639366220636f7665726167653d225b5c22706970656c696e652f706f72746162696c6974792d63692f636f6e66696775726174696f6e5c225d222065766964656e63653d227b5c226b696e645c223a5c227265706f727465645c222c5c2272756e5c223a5c22666978747572653a756e76657269666965642d72756e2f32325c222c5c22726563656970745c223a5c227368613235363a393266653939343866363837303466393764663466646536316633623935386137636130653666373662663362313735396432616561373232656338343563355c227d22206a6f623d706f72746162696c6974792d6369206b65792d636c6173733d617474657374206e6f64653d32322070726f6a656374696f6e3d7368613235363a336136373934313830626364383538376365626361303939386361386635303530636132323066663662663038666335373234663661653065393135303966302070726f76656e616e63653d226578616374207075626c697368656420776f726b666c6f772073656c656374696f6e3b206e6f74206f6273657276656420416374696f6e7320657865637574696f6e222072756e732d6f6e3d7562756e74752d32342e3034207769746e6573733d7769746e6573733a63692e706f72746162696c6974792d63692e7562756e74752d32342e30342e6e6f64652d323220776f726b666c6f773d7368613235363a37336439396263356536343639353361333036356237363034666235353036316337336535333132366463366439646430393234626261623837373831623666",
+      "native": {
+        "status": "open",
+        "needs": [
+          "bytes:sha256:92fe9948f68704f97df4fde61f3b958a7ca0e6f76bf3b1759d2aea722ec845c5",
+          "bytes:sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b"
+        ]
+      }
+    }
+  ],
+  "negative": [
+    {
+      "name": "runner-not-in-matrix",
+      "patch": {
+        "runsOn": "ubuntu-latest"
+      },
+      "cause": "REFUSE·ci-form runner outside declared matrix"
+    },
+    {
+      "name": "node-not-in-matrix",
+      "patch": {
+        "node": 20
+      },
+      "cause": "REFUSE·ci-form node outside declared matrix"
+    },
+    {
+      "name": "other-job",
+      "patch": {
+        "job": "release"
+      },
+      "cause": "REFUSE·ci-form selected pipeline binding"
+    },
+    {
+      "name": "missing-coverage",
+      "patch": {
+        "coverage": []
+      },
+      "cause": "REFUSE·ci-form limited coverage"
+    },
+    {
+      "name": "unrestricted-coverage",
+      "patch": {
+        "coverage": [
+          "*"
+        ]
+      },
+      "cause": "REFUSE·ci-form limited coverage"
+    },
+    {
+      "name": "authority-scope",
+      "patch": {
+        "coverage": [
+          "keys/owner"
+        ]
+      },
+      "cause": "REFUSE·ci-form outside selected coverage keys/owner"
+    },
+    {
+      "name": "prefix-collision",
+      "patch": {
+        "coverage": [
+          "pipeline/portability-cix/configuration"
+        ]
+      },
+      "cause": "REFUSE·ci-form outside selected coverage pipeline/portability-cix/configuration"
+    },
+    {
+      "name": "grant-from-class",
+      "patch": {
+        "keyClass": "authorize"
+      },
+      "cause": "REFUSE·ci-form attest class"
+    },
+    {
+      "name": "witness-slash-path",
+      "patch": {
+        "witness": "witness:ci/portability-ci/ubuntu-24.04/node-22"
+      },
+      "cause": "REFUSE·ci-form witness slash has step semantics; opaque namespace requires another profile"
+    },
+    {
+      "name": "empty-witness",
+      "patch": {
+        "witness": "witness:"
+      },
+      "cause": "REFUSE·ci-form witness"
+    },
+    {
+      "name": "pipeline-setting-as-permission",
+      "patch": {
+        "permissions": "authorize"
+      },
+      "cause": "REFUSE·ci-form fields"
+    },
+    {
+      "name": "wrong-workflow-bytes",
+      "mutation": "workflow",
+      "cause": "REFUSE·ci-form handed input digest"
+    },
+    {
+      "name": "wrong-projection-bytes",
+      "mutation": "projection",
+      "cause": "REFUSE·ci-form handed input digest"
+    },
+    {
+      "name": "corrupt-archive",
+      "mutation": "archive",
+      "cause": "REFUSE·ci-form artifact digest"
+    },
+    {
+      "name": "evidence-label-is-not-verification",
+      "patch": {
+        "evidence": {
+          "kind": "verified"
+        }
+      },
+      "cause": "REFUSE·ci-form execution evidence"
+    },
+    {
+      "name": "missing-provenance",
+      "patch": {
+        "provenance": ""
+      },
+      "cause": "REFUSE·ci-form pipeline declaration"
+    }
+  ],
+  "witnessCompatibility": {
+    "name": "witness:ci/portability-ci/ubuntu-24.04/node-22",
+    "actualRegionSteps": [
+      "witness:ci",
+      "portability-ci",
+      "ubuntu-24.04",
+      "node-22"
+    ],
+    "actualResolution": 4,
+    "actualNamesAtSelf": false,
+    "actualNamesAtLeaf": true,
+    "newProfileDecision": "named refusal, existing slash interpretation unchanged"
+  },
+  "classification": "Declarations and finite coverage only; no execution/signature/permission proof",
+  "nativeReadPolicy": {
+    "subjectArchive": "not handed; needs/bytes retained",
+    "execution": "not established"
+  }
+}

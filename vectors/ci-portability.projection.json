@@ -1,0 +1,39 @@
+{
+  "producer": "@lapxo/bound@0.2.5 published workflow declaration, not observed Actions execution",
+  "workflowDigest": "sha256:73d99bc5e646953a3065b7604fb55061c73e53126dc6d9dd0924bbab87781b6f",
+  "job": "portability-ci",
+  "runsOnExpression": "${{ matrix.os }}",
+  "runners": [
+    "ubuntu-24.04",
+    "macos-14"
+  ],
+  "nodes": [
+    22,
+    24
+  ],
+  "needs": [
+    "exact_archive"
+  ],
+  "permissions": {
+    "contents": "read",
+    "actions": "read"
+  },
+  "commands": [
+    "",
+    "",
+    "npm ci --ignore-scripts",
+    "npm audit signatures",
+    "",
+    "node --experimental-strip-types --test test/portability-installed.test.ts",
+    ""
+  ],
+  "artifactName": "bound-exact-archive",
+  "artifactDigest": "sha256:e0765eeb54fcfec1c9c89a67094641957efead062ffd8a45900f2a3e3d56696b",
+  "allowedCoverage": [
+    "pipeline/portability-ci"
+  ],
+  "extraction": {
+    "parser": "PyYAML 6.0.3",
+    "mode": "safe_load; actual selected job, exact workflow bytes"
+  }
+}
